@@ -118,6 +118,9 @@ module BP3D.Model {
     public addItem(itemType: number, fileName: string, metadata, position: THREE.Vector3, rotation: number, scale: THREE.Vector3, fixed: boolean) {
       itemType = itemType || 1;
       var scope = this;
+      var i = 1;
+      console.log("i: ", i);
+      i+=1;
       var loaderCallback = function (geometry: THREE.Geometry, materials: THREE.Material[]) {
         var item = new (Items.Factory.getClass(itemType))(
           scope.model,
@@ -136,7 +139,7 @@ module BP3D.Model {
       this.loader.load(
         fileName,
         loaderCallback,
-        undefined // TODO_Ekki 
+        undefined // TODO_Ekki
       );
     }
   }

@@ -1,11 +1,13 @@
 /// <reference path="../../lib/jQuery.d.ts" />
 /// <reference path="../../lib/three.d.ts" />
+
 /// <reference path="controller.ts" />
 /// <reference path="floorPlan.ts" />
 /// <reference path="lights.ts" />
 /// <reference path="skybox.ts" />
 /// <reference path="controls.ts" />
 /// <reference path="hud.ts" />
+/// <reference path="human.ts" />
 
 module BP3D.Three {
   export var Main = function (model, element, canvasElement, opts) {
@@ -40,6 +42,9 @@ module BP3D.Three {
     var controller;
     var floorplan;
 
+    var meshes = [];
+    var mixers = [];
+    var human = new Human(scene, model);
     //var canvas;
     //var canvasElement = canvasElement;
 
@@ -97,12 +102,10 @@ module BP3D.Three {
       // setup camera nicely
       scope.centerCamera();
       model.floorplan.fireOnUpdatedRooms(scope.centerCamera);
-
       var lights = new Three.Lights(scene, model.floorplan);
 
       floorplan = new Three.Floorplan(scene,
         model.floorplan, scope.controls);
-
       animate();
 
       scope.element.mouseenter(function () {
@@ -170,6 +173,17 @@ module BP3D.Three {
       }
     }
 
+    var delta = 0;
+    var prevTime = Date.now();
+
+    var animOffset       = 0,   // starting frame of animation
+    	walking         = false,
+    	duration        = 1000, // milliseconds to complete animation
+    	keyframes       = 20,   // total number of animation frames
+    	interpolation   = duration / keyframes, // milliseconds per frame
+    	lastKeyframe    = 0,    // previous keyframe
+    	currentKeyframe = 0;
+
     function render() {
       spin();
       if (shouldRender()) {
@@ -179,15 +193,69 @@ module BP3D.Three {
         renderer.render(hud.getScene(), camera);
       }
       lastRender = Date.now();
+
+    //  human.move();
+      human.moveToPosition(50,0,50);
+
     };
+
+
+    var android;
+    var sceneAnimationClip;
+    var marine;
+    var flag = 0;
+    var geometry;
 
     function animate() {
       var delay = 50;
+      if (flag == 0) {
+        getCube();
+      }
+
       setTimeout(function () {
         requestAnimationFrame(animate);
       }, delay);
       render();
-    };
+
+    }
+    function getCube() {
+      //var items = model.scene.getItems();
+      var items = scene.items;
+      if (items.length > 0){
+        for (var i=0; i<items.length; i++){
+          if(items[i].metadata.itemName == "Cubo"){
+             var jsonLoader = new THREE.JSONLoader();
+
+            //jsonLoader.load( "/models/js/marine_anims_all.json", addModelToScene );
+            flag = 1;
+
+          }
+        }
+      }
+    }
+
+    function addModelToScene( geometry, materials) {
+      // for preparing animation
+    	for (var i = 0; i < materials.length; i++){
+    		materials[i].morphTargets = true;
+      }
+
+      var material = new THREE.MeshFaceMaterial( materials );
+      var clip = THREE.AnimationClip.CreateFromMorphTargetSequence('walk', geometry.morphTargets, 27, false);
+      for (var j = 0; j<5; j++){
+        var mesh = new THREE.SkinnedMesh( geometry, material );
+        meshes.push(mesh);
+        mesh.scale.set(50,50,50);
+        scene.add(mesh);
+        mesh.position.x = -30*j;
+
+        var mixer = new THREE.AnimationMixer( mesh );
+        mixer.clipAction( clip ).play();
+        mixers.push(mixer);
+
+      }
+
+    }
 
     this.rotatePressed = function () {
       controller.rotatePressed();

@@ -20,10 +20,10 @@ module.exports = function (grunt) {
     dest: globalConfig.exampleDir + "/" + globalConfig.moduleName + ".js"
   };
 
-  configuration.copy.threejs = {
-    src: "node_modules/three/three.min.js",
-    dest: globalConfig.exampleDir + "/three.min.js"
-  }
+  // configuration.copy.threejs = {
+  //   src: "node_modules/three/three.min.js",
+  //   dest: globalConfig.exampleDir + "/three.min.js"
+  // }
 
   configuration.typescript = {
     options: {
@@ -73,7 +73,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask("example", [
-    "copy:threejs",
+    // "copy:threejs",
     "copy:" + globalConfig.moduleName
   ]);
 

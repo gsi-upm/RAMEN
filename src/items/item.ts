@@ -55,14 +55,16 @@ module BP3D.Items {
     /** */
     protected halfSize: THREE.Vector3;
 
-    /** Constructs an item. 
+    public mesh: THREE.Mesh;
+
+    /** Constructs an item.
      * @param model TODO
      * @param metadata TODO
      * @param geometry TODO
      * @param material TODO
      * @param position TODO
      * @param rotation TODO
-     * @param scale TODO 
+     * @param scale TODO
      */
     constructor(protected model: Model.Model, public metadata: Metadata, geometry: THREE.Geometry, material: THREE.MeshFaceMaterial, position: THREE.Vector3, rotation: number, scale: THREE.Vector3) {
       super();
@@ -80,6 +82,8 @@ module BP3D.Items {
 
       this.geometry = geometry;
       this.material = material;
+
+      this.mesh = new THREE.Mesh(geometry, material);
 
       if (position) {
         this.position.copy(position);
@@ -259,11 +263,11 @@ module BP3D.Items {
       return [];
     }
 
-    /** 
+    /**
      * returns the 2d corners of the bounding polygon
-     * 
+     *
      * offset is Vector3 (used for getting corners of object at a new position)
-     * 
+     *
      * TODO: handle rotated objects better!
      */
     public getCorners(xDim, yDim, position) {

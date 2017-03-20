@@ -142,7 +142,8 @@ module BP3D.Three {
       var line = new THREE.Line(
         makeLineGeometry(item),
         makeLineMaterial(scope.rotating),
-        THREE.LinePieces);
+        //THREE.LinePieces);
+        2);
 
       var cone = makeCone(item);
       var sphere = makeSphere(item);
