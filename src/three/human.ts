@@ -11,6 +11,7 @@ module BP3D.Three {
     var prevTime = Date.now();
     var angleRadians;
     var floorplan;
+    var a =10;
 
     function init() {
       // Loading JSON 3DModel
@@ -31,10 +32,16 @@ module BP3D.Three {
         // Adding Meshes
         var mesh = new THREE.SkinnedMesh( geometry, material );
 
+        var mesh2 = new THREE.SkinnedMesh( geometry, material );
+
         meshes.push(mesh);
         mesh.scale.set(50,50,50);
+        mesh2.scale.set(50,50,50);
         scene.add(mesh);
-        //mesh.position.x = 30;
+        scene.add(mesh2);
+        mesh2.position.set(-1000, 0,-1000);
+        mesh.position.x = 300;
+        mesh.position.z = 0
 
         // Starting Animation
         var mixer = new THREE.AnimationMixer( mesh );
@@ -138,47 +145,47 @@ module BP3D.Three {
       prevTime = time;
     }
 
+
     this.moveToPosition = function (x, y, z) {
       if (floorplan ==undefined){
         floorplan = model.floorplan;
       }
-      var vector = new THREE.Vector3( 204, 0, 289 );
 
       if (meshes[0]){
-        console.log("VALID POSITION: ", isValidPosition(vector, meshes[0]));
-      var meshX = meshes[0].position.x;
-      var meshZ = meshes[0].position.z;
-      if (angleRadians != 0){
+        var meshX = meshes[0].position.x;
+        var meshZ = meshes[0].position.z;
         for (var i=0; i<meshes.length; i++) {
-          // var meshX = meshes[i].position.x;
-          // var meshY = meshes[i].position.y;
-
           angleRadians = Math.atan2(x- meshX, z-meshZ) ;
+          if (Math.abs(meshX - x) > 2 || Math.abs(meshZ - z) > 2){
+            var rotationAngle = angleRadians-meshes[i].rotation.y;
+            if( rotationAngle>Math.PI){
+              rotationAngle-=2*Math.PI;
+            }
+            else if( rotationAngle<-Math.PI){
+              rotationAngle+=2*Math.PI;
+            }
 
-          if (Math.abs(angleRadians-meshes[i].rotation.y) > 0.051 ){
-           if(angleRadians > 0){
-              // meshes[i].rotateY(0.05);
-              meshes[i].rotation.y += 0.05;
-           }
-           else{
-            //  meshes[i].rotateY(-0.05);
-            meshes[i].rotation.y -= 0.05;
-           }
-          }
-          else if(Math.abs(meshX - x) > 1 || Math.abs(meshZ - z) > 1) {
-            this.move();
-          }
+            console.log("rotation: ",  rotationAngle );
+            if (Math.abs(rotationAngle) > 0.051 ){
+              if(rotationAngle > 0){
+                meshes[i].rotation.y += 0.05;
+              } else {
+                meshes[i].rotation.y -= 0.05;
+              }
+            }else if (Math.abs(rotationAngle) < 0.051 && Math.abs(rotationAngle)>0.006){
+              if(rotationAngle > 0){
+                meshes[i].rotation.y += 0.005;
+              } else {
+                meshes[i].rotation.y -= 0.005;
+              }
+            }
+              this.move();
 
-        //  meshes[i].rotation.y = angleRadians - Math.PI/2;
-        //  meshes[i].rotateY(Math.PI / 2);
-          //angleRadians = 0;
+          }
         }
       }
-      // if (meshX - x > 1 || meshZ - z > 1){
-      //   this.move();
-      // }
-      }
     }
+
     function objectHalfSize(mesh): THREE.Vector3 {
       var objectBox = new THREE.Box3();
       objectBox.setFromObject(mesh);

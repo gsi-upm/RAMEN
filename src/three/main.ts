@@ -195,7 +195,7 @@ module BP3D.Three {
       lastRender = Date.now();
 
     //  human.move();
-      human.moveToPosition(50,0,50);
+      human.moveToPosition(-1000,0,-1000);
 
     };
 
