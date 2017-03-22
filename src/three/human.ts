@@ -11,7 +11,7 @@ module BP3D.Three {
     var prevTime = Date.now();
     var angleRadians;
     var floorplan;
-    var a =10;
+    var clip;
 
     function init() {
       // Loading JSON 3DModel
@@ -27,21 +27,22 @@ module BP3D.Three {
 
       // var material = new THREE.MeshFaceMaterial( materials );
       var material = new THREE.MultiMaterial( materials );
-      var clip = THREE.AnimationClip.CreateFromMorphTargetSequence('walk', geometry.morphTargets, 27, false);
-      for (var j = 0; j<1; j++){
+      clip = THREE.AnimationClip.CreateFromMorphTargetSequence('walk', geometry.morphTargets, 27, false);
+      for (var j = 0; j<100; j++){
         // Adding Meshes
         var mesh = new THREE.SkinnedMesh( geometry, material );
 
         var mesh2 = new THREE.SkinnedMesh( geometry, material );
 
-        meshes.push(mesh);
+
         mesh.scale.set(50,50,50);
         mesh2.scale.set(50,50,50);
         scene.add(mesh);
         scene.add(mesh2);
-        mesh2.position.set(-1000, 0,-1000);
-        mesh.position.x = 300;
-        mesh.position.z = 0
+        mesh2.position.set(290, 0,-300);
+        mesh.position.x = 300 - 100*j;
+        mesh.position.z = 0;
+        meshes.push(mesh);
 
         // Starting Animation
         var mixer = new THREE.AnimationMixer( mesh );
@@ -127,61 +128,64 @@ module BP3D.Three {
       return corners;
     }
 
-    this.move = function () {
+    this.move = function (mesh, i) {
       var time = Date.now();
 
       // Translation Movement
-      for (var y=0; y<meshes.length; y++) {
+      //for (var y=0; y<meshes.length; y++) {
         var moveDistance = 2.5;
-        meshes[y].translateZ(  moveDistance );
+        meshes[i].translateZ(  moveDistance );
+        // meshes[y].translateZ(  moveDistance );
         //meshes[y].rotateY( 0.01 );
-      }
+      // }
 
       // Animation
       for (var z=0; z<mixers.length; z++){
         mixers[z].update((time - prevTime)*0.0005);
       }
-
       prevTime = time;
     }
 
 
-    this.moveToPosition = function (x, y, z) {
-      if (floorplan ==undefined){
+    this.moveToPosition = function(x, y, z) {
+      if (floorplan == undefined) {
         floorplan = model.floorplan;
       }
+      for (var i = 0; i < meshes.length; i++) {
+        var meshX = meshes[i].position.x;
+        var meshZ = meshes[i].position.z;
+        if (isValidPosition(meshes[i].position, meshes[i])) {
 
-      if (meshes[0]){
-        var meshX = meshes[0].position.x;
-        var meshZ = meshes[0].position.z;
-        for (var i=0; i<meshes.length; i++) {
-          angleRadians = Math.atan2(x- meshX, z-meshZ) ;
-          if (Math.abs(meshX - x) > 2 || Math.abs(meshZ - z) > 2){
-            var rotationAngle = angleRadians-meshes[i].rotation.y;
-            if( rotationAngle>Math.PI){
-              rotationAngle-=2*Math.PI;
+          if (Math.abs(meshX - x) > 2 || Math.abs(meshZ - z) > 2) {
+            angleRadians = Math.atan2(x - meshX, z - meshZ);
+            var rotationAngle = angleRadians - meshes[i].rotation.y;
+            if (rotationAngle > Math.PI) {
+              rotationAngle -= 2 * Math.PI;
             }
-            else if( rotationAngle<-Math.PI){
-              rotationAngle+=2*Math.PI;
+            else if (rotationAngle < -Math.PI) {
+              rotationAngle += 2 * Math.PI;
             }
-
-            console.log("rotation: ",  rotationAngle );
-            if (Math.abs(rotationAngle) > 0.051 ){
-              if(rotationAngle > 0){
+            if (Math.abs(rotationAngle) > 0.051) {
+              if (rotationAngle > 0) {
                 meshes[i].rotation.y += 0.05;
               } else {
                 meshes[i].rotation.y -= 0.05;
               }
-            }else if (Math.abs(rotationAngle) < 0.051 && Math.abs(rotationAngle)>0.006){
-              if(rotationAngle > 0){
+            } else if (Math.abs(rotationAngle) < 0.051 && Math.abs(rotationAngle) > 0.006) {
+              if (rotationAngle > 0) {
                 meshes[i].rotation.y += 0.005;
               } else {
                 meshes[i].rotation.y -= 0.005;
               }
             }
-              this.move();
+            this.move(meshes[i],i);
 
           }
+          else{
+            mixers[i].clipAction(clip).stop();
+          }
+        }else{
+          mixers[i].clipAction(clip).stop();
         }
       }
     }
