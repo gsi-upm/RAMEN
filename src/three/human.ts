@@ -5,6 +5,8 @@ module BP3D.Three {
 
     var meshes = [];
     var mixers = [];
+    var items = [];
+    var doors = [];
     var scene = scene;
     var model = model;
 
@@ -13,10 +15,28 @@ module BP3D.Three {
     var floorplan;
     var clip;
 
+    var testing;
     function init() {
       // Loading JSON 3DModel
       var jsonLoader = new THREE.JSONLoader();
       jsonLoader.load( "/models/js/walkmorphcolor.json", addModelToScene);
+
+      $.ajax('/js/floor4.json', {
+        async: false,
+        dataType: 'text',
+        success: function (data) {
+            testing = data;
+        }
+      });
+      var json = JSON.parse(testing);
+      items = json.items;
+      for(var i=0; i<items.length; i++){
+        if(items[i].item_name == "Open Door"){
+          doors.push(items[i]);
+        }
+      }
+      console.log("AQUI: ", doors);
+
     }
 
     function addModelToScene( geometry, materials) {
@@ -39,9 +59,10 @@ module BP3D.Three {
         mesh2.scale.set(50,50,50);
         scene.add(mesh);
         scene.add(mesh2);
-        mesh2.position.set(290, 0,-300);
-        mesh.position.x = 300 - 100*j;
-        mesh.position.z = 0;
+        mesh2.position.set( 504.85099999999989, 0,60);
+        mesh.position.x = 104.85099999999989 - 100*j;
+        mesh.position.z = 60;
+        mesh.rotation.y = Math.PI/2;
         meshes.push(mesh);
 
         // Starting Animation
@@ -62,6 +83,11 @@ module BP3D.Three {
         if (Core.Utils.pointInPolygon(vec3.x, vec3.z, rooms[i].interiorCorners) &&
           !Core.Utils.polygonPolygonIntersect(corners, rooms[i].interiorCorners)) {
           isInARoom = true;
+        }
+      }
+      for (var j = 0; j<doors.length; j++){
+        if(vec3.x > doors[j].xpos - 65  && vec3.x < doors[j].xpos + 65  && vec3.z > doors[j].zpos - 65  && vec3.z < doors[j].zpos + 65 ){
+          return true;
         }
       }
       if (!isInARoom) {
@@ -178,8 +204,8 @@ module BP3D.Three {
                 meshes[i].rotation.y -= 0.005;
               }
             }
-            this.move(meshes[i],i);
 
+              this.move(meshes[i],i);
           }
           else{
             mixers[i].clipAction(clip).stop();

@@ -534,7 +534,7 @@ $(document).ready(function() {
   var cameraButtons = new CameraButtons(blueprint3d);
   mainControls(blueprint3d);
 
-  $.ajax('/js/floor.json', {
+  $.ajax('/js/floor4.json', {
     async: false,
     dataType: 'text',
     success: function (data) {
