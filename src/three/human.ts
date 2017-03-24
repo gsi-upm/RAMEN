@@ -35,7 +35,6 @@ module BP3D.Three {
           doors.push(items[i]);
         }
       }
-      console.log("AQUI: ", doors);
 
     }
 
@@ -48,7 +47,7 @@ module BP3D.Three {
       // var material = new THREE.MeshFaceMaterial( materials );
       var material = new THREE.MultiMaterial( materials );
       clip = THREE.AnimationClip.CreateFromMorphTargetSequence('walk', geometry.morphTargets, 27, false);
-      for (var j = 0; j<100; j++){
+      for (var j = 0; j<1; j++){
         // Adding Meshes
         var mesh = new THREE.SkinnedMesh( geometry, material );
 
@@ -59,10 +58,9 @@ module BP3D.Three {
         mesh2.scale.set(50,50,50);
         scene.add(mesh);
         scene.add(mesh2);
-        mesh2.position.set( 504.85099999999989, 0,60);
+        mesh2.position.set( 604.85099999999989, 0,60);
         mesh.position.x = 104.85099999999989 - 100*j;
         mesh.position.z = 60;
-        mesh.rotation.y = Math.PI/2;
         meshes.push(mesh);
 
         // Starting Animation
@@ -70,6 +68,8 @@ module BP3D.Three {
         mixer.clipAction(clip).play();
         mixers.push(mixer);
       }
+      console.log("MESHES: ",meshes[0].material.materials[0].color);
+      //meshes[0].material.materials[0].color.g = 0;
 
     }
 
@@ -158,31 +158,33 @@ module BP3D.Three {
       var time = Date.now();
 
       // Translation Movement
-      //for (var y=0; y<meshes.length; y++) {
-        var moveDistance = 2.5;
-        meshes[i].translateZ(  moveDistance );
-        // meshes[y].translateZ(  moveDistance );
-        //meshes[y].rotateY( 0.01 );
-      // }
+      var moveDistance = 2.5;
+      meshes[i].translateZ(moveDistance);
 
       // Animation
       for (var z=0; z<mixers.length; z++){
         mixers[z].update((time - prevTime)*0.0005);
       }
+
       prevTime = time;
     }
 
 
     this.moveToPosition = function(x, y, z) {
+      //Get floorplan for isValidPosition
       if (floorplan == undefined) {
         floorplan = model.floorplan;
       }
       for (var i = 0; i < meshes.length; i++) {
+        //Mesh Position
         var meshX = meshes[i].position.x;
         var meshZ = meshes[i].position.z;
+        //Check if the mesh is not in a wall
         if (isValidPosition(meshes[i].position, meshes[i])) {
-
+          //Check if the mesh is not in the final position
           if (Math.abs(meshX - x) > 2 || Math.abs(meshZ - z) > 2) {
+
+            //Angle Calculation
             angleRadians = Math.atan2(x - meshX, z - meshZ);
             var rotationAngle = angleRadians - meshes[i].rotation.y;
             if (rotationAngle > Math.PI) {
@@ -191,7 +193,15 @@ module BP3D.Three {
             else if (rotationAngle < -Math.PI) {
               rotationAngle += 2 * Math.PI;
             }
-            if (Math.abs(rotationAngle) > 0.051) {
+            //Rotation Movement
+            if (Math.abs(rotationAngle) > 0.5) {
+              if (rotationAngle > 0) {
+                meshes[i].rotation.y += 0.45;
+              } else {
+                meshes[i].rotation.y -= 0.45;
+              }
+            }
+            else if (Math.abs(rotationAngle) > 0.051) {
               if (rotationAngle > 0) {
                 meshes[i].rotation.y += 0.05;
               } else {
@@ -207,11 +217,46 @@ module BP3D.Three {
 
               this.move(meshes[i],i);
           }
+          //Stop the animation if the mesh has stopped
           else{
             mixers[i].clipAction(clip).stop();
+            changeColor(0.5,0.5,0.8,i);
           }
         }else{
           mixers[i].clipAction(clip).stop();
+
+        }
+      }
+    }
+
+    function changeColor(r, g, b, i){
+      meshes[i].material.materials[0].color.r = r;
+      meshes[i].material.materials[0].color.g = g;
+      meshes[i].material.materials[0].color.b = b;
+      roomWallTextures();
+      // model.floorplan.getWalls()[2].frontTexture.url = "rooms/textures/Black.png";
+      // model.floorplan.update();
+    //  console.log("ROOMS: ", model.floorplan.getRooms());
+    //   console.log("WALLS: ", model.floorplan.getWalls());
+      // model.floorplan.getRooms()[0].setWallTexture("rooms/textures/Black.png", true, 1)
+      // setTexture("rooms/textures/Black.png", true, 1);
+      // console.log("model.floorplan.getRooms()[0]);
+
+      // model.floorplan.getWalls()[0].backEdge.setTexture("rooms/textures/Black.png", true, 1);
+      // model.floorplan.getWalls()[1].backEdge.setTexture("rooms/textures/Black.png", true, 1);
+      // model.floorplan.getWalls()[2].backEdge.setTexture("rooms/textures/Black.png", true, 1);
+      // model.floorplan.getWalls()[3].backEdge.setTexture("rooms/textures/Black.png", true, 1);
+    }
+
+    function roomWallTextures(){
+      var walls = model.floorplan.getRooms()[1].updateWallsTexture();
+      console.log(walls);
+      for (var i = 0; i<walls.length; i++){
+        if(walls[i].to == false){
+          walls[i].backEdge.setTexture("rooms/textures/Black.png", true, 1);
+        }
+        else{
+          walls[0].frontEdge.setTexture("rooms/textures/Black.png", true, 1);
         }
       }
     }

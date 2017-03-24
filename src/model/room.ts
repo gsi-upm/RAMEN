@@ -20,8 +20,8 @@ module BP3D.Model {
     scale: 400
   }
 
-  /** 
-   * A Room is the combination of a Floorplan with a floor plane. 
+  /**
+   * A Room is the combination of a Floorplan with a floor plane.
    */
   export class Room {
 
@@ -67,7 +67,7 @@ module BP3D.Model {
       return tex || defaultRoomTexture;
     }
 
-    /** 
+    /**
      * textureStretch always true, just an argument for consistency with walls
      */
     private setTexture(textureUrl: string, textureStretch, textureScale: number) {
@@ -115,7 +115,7 @@ module BP3D.Model {
       }
     }
 
-    /** 
+    /**
      * Populates each wall's half edge relating to this room
      * this creates a fancy doubly connected edge list (DCEL)
      */
@@ -157,6 +157,37 @@ module BP3D.Model {
 
       // hold on to an edge reference
       this.edgePointer = firstEdge;
+    }
+    private updateWallsTexture() {
+      var walls = [];
+      var prevEdge = null;
+      var firstEdge = null;
+
+      for (var i = 0; i < this.corners.length; i++) {
+
+        var firstCorner = this.corners[i];
+        var secondCorner = this.corners[(i + 1) % this.corners.length];
+
+        // find if wall is heading in that direction
+        var wallTo = firstCorner.wallTo(secondCorner);
+        var wallFrom = firstCorner.wallFrom(secondCorner);
+
+        if (wallTo) {
+          wallTo.to = true;
+          walls.push(wallTo);
+        } else if (wallFrom) {
+          wallFrom.to = false;
+          walls.push(wallFrom);
+        } else {
+          // something horrible has happened
+          console.log("corners arent connected by a wall, uh oh");
+        }
+
+      }
+
+      // hold on to an edge reference
+      this.edgePointer = firstEdge;
+      return walls;
     }
   }
 }

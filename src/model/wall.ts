@@ -14,9 +14,9 @@ module BP3D.Model {
     scale: 0
   }
 
-  /** 
+  /**
    * A Wall is the basic element to create Rooms.
-   * 
+   *
    * Walls consists of two half edges.
    */
   export class Wall {
@@ -60,7 +60,8 @@ module BP3D.Model {
     /** Actions to be applied explicitly. */
     private action_callbacks = $.Callbacks();
 
-    /** 
+    public to = null;
+    /**
      * Constructs a new wall.
      * @param start Start corner.
      * @param end End corner.
