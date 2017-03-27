@@ -368,6 +368,7 @@ var TextureSelector = function (blueprint3d, sideMenu) {
       var textureUrl = $(this).attr("texture-url");
       var textureStretch = ($(this).attr("texture-stretch") == "true");
       var textureScale = parseInt($(this).attr("texture-scale"));
+      console.log("TEXTURESCALE: ", textureScale);
       currentTarget.setTexture(textureUrl, textureStretch, textureScale);
 
       e.preventDefault();

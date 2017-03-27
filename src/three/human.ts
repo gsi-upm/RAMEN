@@ -58,7 +58,7 @@ module BP3D.Three {
         mesh2.scale.set(50,50,50);
         scene.add(mesh);
         scene.add(mesh2);
-        mesh2.position.set( 604.85099999999989, 0,60);
+        mesh2.position.set( 104.85099999999989, 0,200);
         mesh.position.x = 104.85099999999989 - 100*j;
         mesh.position.z = 60;
         meshes.push(mesh);
@@ -68,9 +68,7 @@ module BP3D.Three {
         mixer.clipAction(clip).play();
         mixers.push(mixer);
       }
-      console.log("MESHES: ",meshes[0].material.materials[0].color);
-      //meshes[0].material.materials[0].color.g = 0;
-
+      
     }
 
     function isValidPosition(vec3, mesh) {
@@ -85,6 +83,7 @@ module BP3D.Three {
           isInARoom = true;
         }
       }
+      //check if it is a door
       for (var j = 0; j<doors.length; j++){
         if(vec3.x > doors[j].xpos - 65  && vec3.x < doors[j].xpos + 65  && vec3.z > doors[j].zpos - 65  && vec3.z < doors[j].zpos + 65 ){
           return true;
@@ -222,6 +221,7 @@ module BP3D.Three {
             mixers[i].clipAction(clip).stop();
             changeColor(0.5,0.5,0.8,i);
           }
+        //Stop the animation if the mesh is in a Wall
         }else{
           mixers[i].clipAction(clip).stop();
 
@@ -233,32 +233,55 @@ module BP3D.Three {
       meshes[i].material.materials[0].color.r = r;
       meshes[i].material.materials[0].color.g = g;
       meshes[i].material.materials[0].color.b = b;
-      roomWallTextures();
-      // model.floorplan.getWalls()[2].frontTexture.url = "rooms/textures/Black.png";
-      // model.floorplan.update();
-    //  console.log("ROOMS: ", model.floorplan.getRooms());
-    //   console.log("WALLS: ", model.floorplan.getWalls());
-      // model.floorplan.getRooms()[0].setWallTexture("rooms/textures/Black.png", true, 1)
-      // setTexture("rooms/textures/Black.png", true, 1);
-      // console.log("model.floorplan.getRooms()[0]);
-
-      // model.floorplan.getWalls()[0].backEdge.setTexture("rooms/textures/Black.png", true, 1);
-      // model.floorplan.getWalls()[1].backEdge.setTexture("rooms/textures/Black.png", true, 1);
-      // model.floorplan.getWalls()[2].backEdge.setTexture("rooms/textures/Black.png", true, 1);
-      // model.floorplan.getWalls()[3].backEdge.setTexture("rooms/textures/Black.png", true, 1);
+      var room = getRoom(meshes[i]);
+      roomWallTextures(room);
     }
 
-    function roomWallTextures(){
-      var walls = model.floorplan.getRooms()[1].updateWallsTexture();
-      console.log(walls);
+    function roomWallTextures(room){
+      var walls = model.floorplan.getRooms()[room].updateWallsTexture();
       for (var i = 0; i<walls.length; i++){
         if(walls[i].to == false){
           walls[i].backEdge.setTexture("rooms/textures/Black.png", true, 1);
         }
         else{
-          walls[0].frontEdge.setTexture("rooms/textures/Black.png", true, 1);
+          walls[i].frontEdge.setTexture("rooms/textures/Black.png", true, 1);
         }
       }
+    }
+
+    function getRoom(mesh){
+      //Mesh position
+      var x = mesh.position.x;
+      var y = mesh.position.z;
+      //Array with all the Rooms
+      var rooms = model.floorplan.getRooms();
+      for (var i = 0; i<rooms.length; i++){
+        //Obtain the min and max coordinates of the room
+        var corners = rooms[i].interiorCorners;
+        var xMin = corners[0].x;
+        var xMax = corners[0].x;
+        var yMin = corners[0].y;
+        var yMax = corners[0].y;
+        for (var j=1; j<corners.length; j++){
+          if (xMin > corners[j].x){
+            xMin = corners[j].x;
+          }
+          if (xMax < corners[j].x){
+            xMax = corners[j].x;
+          }
+          if (yMin > corners[j].y){
+            yMin = corners[j].y;
+          }
+          if (yMin > corners[j].y){
+            yMax = corners[j].y;
+          }
+        }
+        //Check if the mesh is inside the room
+        if( x > xMin && x < xMax && y > yMin && y < yMax){
+          return i;
+        }
+      }
+      return null;
     }
 
     function objectHalfSize(mesh): THREE.Vector3 {
@@ -266,7 +289,6 @@ module BP3D.Three {
       objectBox.setFromObject(mesh);
       return objectBox.max.clone().sub(objectBox.min).divideScalar(2);
     }
-
 
     init();
   }
