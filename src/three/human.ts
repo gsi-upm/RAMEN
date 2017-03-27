@@ -14,6 +14,7 @@ module BP3D.Three {
     var angleRadians;
     var floorplan;
     var clip;
+    var m = 1;
 
     var testing;
     function init() {
@@ -68,7 +69,8 @@ module BP3D.Three {
         mixer.clipAction(clip).play();
         mixers.push(mixer);
       }
-      
+
+
     }
 
     function isValidPosition(vec3, mesh) {
@@ -230,23 +232,50 @@ module BP3D.Three {
     }
 
     function changeColor(r, g, b, i){
+      //Change mesh color
       meshes[i].material.materials[0].color.r = r;
       meshes[i].material.materials[0].color.g = g;
       meshes[i].material.materials[0].color.b = b;
-      var room = getRoom(meshes[i]);
-      roomWallTextures(room);
+      if(m==1){
+        m+=1;
+        var room = getRoom(meshes[i]);
+        roomLight(room, false);
+      }
     }
 
-    function roomWallTextures(room){
+    function roomLight(room, on){
+
+      //Getting the walls
       var walls = model.floorplan.getRooms()[room].updateWallsTexture();
       for (var i = 0; i<walls.length; i++){
+        //Check where is the wall headed
         if(walls[i].to == false){
-          walls[i].backEdge.setTexture("rooms/textures/Black.png", true, 1);
+          //Turn on
+          if(on == true){
+            walls[i].backEdge.setTexture("rooms/textures/walllightmap.jpg", true, 1);
+            model.floorplan.getRooms()[room].setTexture("rooms/textures/hardwood.png", true, 300);
+          }
+          //Turn off
+          else{
+            walls[i].backEdge.setTexture("rooms/textures/walllightmap_dark.png", true, 1);
+            model.floorplan.getRooms()[room].setTexture("rooms/textures/hardwood_dark.png", true, 300);
+          }
         }
         else{
-          walls[i].frontEdge.setTexture("rooms/textures/Black.png", true, 1);
+          //Turn on
+          if (on == true){
+            walls[i].frontEdge.setTexture("rooms/textures/walllightmap.jpg", true, 1);
+            model.floorplan.getRooms()[room].setTexture("rooms/textures/hardwood.png", true, 300);
+          }
+          //Turn off
+          else{
+            walls[i].frontEdge.setTexture("rooms/textures/walllightmap_dark.png", true, 1);
+            model.floorplan.getRooms()[room].setTexture("rooms/textures/hardwood_dark.png", true, 300);
+
+          }
         }
       }
+
     }
 
     function getRoom(mesh){
