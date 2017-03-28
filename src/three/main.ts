@@ -109,11 +109,11 @@ module BP3D.Three {
       animate();
 
       scope.element.mouseenter(function () {
-        mouseOver = true;
+        mouseOver = false;
       }).mouseleave(function () {
         mouseOver = false;
       }).click(function () {
-        hasClicked = true;
+        hasClicked = false;
       });
 
       //canvas = new ThreeCanvas(canvasElement, scope);
@@ -121,8 +121,8 @@ module BP3D.Three {
 
     function spin() {
       if (options.spin && !mouseOver && !hasClicked) {
-        var theta = 2 * Math.PI * options.spinSpeed * (Date.now() - lastRender);
-        scope.controls.rotateLeft(theta);
+        // var theta = 2 * Math.PI * options.spinSpeed * (Date.now() - lastRender);
+        // scope.controls.rotateLeft(theta);
         scope.controls.update()
       }
     }
