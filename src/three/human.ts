@@ -15,6 +15,7 @@ module BP3D.Three {
     var floorplan;
     var clip;
     var m = 1;
+    var video;
 
     var testing;
     function init() {
@@ -44,7 +45,6 @@ module BP3D.Three {
     	for (var i = 0; i < materials.length; i++){
     		materials[i].morphTargets = true;
       }
-
       // var material = new THREE.MeshFaceMaterial( materials );
       var material = new THREE.MultiMaterial( materials );
       clip = THREE.AnimationClip.CreateFromMorphTargetSequence('walk', geometry.morphTargets, 27, false);
@@ -59,9 +59,9 @@ module BP3D.Three {
         mesh2.scale.set(50,50,50);
         scene.add(mesh);
         scene.add(mesh2);
-        mesh2.position.set( 104.85099999999989, 0,200);
+        mesh2.position.set( 104.85099999999989, 0,0);
         mesh.position.x = 104.85099999999989 - 100*j;
-        mesh.position.z = 60;
+        mesh.position.z = -150;
         meshes.push(mesh);
 
         // Starting Animation
@@ -239,7 +239,8 @@ module BP3D.Three {
       if(m==1){
         m+=1;
         var room = getRoom(meshes[i]);
-        roomLight(room, false);
+        console.log("ROOOOOOOOM: ", room);
+        //roomLight(room, false);
       }
     }
 

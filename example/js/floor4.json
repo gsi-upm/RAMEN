@@ -24,16 +24,8 @@
       "b": {
         "x": 0,
         "y": -178.308
-      },
-      "c": {
-        "x": 204.85099999999989,
-        "y": 83
-      },
-      "d": {
-        "x": 204.85099999999989,
-        "y": -83
       }
-    },
+          },
     "walls": [
       {
         "corner1": "71d4f128-ae80-3d58-9bd2-711c6ce6cdf2",
@@ -144,14 +136,27 @@
     "item_type": 7,
     "model_url": "../models/js/open_door.js",
     "xpos": 204.85099999999989,
-    "ypos": 110.5,
+    "ypos": 110.800000297771,
     "zpos": 0,
-    "rotation": -1.5707963267948966,
-    "scale_x": 1.7003089598352215,
-    "scale_y": 0.997292171703541,
-    "scale_z": 0.999415040540576,
+    "rotation": 0,
+    "scale_x": 1,
+    "scale_y": 1,
+    "scale_z": 1,
     "fixed": false
-  }
+  },
+  {
+  "item_name": "Open Door",
+  "item_type": 7,
+  "model_url": "../models/js/open_door.js",
+  "xpos": 350,
+  "ypos": 110.800000297771,
+  "zpos": -178.308,
+  "rotation": 0,
+  "scale_x": 1,
+  "scale_y": 1,
+  "scale_z": 1,
+  "fixed": false
+}
 
 ]
 }

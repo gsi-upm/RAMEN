@@ -29,8 +29,19 @@ module BP3D.Three {
 
     function buildFloor() {
       var textureSettings = scope.room.getTexture();
+      var floorTexture = null;
       // setup texture
-      var floorTexture = THREE.ImageUtils.loadTexture(textureSettings.url);
+      for(var i = 0; i<scene.floorTextures.length; i++) {
+        if(textureSettings.url == scene.floorTextures[i].key){
+          floorTexture = scene.floorTextures[i].value;
+        }
+      }
+
+      if (floorTexture == null) {
+        floorTexture = THREE.ImageUtils.loadTexture(textureSettings.url);
+        scene.floorTextures.push({key: textureSettings.url, value: floorTexture});
+      }
+
       floorTexture.wrapS = THREE.RepeatWrapping;
       floorTexture.wrapT = THREE.RepeatWrapping;
       floorTexture.repeat.set(1, 1);

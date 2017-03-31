@@ -30,6 +30,13 @@ module BP3D.Model {
     /** Item */
     private itemRemovedCallbacks = $.Callbacks();
 
+    public wallTextures = [];
+    public floorTextures = [];
+    public loadedItems = [];
+    public positions = [];
+    public rotations = [];
+    public scales = [];
+
     /**
      * Constructs a scene.
      * @param model The associated model.
@@ -118,29 +125,57 @@ module BP3D.Model {
     public addItem(itemType: number, fileName: string, metadata, position: THREE.Vector3, rotation: number, scale: THREE.Vector3, fixed: boolean) {
       itemType = itemType || 1;
       var scope = this;
-      var i = 1;
-      console.log("i: ", i);
-      i+=1;
+      var loaded = false;
+
+      //Check if the item has been loaded before
+      for (var i=0; i<scope.loadedItems.length; i++){
+        if(scope.loadedItems[i].fileName == fileName){
+          scope.loadedItems[i].number +=1;
+          scope.positions.push(position);
+          loaded =true;
+        }
+      }
+
       var loaderCallback = function (geometry: THREE.Geometry, materials: THREE.Material[]) {
-        var item = new (Items.Factory.getClass(itemType))(
-          scope.model,
-          metadata, geometry,
-          new THREE.MeshFaceMaterial(materials),
-          position, rotation, scale
-        );
-        item.fixed = fixed || false;
-        scope.items.push(item);
-        scope.add(item);
-        item.initObject();
-        scope.itemLoadedCallbacks.fire(item);
+        var n = 1;
+        for (var j=0; j<scope.loadedItems.length; j++){
+          if(scope.loadedItems[j].fileName == fileName ){
+            n = scope.loadedItems[j].number;
+          }
+        }
+        for(var z=0; z<n; z++){
+          var item = new (Items.Factory.getClass(itemType))(
+              scope.model,
+              metadata, geometry,
+              new THREE.MeshFaceMaterial(materials),
+              scope.positions[z],
+              scope.rotations[z],
+              scope.scales[z]
+          );
+          item.fixed = fixed || false;
+          scope.items.push(item);
+          scope.add(item);
+          item.initObject();
+          scope.itemLoadedCallbacks.fire(item);
+
+        }
+
       }
 
       this.itemLoadingCallbacks.fire();
-      this.loader.load(
-        fileName,
-        loaderCallback,
-        undefined // TODO_Ekki
-      );
+      if(!loaded){
+
+        scope.positions.push(position);
+        scope.rotations.push(rotation);
+        scope.scales.push(scale);
+        scope.loadedItems.push({fileName: fileName, number: 1});
+        this.loader.load(
+            fileName,
+            loaderCallback,
+            undefined // TODO_Ekki
+        );
+      }
+
     }
   }
 }

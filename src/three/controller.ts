@@ -50,7 +50,74 @@ module BP3D.Three {
 
       scene.itemRemovedCallbacks.add(itemRemoved);
       scene.itemLoadedCallbacks.add(itemLoaded);
-      setGroundPlane();
+
+      /*
+      //AUDIO NORMAL FUNCIONANDO
+      //Create an AudioListener and add it to the camera
+      var listener = new THREE.AudioListener();
+      camera.add(listener);
+
+      // create a global audio source
+      var sound = new THREE.Audio(listener);
+
+      var audioLoader = new THREE.AudioLoader();
+
+      //Load a sound and set it as the Audio object's buffer
+      audioLoader.load('358232_j_s_song.ogg', function(buffer) {
+        sound.setBuffer(buffer);
+        sound.setLoop(true);
+        sound.setVolume(0.5);
+        sound.play();
+      }, function(buffer) {
+        sound.setBuffer(buffer);
+        sound.setLoop(true);
+        sound.setVolume(0.5);
+        sound.play();
+      }, function(buffer) {
+        sound.setBuffer(buffer);
+        sound.setLoop(true);
+        sound.setVolume(0.5);
+        sound.play();
+      } );
+    */
+      // //"EQUIPO" de MUSICA
+      // //Create an AudioListener and add it to the camera
+      // var listener = new THREE.AudioListener();
+      // camera.add( listener );
+      //
+      // //Create the PositionalAudio object (passing in the listener)
+      // var sound = new THREE.PositionalAudio( listener );
+      //
+      // //Load a sound and set it as the PositionalAudio object's buffer
+      // var audioLoader = new THREE.AudioLoader();
+      // audioLoader.load( '358232_j_s_song.ogg', function( buffer ) {
+      // 	sound.setBuffer( buffer );
+      // 	sound.setRefDistance( 20 );
+      // 	sound.play();
+      // }, function(buffer) {
+      //   sound.setBuffer( buffer );
+      // 	sound.setRefDistance( 20 );
+      // 	sound.play();
+      // }, function(buffer) {
+      //   sound.setBuffer( buffer );
+      // 	sound.setRefDistance( 20 );
+      // 	sound.play();
+      // });
+      //
+      // //Create an object for the sound to play from
+      // var sphere = new THREE.SphereGeometry( 20, 32, 16 );
+      // var material = new THREE.MeshPhongMaterial( { color: 0xff2200 } );
+      // var mesh = new THREE.Mesh( sphere, material );
+      // var mesh2 = new THREE.Mesh( sphere, material );
+      // var mesh3 = new THREE.Mesh( sphere, material );
+      // mesh2.position.set(204.85099999999989, 0, 38);
+      // mesh3.position.set(204.85099999999989, 0, -38);
+      // scene.add( mesh );
+      // scene.add( mesh2 );
+      // scene.add( mesh3 );
+      // //Finally add the sound to the mesh
+      // mesh.add( sound );
+      // setGroundPlane();
     }
 
     // invoked via callback when item is loaded
