@@ -23,7 +23,7 @@ module BP3D.Three {
       var jsonLoader = new THREE.JSONLoader();
       jsonLoader.load( "/models/js/walkmorphcolor.json", addModelToScene);
 
-      $.ajax('/js/floor4.json', {
+      $.ajax('/js/floor5.json', {
         async: false,
         dataType: 'text',
         success: function (data) {
@@ -233,15 +233,59 @@ module BP3D.Three {
 
     function changeColor(r, g, b, i){
       //Change mesh color
-      meshes[i].material.materials[0].color.r = r;
-      meshes[i].material.materials[0].color.g = g;
-      meshes[i].material.materials[0].color.b = b;
+      // meshes[i].material.materials[0].color.r = r;
+      // meshes[i].material.materials[0].color.g = g;
+      // meshes[i].material.materials[0].color.b = b;
+
       if(m==1){
         m+=1;
+        changeColorEmotion("disgust", i);
         var room = getRoom(meshes[i]);
-        console.log("ROOOOOOOOM: ", room);
-        //roomLight(room, false);
+        roomLight(room, false);
       }
+    }
+
+    function changeColorEmotion (emotion, mesh){
+      switch (emotion){
+        case "happiness":
+          //YELLOW
+          meshes[mesh].material.materials[0].color.r = 250/255;
+          meshes[mesh].material.materials[0].color.g = 218/255;
+          meshes[mesh].material.materials[0].color.b = 77/255;
+          break;
+        case "sadness":
+          //DARK BLUE
+          meshes[mesh].material.materials[0].color.r = 0/255;
+          meshes[mesh].material.materials[0].color.g = 70/255;
+          meshes[mesh].material.materials[0].color.b = 255/255;
+          break;
+        case "surprise":
+          //LIGHT BLUE
+          meshes[mesh].material.materials[0].color.r = 66/255;
+          meshes[mesh].material.materials[0].color.g = 163/255;
+          meshes[mesh].material.materials[0].color.b = 191/255;
+          break;
+        case "fear":
+          //GREEN
+          meshes[mesh].material.materials[0].color.r = 57/255;
+          meshes[mesh].material.materials[0].color.g = 162/255;
+          meshes[mesh].material.materials[0].color.b = 81/255;
+          break;
+        case "disgust":
+          //PURPLE
+          meshes[mesh].material.materials[0].color.r = 131/255;
+          meshes[mesh].material.materials[0].color.g = 0/255;
+          meshes[mesh].material.materials[0].color.b = 255/255;
+          break;
+        case "anger":
+          //RED
+          meshes[mesh].material.materials[0].color.r = 227/255;
+          meshes[mesh].material.materials[0].color.g = 52/255;
+          meshes[mesh].material.materials[0].color.b = 84/255;
+          break;
+      }
+
+
     }
 
     function roomLight(room, on){
@@ -302,7 +346,7 @@ module BP3D.Three {
           if (yMin > corners[j].y){
             yMin = corners[j].y;
           }
-          if (yMin > corners[j].y){
+          if (yMin < corners[j].y){
             yMax = corners[j].y;
           }
         }

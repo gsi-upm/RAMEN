@@ -151,12 +151,6 @@ $(document).ready(function() {
       "image" : "models/thumbnails/thumbnail_nyc2.jpg",
       "model" : "models/js/nyc-poster2.js",
       "type" : "2"
-    },
-    {
-      "name" : "Cubo",
-      "image" : "models/thumbnails/Cubo.jpg",
-      "model" : "models/js/android-animations.js",
-      "type" : "1"
     }
    /*
    {

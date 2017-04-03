@@ -117,10 +117,7 @@ var ContextMenu = function(blueprint3d) {
 
   function itemSelected(item) {
     selectedItem = item;
-    console.log("ITEM",item);
-    if (item.metadata.itemName == "Cubo") {
-      move(item);
-    }
+
     $("#context-menu-name").text(item.metadata.itemName);
 
     $("#item-width").val(cmToIn(selectedItem.getWidth()).toFixed(0));
@@ -130,11 +127,6 @@ var ContextMenu = function(blueprint3d) {
     $("#context-menu").show();
 
     $("#fixed").prop('checked', item.fixed);
-  }
-
-  function move(item){
-    console.log(item.position);
-    item.position.x += 10;
   }
 
   function resize() {

@@ -116,6 +116,8 @@ module BP3D.Three {
         hasClicked = false;
       });
 
+      // var audio = new Audio(camera, scene);
+
       //canvas = new ThreeCanvas(canvasElement, scope);
     }
 
@@ -173,17 +175,6 @@ module BP3D.Three {
       }
     }
 
-    var delta = 0;
-    var prevTime = Date.now();
-
-    var animOffset       = 0,   // starting frame of animation
-    	walking         = false,
-    	duration        = 1000, // milliseconds to complete animation
-    	keyframes       = 20,   // total number of animation frames
-    	interpolation   = duration / keyframes, // milliseconds per frame
-    	lastKeyframe    = 0,    // previous keyframe
-    	currentKeyframe = 0;
-
     function render() {
       spin();
       if (shouldRender()) {
@@ -195,16 +186,12 @@ module BP3D.Three {
       lastRender = Date.now();
 
     //  human.move();
-      human.moveToPosition(104.85099999999989, 0,0);
+      human.moveToPosition(104.85099999999989, 0, 300);
 
     };
 
 
-    var android;
-    var sceneAnimationClip;
-    var marine;
     var flag = 0;
-    var geometry;
 
     function animate() {
       var delay = 50;

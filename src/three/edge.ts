@@ -106,7 +106,8 @@ module BP3D.Three {
     }
 
     function updateTexture(callback?) {
-      // callback is fired when texture loads
+      // callback is fired when texture
+      texture = null;
       callback = callback || function () {
         scene.needsUpdate = true;
       }
