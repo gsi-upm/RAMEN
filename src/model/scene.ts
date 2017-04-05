@@ -36,7 +36,8 @@ module BP3D.Model {
     public positions = [];
     public rotations = [];
     public scales = [];
-
+    public meshes = [];
+    public movement = [];
     /**
      * Constructs a scene.
      * @param model The associated model.

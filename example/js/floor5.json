@@ -1511,19 +1511,19 @@
 		"newFloorTextures": {}
 	},
 	"items": [
-    {
-    "item_name": "Open Door",
-    "item_type": 7,
-    "model_url": "../models/js/open_door.js",
-    "xpos": 100,
-    "ypos": 110.800000297771,
-    "zpos": 200,
-    "rotation": 0,
-    "scale_x": 1,
-    "scale_y": 1,
-    "scale_z": 1,
-    "fixed": false
-  },
+		{
+			"item_name": "Open Door",
+			"item_type": 7,
+			"model_url": "../models/js/open_door.js",
+			"xpos": 100,
+			"ypos": 110.800000297771,
+			"zpos": 200,
+			"rotation": 0,
+			"scale_x": 1,
+			"scale_y": 1,
+			"scale_z": 1,
+			"fixed": false
+		},
   {
   "item_name": "Open Door",
   "item_type": 7,

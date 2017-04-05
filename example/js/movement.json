@@ -1,0 +1,30 @@
+{
+  "humans": [
+      {
+      "positions": {
+        "x": [
+          300,
+          400,
+          700
+        ],
+        "y": [
+          300,
+          330,
+          280
+        ]
+      },
+      "sentiment": "happiness",
+      "light": true,
+      "movement": [
+        true,
+        false,
+        true
+      ],
+      "timeStopped": [
+        0,
+        2500,
+        0
+      ]
+    }
+  ]
+}

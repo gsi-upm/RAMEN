@@ -45,6 +45,8 @@ module BP3D.Three {
     var meshes = [];
     var mixers = [];
     var human = new Human(scene, model);
+
+
     //var canvas;
     //var canvasElement = canvasElement;
 
@@ -184,9 +186,9 @@ module BP3D.Three {
         renderer.render(hud.getScene(), camera);
       }
       lastRender = Date.now();
-
     //  human.move();
-      human.moveToPosition(104.85099999999989, 0, 300);
+    //   human.moveToPosition(225, 0, 300);
+        human.moveAll();
 
     };
 
