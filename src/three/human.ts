@@ -24,7 +24,7 @@ module BP3D.Three {
 
         function init() {
             //Loading JSON with the movement
-            $.ajax('/js/movement.json', {
+            $.ajax('/js/movement2.json', {
                 async: false,
                 dataType: 'text',
                 success: function (data2) {
@@ -71,15 +71,18 @@ module BP3D.Three {
                 var mesh = new THREE.SkinnedMesh( geometry, material );
                 mesh.scale.set(50,50,50);
                 scene.add(mesh);
-                mesh.position.x = humans[j].positions.x[0];
-                mesh.position.z = humans[j].positions.y[0];
+                mesh.position.x = humans[j].positions[0].x;
+                mesh.position.z = humans[j].positions[0].y;
                 scene.meshes.push(mesh);
                 scene.movement.push({number:1, time: 0});
+                // changeColorEmotion(humans[j].sentiment[0], j);
+                // Starting Animation
+                var mixer = new THREE.AnimationMixer( mesh );
+                mixers.push(mixer);
+
             }
 
-            // Starting Animation
-            var mixer = new THREE.AnimationMixer( mesh );
-            mixers.push(mixer);
+
 
         }
 
@@ -230,7 +233,6 @@ module BP3D.Three {
                 //Stop the animation if the mesh has stopped
                 else {
                     mixers[i].clipAction(clip).stop();
-                    changeColor(0.5, 0.5, 0.8, i);
                     return true;
                 }
                 //Stop the animation if the mesh is in a Wall
@@ -243,20 +245,24 @@ module BP3D.Three {
             //Check if the meshes exist
             if(scene.meshes[0]){
                 for(var i=0; i<humans.length; i++){
-
                     var number = scene.movement[i].number;
+                    // console.log("NUMBER: ", number);
                     var time = scene.movement[i].time;
                     var position = humans[i].positions;
-                    var move = humans[i].movement[number];
                     var timeStopped = humans[i].timeStopped[number];
-                    
-                    if(this.moveToPosition(scene.meshes[i], i, position.x[number], 0, position.y[number])){
-                        if(!move && scene.movement[i].time == 0){
+                    var sentiment = humans[i].sentiment[number];
+
+                    if(this.moveToPosition(scene.meshes[i], i, position[number].x, 0, position[number].y)){
+                        if(timeStopped!=0 && scene.movement[i].time == 0){
                             scene.movement[i].time = Date.now();
                         }else if(Date.now() - time >= timeStopped){
-                            scene.movement[i].number +=1;
-                            scene.movement[i].time = 0;
+                            if(scene.movement[i].number < humans[i].positions.length-1){
+                                scene.movement[i].number +=1;
+                                scene.movement[i].time = 0;
+                                // changeColorEmotion(sentiment, i);
+                            }
                         }
+
                     }
                 }
             }
@@ -264,55 +270,36 @@ module BP3D.Three {
 
         function changeColor(r, g, b, i){
             //Change mesh color
-            // meshes[i].material.materials[0].color.r = r;
-            // meshes[i].material.materials[0].color.g = g;
-            // meshes[i].material.materials[0].color.b = b;
-
-            if(m==1){
-                m+=1;
-                changeColorEmotion("disgust", i);
-                var room = getRoom(scene.meshes[i]);
-                roomLight(room, false);
-            }
+            scene.meshes[i].material.materials[0].color.r = r;
+            scene.meshes[i].material.materials[0].color.g = g;
+            scene.meshes[i].material.materials[0].color.b = b;
         }
 
         function changeColorEmotion (emotion, mesh){
             switch (emotion){
                 case "happiness":
                     //YELLOW
-                    scene.meshes[mesh].material.materials[0].color.r = 250/255;
-                    scene.meshes[mesh].material.materials[0].color.g = 218/255;
-                    scene.meshes[mesh].material.materials[0].color.b = 77/255;
+                    changeColor(250/255, 218/255, 77/255, mesh);
                     break;
                 case "sadness":
                     //DARK BLUE
-                    scene.meshes[mesh].material.materials[0].color.r = 0/255;
-                    scene.meshes[mesh].material.materials[0].color.g = 70/255;
-                    scene.meshes[mesh].material.materials[0].color.b = 255/255;
+                    changeColor(0/255, 70/255, 255/255, mesh);
                     break;
                 case "surprise":
                     //LIGHT BLUE
-                    scene.meshes[mesh].material.materials[0].color.r = 66/255;
-                    scene.meshes[mesh].material.materials[0].color.g = 163/255;
-                    scene. meshes[mesh].material.materials[0].color.b = 191/255;
+                    changeColor(66/255, 163/255, 191/255, mesh);
                     break;
                 case "fear":
                     //GREEN
-                    scene.meshes[mesh].material.materials[0].color.r = 57/255;
-                    scene. meshes[mesh].material.materials[0].color.g = 162/255;
-                    scene. meshes[mesh].material.materials[0].color.b = 81/255;
+                    changeColor(57/255, 162/255, 81/255, mesh);
                     break;
                 case "disgust":
                     //PURPLE
-                    scene.meshes[mesh].material.materials[0].color.r = 131/255;
-                    scene. meshes[mesh].material.materials[0].color.g = 0/255;
-                    scene. meshes[mesh].material.materials[0].color.b = 255/255;
+                    changeColor(131/255, 0/255, 255/255, mesh);
                     break;
                 case "anger":
                     //RED
-                    scene. meshes[mesh].material.materials[0].color.r = 227/255;
-                    scene. meshes[mesh].material.materials[0].color.g = 52/255;
-                    scene.meshes[mesh].material.materials[0].color.b = 84/255;
+                    changeColor(227/255, 52/255, 84/255, mesh);
                     break;
             }
 
