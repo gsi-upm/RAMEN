@@ -22,6 +22,11 @@ module BP3D.Three {
         var movementJSON;
         var humans;
 
+        var colorCopy;
+        var mcopy;
+        var material2;
+        var material;
+
         function init() {
             //Loading JSON with the movement
             $.ajax('/js/movement2.json', {
@@ -62,28 +67,71 @@ module BP3D.Three {
             for (var i = 0; i < materials.length; i++){
                 materials[i].morphTargets = true;
             }
-            // var material = new THREE.MeshFaceMaterial( materials );
-            var material = new THREE.MultiMaterial( materials );
+
+            var materialsColor = {r:0,g:0,b:0};
+            console.log("MATERIALS: ", materials);
+
+            // var material1 = new THREE.MultiMaterial( materials );
+            var materialsCopy = jQuery.extend(true, {}, materials);
+            var material2 = new THREE.MultiMaterial( materials );
+            console.log("MATERIAL1: ", material1);
+            console.log("MATERIAL2: ", materials[0]);
+            console.log("MATERIAL3: ", material);
+            materials[0].color = materialsColor;
+
             clip = THREE.AnimationClip.CreateFromMorphTargetSequence('walk', geometry.morphTargets, 27, false);
 
             // Adding Meshes
             for (var j=0; j<humans.length; j++){
-                var mesh = new THREE.SkinnedMesh( geometry, material );
+
+                var material1 = new THREE.MeshLambertMaterial();
+                material1.morphTargets =true;
+                var mesh = new THREE.SkinnedMesh( geometry, material1 );
+
                 mesh.scale.set(50,50,50);
                 scene.add(mesh);
                 mesh.position.x = humans[j].positions[0].x;
                 mesh.position.z = humans[j].positions[0].y;
                 scene.meshes.push(mesh);
                 scene.movement.push({number:1, time: 0});
+
                 // changeColorEmotion(humans[j].sentiment[0], j);
                 // Starting Animation
                 var mixer = new THREE.AnimationMixer( mesh );
                 mixers.push(mixer);
 
             }
+                console.log("MESH",scene.meshes[1].material);
+               scene.meshes[1].material.color.r = 0;
 
 
+        }
 
+        function clone(obj) {
+            var copy;
+
+            // Handle the 3 simple types, and null or undefined
+            if (null == obj || "object" != typeof obj) return obj;
+
+            // Handle Array
+            if (obj instanceof Array) {
+                copy = [];
+                for (var i = 0, len = obj.length; i < len; i++) {
+                    copy[i] = clone(obj[i]);
+                }
+                return copy;
+            }
+
+            // Handle Object
+            if (obj instanceof Object) {
+                copy = {};
+                for (var attr in obj) {
+                    if (obj.hasOwnProperty(attr)) copy[attr] = clone(obj[attr]);
+                }
+                return copy;
+            }
+
+            throw new Error("Unable to copy obj! Its type isn't supported.");
         }
 
         function isValidPosition(vec3, mesh) {
