@@ -1500,7 +1500,7 @@
 					"scale": 0
 				},
 				"backTexture": {
-					"url": "rooms/textures/wallmap.png",
+						"url": "rooms/textures/wallmap.png",
 					"stretch": true,
 					"scale": 0
 				}
@@ -1698,6 +1698,18 @@
 "scale_y": 1,
 "scale_z": 1,
 "fixed": false
-}
+},{
+        "item_name": "Dining Table",
+        "item_type": 1,
+        "model_url": "models/js/cb-scholartable_baked.js",
+        "xpos": 300,
+        "ypos": 0,
+        "zpos": 600,
+        "rotation": 0,
+        "scale_x": 1,
+        "scale_y": 1,
+        "scale_z": 1,
+        "fixed": false
+      }
   ]
 }

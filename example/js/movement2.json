@@ -2,34 +2,219 @@
   "humans": [
     {
       "positions": [
-        {"x": 300, "y": 300},
-        {"x": 400, "y": 330},
-        {"x": 700, "y": 280}
+        {"x": 100, "y": 100},
+        {"x": 100, "y": 195},
+        {"x": 100, "y": 300},
+        {"x": 300, "y": 220},
+        {"x": 300, "y": 90}
       ],
-      "sentiment": ["happiness", "happiness", "happiness"],
-      "timeStopped": [
-        0,
-        2500,
-        0
-      ],
+      "sentiment": ["happiness", "happiness", "happiness", "anger", "anger"],
+      "timeStopped": [0, 0, 0, 0, 0],
       "actions": [
+        {"light": true},
+        {"light": false},
+        {"light": true},
+        {"light": true},
         {"light": true}
       ]
     },
     {
       "positions": [
-        {"x": 1850, "y": 300},
-        {"x": 1400, "y": 330},
-        {"x": 750, "y": 280}
+        {"x": 40, "y": 700},
+        {"x": 250, "y": 500},
+        {"x": 200, "y": 405},
+        {"x": 200, "y": 375},
+        {"x": 600, "y": 375},
+        {"x": 600, "y": 410},
+        {"x": 600, "y": 500}
       ],
-      "sentiment": ["sadness", "sadness", "sadness"],
-      "timeStopped": [
-        0,
-        2500,
-        0
-      ],
+      "sentiment": ["happiness", "sadness", "sadness", "sadness", "sadness"],
+      "timeStopped": [0, 2500, 0, 0, 0, 0,0 ],
       "actions": [
+        {"light": true},
+        {"light": true},
+        {"light": false},
+        {"light": true},
+        {"light": true},
+        {"light": false}
+      ]
+    },
+    {
+      "positions": [
+        {"x": 1800, "y": 300},
+        {"x": 1710, "y": 225},
+        {"x": 700, "y": 225},
+        {"x": 700, "y": -100}
+      ],
+      "sentiment": ["happiness", "happiness", "disgust", "disgust"],
+      "timeStopped": [0, 0, 0, 0],
+      "actions": [
+        {"light": true},
+        {"light": true},
+        {"light": true},
         {"light": true}
+      ]
+    },
+    {
+      "positions": [
+        {"x": 1900, "y": 90},
+        {"x": 1900, "y": 100},
+        {"x": 1900, "y": 190},
+        {"x": 1900, "y": 235},
+        {"x": 1800, "y": 395},
+        {"x": 1800, "y": 680}
+      ],
+      "sentiment": ["anger", "anger", "anger", "anger", "surprise","surprise"],
+      "timeStopped": [0, 3000, 0, 0,0,0],
+      "actions": [
+        {"light": true},
+        {"light": true},
+        {"light": false},
+        {"light": true},
+        {"light": true},
+        {"light": true}
+      ]
+    },
+    {
+      "positions": [
+        {"x": 700, "y": 340},
+        {"x": 1400, "y": 360},
+        {"x": 1400, "y": 780}
+      ],
+      "sentiment": ["fear", "fear", "fear"],
+      "timeStopped": [0, 0, 0],
+      "actions": [
+        {"light": true},
+        {"light": true},
+        {"light": true}
+
+      ]
+    },
+    {
+      "positions": [
+        {"x": 900, "y": 100},
+        {"x": 900, "y": 185},
+        {"x": 900, "y": 300},
+        {"x": 1000, "y": 380},
+        {"x": 1000, "y": 700}
+      ],
+      "sentiment": ["happiness", "happiness", "anger", "sadness","anger"],
+      "timeStopped": [0, 0, 1000,0,0],
+      "actions": [
+        {"light": true},
+        {"light": false},
+        {"light": true},
+        {"light": true},
+        {"light": true}
+
+      ]
+    },
+    {
+      "positions": [
+        {"x": 1100, "y": 110},
+        {"x": 1100, "y": 115},
+        {"x": 1100, "y": 185},
+        {"x": 1100, "y": 225},
+        {"x": 900, "y": 225},
+        {"x": 900, "y": 185},
+        {"x": 900, "y": 160}
+      ],
+      "sentiment": ["happiness", "happiness", "anger", "anger","anger","anger","anger"],
+      "timeStopped": [0, 800, 0,0,0,0,0],
+      "actions": [
+        {"light": true},
+        {"light": true},
+        {"light": false},
+        {"light": true},
+        {"light": true},
+        {"light": true}
+
+      ]
+    },
+    {
+      "positions": [
+        {"x": 1300, "y": 120},
+        {"x": 1300, "y": 185},
+        {"x": 1300, "y": 225},
+        {"x": 1400, "y": 385},
+        {"x": 1400, "y": 425},
+        {"x": 1500, "y": 700}
+
+      ],
+      "sentiment": ["happiness", "happiness", "fear", "fear","fear","fear","fear"],
+      "timeStopped": [0, 0, 0,0,0,0,0],
+      "actions": [
+        {"light": true},
+        {"light": true},
+        {"light": true},
+        {"light": true},
+        {"light": true},
+        {"light": true}
+
+      ]
+    },
+    {
+      "positions": [
+        {"x": 600, "y": 700},
+        {"x": 650, "y": 600},
+        {"x": 580, "y": 500},
+        {"x": 600, "y": 425},
+        {"x": 600, "y": 385},
+        {"x": 500, "y": 225},
+        {"x": 500, "y": 120}
+
+      ],
+      "sentiment": ["happiness", "happiness", "fear", "fear","fear","fear","fear"],
+      "timeStopped": [0, 0, 0,0,0,0,0],
+      "actions": [
+        {"light": true},
+        {"light": true},
+        {"light": true},
+        {"light": false},
+        {"light": true},
+        {"light": true}
+
+      ]
+    },
+    {
+      "positions": [
+        {"x": 1500, "y": 300},
+        {"x": 1450, "y": 300},
+        {"x": 200, "y": 330},
+        {"x": 200, "y": 425},
+        {"x": 200, "y": 650}
+
+      ],
+      "sentiment": ["disgust", "disgust", "happiness", "happiness"],
+      "timeStopped": [0, 3500, 0,0],
+      "actions": [
+        {"light": true},
+        {"light": true},
+        {"light": true},
+        {"light": true}
+
+      ]
+    },
+    {
+      "positions": [
+        {"x": 1300, "y": 0},
+        {"x": 1300, "y": 160},
+        {"x": 1300, "y": 185},
+        {"x": 1300, "y": 225},
+        {"x": 1500, "y": 250},
+        {"x": 1500, "y": 0}
+
+      ],
+      "sentiment": ["disgust", "disgust", "happiness", "happiness", "happiness", "happiness"],
+      "timeStopped": [0, 9000, 0,0,0,0],
+      "actions": [
+        {"light": true},
+        {"light": true},
+        {"light": false},
+        {"light": true},
+        {"light": true},
+        {"light": true}
+
       ]
     }
   ]

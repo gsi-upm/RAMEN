@@ -22,11 +22,6 @@ module BP3D.Three {
         var movementJSON;
         var humans;
 
-        var colorCopy;
-        var mcopy;
-        var material2;
-        var material;
-
         function init() {
             //Loading JSON with the movement
             $.ajax('/js/movement2.json', {
@@ -68,17 +63,6 @@ module BP3D.Three {
                 materials[i].morphTargets = true;
             }
 
-            var materialsColor = {r:0,g:0,b:0};
-            console.log("MATERIALS: ", materials);
-
-            // var material1 = new THREE.MultiMaterial( materials );
-            var materialsCopy = jQuery.extend(true, {}, materials);
-            var material2 = new THREE.MultiMaterial( materials );
-            console.log("MATERIAL1: ", material1);
-            console.log("MATERIAL2: ", materials[0]);
-            console.log("MATERIAL3: ", material);
-            materials[0].color = materialsColor;
-
             clip = THREE.AnimationClip.CreateFromMorphTargetSequence('walk', geometry.morphTargets, 27, false);
 
             // Adding Meshes
@@ -95,43 +79,13 @@ module BP3D.Three {
                 scene.meshes.push(mesh);
                 scene.movement.push({number:1, time: 0});
 
-                // changeColorEmotion(humans[j].sentiment[0], j);
+                changeColorEmotion(humans[j].sentiment[0], j);
                 // Starting Animation
                 var mixer = new THREE.AnimationMixer( mesh );
                 mixers.push(mixer);
 
             }
-                console.log("MESH",scene.meshes[1].material);
-               scene.meshes[1].material.color.r = 0;
 
-
-        }
-
-        function clone(obj) {
-            var copy;
-
-            // Handle the 3 simple types, and null or undefined
-            if (null == obj || "object" != typeof obj) return obj;
-
-            // Handle Array
-            if (obj instanceof Array) {
-                copy = [];
-                for (var i = 0, len = obj.length; i < len; i++) {
-                    copy[i] = clone(obj[i]);
-                }
-                return copy;
-            }
-
-            // Handle Object
-            if (obj instanceof Object) {
-                copy = {};
-                for (var attr in obj) {
-                    if (obj.hasOwnProperty(attr)) copy[attr] = clone(obj[attr]);
-                }
-                return copy;
-            }
-
-            throw new Error("Unable to copy obj! Its type isn't supported.");
         }
 
         function isValidPosition(vec3, mesh) {
@@ -148,7 +102,8 @@ module BP3D.Three {
             }
             //check if it is a door
             for (var j = 0; j<doors.length; j++){
-                if(vec3.x > doors[j].xpos - 39  && vec3.x < doors[j].xpos + 39  && vec3.z > doors[j].zpos - 39  && vec3.z < doors[j].zpos + 39 ){
+
+                if(vec3.x > doors[j].xpos - 50  && vec3.x < doors[j].xpos + 50  && vec3.z > doors[j].zpos - 50  && vec3.z < doors[j].zpos + 50 ){
                     return true;
                 }
             }
@@ -275,7 +230,7 @@ module BP3D.Three {
                             mesh.rotation.y -= 0.005;
                         }
                     }
-
+                    //Translation Movement and Animation
                     this.move(mesh, i);
                 }
                 //Stop the animation if the mesh has stopped
@@ -294,20 +249,26 @@ module BP3D.Three {
             if(scene.meshes[0]){
                 for(var i=0; i<humans.length; i++){
                     var number = scene.movement[i].number;
-                    // console.log("NUMBER: ", number);
                     var time = scene.movement[i].time;
                     var position = humans[i].positions;
                     var timeStopped = humans[i].timeStopped[number];
                     var sentiment = humans[i].sentiment[number];
-
+                    //Move Mesh and check if it is in its final position
                     if(this.moveToPosition(scene.meshes[i], i, position[number].x, 0, position[number].y)){
+                        //Update time variable if the mesh has to be stopped
                         if(timeStopped!=0 && scene.movement[i].time == 0){
                             scene.movement[i].time = Date.now();
-                        }else if(Date.now() - time >= timeStopped){
+                        }
+                        //if the timeStopped has expired, changeColor and roomLight
+                        else if(Date.now() - time >= timeStopped){
                             if(scene.movement[i].number < humans[i].positions.length-1){
+                                changeColorEmotion(sentiment, i);
+                                var room = getRoom(scene.meshes[i]);
+                                if(getRoomLight(room) != humans[i].actions[number].light){
+                                    setRoomLight(room, humans[i].actions[number].light);
+                                }
                                 scene.movement[i].number +=1;
                                 scene.movement[i].time = 0;
-                                // changeColorEmotion(sentiment, i);
                             }
                         }
 
@@ -318,12 +279,13 @@ module BP3D.Three {
 
         function changeColor(r, g, b, i){
             //Change mesh color
-            scene.meshes[i].material.materials[0].color.r = r;
-            scene.meshes[i].material.materials[0].color.g = g;
-            scene.meshes[i].material.materials[0].color.b = b;
+            scene.meshes[i].material.color.r = r;
+            scene.meshes[i].material.color.g = g;
+            scene.meshes[i].material.color.b = b;
         }
 
         function changeColorEmotion (emotion, mesh){
+            //Change color according to the emotion
             switch (emotion){
                 case "happiness":
                     //YELLOW
@@ -354,7 +316,14 @@ module BP3D.Three {
 
         }
 
-        function roomLight(room, on){
+        function getRoomLight(room){
+            var texture = model.floorplan.getRooms()[room].getTexture().url;
+            //TRUE -> Light ON, FALSE -> Light OFF
+            return texture == "rooms/textures/hardwood.png";
+
+        }
+
+        function setRoomLight(room, on){
 
             //Getting the walls
             var walls = model.floorplan.getRooms()[room].updateWallsTexture();
@@ -363,7 +332,7 @@ module BP3D.Three {
                 if(walls[i].to == false){
                     //Turn on
                     if(on == true){
-                        walls[i].backEdge.setTexture("rooms/textures/walllightmap.jpg", true, 1);
+                        walls[i].backEdge.setTexture("rooms/textures/wallmap.png", true, 1);
                         model.floorplan.getRooms()[room].setTexture("rooms/textures/hardwood.png", true, 300);
                     }
                     //Turn off
@@ -375,7 +344,7 @@ module BP3D.Three {
                 else{
                     //Turn on
                     if (on == true){
-                        walls[i].frontEdge.setTexture("rooms/textures/walllightmap.jpg", true, 1);
+                        walls[i].frontEdge.setTexture("rooms/textures/wallmap.png", true, 1);
                         model.floorplan.getRooms()[room].setTexture("rooms/textures/hardwood.png", true, 300);
                     }
                     //Turn off
