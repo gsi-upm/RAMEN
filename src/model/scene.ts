@@ -128,20 +128,30 @@ module BP3D.Model {
       var scope = this;
       var loaded = false;
 
+
       //Check if the item has been loaded before
       for (var i=0; i<scope.loadedItems.length; i++){
         if(scope.loadedItems[i].fileName == fileName){
           scope.loadedItems[i].number +=1;
-          scope.positions.push(position);
+          scope.loadedItems[i].positions.push(position);
+          scope.loadedItems[i].rotations.push(rotation);
+          scope.loadedItems[i].scales.push(scale);
+          // scope.positions.push(position);
           loaded =true;
         }
       }
 
       var loaderCallback = function (geometry: THREE.Geometry, materials: THREE.Material[]) {
         var n = 1;
+        var pos = [];
+        var rot = [];
+        var sca = [];
         for (var j=0; j<scope.loadedItems.length; j++){
           if(scope.loadedItems[j].fileName == fileName ){
             n = scope.loadedItems[j].number;
+            pos = scope.loadedItems[j].positions;
+            rot = scope.loadedItems[j].rotations;
+            sca = scope.loadedItems[j].scales;
           }
         }
         for(var z=0; z<n; z++){
@@ -149,9 +159,12 @@ module BP3D.Model {
               scope.model,
               metadata, geometry,
               new THREE.MeshFaceMaterial(materials),
-              scope.positions[z],
-              scope.rotations[z],
-              scope.scales[z]
+              pos[z],
+              rot[z],
+              sca[z]
+              // scope.positions[z],
+              // scope.rotations[z],
+              // scope.scales[z]
           );
           item.fixed = fixed || false;
           scope.items.push(item);
@@ -169,7 +182,7 @@ module BP3D.Model {
         scope.positions.push(position);
         scope.rotations.push(rotation);
         scope.scales.push(scale);
-        scope.loadedItems.push({fileName: fileName, number: 1});
+        scope.loadedItems.push({fileName: fileName, number: 1, positions: [position], rotations: [rotation], scales: [scale]});
         this.loader.load(
             fileName,
             loaderCallback,
