@@ -30,6 +30,8 @@ module BP3D.Model {
         //Simulation running or paused
         public play = true;
 
+        public floorJSON;
+
         /** Constructs a new model.
          * @param textureDir The directory containing the textures.
          */

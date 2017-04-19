@@ -21,6 +21,7 @@ module BP3D.Three {
         var testing;
         var movementJSON;
         var humans;
+        // var speed = 12;
 
         function init() {
             //Loading JSON with the movement
@@ -48,6 +49,7 @@ module BP3D.Three {
                 }
             });
 
+            model.floorJSON = testing;
             var json = JSON.parse(testing);
             items = json.items;
             for(var i=0; i<items.length; i++){
@@ -103,7 +105,7 @@ module BP3D.Three {
             //check if it is a door
             for (var j = 0; j<doors.length; j++){
 
-                if(vec3.x > doors[j].xpos - 50  && vec3.x < doors[j].xpos + 50  && vec3.z > doors[j].zpos - 50  && vec3.z < doors[j].zpos + 50 ){
+                if(vec3.x > doors[j].xpos - 55  && vec3.x < doors[j].xpos + 55  && vec3.z > doors[j].zpos - 55  && vec3.z < doors[j].zpos + 55 ){
                     return true;
                 }
             }
@@ -171,11 +173,11 @@ module BP3D.Three {
             return corners;
         }
 
-        this.move = function (mesh, i) {
+        this.move = function (mesh, i, speed) {
             var time = Date.now();
 
             // Translation Movement
-            var moveDistance = 3;
+            var moveDistance = speed;
             scene.meshes[i].translateZ(moveDistance);
 
             // Animation
@@ -187,7 +189,7 @@ module BP3D.Three {
         }
 
 
-        this.moveToPosition = function(mesh, i, x, y, z) {
+        this.moveToPosition = function(mesh, i, x, y, z, speed) {
             //Get floorplan for isValidPosition
             if (floorplan == undefined) {
                 floorplan = model.floorplan;
@@ -198,7 +200,7 @@ module BP3D.Three {
             //Check if the mesh is not in a wall
             if (isValidPosition(mesh.position, mesh)) {
                 //Check if the mesh is not in the final position
-                if (Math.abs(meshX - x) > 2 || Math.abs(meshZ - z) > 2) {
+                if (Math.abs(meshX - x) > speed - 1 || Math.abs(meshZ - z) > speed - 1) {
                     mixers[i].clipAction(clip).play();
                     //Angle Calculation
                     angleRadians = Math.atan2(x - meshX, z - meshZ);
@@ -231,7 +233,7 @@ module BP3D.Three {
                         }
                     }
                     //Translation Movement and Animation
-                    this.move(mesh, i);
+                    this.move(mesh, i, speed);
                 }
                 //Stop the animation if the mesh has stopped
                 else {
@@ -253,8 +255,9 @@ module BP3D.Three {
                     var position = humans[i].positions;
                     var timeStopped = humans[i].timeStopped[number];
                     var sentiment = humans[i].sentiment[number];
+                    var speed = humans[i].speed[number];
                     //Move Mesh and check if it is in its final position
-                    if(this.moveToPosition(scene.meshes[i], i, position[number].x, 0, position[number].y)){
+                    if(this.moveToPosition(scene.meshes[i], i, position[number].x, 0, position[number].y, speed)){
                         //Update time variable if the mesh has to be stopped
                         if(timeStopped!=0 && scene.movement[i].time == 0){
                             scene.movement[i].time = Date.now();

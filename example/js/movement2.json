@@ -3,13 +3,14 @@
     {
       "positions": [
         {"x": 100, "y": 100},
-        {"x": 100, "y": 195},
+        {"x": 100, "y": 175},
         {"x": 100, "y": 300},
         {"x": 300, "y": 220},
         {"x": 300, "y": 90}
       ],
       "sentiment": ["happiness", "happiness", "happiness", "anger", "anger"],
       "timeStopped": [0, 0, 0, 0, 0],
+      "speed": [10, 10, 10, 10,10],
       "actions": [
         {"light": true},
         {"light": false},
@@ -22,14 +23,15 @@
       "positions": [
         {"x": 200, "y": 700},
         {"x": 250, "y": 500},
-        {"x": 200, "y": 405},
+        {"x": 200, "y": 410},
         {"x": 200, "y": 375},
         {"x": 600, "y": 375},
-        {"x": 600, "y": 410},
+        {"x": 600, "y": 415},
         {"x": 600, "y": 500}
       ],
       "sentiment": ["happiness", "sadness", "sadness", "sadness", "sadness"],
       "timeStopped": [0, 2500, 0, 0, 0, 0,0 ],
+      "speed": [2, 2, 2, 2, 2, 2, 2],
       "actions": [
         {"light": true},
         {"light": true},
@@ -42,12 +44,13 @@
     {
       "positions": [
         {"x": 1800, "y": 300},
-        {"x": 1710, "y": 225},
-        {"x": 700, "y": 225},
+        {"x": 1710, "y": 240},
+        {"x": 700, "y": 240},
         {"x": 700, "y": -100}
       ],
       "sentiment": ["happiness", "happiness", "disgust", "disgust"],
       "timeStopped": [0, 0, 0, 0],
+      "speed": [5, 5, 5, 5],
       "actions": [
         {"light": true},
         {"light": true},
@@ -66,6 +69,7 @@
       ],
       "sentiment": ["anger", "anger", "anger", "anger", "surprise","surprise"],
       "timeStopped": [0, 3000, 0, 0,0,0],
+      "speed": [5, 5, 5, 5, 5, 5],
       "actions": [
         {"light": true},
         {"light": true},
@@ -83,6 +87,7 @@
       ],
       "sentiment": ["fear", "fear", "fear"],
       "timeStopped": [0, 0, 0],
+      "speed": [5, 5, 5],
       "actions": [
         {"light": true},
         {"light": true},
@@ -100,6 +105,7 @@
       ],
       "sentiment": ["happiness", "happiness", "anger", "sadness","anger"],
       "timeStopped": [0, 0, 1000,0,0],
+      "speed": [10, 10, 10, 10,10],
       "actions": [
         {"light": true},
         {"light": false},
@@ -121,6 +127,7 @@
       ],
       "sentiment": ["happiness", "happiness", "anger", "anger","anger","anger","anger"],
       "timeStopped": [0, 800, 0,0,0,0,0],
+      "speed": [5, 5, 5, 5, 5, 5, 5],
       "actions": [
         {"light": true},
         {"light": true},
@@ -143,6 +150,7 @@
       ],
       "sentiment": ["happiness", "happiness", "fear", "fear","fear","fear","fear"],
       "timeStopped": [0, 0, 0,0,0,0,0],
+      "speed": [5, 5, 5, 5, 5, 5],
       "actions": [
         {"light": true},
         {"light": true},
@@ -166,6 +174,7 @@
       ],
       "sentiment": ["happiness", "happiness", "fear", "fear","fear","fear","fear"],
       "timeStopped": [0, 0, 0,0,0,0,0],
+      "speed": [5, 5, 5, 5, 5, 5, 5],
       "actions": [
         {"light": true},
         {"light": true},
@@ -187,6 +196,7 @@
       ],
       "sentiment": ["disgust", "disgust", "happiness", "happiness"],
       "timeStopped": [0, 3500, 0,0],
+      "speed": [10, 10, 10, 10,10],
       "actions": [
         {"light": true},
         {"light": true},
@@ -207,6 +217,7 @@
       ],
       "sentiment": ["disgust", "disgust", "happiness", "happiness", "happiness", "happiness"],
       "timeStopped": [0, 9000, 0,0,0,0],
+      "speed": [10, 10, 10, 10, 10, 10],
       "actions": [
         {"light": true},
         {"light": true},
