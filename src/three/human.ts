@@ -22,6 +22,7 @@ module BP3D.Three {
         var movementJSON;
         var humans;
         // var speed = 12;
+        var qqqq = 1;
 
         function init() {
             //Loading JSON with the movement
@@ -87,6 +88,7 @@ module BP3D.Three {
                 mixers.push(mixer);
 
             }
+
 
         }
 
@@ -238,6 +240,10 @@ module BP3D.Three {
                 //Stop the animation if the mesh has stopped
                 else {
                     mixers[i].clipAction(clip).stop();
+                    if(qqqq ==1){
+                        var prueba = new Video(scene);
+                        qqqq +=1;
+                    }
                     return true;
                 }
                 //Stop the animation if the mesh is in a Wall
@@ -285,6 +291,8 @@ module BP3D.Three {
             scene.meshes[i].material.color.r = r;
             scene.meshes[i].material.color.g = g;
             scene.meshes[i].material.color.b = b;
+
+
         }
 
         function changeColorEmotion (emotion, mesh){
