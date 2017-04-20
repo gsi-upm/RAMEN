@@ -46,6 +46,9 @@ module BP3D.Three {
         var mixers = [];
         var human = new Human(scene, model);
 
+        var video;
+        var imageContext;
+        var textureVideo;
 
         //var canvas;
         //var canvasElement = canvasElement;
@@ -121,6 +124,31 @@ module BP3D.Three {
             // var audio = new Audio(camera, scene);
 
             //canvas = new ThreeCanvas(canvasElement, scope);
+
+            video = document.getElementById( 'video' );
+            var image = document.createElement( 'canvas' );
+            image.width = 480;
+            image.height = 204;
+
+            imageContext = image.getContext( '2d' );
+            imageContext.fillStyle = '#000000';
+            imageContext.fillRect( 0, 0, 480, 204 );
+
+            textureVideo = new THREE.Texture( image );
+
+            var materialVideo = new THREE.MeshBasicMaterial( { map: textureVideo, overdraw: 0.5 } );
+
+            var plane = new THREE.PlaneGeometry( 480/6.5, 204/6.5, 4, 4 );
+
+            var mesh = new THREE.Mesh( plane, materialVideo );
+            mesh.scale.x = mesh.scale.y = mesh.scale.z = 1.5;
+            scene.add(mesh);
+            mesh.position.x = 368;
+            mesh.position.y = 104;
+            mesh.position.z = 600;
+            mesh.rotation.y = -Math.PI / 2;
+
+
         }
 
         function spin() {
@@ -184,6 +212,13 @@ module BP3D.Three {
                 renderer.render(scene.getScene(), camera);
                 renderer.clearDepth();
                 renderer.render(hud.getScene(), camera);
+            }
+            if (video &&  video.readyState === video.HAVE_ENOUGH_DATA ) {
+
+                imageContext.drawImage( video, 0, 0 );
+
+                if ( textureVideo ) textureVideo.needsUpdate = true;
+
             }
             lastRender = Date.now();
             //Check if the simulation is paused

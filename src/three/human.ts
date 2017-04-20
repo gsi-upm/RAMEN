@@ -74,7 +74,7 @@ module BP3D.Three {
                 material1.morphTargets =true;
                 var mesh = new THREE.SkinnedMesh( geometry, material1 );
 
-                mesh.scale.set(50,50,50);
+                mesh.scale.set(55,65,55);
                 scene.add(mesh);
                 mesh.position.x = humans[j].positions[0].x;
                 mesh.position.z = humans[j].positions[0].y;

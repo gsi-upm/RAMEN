@@ -1964,19 +1964,6 @@
         "item_name": "Dresser - White",
         "item_type": 1,
         "model_url": "models/js/we-narrow6white_baked.js",
-        "xpos": 370,
-        "ypos": 38.07895089592499,
-        "zpos": 600,
-        "rotation": -1.57079632679,
-        "scale_x": 1,
-        "scale_y": 1,
-        "scale_z": 1,
-        "fixed": false
-      },
-      {
-        "item_name": "Dresser - White",
-        "item_type": 1,
-        "model_url": "models/js/we-narrow6white_baked.js",
         "xpos": 770,
         "ypos": 38.07895089592499,
         "zpos": 600,
@@ -2024,7 +2011,20 @@
         "scale_y": 1,
         "scale_z": 1,
         "fixed": false
-      }
+	  },
+		{
+			"item_name": "Media Console - White",
+			"item_type": 1,
+			"model_url": "models/js/cb-clapboard_baked.js",
+			"xpos": 370,
+			"ypos": 38.07895089592499,
+			"zpos": 600,
+			"rotation": -1.57079632679,
+			"scale_x": 1,
+			"scale_y": 1,
+			"scale_z": 1,
+			"fixed": false
+		}
 
-  ]
+	]
 }
