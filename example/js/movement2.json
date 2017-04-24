@@ -196,7 +196,7 @@
       ],
       "sentiment": ["disgust", "disgust", "happiness", "happiness"],
       "timeStopped": [0, 3500, 0,0],
-      "speed": [10, 10, 10, 10,10],
+      "speed": [4, 4, 4, 4,4],
       "actions": [
         {"light": true},
         {"light": true},

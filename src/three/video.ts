@@ -2,10 +2,12 @@
 /// <reference path="../../lib/three.d.ts" />
 
 module BP3D.Three {
-    export var Video = function (scene) {
+    export var Video = function (scene, model, room) {
 
         var plane;
         var materialVideo;
+        var mesh;
+
         function init(){
             scene.video = document.getElementById( 'video' );
             var image = document.createElement( 'canvas' );
@@ -31,17 +33,20 @@ module BP3D.Three {
             var items = scene.getItems();
             for (var i=0; i<items.length; i++){
                 if( items[i].metadata.itemName == "Media Console - White"){
-                    var mesh = new THREE.Mesh( plane, materialVideo );
-                    mesh.scale.x = mesh.scale.y = mesh.scale.z = 1.5;
-                    scene.add(mesh);
-                    setPosition(mesh,items[i]);
+                    if(room == items[i].getRoom(model)){
+                        mesh = new THREE.Mesh( plane, materialVideo );
+                        mesh.scale.x = mesh.scale.y = mesh.scale.z = 1.5;
+                        scene.add(mesh);
+                        setPosition(mesh,items[i]);
+                    }
+
 
                 }
             }
         }
+
         function setPosition(mesh, item){
-            var orientation = getOrientation(item);
-            console.log("ORIENTATION: ", orientation);
+            var orientation = item.getOrientation();
             mesh.rotation.y = item.rotation.y;
             switch (orientation){
                 case "NORTH":
@@ -67,18 +72,8 @@ module BP3D.Three {
             }
         }
 
-        function getOrientation(item){
-            var rotation = item.rotation.y;
-            console.log("ROTATION: ", rotation);
-            if(rotation < 0.5 && rotation > -0.5){
-                return "SOUTH";
-            }else if(rotation < -Math.PI/2 + 0.5 && rotation > -Math.PI/2 - 0.5){
-                return "WEST";
-            }else if(rotation < Math.PI/2 + 0.5 && rotation > Math.PI/2 - 0.5){
-                return "EAST";
-            }else if(rotation < Math.PI + 0.5 && rotation > Math.PI - 0.5){
-                return "NORTH";
-            }
+        function offTV() {
+            scene.remove(mesh);
         }
 
 

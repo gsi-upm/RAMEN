@@ -240,10 +240,6 @@ module BP3D.Three {
                 //Stop the animation if the mesh has stopped
                 else {
                     mixers[i].clipAction(clip).stop();
-                    if(qqqq ==1){
-                        var prueba = new Video(scene);
-                        qqqq +=1;
-                    }
                     return true;
                 }
                 //Stop the animation if the mesh is in a Wall
@@ -275,6 +271,7 @@ module BP3D.Three {
                                 var room = getRoom(scene.meshes[i]);
                                 if(getRoomLight(room) != humans[i].actions[number].light){
                                     setRoomLight(room, humans[i].actions[number].light);
+                                    var prueba = new Video(scene, model, room);
                                 }
                                 scene.movement[i].number +=1;
                                 scene.movement[i].time = 0;
