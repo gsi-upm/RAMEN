@@ -44,7 +44,7 @@ module BP3D.Three {
 
         var meshes = [];
         var mixers = [];
-        var human = new Human(scene, model);
+        // var human = new Human(scene, model);
 
         var video;
         var imageContext;
@@ -221,7 +221,7 @@ module BP3D.Three {
             lastRender = Date.now();
             //Check if the simulation is paused
             if(model.play) {
-                human.moveAll();
+                // human.moveAll();
                 if (scene.video &&  scene.video.readyState === scene.video.HAVE_ENOUGH_DATA ) {
 
                     scene.imageContext.drawImage( scene.video, 0, 0 );

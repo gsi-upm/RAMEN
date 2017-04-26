@@ -1,37 +1,28 @@
 {
   "humans": [
-    {
-      "positions": [
-        {"x": 300, "y": 300},
-        {"x": 400, "y": 330},
-        {"x": 700, "y": 280}
-      ],
-      "sentiment": ["sadness", "happiness", "happiness"],
-      "timeStopped": [
-        0,
-        2500,
-        0
-      ],
-      "actions": [
-        {"light": true},
-        {"light": false},
-        {"light": true}
-      ]
-    },
-    {
-      "positions": [
-        {"x": 1850, "y": 300},
-        {"x": 1400, "y": 330}
-      ],
-      "sentiment": ["anger", "happiness"],
-      "timeStopped": [
-        0,
-        2500
-      ],
-      "actions": [
-        {"light": true},
-        {"light": true}
-      ]
-    }
+    [
+        {
+            "step": 1,
+            "position": {"x": 100, "y": 100},
+            "sentiment": "anger"
+        },
+        {
+            "step": 50,
+            "position": {"x": 200, "y": 200},
+            "sentiment": "sadness"
+        }
+    ],
+    [
+        {
+            "step": 1,
+            "position": {"x": 500, "y": 100},
+            "sentiment": "fear"
+        },
+        {
+            "step": 20,
+            "position": {"x": 600, "y": 200},
+            "sentiment": "happiness"
+        }
+    ]
   ]
 }

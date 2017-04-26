@@ -51,7 +51,8 @@ module BP3D.Model {
                 data.items
             );
 
-            this.roomLoadedCallbacks.fire();
+            // this.roomLoadedCallbacks.fire();
+            this.floorplan.update();
         }
 
         private exportSerialized(): string {
