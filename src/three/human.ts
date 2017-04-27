@@ -25,39 +25,41 @@ module BP3D.Three {
         var qqqq = 1;
 
         function init() {
-            //Loading JSON with the movement
-            $.ajax('/js/movement2.json', {
-                async: false,
-                dataType: 'text',
-                success: function (data2) {
-                    movementJSON = data2;
-                }
-            });
 
-            var jsonMove = JSON.parse(movementJSON);
-            humans = jsonMove.humans;
-
-            // Loading JSON 3DModel
-            var jsonLoader = new THREE.JSONLoader();
-            jsonLoader.load( "/models/js/walkmorphcolor.json", addModelToScene);
-
-            //Loading JSON with the doors
-            $.ajax('/js/floor5.json', {
-                async: false,
-                dataType: 'text',
-                success: function (data) {
-                    testing = data;
-                }
-            });
-
-            model.floorJSON = testing;
-            var json = JSON.parse(testing);
-            items = json.items;
-            for(var i=0; i<items.length; i++){
-                if(items[i].item_name == "Open Door"){
-                    doors.push(items[i]);
-                }
-            }
+            setRoomLight(0, false);
+            // //Loading JSON with the movement
+            // $.ajax('/js/movement2.json', {
+            //     async: false,
+            //     dataType: 'text',
+            //     success: function (data2) {
+            //         movementJSON = data2;
+            //     }
+            // });
+            //
+            // var jsonMove = JSON.parse(movementJSON);
+            // humans = jsonMove.humans;
+            //
+            // // Loading JSON 3DModel
+            // var jsonLoader = new THREE.JSONLoader();
+            // jsonLoader.load( "/models/js/walkmorphcolor.json", addModelToScene);
+            //
+            // //Loading JSON with the doors
+            // $.ajax('/js/floor5.json', {
+            //     async: false,
+            //     dataType: 'text',
+            //     success: function (data) {
+            //         testing = data;
+            //     }
+            // });
+            //
+            // model.floorJSON = testing;
+            // var json = JSON.parse(testing);
+            // items = json.items;
+            // for(var i=0; i<items.length; i++){
+            //     if(items[i].item_name == "Open Door"){
+            //         doors.push(items[i]);
+            //     }
+            // }
         }
 
         function addModelToScene( geometry, materials) {

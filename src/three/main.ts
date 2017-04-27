@@ -230,6 +230,10 @@ module BP3D.Three {
 
                 }
             }
+            else{
+                var human = new Human(scene, model);
+                console.log("ROOMS", model.floorplan.getRooms());
+            }
         };
 
 
