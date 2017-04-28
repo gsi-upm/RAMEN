@@ -44,7 +44,7 @@ module BP3D.Three {
 
         var meshes = [];
         var mixers = [];
-        // var human = new Human(scene, model);
+        var human = new Human(scene, model);
 
         var video;
         var imageContext;
@@ -221,7 +221,7 @@ module BP3D.Three {
             lastRender = Date.now();
             //Check if the simulation is paused
             if(model.play) {
-                // human.moveAll();
+                human.moveAll();
                 if (scene.video &&  scene.video.readyState === scene.video.HAVE_ENOUGH_DATA ) {
 
                     scene.imageContext.drawImage( scene.video, 0, 0 );
@@ -231,8 +231,8 @@ module BP3D.Three {
                 }
             }
             else{
-                var human = new Human(scene, model);
-                console.log("ROOMS", model.floorplan.getRooms());
+                // var human = new Human(scene, model);
+                console.log("ROOMS", model.floorplan.getRooms()[33]);
             }
         };
 
@@ -241,30 +241,12 @@ module BP3D.Three {
 
         function animate() {
             var delay = 50;
-            if (flag == 0) {
-                getCube();
-            }
 
             setTimeout(function () {
                 requestAnimationFrame(animate);
             }, delay);
             render();
 
-        }
-        function getCube() {
-            //var items = model.scene.getItems();
-            var items = scene.items;
-            if (items.length > 0){
-                for (var i=0; i<items.length; i++){
-                    if(items[i].metadata.itemName == "Cubo"){
-                        var jsonLoader = new THREE.JSONLoader();
-
-                        //jsonLoader.load( "/models/js/marine_anims_all.json", addModelToScene );
-                        flag = 1;
-
-                    }
-                }
-            }
         }
 
         function addModelToScene( geometry, materials) {

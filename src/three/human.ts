@@ -1,5 +1,6 @@
 /// <reference path="../../lib/three.d.ts" />
 /// <reference path="loadMovement.ts" />
+/// <reference path="../core/utils.ts" />
 
 module BP3D.Three {
     export var Human = function (scene, model) {
@@ -22,11 +23,24 @@ module BP3D.Three {
         var movementJSON;
         var humans;
         // var speed = 12;
-        var qqqq = 1;
+        var allRooms3;
+        var allRooms2;
+        var allRooms;
+
+        var path = ["C_1","C_5", "Office4","C_5", "CI_41", "CI_42","CI_5","Lab8_2","CI_5", "Lab7","CI_5","CI_12","Lab1","CI_12"];
+        var flag = 1;
 
         function init() {
+            $.ajax('/js/rooms.json', {
+                async: false,
+                dataType: 'text',
+                success: function (data) {
+                    allRooms2 = data;
+                }
+            });
 
-            setRoomLight(0, false);
+            allRooms3 = JSON.parse(allRooms2);
+            allRooms = allRooms3.room;
             // //Loading JSON with the movement
             // $.ajax('/js/movement2.json', {
             //     async: false,
@@ -39,27 +53,29 @@ module BP3D.Three {
             // var jsonMove = JSON.parse(movementJSON);
             // humans = jsonMove.humans;
             //
-            // // Loading JSON 3DModel
-            // var jsonLoader = new THREE.JSONLoader();
-            // jsonLoader.load( "/models/js/walkmorphcolor.json", addModelToScene);
-            //
-            // //Loading JSON with the doors
-            // $.ajax('/js/floor5.json', {
-            //     async: false,
-            //     dataType: 'text',
-            //     success: function (data) {
-            //         testing = data;
-            //     }
-            // });
-            //
-            // model.floorJSON = testing;
-            // var json = JSON.parse(testing);
-            // items = json.items;
-            // for(var i=0; i<items.length; i++){
-            //     if(items[i].item_name == "Open Door"){
-            //         doors.push(items[i]);
-            //     }
-            // }
+            // Loading JSON 3DModel
+            var jsonLoader = new THREE.JSONLoader();
+            jsonLoader.load( "/models/js/walkmorphcolor.json", addModelToScene);
+
+            //Loading JSON with the doors
+            $.ajax('/js/design(15).blueprint3d', {
+                async: false,
+                dataType: 'text',
+                success: function (data) {
+                    testing = data;
+                }
+            });
+
+            model.floorJSON = testing;
+            var json = JSON.parse(testing);
+            items = json.items;
+            for(var i=0; i<items.length; i++){
+                if(items[i].item_name == "Open Door"){
+                    doors.push(items[i]);
+                }
+            }
+
+
         }
 
         function addModelToScene( geometry, materials) {
@@ -70,26 +86,46 @@ module BP3D.Three {
 
             clip = THREE.AnimationClip.CreateFromMorphTargetSequence('walk', geometry.morphTargets, 27, false);
 
-            // Adding Meshes
-            for (var j=0; j<humans.length; j++){
+            var material1 = new THREE.MeshLambertMaterial();
+            material1.morphTargets =true;
+            var mesh = new THREE.SkinnedMesh( geometry, material1 );
 
-                var material1 = new THREE.MeshLambertMaterial();
-                material1.morphTargets =true;
-                var mesh = new THREE.SkinnedMesh( geometry, material1 );
-
-                mesh.scale.set(55,65,55);
-                scene.add(mesh);
-                mesh.position.x = humans[j].positions[0].x;
-                mesh.position.z = humans[j].positions[0].y;
-                scene.meshes.push(mesh);
-                scene.movement.push({number:1, time: 0});
-
-                changeColorEmotion(humans[j].sentiment[0], j);
-                // Starting Animation
-                var mixer = new THREE.AnimationMixer( mesh );
+            mesh.scale.set(55,65,55);
+            scene.add(mesh);
+            scene.meshes.push(mesh);
+            var a = path[0];
+            for(var j = 0; j < allRooms.length; j++){
+                if(a == allRooms[j].name){
+                    mesh.position.x = allRooms[j].x;
+                    mesh.position.z = allRooms[j].y;
+                }
+            }
+            var mixer = new THREE.AnimationMixer( mesh );
                 mixers.push(mixer);
 
-            }
+
+            changeColorEmotion("happiness", 0);
+
+            // // Adding Meshes
+            // for (var j=0; j<humans.length; j++){
+            //
+            //     var material1 = new THREE.MeshLambertMaterial();
+            //     material1.morphTargets =true;
+            //     var mesh = new THREE.SkinnedMesh( geometry, material1 );
+            //
+            //     mesh.scale.set(55,65,55);
+            //     scene.add(mesh);
+            //     mesh.position.x = humans[j].positions[0].x;
+            //     mesh.position.z = humans[j].positions[0].y;
+            //     scene.meshes.push(mesh);
+            //     scene.movement.push({number:1, time: 0});
+            //
+            //     changeColorEmotion(humans[j].sentiment[0], j);
+            //     // Starting Animation
+            //     var mixer = new THREE.AnimationMixer( mesh );
+            //     mixers.push(mixer);
+            //
+            // }
 
 
         }
@@ -251,38 +287,50 @@ module BP3D.Three {
         }
 
         this.moveAll = function() {
-            //Check if the meshes exist
-            if(scene.meshes[0]){
-                for(var i=0; i<humans.length; i++){
-                    var number = scene.movement[i].number;
-                    var time = scene.movement[i].time;
-                    var position = humans[i].positions;
-                    var timeStopped = humans[i].timeStopped[number];
-                    var sentiment = humans[i].sentiment[number];
-                    var speed = humans[i].speed[number];
-                    //Move Mesh and check if it is in its final position
-                    if(this.moveToPosition(scene.meshes[i], i, position[number].x, 0, position[number].y, speed)){
-                        //Update time variable if the mesh has to be stopped
-                        if(timeStopped!=0 && scene.movement[i].time == 0){
-                            scene.movement[i].time = Date.now();
-                        }
-                        //if the timeStopped has expired, changeColor and roomLight
-                        else if(Date.now() - time >= timeStopped){
-                            if(scene.movement[i].number < humans[i].positions.length-1){
-                                changeColorEmotion(sentiment, i);
-                                var room = getRoom(scene.meshes[i]);
-                                if(getRoomLight(room) != humans[i].actions[number].light){
-                                    setRoomLight(room, humans[i].actions[number].light);
-                                    var prueba = new Video(scene, model, room);
-                                }
-                                scene.movement[i].number +=1;
-                                scene.movement[i].time = 0;
-                            }
-                        }
 
+            if(scene.meshes[0]) {
+                for (var j = 0; j < allRooms.length; j++) {
+                    if (path[flag] == allRooms[j].name) {
+                        var speed = calculateSpeed(allRooms[j-1].x,allRooms[j-1].y,allRooms[j].x, allRooms[j].y, 10);
+                        if (this.moveToPosition(scene.meshes[0], 0, allRooms[j].x, 0, allRooms[j].y, speed)) {
+                            flag +=1;
+                        }
                     }
                 }
             }
+
+            // //Check if the meshes exist
+            // if(scene.meshes[0]){
+            //     for(var i=0; i<humans.length; i++){
+            //         var number = scene.movement[i].number;
+            //         var time = scene.movement[i].time;
+            //         var position = humans[i].positions;
+            //         var timeStopped = humans[i].timeStopped[number];
+            //         var sentiment = humans[i].sentiment[number];
+            //         var speed = humans[i].speed[number];
+            //         //Move Mesh and check if it is in its final position
+            //         if(this.moveToPosition(scene.meshes[i], i, position[number].x, 0, position[number].y, speed)){
+            //             //Update time variable if the mesh has to be stopped
+            //             if(timeStopped!=0 && scene.movement[i].time == 0){
+            //                 scene.movement[i].time = Date.now();
+            //             }
+            //             //if the timeStopped has expired, changeColor and roomLight
+            //             else if(Date.now() - time >= timeStopped){
+            //                 if(scene.movement[i].number < humans[i].positions.length-1){
+            //                     changeColorEmotion(sentiment, i);
+            //                     var room = getRoom(scene.meshes[i]);
+            //                     if(getRoomLight(room) != humans[i].actions[number].light){
+            //                         setRoomLight(room, humans[i].actions[number].light);
+            //                         var prueba = new Video(scene, model, room);
+            //                     }
+            //                     scene.movement[i].number +=1;
+            //                     scene.movement[i].time = 0;
+            //                 }
+            //             }
+            //
+            //         }
+            //     }
+            // }
         }
 
         function changeColor(r, g, b, i){
@@ -401,6 +449,13 @@ module BP3D.Three {
                 }
             }
             return null;
+        }
+
+        function calculateSpeed(x1, y1, x2, y2, time){
+            console.log("DISTANCE", Core.Utils.distance(x1, y1, x2, y2));
+            var distance = Core.Utils.distance(x1, y1, x2, y2);
+            var speed = distance / time/20;
+            return speed;
         }
 
         function objectHalfSize(mesh): THREE.Vector3 {
