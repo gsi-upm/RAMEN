@@ -41,6 +41,7 @@ module BP3D.Model {
         public video;
         public imageContext;
         public textureVideo;
+        public fps;
 
         /**
          * Constructs a scene.

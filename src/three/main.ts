@@ -49,7 +49,8 @@ module BP3D.Three {
         var video;
         var imageContext;
         var textureVideo;
-        var qqqq, prueba;
+        var qqqq = 1;
+        var timeRender = 0;
 
         //var canvas;
         //var canvasElement = canvasElement;
@@ -78,7 +79,7 @@ module BP3D.Three {
             THREE.ImageUtils.crossOrigin = "";
 
             domElement = scope.element.get(0) // Container
-            camera = new THREE.PerspectiveCamera(45, 1, 1, 10000);
+            camera = new THREE.PerspectiveCamera(45, 1, 1, 14500);
             renderer = new THREE.WebGLRenderer({
                 antialias: true,
                 preserveDrawingBuffer: true // required to support .toDataURL()
@@ -87,7 +88,7 @@ module BP3D.Three {
                 renderer.shadowMapEnabled = true;
             renderer.shadowMapSoft = true;
             renderer.shadowMapType = THREE.PCFSoftShadowMap;
-
+            renderer.setClearColor( 0x808080, 1);
             var skybox = new Three.Skybox(scene);
 
             scope.controls = new Three.Controls(camera, domElement);
@@ -221,7 +222,7 @@ module BP3D.Three {
             lastRender = Date.now();
             //Check if the simulation is paused
             if(model.play) {
-                human.moveAll();
+               // human.moveAll();
                 if (scene.video &&  scene.video.readyState === scene.video.HAVE_ENOUGH_DATA ) {
 
                     scene.imageContext.drawImage( scene.video, 0, 0 );
@@ -231,9 +232,18 @@ module BP3D.Three {
                 }
             }
             else{
-                // var human = new Human(scene, model);
-                console.log("ROOMS", model.floorplan.getRooms()[33]);
+                qqqq+=1;
+                if(qqqq ==1) {
+
+                    // console.log("Position1: ", scene.meshes[0].position);
+                    // scene.meshes[0].translateZ(10);
+
+                    // console.log("Position2: ", scene.meshes[0].position);
+                }
             }
+            var date = new Date();
+            scene.fps = 1000/( date.getTime() - timeRender);
+            timeRender = date.getTime();
         };
 
 

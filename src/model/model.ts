@@ -28,7 +28,7 @@ module BP3D.Model {
         private roomDeletedCallbacks = $.Callbacks();
 
         //Simulation running or paused
-        public play = true;
+        public play = false;
 
         public floorJSON;
 

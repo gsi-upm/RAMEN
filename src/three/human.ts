@@ -27,7 +27,9 @@ module BP3D.Three {
         var allRooms2;
         var allRooms;
 
-        var path = ["C_1","C_5", "Office4","C_5", "CI_41", "CI_42","CI_5","Lab8_2","CI_5", "Lab7","CI_5","CI_12","Lab1","CI_12"];
+        // var path = ["C_5","Office4","C_5", "CI_41", "CI_42","CI_5","Lab8_2","CI_5", "Lab7","CI_5","CI_12","Lab1","CI_12"];
+
+        var path = [ "CI_5","Lab8_2"];
         var flag = 1;
 
         function init() {
@@ -271,9 +273,10 @@ module BP3D.Three {
                         } else {
                             mesh.rotation.y -= 0.005;
                         }
-                    }
+                    } else {
                     //Translation Movement and Animation
                     this.move(mesh, i, speed);
+                    }
                 }
                 //Stop the animation if the mesh has stopped
                 else {
@@ -291,8 +294,8 @@ module BP3D.Three {
             if(scene.meshes[0]) {
                 for (var j = 0; j < allRooms.length; j++) {
                     if (path[flag] == allRooms[j].name) {
-                        var speed = calculateSpeed(allRooms[j-1].x,allRooms[j-1].y,allRooms[j].x, allRooms[j].y, 10);
-                        if (this.moveToPosition(scene.meshes[0], 0, allRooms[j].x, 0, allRooms[j].y, speed)) {
+                        var speed = calculateSpeed(5064.6002,370.645,5530.6, 370.645,4);
+                        if (this.moveToPosition(scene.meshes[0], 0, 5530.6, 0, 370.645, speed)) {
                             flag +=1;
                         }
                     }
@@ -452,9 +455,8 @@ module BP3D.Three {
         }
 
         function calculateSpeed(x1, y1, x2, y2, time){
-            console.log("DISTANCE", Core.Utils.distance(x1, y1, x2, y2));
             var distance = Core.Utils.distance(x1, y1, x2, y2);
-            var speed = distance / time/20;
+            var speed = distance / time/scene.fps;
             return speed;
         }
 
