@@ -21,11 +21,13 @@ module BP3D.Three {
 
         var testing;
         var movementJSON;
-        var humans;
+        var steps;
         // var speed = 12;
         var allRooms3;
         var allRooms2;
         var allRooms;
+
+        var meshesMoving = [];
 
         // var path = ["C_5","Office4","C_5", "CI_41", "CI_42","CI_5","Lab8_2","CI_5", "Lab7","CI_5","CI_12","Lab1","CI_12"];
 
@@ -43,18 +45,19 @@ module BP3D.Three {
 
             allRooms3 = JSON.parse(allRooms2);
             allRooms = allRooms3.room;
-            // //Loading JSON with the movement
-            // $.ajax('/js/movement2.json', {
-            //     async: false,
-            //     dataType: 'text',
-            //     success: function (data2) {
-            //         movementJSON = data2;
-            //     }
-            // });
-            //
-            // var jsonMove = JSON.parse(movementJSON);
-            // humans = jsonMove.humans;
-            //
+            //Loading JSON with the movement
+            $.ajax('/js/movement.json', {
+                async: false,
+                dataType: 'text',
+                success: function (data2) {
+                    movementJSON = data2;
+                }
+            });
+
+            var jsonMove = JSON.parse(movementJSON);
+            steps = jsonMove.steps;
+
+
             // Loading JSON 3DModel
             var jsonLoader = new THREE.JSONLoader();
             jsonLoader.load( "/models/js/walkmorphcolor.json", addModelToScene);
@@ -82,52 +85,41 @@ module BP3D.Three {
 
         function addModelToScene( geometry, materials) {
             // Preparing animation
-            for (var i = 0; i < materials.length; i++){
+            for (let i = 0; i < materials.length; i++){
                 materials[i].morphTargets = true;
             }
-
             clip = THREE.AnimationClip.CreateFromMorphTargetSequence('walk', geometry.morphTargets, 27, false);
 
-            var material1 = new THREE.MeshLambertMaterial();
-            material1.morphTargets =true;
-            var mesh = new THREE.SkinnedMesh( geometry, material1 );
 
-            mesh.scale.set(55,65,55);
-            scene.add(mesh);
-            scene.meshes.push(mesh);
-            var a = path[0];
-            for(var j = 0; j < allRooms.length; j++){
-                if(a == allRooms[j].name){
-                    mesh.position.x = allRooms[j].x;
-                    mesh.position.z = allRooms[j].y;
+            //Adding Mesh
+            for(let j = 0; j < steps[0].length; j++){
+                let material1 = new THREE.MeshLambertMaterial();
+                material1.morphTargets =true;
+                let mesh = new THREE.SkinnedMesh( geometry, material1 );
+                mesh.scale.set(55,65,55);
+                scene.add(mesh);
+                scene.meshes.push(mesh);
+
+                //Setting mesh position
+                let position = steps[0][j].position;
+                for(let k = 0; k < allRooms.length; k++){
+                    if(position == allRooms[k].name){
+                        mesh.position.x = allRooms[k].x;
+                        mesh.position.z = allRooms[k].y;
+                    }
                 }
-            }
-            var mixer = new THREE.AnimationMixer( mesh );
+
+                //Mesh Animation
+                let mixer = new THREE.AnimationMixer( mesh );
                 mixers.push(mixer);
 
+                //Mesh Emotion
+                let sentiment = steps[0][j].sentiment;
+                changeColorEmotion(sentiment, j);
+            }
+            //Setting the initial time of the simulation
+            scene.initialTime = Date.now();
 
-            changeColorEmotion("happiness", 0);
-
-            // // Adding Meshes
-            // for (var j=0; j<humans.length; j++){
-            //
-            //     var material1 = new THREE.MeshLambertMaterial();
-            //     material1.morphTargets =true;
-            //     var mesh = new THREE.SkinnedMesh( geometry, material1 );
-            //
-            //     mesh.scale.set(55,65,55);
-            //     scene.add(mesh);
-            //     mesh.position.x = humans[j].positions[0].x;
-            //     mesh.position.z = humans[j].positions[0].y;
-            //     scene.meshes.push(mesh);
-            //     scene.movement.push({number:1, time: 0});
-            //
-            //     changeColorEmotion(humans[j].sentiment[0], j);
-            //     // Starting Animation
-            //     var mixer = new THREE.AnimationMixer( mesh );
-            //     mixers.push(mixer);
-            //
-            // }
 
 
         }
@@ -289,18 +281,40 @@ module BP3D.Three {
             }
         }
 
-        this.moveAll = function() {
+        this.moveAll = function(step) {
+            if(scene.flag == 1){
+                var stepArr = steps[step];
 
-            if(scene.meshes[0]) {
-                for (var j = 0; j < allRooms.length; j++) {
-                    if (path[flag] == allRooms[j].name) {
-                        var speed = calculateSpeed(5064.6002,370.645,5530.6, 370.645,4);
-                        if (this.moveToPosition(scene.meshes[0], 0, 5530.6, 0, 370.645, speed)) {
-                            flag +=1;
+                if(stepArr && stepArr.length != 0){
+                    for (let i in stepArr ){
+                        if (stepArr[i].agent != undefined){
+                            if(stepArr[i].moveTo != undefined && stepArr[i].toStep != undefined){
+                                let time = (stepArr[i].toStep - step) * scene.stepTime;
+                                let room = whichRoom(stepArr[i].moveTo);
+                                let speed = calculateSpeed(scene.meshes[stepArr.agent].position.x ,scene.meshes[stepArr.agent].position.y , room.x, room.y, time);
+                                this.moveToPosition(scene.meshes[stepArr.agent], stepArr.agent, room.x, 0, room.y, speed);
+                                meshesMoving.push({"mesh": scene.meshes[stepArr.agent], "to":{"x": room.x,"y": room.y}, "speed": speed});
+                                scene.flag = 0;
+                            }
                         }
+
                     }
                 }
+                console.log("MESHESMOVING", meshesMoving);
             }
+
+
+
+            // if(scene.meshes[0]) {
+            //     for (var j = 0; j < allRooms.length; j++) {
+            //         if (path[flag] == allRooms[j].name) {
+            //             var speed = calculateSpeed(5064.6002,370.645,5530.6, 370.645,4);
+            //             if (this.moveToPosition(scene.meshes[0], 0, 5530.6, 0, 370.645, speed)) {
+            //                 flag +=1;
+            //             }
+            //         }
+            //     }
+            // }
 
             // //Check if the meshes exist
             // if(scene.meshes[0]){
@@ -334,6 +348,16 @@ module BP3D.Three {
             //         }
             //     }
             // }
+        }
+
+        function whichRoom(room){
+            for (var j = 0; j < allRooms.length; j++) {
+                if (room == allRooms[j].name) {
+                    var x = allRooms[j].x;
+                    var y = allRooms[j].y;
+                    return {"x": x, "y": y};
+                }
+            }
         }
 
         function changeColor(r, g, b, i){

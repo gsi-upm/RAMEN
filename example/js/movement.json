@@ -1,27 +1,24 @@
 {
-  "humans": [
+  "steps": [
     [
         {
-            "step": 1,
-            "position": {"x": 100, "y": 100},
+            "agent": 0,
+            "position": "C_10",
             "sentiment": "anger"
         },
         {
-            "step": 50,
-            "position": {"x": 200, "y": 200},
+            "agent": 1,
+            "position": "Lab1",
             "sentiment": "sadness"
         }
     ],
+    [],
+    [],
     [
         {
-            "step": 1,
-            "position": {"x": 500, "y": 100},
-            "sentiment": "fear"
-        },
-        {
-            "step": 20,
-            "position": {"x": 600, "y": 200},
-            "sentiment": "happiness"
+            "agent": 0,
+            "moveTo": "C_8",
+            "toStep": 6
         }
     ]
   ]

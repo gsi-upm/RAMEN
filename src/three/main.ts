@@ -51,6 +51,8 @@ module BP3D.Three {
         var textureVideo;
         var qqqq = 1;
         var timeRender = 0;
+        var stepTime = 1000;
+        var step = 1;
 
         //var canvas;
         //var canvasElement = canvasElement;
@@ -152,8 +154,6 @@ module BP3D.Three {
 
 
 
-
-
         }
 
         function spin() {
@@ -219,10 +219,19 @@ module BP3D.Three {
                 renderer.render(hud.getScene(), camera);
             }
 
-            lastRender = Date.now();
+
             //Check if the simulation is paused
             if(model.play) {
-               // human.moveAll();
+
+                human.moveAll(step);
+
+                lastRender = Date.now();
+                if( lastRender - scene.initialTime >= stepTime){
+                    scene.initialTime = lastRender;
+                    step += 1;
+                    scene.flag = 1;
+                }
+
                 if (scene.video &&  scene.video.readyState === scene.video.HAVE_ENOUGH_DATA ) {
 
                     scene.imageContext.drawImage( scene.video, 0, 0 );
@@ -234,7 +243,7 @@ module BP3D.Three {
             else{
                 qqqq+=1;
                 if(qqqq ==1) {
-
+                        console.log("pause");
                     // console.log("Position1: ", scene.meshes[0].position);
                     // scene.meshes[0].translateZ(10);
 
@@ -247,7 +256,6 @@ module BP3D.Three {
         };
 
 
-        var flag = 0;
 
         function animate() {
             var delay = 50;
