@@ -212,6 +212,7 @@ module BP3D.Three {
 
             // Translation Movement
             var moveDistance = speed;
+            // var moveDistance = 4;
             scene.meshes[i].translateZ(moveDistance);
 
             // Animation
@@ -223,7 +224,7 @@ module BP3D.Three {
         }
 
 
-        this.moveToPosition = function(mesh, i, x, y, z, speed) {
+        this.moveToPosition = function(mesh, i, x, y, z, speed, startTime, time) {
             //Get floorplan for isValidPosition
             if (floorplan == undefined) {
                 floorplan = model.floorplan;
@@ -231,10 +232,12 @@ module BP3D.Three {
             //Mesh Position
             var meshX = mesh.position.x;
             var meshZ = mesh.position.z;
+
+            let speed2 = speed / scene.fps;
             //Check if the mesh is not in a wall
             if (isValidPosition(mesh.position, mesh)) {
                 //Check if the mesh is not in the final position
-                if (Math.abs(meshX - x) > speed - 1 || Math.abs(meshZ - z) > speed - 1) {
+                if (Math.abs(meshX - x) > speed2 - 1 || Math.abs(meshZ - z) > speed2 - 1) {
                     mixers[i].clipAction(clip).play();
                     //Angle Calculation
                     angleRadians = Math.atan2(x - meshX, z - meshZ);
@@ -246,32 +249,48 @@ module BP3D.Three {
                         rotationAngle += 2 * Math.PI;
                     }
                     //Rotation Movement
-                    if (Math.abs(rotationAngle) > 0.5) {
+                    if (Math.abs(rotationAngle) > 0.7) {
                         if (rotationAngle > 0) {
-                            mesh.rotation.y += 0.45;
+                            // mesh.rotation.y += 0.75;
+                            mesh.rotation.y += Math.PI/4;
                         } else {
-                            mesh.rotation.y -= 0.45;
+                            // mesh.rotation.y -= 0.75;
+                            mesh.rotation.y -= Math.PI/4;
                         }
                     }
-                    else if (Math.abs(rotationAngle) > 0.051) {
-                        if (rotationAngle > 0) {
-                            mesh.rotation.y += 0.05;
-                        } else {
-                            mesh.rotation.y -= 0.05;
+                    // else if (Math.abs(rotationAngle) > 0.051) {
+                    //     if (rotationAngle > 0) {
+                    //         mesh.rotation.y += 0.05;
+                    //     } else {
+                    //         mesh.rotation.y -= 0.05;
+                    //     }
+                    // } else if (Math.abs(rotationAngle) < 0.051 && Math.abs(rotationAngle) > 0.006) {
+                    //     if (rotationAngle > 0) {
+                    //         mesh.rotation.y += 0.005;
+                    //     } else {
+                    //         mesh.rotation.y -= 0.005;
+                    //     }
+                    // }
+                    else {
+                        //Translation Movement and Animation
+                        let thisTime = Date.now();
+                        let timeElapsed = thisTime-startTime;
+                        if(time - timeElapsed>=0){
+                            speed2 = calculateSpeed(meshX, meshZ, x, z, time-(timeElapsed)) / scene.fps;
+                            this.move(mesh, i, speed2);
                         }
-                    } else if (Math.abs(rotationAngle) < 0.051 && Math.abs(rotationAngle) > 0.006) {
-                        if (rotationAngle > 0) {
-                            mesh.rotation.y += 0.005;
-                        } else {
-                            mesh.rotation.y -= 0.005;
+                        else{
+                            mesh.position.x = x;
+                            mesh.position.z = z;
+                            mixers[i].clipAction(clip).stop();
+                            return true;
                         }
-                    } else {
-                    //Translation Movement and Animation
-                    this.move(mesh, i, speed);
                     }
                 }
                 //Stop the animation if the mesh has stopped
                 else {
+                    mesh.position.x = x;
+                    mesh.position.z = z;
                     mixers[i].clipAction(clip).stop();
                     return true;
                 }
@@ -281,40 +300,45 @@ module BP3D.Three {
             }
         }
 
+        this.moveMeshes = function(){
+            for(let i = 0; i< meshesMoving.length; i++){
+                var j = meshesMoving[i].agent;
+                if(this.moveToPosition(scene.meshes[j], j, meshesMoving[i].to.x, 0, meshesMoving[i].to.y,meshesMoving[i].speed, meshesMoving[i].startTime, meshesMoving[i].time))
+                    meshesMoving.splice(i, 1);
+
+            }
+        }
+
         this.moveAll = function(step) {
             if(scene.flag == 1){
                 var stepArr = steps[step];
 
                 if(stepArr && stepArr.length != 0){
-                    for (let i in stepArr ){
+
+                    for (let i = 0; i < stepArr.length; i++){
                         if (stepArr[i].agent != undefined){
                             if(stepArr[i].moveTo != undefined && stepArr[i].toStep != undefined){
                                 let time = (stepArr[i].toStep - step) * scene.stepTime;
                                 let room = whichRoom(stepArr[i].moveTo);
-                                let speed = calculateSpeed(scene.meshes[stepArr.agent].position.x ,scene.meshes[stepArr.agent].position.y , room.x, room.y, time);
-                                this.moveToPosition(scene.meshes[stepArr.agent], stepArr.agent, room.x, 0, room.y, speed);
-                                meshesMoving.push({"mesh": scene.meshes[stepArr.agent], "to":{"x": room.x,"y": room.y}, "speed": speed});
+                                let speed = calculateSpeed(scene.meshes[stepArr[i].agent].position.x ,scene.meshes[stepArr[i].agent].position.y , room.x, room.y, time);
+                                meshesMoving.push({"agent":stepArr[i].agent, "to":{"x": room.x,"y": room.y}, "speed": speed, "startTime": Date.now(), "time": time});
                                 scene.flag = 0;
                             }
+                            if (stepArr[i].sentiment != undefined){
+                                changeColorEmotion(stepArr[i].sentiment, stepArr[i].agent);
+                            }
+                        }
+                        if (stepArr[i].light != undefined){
+                            let room = whichRoom(stepArr[i].room);
+                            let roomNumber = getRoom(room.x, room.y);
+                            setRoomLight(roomNumber, stepArr[i].light);
                         }
 
                     }
                 }
-                console.log("MESHESMOVING", meshesMoving);
             }
 
-
-
-            // if(scene.meshes[0]) {
-            //     for (var j = 0; j < allRooms.length; j++) {
-            //         if (path[flag] == allRooms[j].name) {
-            //             var speed = calculateSpeed(5064.6002,370.645,5530.6, 370.645,4);
-            //             if (this.moveToPosition(scene.meshes[0], 0, 5530.6, 0, 370.645, speed)) {
-            //                 flag +=1;
-            //             }
-            //         }
-            //     }
-            // }
+            this.moveMeshes();
 
             // //Check if the meshes exist
             // if(scene.meshes[0]){
@@ -443,10 +467,42 @@ module BP3D.Three {
 
         }
 
-        function getRoom(mesh){
-            //Mesh position
-            var x = mesh.position.x;
-            var y = mesh.position.z;
+        // function getRoom(mesh){
+        //     //Mesh position
+        //     var x = mesh.position.x;
+        //     var y = mesh.position.z;
+        //     //Array with all the Rooms
+        //     var rooms = model.floorplan.getRooms();
+        //     for (var i = 0; i<rooms.length; i++){
+        //         //Obtain the min and max coordinates of the room
+        //         var corners = rooms[i].interiorCorners;
+        //         var xMin = corners[0].x;
+        //         var xMax = corners[0].x;
+        //         var yMin = corners[0].y;
+        //         var yMax = corners[0].y;
+        //         for (var j=1; j<corners.length; j++){
+        //             if (xMin > corners[j].x){
+        //                 xMin = corners[j].x;
+        //             }
+        //             if (xMax < corners[j].x){
+        //                 xMax = corners[j].x;
+        //             }
+        //             if (yMin > corners[j].y){
+        //                 yMin = corners[j].y;
+        //             }
+        //             if (yMin < corners[j].y){
+        //                 yMax = corners[j].y;
+        //             }
+        //         }
+        //         //Check if the mesh is inside the room
+        //         if( x > xMin && x < xMax && y > yMin && y < yMax){
+        //             return i;
+        //         }
+        //     }
+        //     return null;
+        // }
+
+        function getRoom(x, y){
             //Array with all the Rooms
             var rooms = model.floorplan.getRooms();
             for (var i = 0; i<rooms.length; i++){
@@ -480,7 +536,8 @@ module BP3D.Three {
 
         function calculateSpeed(x1, y1, x2, y2, time){
             var distance = Core.Utils.distance(x1, y1, x2, y2);
-            var speed = distance / time/scene.fps;
+            // var speed = distance*1000 / (time-800)/scene.fps;
+            var speed = distance*1000 / time;
             return speed;
         }
 
