@@ -28,7 +28,8 @@ module BP3D.Three {
         var allRooms;
 
         var meshesMoving = [];
-
+        var outBuilding;
+        var geometry1;
         // var path = ["C_5","Office4","C_5", "CI_41", "CI_42","CI_5","Lab8_2","CI_5", "Lab7","CI_5","CI_12","Lab1","CI_12"];
 
         var path = [ "CI_5","Lab8_2"];
@@ -80,6 +81,7 @@ module BP3D.Three {
                 }
             }
 
+            outBuilding = whichRoom("outBuilding");
 
         }
 
@@ -89,7 +91,7 @@ module BP3D.Three {
                 materials[i].morphTargets = true;
             }
             clip = THREE.AnimationClip.CreateFromMorphTargetSequence('walk', geometry.morphTargets, 27, false);
-
+            geometry1 = geometry;
 
             //Adding Mesh
             for(let j = 0; j < steps[0].length; j++){
@@ -122,6 +124,29 @@ module BP3D.Three {
 
 
 
+        }
+
+        function addIndividualModelToScene(agent, room, sentiment) {
+
+            //Adding Mesh
+            let material1 = new THREE.MeshLambertMaterial();
+            material1.morphTargets =true;
+            let mesh = new THREE.SkinnedMesh( geometry1, material1 );
+            mesh.scale.set(55,65,55);
+            scene.add(mesh);
+            scene.meshes[agent] = mesh;
+
+            //Setting mesh position
+            let position = whichRoom(room);
+            mesh.position.x = position.x;
+            mesh.position.z = position.y;
+
+            //Mesh Animation
+            let mixer = new THREE.AnimationMixer( mesh );
+            mixers[agent] = mixer;
+
+            //Mesh Emotion
+            changeColorEmotion(sentiment, agent);
         }
 
         function isValidPosition(vec3, mesh) {
@@ -221,6 +246,7 @@ module BP3D.Three {
             }
 
             prevTime = time;
+
         }
 
 
@@ -292,6 +318,10 @@ module BP3D.Three {
                     mesh.position.x = x;
                     mesh.position.z = z;
                     mixers[i].clipAction(clip).stop();
+                    if(mesh.position.x == outBuilding.x && mesh.position.z == outBuilding.y){
+                        scene.remove(mesh);
+                        scene.meshes[i] = null;
+                    }
                     return true;
                 }
                 //Stop the animation if the mesh is in a Wall
@@ -317,16 +347,24 @@ module BP3D.Three {
 
                     for (let i = 0; i < stepArr.length; i++){
                         if (stepArr[i].agent != undefined){
-                            if(stepArr[i].moveTo != undefined && stepArr[i].toStep != undefined){
-                                let time = (stepArr[i].toStep - step) * scene.stepTime;
-                                let room = whichRoom(stepArr[i].moveTo);
-                                let speed = calculateSpeed(scene.meshes[stepArr[i].agent].position.x ,scene.meshes[stepArr[i].agent].position.y , room.x, room.y, time);
-                                meshesMoving.push({"agent":stepArr[i].agent, "to":{"x": room.x,"y": room.y}, "speed": speed, "startTime": Date.now(), "time": time});
-                                scene.flag = 0;
+                            if(scene.meshes[stepArr[i].agent] == undefined){
+                                var position = stepArr[i].position;
+                                var sentiment = stepArr[i].sentiment;
+                                addIndividualModelToScene(stepArr[i].agent,  position, sentiment)
                             }
-                            if (stepArr[i].sentiment != undefined){
-                                changeColorEmotion(stepArr[i].sentiment, stepArr[i].agent);
+                            else{
+                                if(stepArr[i].moveTo != undefined && stepArr[i].toStep != undefined){
+                                    let time = (stepArr[i].toStep - step) * scene.stepTime;
+                                    let room = whichRoom(stepArr[i].moveTo);
+                                    let speed = calculateSpeed(scene.meshes[stepArr[i].agent].position.x ,scene.meshes[stepArr[i].agent].position.y , room.x, room.y, time);
+                                    meshesMoving.push({"agent":stepArr[i].agent, "to":{"x": room.x,"y": room.y}, "speed": speed, "startTime": Date.now(), "time": time});
+                                    scene.flag = 0;
+                                }
+                                if (stepArr[i].sentiment != undefined){
+                                    changeColorEmotion(stepArr[i].sentiment, stepArr[i].agent);
+                                }
                             }
+
                         }
                         if (stepArr[i].light != undefined){
                             let room = whichRoom(stepArr[i].room);
