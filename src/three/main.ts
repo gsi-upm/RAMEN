@@ -49,7 +49,7 @@ module BP3D.Three {
         var video;
         var imageContext;
         var textureVideo;
-        var qqqq = 1;
+        var paused = 1;
         var timeRender = 0;
         var stepTime = 1000;
         var step = 1;
@@ -241,13 +241,10 @@ module BP3D.Three {
                 }
             }
             else{
-                qqqq+=1;
-                if(qqqq ==1) {
-                        console.log("pause");
-                    // console.log("Position1: ", scene.meshes[0].position);
-                    // scene.meshes[0].translateZ(10);
 
-                    // console.log("Position2: ", scene.meshes[0].position);
+                if(paused ==1) {
+                    paused+=1;
+
                 }
             }
             var date = new Date();
@@ -264,29 +261,6 @@ module BP3D.Three {
                 requestAnimationFrame(animate);
             }, delay);
             render();
-
-        }
-
-        function addModelToScene( geometry, materials) {
-            // for preparing animation
-            for (var i = 0; i < materials.length; i++){
-                materials[i].morphTargets = true;
-            }
-
-            var material = new THREE.MeshFaceMaterial( materials );
-            var clip = THREE.AnimationClip.CreateFromMorphTargetSequence('walk', geometry.morphTargets, 27, false);
-            for (var j = 0; j<5; j++){
-                var mesh = new THREE.SkinnedMesh( geometry, material );
-                meshes.push(mesh);
-                mesh.scale.set(50,50,50);
-                scene.add(mesh);
-                mesh.position.x = -30*j;
-
-                var mixer = new THREE.AnimationMixer( mesh );
-                mixer.clipAction( clip ).play();
-                mixers.push(mixer);
-
-            }
 
         }
 

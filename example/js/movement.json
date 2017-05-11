@@ -31,7 +31,17 @@
                                            "agent": 1,
                                            "moveTo": "C_3",
                                            "toStep": 10
-                                              }
+                       },
+                       {
+                                 "video": true,
+                                 "room": "Office3"
+
+                                                                     },
+                     {
+                                                      "video": true,
+                                                      "room": "Office4"
+
+                                                                                          }
     ],
     [
         {

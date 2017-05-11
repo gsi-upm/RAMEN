@@ -21,8 +21,10 @@ module BP3D.Three {
             scene.textureVideo = new THREE.Texture( image );
 
             materialVideo = new THREE.MeshBasicMaterial( { map: scene.textureVideo, overdraw: 0.5 } );
+            // plane = new THREE.PlaneGeometry( 480/6.5, 204/6.5, 4, 4 );
 
-            plane = new THREE.PlaneGeometry( 480/6.5, 204/6.5, 4, 4 );
+            plane = new THREE.PlaneGeometry( 512/7, 256/7, 4, 4 );
+
 
 
             getTV();
@@ -33,7 +35,7 @@ module BP3D.Three {
             var items = scene.getItems();
             for (var i=0; i<items.length; i++){
                 if( items[i].metadata.itemName == "Media Console - White"){
-                    if(room == items[i].getRoom(model)){
+                    if(room == items[i].getRoom(model)){;
                         mesh = new THREE.Mesh( plane, materialVideo );
                         mesh.scale.x = mesh.scale.y = mesh.scale.z = 1.5;
                         scene.add(mesh);

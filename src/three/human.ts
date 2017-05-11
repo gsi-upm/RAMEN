@@ -64,7 +64,7 @@ module BP3D.Three {
             jsonLoader.load( "/models/js/walkmorphcolor.json", addModelToScene);
 
             //Loading JSON with the doors
-            $.ajax('/js/design(15).blueprint3d', {
+            $.ajax('/js/design(16).blueprint3d', {
                 async: false,
                 dataType: 'text',
                 success: function (data) {
@@ -370,6 +370,12 @@ module BP3D.Three {
                             let room = whichRoom(stepArr[i].room);
                             let roomNumber = getRoom(room.x, room.y);
                             setRoomLight(roomNumber, stepArr[i].light);
+                        }
+
+                        if (stepArr[i].video != undefined){
+                            var roomCoordinates = whichRoom(stepArr[i].room);
+                            var room = getRoom(roomCoordinates.x, roomCoordinates.y);
+                            var video = new Video(scene, model, room);
                         }
 
                     }
