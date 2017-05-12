@@ -64,7 +64,7 @@ module BP3D.Three {
             jsonLoader.load( "/models/js/walkmorphcolor.json", addModelToScene);
 
             //Loading JSON with the doors
-            $.ajax('/js/design(16).blueprint3d', {
+            $.ajax('/js/design(18).blueprint3d', {
                 async: false,
                 dataType: 'text',
                 success: function (data) {
@@ -101,7 +101,6 @@ module BP3D.Three {
                 mesh.scale.set(55,65,55);
                 scene.add(mesh);
                 scene.meshes.push(mesh);
-
                 //Setting mesh position
                 let position = steps[0][j].position;
                 for(let k = 0; k < allRooms.length; k++){

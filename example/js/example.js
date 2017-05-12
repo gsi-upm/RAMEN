@@ -538,7 +538,7 @@ $(document).ready(function() {
     var cameraButtons = new CameraButtons(blueprint3d);
     mainControls(blueprint3d);
 
-    $.ajax('/js/design(16).blueprint3d', {
+    $.ajax('/js/design(18).blueprint3d', {
         async: false,
         dataType: 'text',
         success: function (data) {

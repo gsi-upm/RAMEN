@@ -35,7 +35,7 @@ module BP3D.Three {
             var items = scene.getItems();
             for (var i=0; i<items.length; i++){
                 if( items[i].metadata.itemName == "Media Console - White"){
-                    if(room == items[i].getRoom(model)){;
+                    if(room == items[i].getRoom(model)){
                         mesh = new THREE.Mesh( plane, materialVideo );
                         mesh.scale.x = mesh.scale.y = mesh.scale.z = 1.5;
                         scene.add(mesh);
