@@ -2622,6 +2622,19 @@
       "fixed": false
     },
     {
+          "item_name": "Dining Table",
+          "item_type": 1,
+          "model_url": "models/js/cb-scholartable_baked.js",
+          "xpos": 5859,
+          "ypos": 38.078950895925004,
+          "zpos": 683.1874163778679,
+          "rotation": 0,
+          "scale_x": 1,
+          "scale_y": 1,
+          "scale_z": 1,
+          "fixed": false
+        },
+    {
       "item_name": "Dining Table",
       "item_type": 1,
       "model_url": "models/js/cb-scholartable_baked.js",
@@ -2647,6 +2660,32 @@
       "scale_z": 1,
       "fixed": false
     },
+     {
+              "item_name": "Dining Table",
+              "item_type": 1,
+              "model_url": "models/js/cb-scholartable_baked.js",
+              "xpos": 8204,
+              "ypos": 38.078950895925004,
+              "zpos": 683.1874163778679,
+              "rotation": 0,
+              "scale_x": 1,
+              "scale_y": 1,
+              "scale_z": 1,
+              "fixed": false
+            },
+{
+              "item_name": "Dining Table",
+              "item_type": 1,
+              "model_url": "models/js/cb-scholartable_baked.js",
+              "xpos": 8673,
+              "ypos": 38.078950895925004,
+              "zpos": 683.1874163778679,
+              "rotation": 0,
+              "scale_x": 1,
+              "scale_y": 1,
+              "scale_z": 1,
+              "fixed": false
+            },
     {
       "item_name": "Dining Table",
       "item_type": 1,
@@ -2817,6 +2856,19 @@
       "fixed": false
     },
     {
+          "item_name": "Chair",
+          "item_type": 1,
+          "model_url": "models/js/gus-churchchair-whiteoak.js",
+          "xpos": 5859,
+          "ypos": 39.47743068655714,
+          "zpos": 736.8893104672812,
+          "rotation": -3.141592653589793,
+          "scale_x": 1,
+          "scale_y": 1,
+          "scale_z": 1,
+          "fixed": false
+        },
+    {
       "item_name": "Chair",
       "item_type": 1,
       "model_url": "models/js/gus-churchchair-whiteoak.js",
@@ -2829,6 +2881,32 @@
       "scale_z": 1,
       "fixed": false
     },
+    {
+          "item_name": "Chair",
+          "item_type": 1,
+          "model_url": "models/js/gus-churchchair-whiteoak.js",
+          "xpos": 8204,
+          "ypos": 39.47743068655714,
+          "zpos": 736.8893104672812,
+          "rotation": -3.141592653589793,
+          "scale_x": 1,
+          "scale_y": 1,
+          "scale_z": 1,
+          "fixed": false
+        },
+{
+          "item_name": "Chair",
+          "item_type": 1,
+          "model_url": "models/js/gus-churchchair-whiteoak.js",
+          "xpos": 8673,
+          "ypos": 39.47743068655714,
+          "zpos": 736.8893104672812,
+          "rotation": -3.141592653589793,
+          "scale_x": 1,
+          "scale_y": 1,
+          "scale_z": 1,
+          "fixed": false
+        },
     {
       "item_name": "Chair",
       "item_type": 1,
@@ -3766,6 +3844,33 @@
       "fixed": false
     },
     {
+          "item_name": "Red Chair",
+          "item_type": 1,
+          "model_url": "models/js/ik-ekero-orange_baked.js",
+          "xpos": 8005,
+          "ypos": 37.50235073007,
+          "zpos": 3.688573721642797,
+          "rotation": 0,
+          "scale_x": 1,
+          "scale_y": 1,
+          "scale_z": 1,
+          "fixed": false
+        },
+   {
+             "item_name": "Red Chair",
+             "item_type": 1,
+             "model_url": "models/js/ik-ekero-orange_baked.js",
+             "xpos": 9412,
+             "ypos": 37.50235073007,
+             "zpos": 3.688573721642797,
+             "rotation": 0,
+             "scale_x": 1,
+             "scale_y": 1,
+             "scale_z": 1,
+             "fixed": false
+           },
+
+    {
       "item_name": "Wooden Trunk",
       "item_type": 1,
       "model_url": "models/js/cb-tecs_baked.js",
@@ -3908,6 +4013,72 @@
       "scale_z": 1,
       "fixed": false
     },
+     {
+          "item_name": "Bookshelf",
+          "item_type": 1,
+          "model_url": "models/js/cb-kendallbookcasewalnut_baked.js",
+          "xpos": 6363,
+          "ypos": 92.17650034119151,
+          "zpos": -17.031541675755477,
+          "rotation": 0,
+          "scale_x": 1,
+          "scale_y": 1,
+          "scale_z": 1,
+          "fixed": false
+        },
+    {
+              "item_name": "Bookshelf",
+              "item_type": 1,
+              "model_url": "models/js/cb-kendallbookcasewalnut_baked.js",
+              "xpos": 6598,
+              "ypos": 92.17650034119151,
+              "zpos": -17.031541675755477,
+              "rotation": 0,
+              "scale_x": 1,
+              "scale_y": 1,
+              "scale_z": 1,
+              "fixed": false
+            },
+ {
+              "item_name": "Bookshelf",
+              "item_type": 1,
+              "model_url": "models/js/cb-kendallbookcasewalnut_baked.js",
+              "xpos": 7770,
+              "ypos": 92.17650034119151,
+              "zpos": -17.031541675755477,
+              "rotation": 0,
+              "scale_x": 1,
+              "scale_y": 1,
+              "scale_z": 1,
+              "fixed": false
+            },
+            {
+                          "item_name": "Bookshelf",
+                          "item_type": 1,
+                          "model_url": "models/js/cb-kendallbookcasewalnut_baked.js",
+                          "xpos": 8210,
+                          "ypos": 92.17650034119151,
+                          "zpos": -17.031541675755477,
+                          "rotation": 0,
+                          "scale_x": 1,
+                          "scale_y": 1,
+                          "scale_z": 1,
+                          "fixed": false
+                        },
+
+{
+              "item_name": "Bookshelf",
+              "item_type": 1,
+              "model_url": "models/js/cb-kendallbookcasewalnut_baked.js",
+              "xpos": 9177,
+              "ypos": 92.17650034119151,
+              "zpos": -17.031541675755477,
+              "rotation": 0,
+              "scale_x": 1,
+              "scale_y": 1,
+              "scale_z": 1,
+              "fixed": false
+            },
     {
       "item_name": "Wooden Trunk",
       "item_type": 1,
