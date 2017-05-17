@@ -1,72 +1,178 @@
 {
   "steps": [
     [
-        {
-                    "agent": 0,
-                    "position": "Hall_1",
-                    "sentiment": "sadness"
-                }
+      {
+        "agent": 0,
+        "position": "Office1",
+        "sentiment": "sadness"
+      },
+      {
+        "agent": 1,
+        "position": "Office8",
+        "sentiment": "anger"
+      },
+      {
+        "agent": 2,
+        "position": "Lab12",
+        "sentiment": "fear"
+      },
+      {
+        "agent": 3,
+        "position": "Lab7",
+        "sentiment": "happiness"
+      },
+      {
+        "agent": 4,
+        "position": "Lab8_1",
+        "sentiment": "happiness"
+      },
+      {
+        "agent": 5,
+        "position": "Lab13",
+        "sentiment": "happiness"
+      },
+      {
+        "agent": 6,
+        "position": "Office3",
+        "sentiment": "happiness"
+      },
+      {
+        "agent": 7,
+        "position": "Office6",
+        "sentiment": "sadness"
+      },
+      {
+        "agent": 8,
+        "position": "Office12",
+        "sentiment": "happiness"
+      }
     ],
     [
-         {
-                    "agent": 0,
-                    "moveTo": "outBuilding",
-                    "toStep": 6
-                },
-                          {
-                             "light": false,
-                             "room": "Lab1"
-                          },
-                {
-                                    "agent": 1,
-                                    "position": "Office2",
-                                    "sentiment": "happiness"
-                                }
+      {
+        "agent": 1,
+        "moveTo": "C_9",
+        "toStep": 6
+      },
+      {
+        "agent": 2,
+        "moveTo": "Lab13",
+        "toStep": 6
+      },
+      {
+        "agent": 6,
+        "moveTo": "C_4",
+        "toStep": 5
+      }
     ],
-    [  {
-                           "agent": 2,
-                           "position": "C_1",
-                           "sentiment": "sadness"
-                       },{
-                                           "agent": 1,
-                                           "moveTo": "C_3",
-                                           "toStep": 10
-                       },
-                       {
-                                 "video": true,
-                                 "room": "Office3"
-
-                                                                     },
-                     {
-                                                      "video": true,
-                                                      "room": "Office4"
-
-                                                                                          }
-    ],
-    [
-        {
-                            "agent": 2,
-                            "moveTo": "C_7",
-                            "toStep": 15
-                        }
-
-    ],
-    [],
-    [],
-    [],
-    [],
-    [],
     [{
-                                                         "agent": 0,
-                                                         "position": "C_7",
-                                                         "sentiment": "fear"
-                                                     }
-   ],
-   [{
-                                "agent": 0,
-                                "moveTo": "C_1",
-                                "toStep": 20
-                            }]
+             "light": false,
+             "room": "Lab7"
+           },
+      {
+        "agent": 3,
+        "moveTo": "CI_5",
+        "toStep": 6
+      }
+    ],
+    [],
+    [
+      {
+        "agent": 0,
+        "moveTo": "C_2",
+        "toStep": 7
+      }
+    ],
+    [
 
+      {
+        "agent": 6,
+        "moveTo": "Hall_2",
+        "toStep": 16
+      }
+    ],
+    [
+      {
+        "agent": 1,
+        "moveTo": "C_8",
+        "toStep": 12
+      },
+      {
+        "agent": 2,
+        "moveTo": "Lab12",
+        "toStep": 10
+      },
+      {
+        "agent": 3,
+        "moveTo": "CI_12",
+        "toStep": 14
+      }
+    ],
+    [
+      {
+        "agent": 0,
+        "moveTo": "C_1",
+        "toStep": 10
+      },
+      {
+        "agent": 4,
+        "moveTo": "Lab9",
+        "toStep": 10
+      }
+    ],
+    [
+      {
+        "light": false,
+        "room": "Lab8_1"
+      }
+    ],
+    [],
+    [
+      {
+        "agent": 0,
+        "moveTo": "Class3",
+        "toStep": 14
+      }
+    ],
+    [
+      {
+        "agent": 1,
+        "moveTo": "Office7",
+        "toStep": 15
+      }
+    ],
+    [],
+    [],
+    [
+      {
+        "agent": 3,
+        "moveTo": "Lab1",
+        "toStep": 17
+      }
+    ],
+    [],
+    [
+      {
+        "agent": 6,
+        "moveTo": "outBuilding",
+        "toStep": 20
+      }
+    ],
+    [],
+
+         [],[],[],
+         [
+         {
+                      "agent": 6,
+                      "position": "outBuilding",
+                      "sentiment": "fear"
+                    }
+         ],
+         [
+                    {
+                      "agent": 6,
+                      "moveTo": "Hall_1",
+                      "toStep": 30
+                    }
+                  ]
   ]
 }

@@ -115,8 +115,15 @@ module BP3D.Three {
                 mixers.push(mixer);
 
                 //Mesh Emotion
-                let sentiment = steps[0][j].sentiment;
-                changeColorEmotion(sentiment, j);
+                if(steps[0][j].sentiment != undefined){
+                    let sentiment = steps[0][j].sentiment;
+                    changeColorEmotion(sentiment, j);
+                }
+                //DEFAULT: happiness
+                else{
+                    changeColorEmotion("happiness", j);
+                }
+
             }
             //Setting the initial time of the simulation
             scene.initialTime = Date.now();
@@ -145,7 +152,14 @@ module BP3D.Three {
             mixers[agent] = mixer;
 
             //Mesh Emotion
-            changeColorEmotion(sentiment, agent);
+            if(sentiment != undefined){
+                changeColorEmotion(sentiment, agent);
+            }
+            //DEFAULT: happiness
+            else{
+                changeColorEmotion("happiness", agent);
+            }
+
         }
 
         function isValidPosition(vec3, mesh) {
@@ -249,7 +263,7 @@ module BP3D.Three {
         }
 
 
-        this.moveToPosition = function(mesh, i, x, y, z, speed, startTime, time) {
+        this.moveToPosition = function(mesh, i, x, y, z, speed, startTime, time, finalStep) {
             //Get floorplan for isValidPosition
             if (floorplan == undefined) {
                 floorplan = model.floorplan;
@@ -299,11 +313,18 @@ module BP3D.Three {
                     else {
                         //Translation Movement and Animation
                         let thisTime = Date.now();
-                        let timeElapsed = thisTime-startTime;
-                        if(time - timeElapsed>=0){
-                            speed2 = calculateSpeed(meshX, meshZ, x, z, time-(timeElapsed)) / scene.fps;
+                        let timeElapsed = thisTime+400-startTime;
+                        // if(scene.step == finalStep){
+                        //     mesh.position.x = x;
+                        //     mesh.position.z = z;
+                        //     mixers[i].clipAction(clip).stop();
+                        //     return true;
+                        // }
+                        if(time - timeElapsed>0){
+                            speed2 = calculateSpeed(meshX, meshZ, x, z, time-(timeElapsed)-100) / scene.fps;
                             this.move(mesh, i, speed2);
                         }
+
                         else{
                             mesh.position.x = x;
                             mesh.position.z = z;
@@ -332,8 +353,12 @@ module BP3D.Three {
         this.moveMeshes = function(){
             for(let i = 0; i< meshesMoving.length; i++){
                 var j = meshesMoving[i].agent;
-                if(this.moveToPosition(scene.meshes[j], j, meshesMoving[i].to.x, 0, meshesMoving[i].to.y,meshesMoving[i].speed, meshesMoving[i].startTime, meshesMoving[i].time))
+                if(this.moveToPosition(scene.meshes[j], j, meshesMoving[i].to.x, 0, meshesMoving[i].to.y,meshesMoving[i].speed, meshesMoving[i].startTime, meshesMoving[i].time, meshesMoving[i].startStep)
+                || meshesMoving[i].finalStep == scene.step){
                     meshesMoving.splice(i, 1);
+                    mixers[j].clipAction(clip).stop();
+                }
+
 
             }
         }
@@ -347,8 +372,14 @@ module BP3D.Three {
                     for (let i = 0; i < stepArr.length; i++){
                         if (stepArr[i].agent != undefined){
                             if(scene.meshes[stepArr[i].agent] == undefined){
-                                var position = stepArr[i].position;
-                                var sentiment = stepArr[i].sentiment;
+                                if(stepArr[i].position != undefined){
+                                    var position = stepArr[i].position;
+                                    var sentiment = stepArr[i].sentiment;
+                                }else{
+                                    var position = stepArr[i].moveTo;
+                                    var sentiment = stepArr[i].sentiment;
+                                }
+
                                 addIndividualModelToScene(stepArr[i].agent,  position, sentiment)
                             }
                             else{
@@ -356,7 +387,7 @@ module BP3D.Three {
                                     let time = (stepArr[i].toStep - step) * scene.stepTime;
                                     let room = whichRoom(stepArr[i].moveTo);
                                     let speed = calculateSpeed(scene.meshes[stepArr[i].agent].position.x ,scene.meshes[stepArr[i].agent].position.y , room.x, room.y, time);
-                                    meshesMoving.push({"agent":stepArr[i].agent, "to":{"x": room.x,"y": room.y}, "speed": speed, "startTime": Date.now(), "time": time});
+                                    meshesMoving.push({"agent":stepArr[i].agent, "to":{"x": room.x,"y": room.y}, "speed": speed, "startTime": Date.now(), "time": time, "finalStep": stepArr[i].toStep});
                                     scene.flag = 0;
                                 }
                                 if (stepArr[i].sentiment != undefined){
@@ -478,7 +509,11 @@ module BP3D.Three {
         function setRoomLight(room, on){
 
             //Getting the walls
-            var walls = model.floorplan.getRooms()[room].updateWallsTexture();
+            console.log("ROOMLIGHT", room);
+            console.log("ROOMS: ",model.floorplan.getRooms());
+            // var walls = model.floorplan.getRooms()[room].updateWallsTexture();
+            var walls = model.floorplan.getRooms()[26].updateWallsTexture();
+
             for (var i = 0; i<walls.length; i++){
                 //Check where is the wall headed
                 if(walls[i].to == false){

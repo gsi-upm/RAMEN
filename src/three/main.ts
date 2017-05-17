@@ -52,7 +52,7 @@ module BP3D.Three {
         var paused = 1;
         var timeRender = 0;
         var stepTime = 1000;
-        var step = 1;
+        // var step = 1;
 
         //var canvas;
         //var canvasElement = canvasElement;
@@ -223,12 +223,12 @@ module BP3D.Three {
             //Check if the simulation is paused
             if(model.play) {
 
-                human.moveAll(step);
+                human.moveAll(scene.step);
 
                 lastRender = Date.now();
                 if( lastRender - scene.initialTime >= stepTime){
                     scene.initialTime = lastRender;
-                    step += 1;
+                    scene.step += 1;
                     scene.flag = 1;
                 }
 
