@@ -313,7 +313,8 @@ module BP3D.Three {
                     else {
                         //Translation Movement and Animation
                         let thisTime = Date.now();
-                        let timeElapsed = thisTime+400-startTime;
+                        // let timeElapsed = thisTime+400-startTime;
+                        let timeElapsed = thisTime-startTime;
                         // if(scene.step == finalStep){
                         //     mesh.position.x = x;
                         //     mesh.position.z = z;
@@ -321,7 +322,9 @@ module BP3D.Three {
                         //     return true;
                         // }
                         if(time - timeElapsed>0){
-                            speed2 = calculateSpeed(meshX, meshZ, x, z, time-(timeElapsed)-100) / scene.fps;
+                            // speed2 = calculateSpeed(meshX, meshZ, x, z, time-(timeElapsed)-100) / scene.fps;
+                            speed2 = calculateSpeed(meshX, meshZ, x, z, time-(timeElapsed)) / scene.fps;
+
                             this.move(mesh, i, speed2);
                         }
 
@@ -511,8 +514,7 @@ module BP3D.Three {
             //Getting the walls
             console.log("ROOMLIGHT", room);
             console.log("ROOMS: ",model.floorplan.getRooms());
-            // var walls = model.floorplan.getRooms()[room].updateWallsTexture();
-            var walls = model.floorplan.getRooms()[26].updateWallsTexture();
+            var walls = model.floorplan.getRooms()[room].updateWallsTexture();
 
             for (var i = 0; i<walls.length; i++){
                 //Check where is the wall headed
