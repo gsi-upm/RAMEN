@@ -8,171 +8,349 @@
       },
       {
         "agent": 1,
-        "position": "Office8",
-        "sentiment": "anger"
+        "position": "outBuilding",
+        "sentiment": "happiness"
       },
       {
         "agent": 2,
-        "position": "Lab12",
-        "sentiment": "fear"
+        "position": "Office8",
+        "sentiment": "surprise"
       },
       {
         "agent": 3,
-        "position": "Lab7",
-        "sentiment": "happiness"
+        "position": "Office2",
+        "sentiment": "surprise"
       },
       {
         "agent": 4,
-        "position": "Lab8_1",
-        "sentiment": "happiness"
+        "position": "Lab1",
+        "sentiment": "fear"
       },
       {
         "agent": 5,
-        "position": "Lab13",
-        "sentiment": "happiness"
+        "position": "outBuilding",
+        "sentiment": "disgust"
       },
       {
         "agent": 6,
-        "position": "Office3",
-        "sentiment": "happiness"
-      },
-      {
-        "agent": 7,
-        "position": "Office6",
+        "position": "Lab2",
         "sentiment": "sadness"
       },
       {
-        "agent": 8,
-        "position": "Office12",
+        "agent": 7,
+        "position": "Office10",
         "sentiment": "happiness"
       }
     ],
     [
       {
         "agent": 1,
-        "moveTo": "C_9",
+        "moveTo": "Hall.1",
         "toStep": 6
       },
       {
-        "agent": 2,
-        "moveTo": "Lab13",
-        "toStep": 6
-      },
-      {
-        "agent": 6,
-        "moveTo": "C_4",
+        "agent": 7,
+        "moveTo": "C.11",
         "toStep": 5
-      }
-    ],
-    [{
-             "light": false,
-             "room": "Lab7"
-           },
+      },
       {
-        "agent": 3,
-        "moveTo": "CI_5",
-        "toStep": 6
+        "video": true,
+        "room": "Office2"
       }
     ],
     [],
     [
       {
-        "agent": 0,
-        "moveTo": "C_2",
-        "toStep": 7
+        "agent": 1,
+        "sentiment": "anger"
       }
     ],
+    [ {
+             "light": false,
+             "room": "Office10"
+           }],
     [
-
       {
-        "agent": 6,
-        "moveTo": "Hall_2",
-        "toStep": 16
+        "agent": 5,
+        "moveTo": "Hall.1",
+        "toStep": 9
+      },
+      {
+        "agent": 7,
+        "moveTo": "Lab12",
+        "toStep": 10
       }
     ],
     [
       {
         "agent": 1,
-        "moveTo": "C_8",
-        "toStep": 12
-      },
-      {
-        "agent": 2,
-        "moveTo": "Lab12",
+        "moveTo": "Hall.2",
         "toStep": 10
       },
       {
-        "agent": 3,
-        "moveTo": "CI_12",
+        "agent": 2,
+        "moveTo": "C.9",
+        "toStep": 9
+      }
+    ],
+    [],
+    [
+      {
+        "light": false,
+        "room": "Office8"
+      }
+    ],
+    [
+      {
+        "agent": 2,
+        "moveTo": "C.13",
+        "toStep": 18
+      },
+      {
+        "agent": 5,
+        "moveTo": "Restroom",
         "toStep": 14
       }
     ],
     [
       {
-        "agent": 0,
-        "moveTo": "C_1",
-        "toStep": 10
+        "agent": 1,
+        "moveTo": "Hall.3",
+        "toStep": 13
       },
       {
-        "agent": 4,
-        "moveTo": "Lab9",
-        "toStep": 10
+        "agent": 7,
+        "moveTo": "Lab14.1",
+        "toStep": 15
+      }
+    ],
+    [
+      {
+        "agent": 0,
+        "moveTo": "C.2",
+        "toStep": 13
       }
     ],
     [
       {
         "light": false,
-        "room": "Lab8_1"
+        "room": "Office1"
       }
     ],
-    [],
     [
       {
         "agent": 0,
-        "moveTo": "Class3",
-        "toStep": 14
+        "moveTo": "C.6",
+        "toStep": 18
+      },
+      {
+        "agent": 1,
+        "moveTo": "C.1",
+        "toStep": 16
+      }
+    ],
+    [],
+    [],
+    [
+      {
+        "agent": 1,
+        "moveTo": "C.5",
+        "toStep": 22
+      },
+      {
+        "agent": 4,
+        "moveTo": "CI.12",
+        "toStep": 18
+      }
+    ],
+    [
+      {
+        "light": false,
+        "room": "Lab1"
+      }
+    ],
+    [
+      {
+        "agent": 0,
+        "moveTo": "Office5",
+        "toStep": 21
+      },
+      {
+        "agent": 2,
+        "moveTo": "Lab15.2",
+        "toStep": 23
+      },
+      {
+        "agent": 4,
+        "moveTo": "CI.3",
+        "toStep": 22
+      }
+    ],
+    [],
+    [],
+    [
+      {
+        "agent": 6,
+        "moveTo": "CI.2",
+        "toStep": 24
       }
     ],
     [
       {
         "agent": 1,
-        "moveTo": "Office7",
-        "toStep": 15
+        "moveTo": "Office4",
+        "toStep": 24
+      },
+      {
+        "agent": 4,
+        "moveTo": "Lab3",
+        "toStep": 24
       }
     ],
     [],
+    [
+      {
+        "agent": 5,
+        "moveTo": "Hall.1",
+        "toStep": 30
+      },
+      {
+        "agent": 6,
+        "moveTo": "CI.12",
+        "toStep": 28
+      }
+    ],
     [],
     [
       {
-        "agent": 3,
-        "moveTo": "Lab1",
-        "toStep": 17
+        "agent": 5,
+        "sentiment": "happiness"
       }
     ],
     [],
     [
       {
         "agent": 6,
-        "moveTo": "outBuilding",
-        "toStep": 20
+        "moveTo": "C.2",
+        "toStep": 32
       }
     ],
     [],
-
-         [],[],[],
-         [
-         {
-                      "agent": 6,
-                      "position": "outBuilding",
-                      "sentiment": "fear"
-                    }
-         ],
-         [
-                    {
-                      "agent": 6,
-                      "moveTo": "Hall_1",
-                      "toStep": 30
-                    }
-                  ]
+    [
+      {
+        "agent": 0,
+        "moveTo": "C.6",
+        "toStep": 32
+      },
+      {
+        "agent": 5,
+        "moveTo": "Hall.3",
+        "toStep": 38
+      }
+    ],
+    [
+      {
+        "light": false,
+        "room": "Office5"
+      }
+    ],
+    [
+      {
+        "agent": 0,
+        "moveTo": "C.2",
+        "toStep": 39
+      },
+      {
+        "agent": 6,
+        "moveTo": "Hall.2",
+        "toStep": 40
+      }
+    ],
+    [
+      {
+        "agent": 2,
+        "moveTo": "C.13",
+        "toStep": 38
+      }
+    ],
+    [],
+    [],
+    [
+      {
+        "light": false,
+        "room": "Lab15.1"
+      }
+    ],
+    [],
+    [
+      {
+        "agent": 2,
+        "moveTo": "C.14",
+        "toStep": 41
+      },
+      {
+        "agent": 5,
+        "moveTo": "C.13",
+        "toStep": 65
+      }
+    ],
+    [
+      {
+        "agent": 0,
+        "moveTo": "Office1",
+        "toStep": 41
+      }
+    ],
+    [
+      {
+        "light": true,
+        "room": "Office1"
+      },
+      {
+        "agent": 6,
+        "moveTo": "outBuilding",
+        "toStep": 48
+      }
+    ],
+    [
+      {
+        "agent": 2,
+        "moveTo": "Office13",
+        "toStep": 43
+      }
+    ],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      {
+        "agent": 5,
+        "moveTo": "Office12",
+        "toStep": 69
+      }
+    ],
+    [],
+    [],
+    []
   ]
 }
