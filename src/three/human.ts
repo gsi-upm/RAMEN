@@ -95,40 +95,55 @@ module BP3D.Three {
 
             //Adding Mesh
             for(let j = 0; j < steps[0].length; j++){
-                let material1 = new THREE.MeshLambertMaterial();
-                material1.morphTargets =true;
-                let mesh = new THREE.SkinnedMesh( geometry, material1 );
-                mesh.scale.set(55,65,55);
-                scene.add(mesh);
-                scene.meshes.push(mesh);
-                //Setting mesh position
-                let position = steps[0][j].position;
-                for(let k = 0; k < allRooms.length; k++){
-                    if(position == allRooms[k].name){
-                        mesh.position.x = allRooms[k].x;
-                        mesh.position.z = allRooms[k].y;
+                if (steps[0][j].agent != undefined){
+                    let material1 = new THREE.MeshLambertMaterial();
+                    material1.morphTargets =true;
+                    let mesh = new THREE.SkinnedMesh( geometry, material1 );
+                    mesh.scale.set(55,65,55);
+                    scene.add(mesh);
+                    scene.meshes.push(mesh);
+                    //Setting mesh position
+                    let position = steps[0][j].position;
+                    for(let k = 0; k < allRooms.length; k++){
+                        if(position == allRooms[k].name){
+                            mesh.position.x = allRooms[k].x;
+                            mesh.position.z = allRooms[k].y;
+                        }
+                    }
+
+                    //Mesh Animation
+                    let mixer = new THREE.AnimationMixer( mesh );
+                    mixers.push(mixer);
+
+                    //Mesh Emotion
+                    if(steps[0][j].sentiment != undefined){
+                        let sentiment = steps[0][j].sentiment;
+                        changeColorEmotion(sentiment, j);
+                    }
+                    //DEFAULT: happiness
+                    else{
+                        changeColorEmotion("happiness", j);
                     }
                 }
-
-                //Mesh Animation
-                let mixer = new THREE.AnimationMixer( mesh );
-                mixers.push(mixer);
-
-                //Mesh Emotion
-                if(steps[0][j].sentiment != undefined){
-                    let sentiment = steps[0][j].sentiment;
-                    changeColorEmotion(sentiment, j);
+                else if (steps[0][j].light != undefined){
+                    console.log("HOLA");
+                    let room = whichRoom(steps[0][j].room);
+                    let roomNumber = getRoom(room.x, room.y);
+                    setRoomLight(roomNumber, steps[0][j].light);
                 }
-                //DEFAULT: happiness
-                else{
-                    changeColorEmotion("happiness", j);
-                }
-
             }
             //Setting the initial time of the simulation
             scene.initialTime = Date.now();
 
-
+            // for(let j = 0; j < steps[0].length; j++){
+            //     console.log("ADIOS", steps[0][j]);
+            //     if (steps[0][j].light != undefined){
+            //         console.log("HOLA");
+            //         let room = whichRoom(steps[0][j].room);
+            //         let roomNumber = getRoom(room.x, room.y);
+            //         setRoomLight(roomNumber, steps[0][j].light);
+            //     }
+            // }
 
         }
 
@@ -361,8 +376,6 @@ module BP3D.Three {
                     meshesMoving.splice(i, 1);
                     mixers[j].clipAction(clip).stop();
                 }
-
-
             }
         }
 

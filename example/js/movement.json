@@ -40,9 +40,14 @@
         "agent": 7,
         "position": "Office10",
         "sentiment": "happiness"
-      }
+      },{
+                                "light": false,
+                                "room": "Office1"
+                              }
     ],
     [
+
+
       {
         "agent": 1,
         "moveTo": "Hall.1",

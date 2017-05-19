@@ -125,35 +125,35 @@ module BP3D.Three {
                 hasClicked = false;
             });
 
-            // var audio = new Audio(camera, scene);
+            // var plane = new THREE.PlaneGeometry( 102.106, 102.106, 4, 4 );
+            //
+            // var lavaTexture = THREE.ImageUtils.loadTexture( 'lava.jpg' );
+            // var lavaMaterial = new THREE.MeshBasicMaterial( { map: lavaTexture } );
+            // var mesh = new THREE.Mesh( plane, lavaMaterial );
+            // mesh.rotation.x = -Math.PI / 2;
+            // mesh.position.y = 50;
+            // scene.add( mesh );
 
-            //canvas = new ThreeCanvas(canvasElement, scope);
-            //
-            // video = document.getElementById( 'video' );
-            // var image = document.createElement( 'canvas' );
-            // image.width = 480;
-            // image.height = 204;
-            //
-            // imageContext = image.getContext( '2d' );
-            // imageContext.fillStyle = '#000000';
-            // imageContext.fillRect( 0, 0, 480, 204 );
-            //
-            // textureVideo = new THREE.Texture( image );
-            //
-            // var materialVideo = new THREE.MeshBasicMaterial( { map: textureVideo, overdraw: 0.5 } );
-            //
-            // var plane = new THREE.PlaneGeometry( 480/6.5, 204/6.5, 4, 4 );
-            //
-            // var mesh = new THREE.Mesh( plane, materialVideo );
-            // mesh.scale.x = mesh.scale.y = mesh.scale.z = 1.5;
-            // scene.add(mesh);
-            // mesh.position.x = 368;
-            // mesh.position.y = 104;
-            // mesh.position.z = 600;
-            // mesh.rotation.y = -Math.PI / 2;
+            // var cubeGeometry = new THREE.CubeGeometry( 102.106, 102.106, 102.106 );
+
+            // var materialArray = [];
+            // materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'lava.jpg' ) }));
+            // materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'lava.jpg' ) }));
+            // materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'lava.jpg' ) }));
+            // materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'lava.jpg' ) }));
+            // materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'lava.jpg' ) }));
+            // materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'lava.jpg' ) }));
+            // var cubeMaterial = new THREE.MeshFaceMaterial(materialArray);
 
 
+            var crateTexture =  THREE.ImageUtils.loadTexture( 'lava.jpg' );
+            var crateMaterial = new THREE.MeshBasicMaterial( { map: crateTexture } );
 
+            var DiceBlueGeom = new THREE.CubeGeometry( 102.106, 102.106, 102.106, 1, 1, 1 );
+            var DiceBlue = new THREE.Mesh( DiceBlueGeom, crateMaterial );
+            DiceBlue.position.y = 102.106/2;
+            // DiceBlue.position.set(60, 50, -100);
+            scene.add( DiceBlue );
         }
 
         function spin() {
