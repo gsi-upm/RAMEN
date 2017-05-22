@@ -34,6 +34,7 @@ module BP3D.Three {
 
         var path = [ "CI_5","Lab8_2"];
         var flag = 1;
+        var type;
 
         function init() {
             $.ajax('/js/rooms.json', {
@@ -47,7 +48,7 @@ module BP3D.Three {
             allRooms3 = JSON.parse(allRooms2);
             allRooms = allRooms3.room;
             //Loading JSON with the movement
-            $.ajax('/js/movement.json', {
+            $.ajax('/js/movement2.json', {
                 async: false,
                 dataType: 'text',
                 success: function (data2) {
@@ -57,6 +58,7 @@ module BP3D.Three {
 
             var jsonMove = JSON.parse(movementJSON);
             steps = jsonMove.steps;
+            type = jsonMove.type;
 
 
             // Loading JSON 3DModel
@@ -104,12 +106,19 @@ module BP3D.Three {
                     scene.meshes.push(mesh);
                     //Setting mesh position
                     let position = steps[0][j].position;
-                    for(let k = 0; k < allRooms.length; k++){
-                        if(position == allRooms[k].name){
-                            mesh.position.x = allRooms[k].x;
-                            mesh.position.z = allRooms[k].y;
+                    if(type==0){
+                        for(let k = 0; k < allRooms.length; k++){
+                            if(position == allRooms[k].name){
+                                mesh.position.x = allRooms[k].x;
+                                mesh.position.z = allRooms[k].y;
+                            }
                         }
                     }
+                    else{
+                        mesh.position.x = position.x;
+                        mesh.position.z = position.y;
+                    }
+
 
                     //Mesh Animation
                     let mixer = new THREE.AnimationMixer( mesh );
@@ -126,28 +135,18 @@ module BP3D.Three {
                     }
                 }
                 else if (steps[0][j].light != undefined){
-                    console.log("HOLA");
                     let room = whichRoom(steps[0][j].room);
                     let roomNumber = getRoom(room.x, room.y);
                     setRoomLight(roomNumber, steps[0][j].light);
                 }
+
             }
             //Setting the initial time of the simulation
             scene.initialTime = Date.now();
 
-            // for(let j = 0; j < steps[0].length; j++){
-            //     console.log("ADIOS", steps[0][j]);
-            //     if (steps[0][j].light != undefined){
-            //         console.log("HOLA");
-            //         let room = whichRoom(steps[0][j].room);
-            //         let roomNumber = getRoom(room.x, room.y);
-            //         setRoomLight(roomNumber, steps[0][j].light);
-            //     }
-            // }
-
         }
 
-        function addIndividualModelToScene(agent, room, sentiment) {
+        function addIndividualModelToScene(agent, x, y, sentiment) {
 
             //Adding Mesh
             let material1 = new THREE.MeshLambertMaterial();
@@ -158,9 +157,8 @@ module BP3D.Three {
             scene.meshes[agent] = mesh;
 
             //Setting mesh position
-            let position = whichRoom(room);
-            mesh.position.x = position.x;
-            mesh.position.z = position.y;
+            mesh.position.x = x;
+            mesh.position.z = y;
 
             //Mesh Animation
             let mixer = new THREE.AnimationMixer( mesh );
@@ -302,52 +300,73 @@ module BP3D.Three {
                     else if (rotationAngle < -Math.PI) {
                         rotationAngle += 2 * Math.PI;
                     }
+
                     //Rotation Movement
-                    if (Math.abs(rotationAngle) > 0.7) {
-                        if (rotationAngle > 0) {
-                            // mesh.rotation.y += 0.75;
-                            mesh.rotation.y += Math.PI/4;
-                        } else {
-                            // mesh.rotation.y -= 0.75;
-                            mesh.rotation.y -= Math.PI/4;
+                    if(type == 0){
+                        if (Math.abs(rotationAngle) > 0.7) {
+                            if (rotationAngle > 0) {
+                                // mesh.rotation.y += 0.75;
+                                mesh.rotation.y += Math.PI/4;
+                            } else {
+                                // mesh.rotation.y -= 0.75;
+                                mesh.rotation.y -= Math.PI/4;
+                            }
+                        }
+                        else {
+                            //Translation Movement and Animation
+                            let thisTime = Date.now();
+                            let timeElapsed = thisTime-startTime;
+                            if(time - timeElapsed>0){
+                                speed2 = calculateSpeed(meshX, meshZ, x, z, time-(timeElapsed)) / scene.fps;
+
+                                this.move(mesh, i, speed2);
+                            }
+
+                            else{
+                                mesh.position.x = x;
+                                mesh.position.z = z;
+                                mixers[i].clipAction(clip).stop();
+                                return true;
+                            }
                         }
                     }
-                    // else if (Math.abs(rotationAngle) > 0.051) {
-                    //     if (rotationAngle > 0) {
-                    //         mesh.rotation.y += 0.05;
-                    //     } else {
-                    //         mesh.rotation.y -= 0.05;
-                    //     }
-                    // } else if (Math.abs(rotationAngle) < 0.051 && Math.abs(rotationAngle) > 0.006) {
-                    //     if (rotationAngle > 0) {
-                    //         mesh.rotation.y += 0.005;
-                    //     } else {
-                    //         mesh.rotation.y -= 0.005;
-                    //     }
-                    // }
-                    else {
-                        //Translation Movement and Animation
-                        let thisTime = Date.now();
-                        // let timeElapsed = thisTime+400-startTime;
-                        let timeElapsed = thisTime-startTime;
-                        // if(scene.step == finalStep){
-                        //     mesh.position.x = x;
-                        //     mesh.position.z = z;
-                        //     mixers[i].clipAction(clip).stop();
-                        //     return true;
-                        // }
-                        if(time - timeElapsed>0){
-                            // speed2 = calculateSpeed(meshX, meshZ, x, z, time-(timeElapsed)-100) / scene.fps;
-                            speed2 = calculateSpeed(meshX, meshZ, x, z, time-(timeElapsed)) / scene.fps;
-
-                            this.move(mesh, i, speed2);
+                    else{
+                        if (Math.abs(rotationAngle) > 0.5) {
+                            if (rotationAngle > 0) {
+                                mesh.rotation.y += 0.45;
+                            } else {
+                                mesh.rotation.y -= 0.45;
+                            }
                         }
+                        else if (Math.abs(rotationAngle) > 0.051) {
+                            if (rotationAngle > 0) {
+                                mesh.rotation.y += 0.05;
+                            } else {
+                                mesh.rotation.y -= 0.05;
+                            }
+                        } else if (Math.abs(rotationAngle) < 0.051 && Math.abs(rotationAngle) > 0.006) {
+                            if (rotationAngle > 0) {
+                                mesh.rotation.y += 0.005;
+                            } else {
+                                mesh.rotation.y -= 0.005;
+                            }
+                        }
+                        else {
+                            //Translation Movement and Animation
+                            let thisTime = Date.now();
+                            let timeElapsed = thisTime-startTime;
+                            if(time - timeElapsed>0){
+                                speed2 = calculateSpeed(meshX, meshZ, x, z, time-(timeElapsed)) / scene.fps;
 
-                        else{
-                            mesh.position.x = x;
-                            mesh.position.z = z;
-                            mixers[i].clipAction(clip).stop();
-                            return true;
+                                this.move(mesh, i, speed2);
+                            }
+
+                            else{
+                                mesh.position.x = x;
+                                mesh.position.z = z;
+                                mixers[i].clipAction(clip).stop();
+                                return true;
+                            }
                         }
                     }
                 }
@@ -389,21 +408,52 @@ module BP3D.Three {
                         if (stepArr[i].agent != undefined){
                             if(scene.meshes[stepArr[i].agent] == undefined){
                                 if(stepArr[i].position != undefined){
-                                    var position = stepArr[i].position;
+                                    if(type == 0){
+                                        var room = whichRoom(stepArr[i].position);
+                                        var x = room.x;
+                                        var y = room.y;
+                                    }else{
+                                        var x = stepArr[i].position.x;
+                                        var y = stepArr[i].position.y;
+                                    }
+
                                     var sentiment = stepArr[i].sentiment;
                                 }else{
-                                    var position = stepArr[i].moveTo;
+                                    if(type == 0){
+                                        var position = stepArr[i].moveTo;
+                                        let room = whichRoom(position);
+                                        var x = room.x;
+                                        var y = room.y;
+                                    }
+                                    else{
+                                        var position = stepArr[i].moveTo;
+                                        var x = position.x;
+                                        var y = position.y;
+                                    }
+
                                     var sentiment = stepArr[i].sentiment;
                                 }
 
-                                addIndividualModelToScene(stepArr[i].agent,  position, sentiment)
+                                addIndividualModelToScene(stepArr[i].agent,  x, y, sentiment)
                             }
                             else{
                                 if(stepArr[i].moveTo != undefined && stepArr[i].toStep != undefined){
                                     let time = (stepArr[i].toStep - step) * scene.stepTime;
-                                    let room = whichRoom(stepArr[i].moveTo);
-                                    let speed = calculateSpeed(scene.meshes[stepArr[i].agent].position.x ,scene.meshes[stepArr[i].agent].position.y , room.x, room.y, time);
-                                    meshesMoving.push({"agent":stepArr[i].agent, "to":{"x": room.x,"y": room.y}, "speed": speed, "startTime": Date.now(), "time": time, "finalStep": stepArr[i].toStep});
+                                    if(type == 0){
+                                        var xTo = whichRoom(stepArr[i].moveTo).x;
+                                        var yTo = whichRoom(stepArr[i].moveTo).y;
+                                        var speed = calculateSpeed(scene.meshes[stepArr[i].agent].position.x ,scene.meshes[stepArr[i].agent].position.y , xTo, yTo, time);
+
+                                    }
+                                    else{
+
+                                        var xTo = stepArr[i].moveTo.x;
+                                        var yTo = stepArr[i].moveTo.y;
+                                        var speed = calculateSpeed(scene.meshes[stepArr[i].agent].position.x ,scene.meshes[stepArr[i].agent].position.y ,xTo, yTo, time);
+
+                                    }
+
+                                    meshesMoving.push({"agent":stepArr[i].agent, "to":{"x": xTo,"y": yTo}, "speed": speed, "startTime": Date.now(), "time": time, "finalStep": stepArr[i].toStep});
                                     scene.flag = 0;
                                 }
                                 if (stepArr[i].sentiment != undefined){
@@ -420,8 +470,8 @@ module BP3D.Three {
 
                         if (stepArr[i].video != undefined){
                             var roomCoordinates = whichRoom(stepArr[i].room);
-                            var room = getRoom(roomCoordinates.x, roomCoordinates.y);
-                            var video = new Video(scene, model, room);
+                            // var room = getRoom(roomCoordinates.x, roomCoordinates.y);
+                            var video = new Video(scene, model, getRoom(roomCoordinates.x, roomCoordinates.y));
                         }
 
                     }
