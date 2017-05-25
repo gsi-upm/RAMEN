@@ -560,6 +560,10 @@ module BP3D.Three {
                     //RED
                     changeColor(227/255, 52/255, 84/255, mesh);
                     break;
+                case "dead":
+                    //BLACK
+                    changeColor(0, 0, 0, mesh);
+                    break;
             }
 
 
