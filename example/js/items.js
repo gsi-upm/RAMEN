@@ -151,7 +151,13 @@ $(document).ready(function() {
       "image" : "models/thumbnails/thumbnail_nyc2.jpg",
       "model" : "models/js/nyc-poster2.js",
       "type" : "2"
-    }
+    },
+      {
+          "name" : "Camera",
+          "image" : "models/thumbnails/thumbnail_nyc2.jpg",
+          "model" : "models/js/cube5.json",
+          "type" : "2"
+      }
    /*
    {
       "name" : "",
