@@ -46,7 +46,7 @@ module BP3D.Model {
         public stepTime = 1000;
         public flag = 1;
         public step = 1;
-
+        public customUniforms;
         /**
          * Constructs a scene.
          * @param model The associated model.

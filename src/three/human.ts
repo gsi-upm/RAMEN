@@ -30,11 +30,10 @@ module BP3D.Three {
         var meshesMoving = [];
         var outBuilding;
         var geometry1;
-        // var path = ["C_5","Office4","C_5", "CI_41", "CI_42","CI_5","Lab8_2","CI_5", "Lab7","CI_5","CI_12","Lab1","CI_12"];
 
-        var path = [ "CI_5","Lab8_2"];
         var flag = 1;
         var type;
+        var fire;
 
         function init() {
             $.ajax('/js/rooms.json', {
@@ -84,6 +83,7 @@ module BP3D.Three {
             }
 
             outBuilding = whichRoom("outBuilding");
+            var fire = new Fire(scene, model);
 
         }
 
@@ -473,6 +473,17 @@ module BP3D.Three {
                             // var room = getRoom(roomCoordinates.x, roomCoordinates.y);
                             var video = new Video(scene, model, getRoom(roomCoordinates.x, roomCoordinates.y));
                         }
+
+                        if (stepArr[i].fire != undefined){
+                            if (stepArr[i].fire == true) {
+                                if(fire == undefined){
+                                    fire = new Fire(scene, model);
+                                }
+                                var position = stepArr[i].position;
+                                fire.setFire(position);
+                            }
+                        }
+
 
                     }
                 }

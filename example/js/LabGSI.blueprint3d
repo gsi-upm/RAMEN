@@ -583,6 +583,62 @@
       "scale_y": 1,
       "scale_z": 1,
       "fixed": false
-    }
+    },
+    {
+          "item_name": "Window",
+          "item_type": 3,
+          "model_url": "models/js/whitewindow.js",
+          "xpos": 445,
+          "ypos": 142.05999324017057,
+          "zpos": 290,
+          "rotation": 0,
+          "scale_x": 1,
+          "scale_y": 1,
+          "scale_z": 1,
+          "fixed": false
+        }
+        ,
+            {
+                  "item_name": "Window",
+                  "item_type": 3,
+                  "model_url": "models/js/whitewindow.js",
+                  "xpos": 902,
+                  "ypos": 142.05999324017057,
+                  "zpos": 290,
+                  "rotation": 0,
+                  "scale_x": 1,
+                  "scale_y": 1,
+                  "scale_z": 1,
+                  "fixed": false
+                }
+                ,
+                {
+                                  "item_name": "Beacon",
+                                  "item_type": 2,
+                                  "model_url": "models/js/beacon.json",
+                                  "xpos": 400,
+                                  "ypos": 80,
+                                  "zpos": -190,
+                                  "rotation": 0,
+                                  "scale_x": 4,
+                                  "scale_y": 4,
+                                  "scale_z": 4,
+                                  "fixed": false
+                                }
+                                 ,
+                                                {
+                                                                  "item_name": "Beacon",
+                                                                  "item_type": 2,
+                                                                  "model_url": "models/js/beacon_wall.json",
+                                                                  "xpos": 400,
+                                                                  "ypos":120,
+                                                                  "zpos": -215,
+                                                                  "rotation": 0,
+                                                                  "scale_x": 4,
+                                                                  "scale_y": 4,
+                                                                  "scale_z": 4,
+                                                                  "fixed": false
+                                                                }
+
   ]
 }

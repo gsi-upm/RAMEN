@@ -4,8 +4,13 @@
     [
       {
         "agent": 0,
-        "position": {"x": 800, "y": 500},
-        "sentiment": "dead"
+        "position": {"x": 700, "y": -500},
+        "sentiment": "happiness"
+      },
+      {
+        "agent": 1,
+        "position": {"x": 700, "y": -300},
+        "sentiment": "anger"
       }
     ],
     [
@@ -15,12 +20,19 @@
         "toStep": 6
       }
     ],
-    [],
+    [{
+        "fire": true,
+        "position":{"x": -200, "y": 0}
+    }],
     [{
       "agent": 1,
       "position": {"x": 1500, "y": 600},
       "sentiment": "fear"
-    }],
+    },
+      {
+        "fire": true,
+        "position":{"x": 200, "y": 0}
+      }],
     [{
       "agent": 1,
       "moveTo": {"x": 800, "y": 200},
