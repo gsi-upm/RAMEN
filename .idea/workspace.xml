@@ -5,9 +5,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example/js/LabGSI.blueprint3d" afterPath="$PROJECT_DIR$/example/js/LabGSI.blueprint3d" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example/js/movement2.json" afterPath="$PROJECT_DIR$/example/js/movement2.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/scene.ts" afterPath="$PROJECT_DIR$/src/model/scene.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/three/human.ts" afterPath="$PROJECT_DIR$/src/three/human.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/three/main.ts" afterPath="$PROJECT_DIR$/src/three/main.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,20 +26,8 @@
       <file leaf-file-name="main.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/three/main.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="205" column="17" lean-forward="true" selection-start-line="205" selection-start-column="17" selection-end-line="205" selection-end-column="17" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="video.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/three/video.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="84" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+            <state relative-caret-position="3468">
+              <caret line="205" column="17" lean-forward="false" selection-start-line="205" selection-start-column="17" selection-end-line="205" selection-end-column="17" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -52,7 +38,7 @@
       <file leaf-file-name="fire.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/three/fire.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
+            <state relative-caret-position="1224">
               <caret line="73" column="44" lean-forward="false" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="44" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -64,8 +50,8 @@
       <file leaf-file-name="human.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/three/human.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="481" column="67" lean-forward="false" selection-start-line="481" selection-start-column="67" selection-end-line="481" selection-end-column="67" />
+            <state relative-caret-position="425">
+              <caret line="67" column="30" lean-forward="false" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -76,18 +62,8 @@
       <file leaf-file-name="scene.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/scene.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="556">
+            <state relative-caret-position="765">
               <caret line="48" column="30" lean-forward="false" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="example.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/js/example.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9299">
-              <caret line="547" column="993" lean-forward="false" selection-start-line="547" selection-start-column="993" selection-end-line="547" selection-end-column="993" />
               <folding />
             </state>
           </provider>
@@ -96,8 +72,8 @@
       <file leaf-file-name="LabGSI.blueprint3d" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/js/LabGSI.blueprint3d">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="641">
-              <caret line="634" column="78" lean-forward="false" selection-start-line="634" selection-start-column="78" selection-end-line="634" selection-end-column="78" />
+            <state relative-caret-position="469">
+              <caret line="433" column="45" lean-forward="false" selection-start-line="433" selection-start-column="45" selection-end-line="433" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -106,8 +82,8 @@
       <file leaf-file-name="design(19).blueprint3d" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/js/design(19).blueprint3d">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="5056" column="4" lean-forward="false" selection-start-line="5056" selection-start-column="4" selection-end-line="5068" selection-end-column="5" />
+            <state relative-caret-position="81736">
+              <caret line="4808" column="10" lean-forward="false" selection-start-line="4796" selection-start-column="4" selection-end-line="4808" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -116,8 +92,28 @@
       <file leaf-file-name="movement2.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/example/js/movement2.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+            <state relative-caret-position="615">
+              <caret line="160" column="19" lean-forward="false" selection-start-line="160" selection-start-column="19" selection-end-line="160" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rooms_Lab.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/js/rooms_Lab.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="movement.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/js/movement.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="935">
+              <caret line="55" column="7" lean-forward="false" selection-start-line="51" selection-start-column="6" selection-end-line="55" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -145,7 +141,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Hall_1</find>
       <find>speed</find>
       <find>human</find>
       <find>re</find>
@@ -171,10 +166,11 @@
       <find>text</find>
       <find>move</find>
       <find>nyc</find>
-      <find>camera</find>
       <find>custom</find>
       <find>customU</find>
       <find>wind</find>
+      <find>camera</find>
+      <find>gsi</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/three</dir>
@@ -219,6 +215,7 @@
         <option value="$PROJECT_DIR$/src/three/main.ts" />
         <option value="$PROJECT_DIR$/src/three/fire.ts" />
         <option value="$PROJECT_DIR$/src/three/human.ts" />
+        <option value="$PROJECT_DIR$/example/js/rooms_Lab.json" />
         <option value="$PROJECT_DIR$/example/js/LabGSI.blueprint3d" />
         <option value="$PROJECT_DIR$/example/js/movement2.json" />
       </list>
@@ -258,6 +255,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -423,7 +421,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -600,12 +597,15 @@
       <workItem from="1495617659472" duration="2369000" />
       <workItem from="1495700248285" duration="4994000" />
       <workItem from="1495786309743" duration="7109000" />
-      <workItem from="1496046479431" duration="7833000" />
+      <workItem from="1496046479431" duration="7894000" />
+      <workItem from="1496134809920" duration="5839000" />
+      <workItem from="1496220721792" duration="599000" />
+      <workItem from="1496308723371" duration="7710000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="355844000" />
+    <option name="totallyTimeSpent" value="370053000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -617,7 +617,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="56" y="-14" width="1385" height="915" extended-state="6" />
+    <frame x="56" y="-14" width="1385" height="915" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -675,13 +675,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/items/item.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6324">
-          <caret line="375" column="36" lean-forward="true" selection-start-line="375" selection-start-column="36" selection-end-line="375" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/js/movement.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -907,16 +900,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17102">
           <caret line="1009" column="55" lean-forward="false" selection-start-line="1009" selection-start-column="51" selection-end-line="1009" selection-end-column="55" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/js/movement.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="55" column="7" lean-forward="false" selection-start-line="51" selection-start-column="6" selection-end-line="55" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -924,7 +907,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66147">
           <caret line="3891" column="15" lean-forward="false" selection-start-line="3891" selection-start-column="14" selection-end-line="3891" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -932,7 +914,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -940,7 +921,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -948,6 +928,56 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9299">
           <caret line="547" column="993" lean-forward="false" selection-start-line="547" selection-start-column="993" selection-end-line="547" selection-end-column="993" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/three/video.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1411">
+          <caret line="84" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/scene.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="48" column="30" lean-forward="false" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/three/main.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3468">
+          <caret line="205" column="17" lean-forward="false" selection-start-line="205" selection-start-column="17" selection-end-line="205" selection-end-column="17" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/three/fire.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="73" column="44" lean-forward="false" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="44" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/js/design(19).blueprint3d">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81736">
+          <caret line="4808" column="10" lean-forward="false" selection-start-line="4796" selection-start-column="4" selection-end-line="4808" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/js/movement.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="55" column="7" lean-forward="false" selection-start-line="51" selection-start-column="6" selection-end-line="55" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -960,74 +990,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/three/video.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="84" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/scene.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="48" column="30" lean-forward="false" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/three/main.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="205" column="17" lean-forward="true" selection-start-line="205" selection-start-column="17" selection-end-line="205" selection-end-column="17" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/three/fire.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="73" column="44" lean-forward="false" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="44" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/three/human.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="481" column="67" lean-forward="false" selection-start-line="481" selection-start-column="67" selection-end-line="481" selection-end-column="67" />
+        <state relative-caret-position="425">
+          <caret line="67" column="30" lean-forward="false" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/js/design(19).blueprint3d">
+    <entry file="file://$PROJECT_DIR$/example/js/rooms_Lab.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="5056" column="4" lean-forward="false" selection-start-line="5056" selection-start-column="4" selection-end-line="5068" selection-end-column="5" />
+        <state relative-caret-position="153">
+          <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example/js/LabGSI.blueprint3d">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
-          <caret line="634" column="78" lean-forward="false" selection-start-line="634" selection-start-column="78" selection-end-line="634" selection-end-column="78" />
+        <state relative-caret-position="469">
+          <caret line="433" column="45" lean-forward="false" selection-start-line="433" selection-start-column="45" selection-end-line="433" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example/js/movement2.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+        <state relative-caret-position="615">
+          <caret line="160" column="19" lean-forward="false" selection-start-line="160" selection-start-column="19" selection-end-line="160" selection-end-column="19" />
           <folding />
         </state>
       </provider>
