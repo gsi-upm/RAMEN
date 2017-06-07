@@ -119,6 +119,9 @@ module BP3D.Three {
                         mesh.position.z = position.y;
                     }
 
+                    if(steps[0][j].rotation != undefined){
+                        mesh.rotation.y = steps[0][j].rotation;
+                    }
 
                     //Mesh Animation
                     let mixer = new THREE.AnimationMixer( mesh );
@@ -146,7 +149,7 @@ module BP3D.Three {
 
         }
 
-        function addIndividualModelToScene(agent, x, y, sentiment) {
+        function addIndividualModelToScene(agent, x, y, sentiment, rotation) {
 
             //Adding Mesh
             let material1 = new THREE.MeshLambertMaterial();
@@ -163,6 +166,10 @@ module BP3D.Three {
             //Mesh Animation
             let mixer = new THREE.AnimationMixer( mesh );
             mixers[agent] = mixer;
+
+            if(rotation != undefined){
+                mesh.rotation.y = rotation;
+            }
 
             //Mesh Emotion
             if(sentiment != undefined){
@@ -392,6 +399,13 @@ module BP3D.Three {
                 var j = meshesMoving[i].agent;
                 if(this.moveToPosition(scene.meshes[j], j, meshesMoving[i].to.x, 0, meshesMoving[i].to.y,meshesMoving[i].speed, meshesMoving[i].startTime, meshesMoving[i].time, meshesMoving[i].startStep)
                 || meshesMoving[i].finalStep == scene.step){
+                    console.log("ROTATION",meshesMoving[i].rotation);
+                    if(meshesMoving[i].rotation != undefined){
+                        console.log("HOLA", j);
+                        scene.meshes[meshesMoving[i].agent].rotation.y = meshesMoving[i].rotation;
+                    }
+
+
                     meshesMoving.splice(i, 1);
                     mixers[j].clipAction(clip).stop();
                 }
@@ -418,6 +432,7 @@ module BP3D.Three {
                                     }
 
                                     var sentiment = stepArr[i].sentiment;
+                                    var rotation = stepArr[i].rotation;
                                 }else{
                                     if(type == 0){
                                         var position = stepArr[i].moveTo;
@@ -432,9 +447,10 @@ module BP3D.Three {
                                     }
 
                                     var sentiment = stepArr[i].sentiment;
+                                    var rotation = stepArr[i].rotation;
                                 }
 
-                                addIndividualModelToScene(stepArr[i].agent,  x, y, sentiment)
+                                addIndividualModelToScene(stepArr[i].agent,  x, y, sentiment, rotation)
                             }
                             else{
                                 if(stepArr[i].moveTo != undefined && stepArr[i].toStep != undefined){
@@ -452,8 +468,12 @@ module BP3D.Three {
                                         var speed = calculateSpeed(scene.meshes[stepArr[i].agent].position.x ,scene.meshes[stepArr[i].agent].position.y ,xTo, yTo, time);
 
                                     }
+                                    var rotation = undefined;
+                                    if (stepArr[i].rotation != undefined){
+                                        rotation = stepArr[i].rotation;
+                                    }
 
-                                    meshesMoving.push({"agent":stepArr[i].agent, "to":{"x": xTo,"y": yTo}, "speed": speed, "startTime": Date.now(), "time": time, "finalStep": stepArr[i].toStep});
+                                    meshesMoving.push({"agent":stepArr[i].agent, "to":{"x": xTo,"y": yTo}, "speed": speed, "startTime": Date.now(), "time": time, "finalStep": stepArr[i].toStep, "rotation": rotation});
                                     scene.flag = 0;
                                 }
                                 if (stepArr[i].sentiment != undefined){

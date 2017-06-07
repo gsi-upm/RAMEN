@@ -40,19 +40,28 @@
       {
         "agent": 7,
         "position": "Lab3",
-        "sentiment": "happiness"
+        "sentiment": "happiness",
+        "rotation": 3.14
       }
     ],
     [
       {
+        "agent":8,
+        "position": "Lab2",
+        "sentiment": "sadness",
+        "rotation": 1.57
+      },
+      {
         "agent": 0,
         "moveTo": "C.2",
-        "toStep": 4
+        "toStep": 4,
+        "rotation": 3.14
       },
       {
         "agent": 1,
         "moveTo": "C.3",
-        "toStep": 4
+        "toStep": 4,
+        "rotation": 1.57
       },
 
       {
@@ -82,11 +91,7 @@
         "moveTo": "CI.12",
         "toStep": 4
       },
-      {
-        "agent": 7,
-        "moveTo": "CI.3",
-        "toStep": 4
-      },
+
       {
         "fire":true,
         "position": {"x":4927 ,"y": -557}
@@ -113,16 +118,8 @@
       }],
     [],
     [],
-    [{
-      "agent": 0,
-      "moveTo": "C.1",
-      "toStep": 8
-    },
-      {
-        "agent": 1,
-        "moveTo": "C.2",
-        "toStep": 8
-      },
+    [
+
 
       {
         "agent": 2,
@@ -149,11 +146,6 @@
       {
         "agent": 6,
         "moveTo": "CI.11",
-        "toStep": 8
-      },
-      {
-        "agent": 7,
-        "moveTo": "CI.2",
         "toStep": 8
       }],
     [],
