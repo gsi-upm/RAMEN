@@ -36,7 +36,7 @@ module BP3D.Three {
         var fire;
 
         function init() {
-            $.ajax('/js/rooms_Lab.json', {
+            $.ajax('/js/rooms.json', {
                 async: false,
                 dataType: 'text',
                 success: function (data) {
@@ -47,7 +47,7 @@ module BP3D.Three {
             allRooms3 = JSON.parse(allRooms2);
             allRooms = allRooms3.room;
             //Loading JSON with the movement
-            $.ajax('/js/movement2.json', {
+            $.ajax('/js/movement3.json', {
                 async: false,
                 dataType: 'text',
                 success: function (data2) {
@@ -65,7 +65,7 @@ module BP3D.Three {
             jsonLoader.load( "/models/js/walkmorphcolor.json", addModelToScene);
 
             //Loading JSON with the doors
-            $.ajax('/js/LabGSI.blueprint3d', {
+            $.ajax('/js/design(19).blueprint3d', {
                 async: false,
                 dataType: 'text',
                 success: function (data) {

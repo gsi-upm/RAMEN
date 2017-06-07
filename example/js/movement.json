@@ -41,14 +41,21 @@
         "agent": 7,
         "position": "Office10",
         "sentiment": "happiness"
-      },{
-                                "light": false,
-                                "room": "Office1"
-                              }
+      }
     ],
     [
-
-
+      {
+        "light": false,
+        "room": "Office3"
+      },
+      {
+        "light": false,
+        "room": "Office4"
+      },
+      {
+        "light": false,
+        "room": "Office5"
+      },
       {
         "agent": 1,
         "moveTo": "Hall.1",
@@ -71,10 +78,12 @@
         "sentiment": "anger"
       }
     ],
-    [ {
-             "light": false,
-             "room": "Office10"
-           }],
+    [
+      {
+        "light": false,
+        "room": "Office10"
+      }
+    ],
     [
       {
         "agent": 5,

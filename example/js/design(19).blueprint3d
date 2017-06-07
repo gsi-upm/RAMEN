@@ -4795,19 +4795,6 @@
       "fixed": false
     },
     {
-          "item_name": "Camera",
-          "item_type": 2,
-          "model_url": "models/js/camera3.json",
-          "xpos": 1000,
-          "ypos": 200,
-          "zpos": -1105.2059521484375,
-          "rotation": 0,
-          "scale_x": 10,
-          "scale_y": 10,
-          "scale_z": 10,
-          "fixed": false
-        },
-    {
       "item_name": "NYC Poster",
       "item_type": 2,
       "model_url": "models/js/nyc-poster2.js",
