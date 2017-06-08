@@ -399,10 +399,15 @@ module BP3D.Three {
                 var j = meshesMoving[i].agent;
                 if(this.moveToPosition(scene.meshes[j], j, meshesMoving[i].to.x, 0, meshesMoving[i].to.y,meshesMoving[i].speed, meshesMoving[i].startTime, meshesMoving[i].time, meshesMoving[i].startStep)
                 || meshesMoving[i].finalStep == scene.step){
-                    console.log("ROTATION",meshesMoving[i].rotation);
                     if(meshesMoving[i].rotation != undefined){
-                        console.log("HOLA", j);
                         scene.meshes[meshesMoving[i].agent].rotation.y = meshesMoving[i].rotation;
+                    }
+                    if(meshesMoving[i].outBuilding != undefined){
+
+                        if(meshesMoving[i].outBuilding == true){
+                            scene.remove(scene.meshes[meshesMoving[i].agent]);
+                            scene.meshes[meshesMoving[i].agent] = null;
+                        }
                     }
 
 
@@ -472,8 +477,12 @@ module BP3D.Three {
                                     if (stepArr[i].rotation != undefined){
                                         rotation = stepArr[i].rotation;
                                     }
+                                    var out = undefined;
+                                    if (stepArr[i].outBuilding != undefined){
+                                        out = stepArr[i].outBuilding;
+                                    }
 
-                                    meshesMoving.push({"agent":stepArr[i].agent, "to":{"x": xTo,"y": yTo}, "speed": speed, "startTime": Date.now(), "time": time, "finalStep": stepArr[i].toStep, "rotation": rotation});
+                                    meshesMoving.push({"agent":stepArr[i].agent, "to":{"x": xTo,"y": yTo}, "speed": speed, "startTime": Date.now(), "time": time, "finalStep": stepArr[i].toStep, "rotation": rotation, "outBuilding": out});
                                     scene.flag = 0;
                                 }
                                 if (stepArr[i].sentiment != undefined){

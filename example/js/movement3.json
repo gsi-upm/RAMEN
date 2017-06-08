@@ -50,6 +50,7 @@
         "position": "Lab2",
         "sentiment": "sadness",
         "rotation": 1.57
+
       },
       {
         "agent": 0,
@@ -61,7 +62,8 @@
         "agent": 1,
         "moveTo": "C.3",
         "toStep": 4,
-        "rotation": 1.57
+        "rotation": 1.57,
+        "outBuilding": true
       },
 
       {
@@ -147,6 +149,7 @@
         "agent": 6,
         "moveTo": "CI.11",
         "toStep": 8
+
       }],
     [],
     [],
