@@ -36,7 +36,7 @@ module BP3D.Three {
         var fire;
 
         function init() {
-            $.ajax('/js/rooms.json', {
+            $.ajax('/js/rooms_Lab.json', {
                 async: false,
                 dataType: 'text',
                 success: function (data) {
@@ -47,7 +47,7 @@ module BP3D.Three {
             allRooms3 = JSON.parse(allRooms2);
             allRooms = allRooms3.room;
             //Loading JSON with the movement
-            $.ajax('/js/movement3.json', {
+            $.ajax('/js/lab_move.json', {
                 async: false,
                 dataType: 'text',
                 success: function (data2) {
@@ -65,7 +65,7 @@ module BP3D.Three {
             jsonLoader.load( "/models/js/walkmorphcolor.json", addModelToScene);
 
             //Loading JSON with the doors
-            $.ajax('/js/design(19).blueprint3d', {
+            $.ajax('/js/LabGSI.blueprint3d', {
                 async: false,
                 dataType: 'text',
                 success: function (data) {
@@ -162,6 +162,7 @@ module BP3D.Three {
             //Setting mesh position
             mesh.position.x = x;
             mesh.position.z = y;
+            mesh.rotation.y = 3.14;
 
             //Mesh Animation
             let mixer = new THREE.AnimationMixer( mesh );
@@ -619,32 +620,40 @@ module BP3D.Three {
         function setRoomLight(room, on){
 
             //Getting the walls
-            console.log("ROOMLIGHT", room);
-            console.log("ROOMS: ",model.floorplan.getRooms());
             var walls = model.floorplan.getRooms()[room].updateWallsTexture();
 
             for (var i = 0; i<walls.length; i++){
                 //Check where is the wall headed
                 if(walls[i].to == false){
                     //Turn on
-                    if(on == true){
+                    if(on == "high"){
                         walls[i].backEdge.setTexture("rooms/textures/wallmap.png", true, 1);
                         model.floorplan.getRooms()[room].setTexture("rooms/textures/hardwood.png", true, 300);
                     }
+                    //Turn medium
+                    else if (on == "medium"){
+                        walls[i].backEdge.setTexture("rooms/textures/walllightmap_medium.png", true, 1);
+                        model.floorplan.getRooms()[room].setTexture("rooms/textures/hardwood_medium.png", true, 300);
+                    }
                     //Turn off
-                    else{
+                    else if (on == "low"){
                         walls[i].backEdge.setTexture("rooms/textures/walllightmap_dark.png", true, 1);
                         model.floorplan.getRooms()[room].setTexture("rooms/textures/hardwood_dark.png", true, 300);
                     }
                 }
                 else{
                     //Turn on
-                    if (on == true){
+                    if(on == "high"){
                         walls[i].frontEdge.setTexture("rooms/textures/wallmap.png", true, 1);
                         model.floorplan.getRooms()[room].setTexture("rooms/textures/hardwood.png", true, 300);
                     }
+                    //Turn medium
+                    else if (on == "medium"){
+                        walls[i].frontEdge.setTexture("rooms/textures/walllightmap_medium.png", true, 1);
+                        model.floorplan.getRooms()[room].setTexture("rooms/textures/hardwood_medium.png", true, 300);
+                    }
                     //Turn off
-                    else{
+                    else if (on == "low"){
                         walls[i].frontEdge.setTexture("rooms/textures/walllightmap_dark.png", true, 1);
                         model.floorplan.getRooms()[room].setTexture("rooms/textures/hardwood_dark.png", true, 300);
 
