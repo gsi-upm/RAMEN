@@ -46,7 +46,10 @@ var CameraButtons = function(blueprint3d) {
         //Play Controls
         $("#play").click(playAction);
         $("#pause").click(pauseAction);
+
+
     }
+
 
     function preventDefault(e) {
         e.preventDefault();
@@ -103,6 +106,9 @@ var ContextMenu = function(blueprint3d) {
     var selectedItem;
     var three = blueprint3d.three;
 
+    var lastSelectedItem;
+    var selected = true;
+
     function init() {
         $("#context-menu-delete").click(function(event) {
             selectedItem.remove();
@@ -117,6 +123,31 @@ var ContextMenu = function(blueprint3d) {
             var checked = $(this).prop('checked');
             selectedItem.setFixed(checked);
         });
+
+
+    }
+
+    function moveObject(direction){
+        switch (direction) {
+            case "up":
+                selectedItem.position.z -= 10;
+                break;
+            case "down":
+                selectedItem.position.z += 10;
+                break;
+            case "left":
+                selectedItem.position.x -= 10;
+                break;
+            case "right":
+                selectedItem.position.x += 10;
+                break;
+            case "rotate-right":
+                selectedItem.rotation.y += 0.19634954084;
+                break;
+            case "rotate-left":
+                selectedItem.rotation.y -= 0.19634954084;
+                break;
+        }
     }
 
     function cmToIn(cm) {
@@ -139,10 +170,48 @@ var ContextMenu = function(blueprint3d) {
         $("#context-menu").show();
 
         $("#fixed").prop('checked', item.fixed);
+
+        if(lastSelectedItem == null){
+            lastSelectedItem = selectedItem;
+            moveItem();
+
+        } else if(lastSelectedItem != selectedItem){
+            lastSelectedItem = selectedItem;
+        }
+        else{
+            if(selected){
+                selected = !selected;
+                moveItem();
+            }
+
+        }
+
     }
 
-    function resize() {
-        selectedItem.resize(
+        function moveItem(){
+            //Object Controls
+            $("#move-object-left").click(function(){
+                moveObject("left")
+            });
+            $("#move-object-right").click(function(){
+                moveObject("right")
+            });
+            $("#move-object-up").click(function(){
+                moveObject("up")
+            });
+            $("#move-object-down").click(function(){
+                moveObject("down")
+            });
+            $("#rotate-object-left").click(function(){
+                moveObject("rotate-left")
+            });
+            $("#rotate-object-right").click(function(){
+                moveObject("rotate-right")
+            });
+        }
+
+        function resize() {
+            selectedItem.resize(
             inToCm($("#item-height").val()),
             inToCm($("#item-width").val()),
             inToCm($("#item-depth").val())
@@ -481,7 +550,9 @@ var mainControls = function(blueprint3d) {
     var blueprint3d = blueprint3d;
 
     function newDesign() {
-        blueprint3d.model.loadSerialized('{"floorplan":{"corners":{"f90da5e3-9e0e-eba7-173d-eb0b071e838e":{"x":204.85099999999989,"y":289.052},"da026c08-d76a-a944-8e7b-096b752da9ed":{"x":672.2109999999999,"y":289.052},"4e3d65cb-54c0-0681-28bf-bddcc7bdb571":{"x":672.2109999999999,"y":-178.308},"71d4f128-ae80-3d58-9bd2-711c6ce6cdf2":{"x":204.85099999999989,"y":-178.308}},"walls":[{"corner1":"71d4f128-ae80-3d58-9bd2-711c6ce6cdf2","corner2":"f90da5e3-9e0e-eba7-173d-eb0b071e838e","frontTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0},"backTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0}},{"corner1":"f90da5e3-9e0e-eba7-173d-eb0b071e838e","corner2":"da026c08-d76a-a944-8e7b-096b752da9ed","frontTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0},"backTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0}},{"corner1":"da026c08-d76a-a944-8e7b-096b752da9ed","corner2":"4e3d65cb-54c0-0681-28bf-bddcc7bdb571","frontTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0},"backTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0}},{"corner1":"4e3d65cb-54c0-0681-28bf-bddcc7bdb571","corner2":"71d4f128-ae80-3d58-9bd2-711c6ce6cdf2","frontTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0},"backTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0}}],"wallTextures":[],"floorTextures":{},"newFloorTextures":{}},"items":[]}');
+        // blueprint3d.model.loadSerialized('{"floorplan":{"corners":{"f90da5e3-9e0e-eba7-173d-eb0b071e838e":{"x":204.85099999999989,"y":289.052},"da026c08-d76a-a944-8e7b-096b752da9ed":{"x":672.2109999999999,"y":289.052},"4e3d65cb-54c0-0681-28bf-bddcc7bdb571":{"x":672.2109999999999,"y":-178.308},"71d4f128-ae80-3d58-9bd2-711c6ce6cdf2":{"x":204.85099999999989,"y":-178.308}},"walls":[{"corner1":"71d4f128-ae80-3d58-9bd2-711c6ce6cdf2","corner2":"f90da5e3-9e0e-eba7-173d-eb0b071e838e","frontTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0},"backTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0}},{"corner1":"f90da5e3-9e0e-eba7-173d-eb0b071e838e","corner2":"da026c08-d76a-a944-8e7b-096b752da9ed","frontTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0},"backTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0}},{"corner1":"da026c08-d76a-a944-8e7b-096b752da9ed","corner2":"4e3d65cb-54c0-0681-28bf-bddcc7bdb571","frontTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0},"backTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0}},{"corner1":"4e3d65cb-54c0-0681-28bf-bddcc7bdb571","corner2":"71d4f128-ae80-3d58-9bd2-711c6ce6cdf2","frontTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0},"backTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0}}],"wallTextures":[],"floorTextures":{},"newFloorTextures":{}},"items":[]}');
+
+        blueprint3d.model.loadSerialized('{"floorplan":{"corners":{"f90da5e3-9e0e-eba7-173d-eb0b071e838e":{"x":0,"y":500},"da026c08-d76a-a944-8e7b-096b752da9ed":{"x":500,"y":500},"4e3d65cb-54c0-0681-28bf-bddcc7bdb571":{"x":500,"y":0},"71d4f128-ae80-3d58-9bd2-711c6ce6cdf2":{"x":0,"y":0}},"walls":[{"corner1":"71d4f128-ae80-3d58-9bd2-711c6ce6cdf2","corner2":"f90da5e3-9e0e-eba7-173d-eb0b071e838e","frontTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0},"backTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0}},{"corner1":"f90da5e3-9e0e-eba7-173d-eb0b071e838e","corner2":"da026c08-d76a-a944-8e7b-096b752da9ed","frontTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0},"backTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0}},{"corner1":"da026c08-d76a-a944-8e7b-096b752da9ed","corner2":"4e3d65cb-54c0-0681-28bf-bddcc7bdb571","frontTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0},"backTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0}},{"corner1":"4e3d65cb-54c0-0681-28bf-bddcc7bdb571","corner2":"71d4f128-ae80-3d58-9bd2-711c6ce6cdf2","frontTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0},"backTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0}}],"wallTextures":[],"floorTextures":{},"newFloorTextures":{}},"items":[]}');
     }
 
     function loadDesign() {

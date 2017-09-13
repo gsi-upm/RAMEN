@@ -157,6 +157,34 @@ void main()
                             </div>
                             <small><span class="text-muted">Measurements in inches.</span></small>
                         </div>
+                        <div class="panel-heading">Adjust position</div>
+                        <div class="panel-body" style="color: #333333">
+
+                            <div class="form form-horizontal" class="lead">
+                                <div class="form-group">
+                                    <a href="#" class="btn btn-default btn-sm" id="rotate-object-left">
+                                        <span class="glyphicon glyphicon-repeat"></span>
+                                    </a>
+                                    <a href="#" class="btn btn-default btn-sm" id="move-object-left">
+                                        <span class="glyphicon glyphicon-arrow-left"></span>
+                                    </a>
+                                    <span class="btn-group-vertical">
+                                        <a class="btn btn-default" href="#" id="move-object-up">
+                                            <span class="glyphicon glyphicon-arrow-up"></span>
+                                        </a>
+                                        <a class="btn btn-default" href="#" id="move-object-down">
+                                            <span class="glyphicon glyphicon-arrow-down"></span>
+                                        </a>
+                                    </span>
+                                    <a href="#" class="btn btn-default btn-sm" id="move-object-right">
+                                        <span class="glyphicon glyphicon-arrow-right"></span>
+                                    </a>
+                                    <a href="#" class="btn btn-default btn-sm" id="rotate-object-right">
+                                        <span class="glyphicon glyphicon-repeat"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <label><input type="checkbox" id="fixed" /> Lock in place</label>
@@ -210,18 +238,18 @@ void main()
             <!-- 3D Viewer -->
             <div id="viewer">
 
-                <!--<div id="main-controls">-->
-                    <!--<a href="#" class="btn btn-default btn-sm" id="new">-->
-                        <!--New Plan-->
-                    <!--</a>-->
-                    <!--<a href="#" class="btn btn-default btn-sm" id="saveFile">-->
-                        <!--Save Plan-->
-                    <!--</a>-->
-                    <!--<a class="btn btn-sm btn-default btn-file">-->
-                        <!--<input type="file" class="hidden-input" id="loadFile">-->
-                        <!--Load Plan-->
-                    <!--</a>-->
-                <!--</div>-->
+                <div id="main-controls">
+                    <a href="#" class="btn btn-default btn-sm" id="new">
+                        New Plan
+                    </a>
+                    <a href="#" class="btn btn-default btn-sm" id="saveFile">
+                        Save Plan
+                    </a>
+                    <a class="btn btn-sm btn-default btn-file">
+                        <input type="file" class="hidden-input" id="loadFile">
+                        Load Plan
+                    </a>
+                </div>
 
                 <div id="play-controls">
                     <a href="#" class="btn btn-default btn-sm" id="play">
@@ -231,6 +259,14 @@ void main()
                         <span class="glyphicon glyphicon-pause"></span>
                     </a>
                 </div>
+                <!--<div id="object-controls">-->
+                    <!--&lt;!&ndash;<a href="#" class="btn btn-default btn-sm" id="move-object-left">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<span class="glyphicon glyphicon-arrow-left"></span>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                    <!--<a href="#" class="btn btn-default btn-sm" id="move-object-right">-->
+                        <!--<span class="glyphicon glyphicon-arrow-right"></span>-->
+                    <!--</a>-->
+                <!--</div>-->
 
                 <div id="camera-controls">
                     <a href="#" class="btn btn-default bottom" id="zoom-out">
