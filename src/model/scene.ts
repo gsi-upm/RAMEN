@@ -138,6 +138,7 @@ module BP3D.Model {
             var loaded = false;
 
 
+
             //Check if the item has been loaded before
             for (var i=0; i<scope.loadedItems.length; i++){
                 if(scope.loadedItems[i].fileName == fileName){
@@ -146,9 +147,11 @@ module BP3D.Model {
                     scope.loadedItems[i].rotations.push(rotation);
                     scope.loadedItems[i].scales.push(scale);
                     // scope.positions.push(position);
-                    loaded =true;
+                    loaded = true;
                 }
             }
+
+
 
             var loaderCallback = function (geometry: THREE.Geometry, materials: THREE.Material[]) {
                 var n = 1;
@@ -183,11 +186,10 @@ module BP3D.Model {
 
                 }
 
-            }
+            };
 
-            this.itemLoadingCallbacks.fire();
             if(!loaded){
-
+                this.itemLoadingCallbacks.fire();
                 scope.positions.push(position);
                 scope.rotations.push(rotation);
                 scope.scales.push(scale);
@@ -199,6 +201,31 @@ module BP3D.Model {
                 );
             }
 
+        }
+
+        public addItem2(itemType: number, fileName: string, metadata, position: THREE.Vector3, rotation: number, scale: THREE.Vector3, fixed: boolean) {
+            itemType = itemType || 1;
+            var scope = this;
+            var loaderCallback = function (geometry: THREE.Geometry, materials: THREE.Material[]) {
+                var item = new (Items.Factory.getClass(itemType))(
+                    scope.model,
+                    metadata, geometry,
+                    new THREE.MeshFaceMaterial(materials),
+                    position, rotation, scale
+                );
+                item.fixed = fixed || false;
+                scope.items.push(item);
+                scope.add(item);
+                item.initObject();
+                scope.itemLoadedCallbacks.fire(item);
+            }
+
+            this.itemLoadingCallbacks.fire();
+            this.loader.load(
+                fileName,
+                loaderCallback,
+                undefined // TODO_Ekki
+            );
         }
     }
 }

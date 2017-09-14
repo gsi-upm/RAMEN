@@ -153,7 +153,7 @@ module BP3D.Three {
 
             //Adding Mesh
             let material1 = new THREE.MeshLambertMaterial();
-            material1.morphTargets =true;
+            material1.morphTargets = true;
             let mesh = new THREE.SkinnedMesh( geometry1, material1 );
             mesh.scale.set(55,65,55);
             scene.add(mesh);
