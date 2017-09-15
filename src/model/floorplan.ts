@@ -116,7 +116,7 @@ module BP3D.Model {
                 scope.removeWall(wall);
             });
             this.new_wall_callbacks.fire(wall);
-            // this.update();
+            this.update();
             return wall;
         }
 
@@ -305,7 +305,7 @@ module BP3D.Model {
             });
             this.assignOrphanEdges();
 
-            // this.updateFloorTextures();
+            this.updateFloorTextures();
             this.updated_rooms.fire();
         }
 

@@ -218,7 +218,7 @@ module BP3D.Model {
                 scope.add(item);
                 item.initObject();
                 scope.itemLoadedCallbacks.fire(item);
-            }
+            };
 
             this.itemLoadingCallbacks.fire();
             this.loader.load(

@@ -78,7 +78,6 @@ module BP3D.Three {
         function clickDragged(vec2?) {
             vec2 = vec2 || mouse;
             var intersection = scope.itemIntersection(mouse, selectedObject);
-            console.log("HOAL", intersection);
             if (intersection) {
                 //ROTATE
                 if (scope.isRotating()) {

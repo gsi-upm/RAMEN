@@ -100,7 +100,8 @@ var CameraButtons = function(blueprint3d) {
  * Context menu for selected item
  */
 
-var ContextMenu = function(blueprint3d) {
+var ContextMenu;
+ContextMenu = function (blueprint3d) {
 
     var scope = this;
     var selectedItem;
@@ -110,7 +111,7 @@ var ContextMenu = function(blueprint3d) {
     var selected = true;
 
     function init() {
-        $("#context-menu-delete").click(function(event) {
+        $("#context-menu-delete").click(function (event) {
             selectedItem.remove();
         });
 
@@ -119,7 +120,7 @@ var ContextMenu = function(blueprint3d) {
 
         initResize();
 
-        $("#fixed").click(function() {
+        $("#fixed").click(function () {
             var checked = $(this).prop('checked');
             selectedItem.setFixed(checked);
         });
@@ -127,26 +128,50 @@ var ContextMenu = function(blueprint3d) {
 
     }
 
-    function moveObject(direction){
+    function moveObject(direction) {
+
+        // console.log("selectedITEMPosition1", selectedItem.position);
+        // var position = {"x": selectedItem.position.x, "y": selectedItem.position.y, "z": selectedItem.position.z};
+
         switch (direction) {
             case "up":
                 selectedItem.position.z -= 10;
+                selectedItem.resized();
+                // console.log("selectedITEMPosition2", selectedItem.position, "position", position);
                 break;
             case "down":
                 selectedItem.position.z += 10;
+                selectedItem.resized();
                 break;
             case "left":
                 selectedItem.position.x -= 10;
+                selectedItem.resized();
                 break;
             case "right":
                 selectedItem.position.x += 10;
+                selectedItem.resized();
                 break;
             case "rotate-right":
-                selectedItem.rotation.y += 0.19634954084;
+                if(selectedItem.metadata.itemName == "Open Door"){
+                    selectedItem.rotation.y += 1.57079632679
+                    selectedItem.position_set = false;
+                    selectedItem.placeInRoom();
+                }else{
+                    selectedItem.rotation.y += 0.19634954084;
+                    selectedItem.resized();
+                }
+
                 break;
             case "rotate-left":
-                selectedItem.rotation.y -= 0.19634954084;
-                break;
+                if(selectedItem.metadata.itemName == "Open Door"){
+                    selectedItem.rotation.y += 1.57079632679
+                    selectedItem.position_set = false;
+                    selectedItem.placeInRoom();
+                }else {
+                    selectedItem.rotation.y -= 0.19634954084;
+                    selectedItem.resized();
+                    break;
+                }
         }
     }
 
@@ -171,15 +196,15 @@ var ContextMenu = function(blueprint3d) {
 
         $("#fixed").prop('checked', item.fixed);
 
-        if(lastSelectedItem == null){
+        if (lastSelectedItem == null) {
             lastSelectedItem = selectedItem;
             moveItem();
 
-        } else if(lastSelectedItem != selectedItem){
+        } else if (lastSelectedItem != selectedItem) {
             lastSelectedItem = selectedItem;
         }
-        else{
-            if(selected){
+        else {
+            if (selected) {
                 selected = !selected;
                 moveItem();
             }
@@ -188,30 +213,30 @@ var ContextMenu = function(blueprint3d) {
 
     }
 
-        function moveItem(){
-            //Object Controls
-            $("#move-object-left").click(function(){
-                moveObject("left")
-            });
-            $("#move-object-right").click(function(){
-                moveObject("right")
-            });
-            $("#move-object-up").click(function(){
-                moveObject("up")
-            });
-            $("#move-object-down").click(function(){
-                moveObject("down")
-            });
-            $("#rotate-object-left").click(function(){
-                moveObject("rotate-left")
-            });
-            $("#rotate-object-right").click(function(){
-                moveObject("rotate-right")
-            });
-        }
+    function moveItem() {
+        //Object Controls
+        $("#move-object-left").click(function () {
+            moveObject("left")
+        });
+        $("#move-object-right").click(function () {
+            moveObject("right")
+        });
+        $("#move-object-up").click(function () {
+            moveObject("up")
+        });
+        $("#move-object-down").click(function () {
+            moveObject("down")
+        });
+        $("#rotate-object-left").click(function () {
+            moveObject("rotate-left")
+        });
+        $("#rotate-object-right").click(function () {
+            moveObject("rotate-right")
+        });
+    }
 
-        function resize() {
-            selectedItem.resize(
+    function resize() {
+        selectedItem.resize(
             inToCm($("#item-height").val()),
             inToCm($("#item-width").val()),
             inToCm($("#item-depth").val())
@@ -230,7 +255,7 @@ var ContextMenu = function(blueprint3d) {
     }
 
     init();
-}
+};
 
 /*
  * Loading modal for items
@@ -474,7 +499,7 @@ var TextureSelector = function (blueprint3d, sideMenu) {
     }
 
     init();
-}
+};
 
 /*
  * Floorplanner controls
@@ -560,7 +585,7 @@ var mainControls = function(blueprint3d) {
         reader.onload = function(event) {
             var data = event.target.result;
             blueprint3d.model.loadSerialized(data);
-        }
+        };
         reader.readAsText(files[0]);
     }
 

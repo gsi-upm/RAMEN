@@ -12,7 +12,7 @@ module BP3D.Model {
     url: "rooms/textures/wallmap.png",
     stretch: true,
     scale: 0
-  }
+  };
 
   /**
    * A Wall is the basic element to create Rooms.
@@ -69,7 +69,7 @@ module BP3D.Model {
     constructor(private start: Corner, private end: Corner) {
       this.id = this.getUuid();
 
-      this.start.attachStart(this)
+      this.start.attachStart(this);
       this.end.attachEnd(this);
     }
 
