@@ -117,7 +117,8 @@ module BP3D.Three {
                 // check walls
                 var wallEdgePlanes = model.floorplan.wallEdgePlanes();
                 var wallIntersects = scope.getIntersections(
-                    mouse, wallEdgePlanes, true);
+                    mouse, wallEdgePlanes);
+
                 if (wallIntersects.length > 0) {
                     var wall = wallIntersects[0].object.edge;
                     three.wallClicked.fire(wall);
@@ -138,6 +139,7 @@ module BP3D.Three {
             }
 
         }
+
 
         function mouseMoveEvent(event) {
             if (scope.enabled) {
@@ -348,13 +350,18 @@ module BP3D.Three {
 
         // returns the first intersection object
         this.itemIntersection = function (vec2, item) {
+            var items = model.scene.getItems();
+
             var customIntersections = item.customIntersectionPlanes();
+            // console.log("custom", customIntersections);
             var intersections = null;
-            if (customIntersections && customIntersections.length > 0) {
-                intersections = this.getIntersections(vec2, customIntersections, true);
-            } else {
-                intersections = this.getIntersections(vec2, plane);
-            }
+            // if (customIntersections && customIntersections.length > 0) {
+            //     intersections = this.getIntersections(vec2, customIntersections, true);
+            //     console.log("intersections", intersections);
+            // } else {
+                intersections = this.getIntersections(vec2, items, false, true);
+
+            // }
             if (intersections.length > 0) {
                 return intersections[0];
             } else {

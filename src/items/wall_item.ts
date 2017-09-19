@@ -136,7 +136,9 @@ namespace BP3D.Items {
 
         /** */
         public moveToPosition(vec3, intersection) {
-            this.changeWallEdge(intersection.object.edge);
+            if(intersection.object.currentWallEdge != undefined){
+                this.changeWallEdge(intersection.object.currentWallEdge);
+            }
             this.boundMove(vec3);
             this.position.copy(vec3);
             this.redrawWall();

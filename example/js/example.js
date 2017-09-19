@@ -130,9 +130,6 @@ ContextMenu = function (blueprint3d) {
 
     function moveObject(direction) {
 
-        // console.log("selectedITEMPosition1", selectedItem.position);
-        // var position = {"x": selectedItem.position.x, "y": selectedItem.position.y, "z": selectedItem.position.z};
-
         switch (direction) {
             case "up":
                 selectedItem.position.z -= 10;
@@ -270,7 +267,7 @@ var ModalEffects = function(blueprint3d) {
     this.setActiveItem = function(active) {
         itemSelected = active;
         update();
-    }
+    };
 
     function update() {
         if (itemsLoading > 0) {
@@ -295,7 +292,7 @@ var ModalEffects = function(blueprint3d) {
     }
 
     init();
-}
+};
 
 /*
  * Side menu
@@ -473,6 +470,7 @@ var TextureSelector = function (blueprint3d, sideMenu) {
     }
 
     function init() {
+        console.log("WALLCLICKEDINIT");
         three.wallClicked.add(wallClicked);
         three.floorClicked.add(floorClicked);
         three.itemSelectedCallbacks.add(reset);
@@ -482,6 +480,7 @@ var TextureSelector = function (blueprint3d, sideMenu) {
     }
 
     function wallClicked(halfEdge) {
+        console.log("ESTONOFUNCIONA");
         currentTarget = halfEdge;
         $("#floorTexturesDiv").hide();
         $("#wallTextures").show();
