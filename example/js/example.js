@@ -134,7 +134,6 @@ ContextMenu = function (blueprint3d) {
             case "up":
                 selectedItem.position.z -= 10;
                 selectedItem.resized();
-                // console.log("selectedITEMPosition2", selectedItem.position, "position", position);
                 break;
             case "down":
                 selectedItem.position.z += 10;
@@ -470,7 +469,6 @@ var TextureSelector = function (blueprint3d, sideMenu) {
     }
 
     function init() {
-        console.log("WALLCLICKEDINIT");
         three.wallClicked.add(wallClicked);
         three.floorClicked.add(floorClicked);
         three.itemSelectedCallbacks.add(reset);
@@ -480,7 +478,6 @@ var TextureSelector = function (blueprint3d, sideMenu) {
     }
 
     function wallClicked(halfEdge) {
-        console.log("ESTONOFUNCIONA");
         currentTarget = halfEdge;
         $("#floorTexturesDiv").hide();
         $("#wallTextures").show();

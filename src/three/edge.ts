@@ -214,7 +214,7 @@ module BP3D.Three {
             // add holes for each wall item
             wall.items.forEach((item) => {
                 var pos = item.position.clone();
-                pos.applyMatrix4(transform)
+                pos.applyMatrix4(transform);
                 var halfSize = item.halfSize;
                 var min = halfSize.clone().multiplyScalar(-1);
                 var max = halfSize.clone();
@@ -230,8 +230,9 @@ module BP3D.Three {
 
                 shape.holes.push(new THREE.Path(holePoints));
             });
-
+            console.log("SHAPE", shape);
             var geometry = new THREE.ShapeGeometry(shape);
+            // console.log("GEOMETRY", geometry, "shape", shape);
 
             geometry.vertices.forEach((v) => {
                 v.applyMatrix4(invTransform);

@@ -353,7 +353,6 @@ module BP3D.Three {
             var items = model.scene.getItems();
 
             var customIntersections = item.customIntersectionPlanes();
-            // console.log("custom", customIntersections);
             var intersections = null;
             // if (customIntersections && customIntersections.length > 0) {
             //     intersections = this.getIntersections(vec2, customIntersections, true);
