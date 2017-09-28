@@ -68,7 +68,7 @@ module BP3D.Model {
 
         // hack
         public wallEdgePlanes(): THREE.Mesh[] {
-            var planes = []
+            var planes = [];
             this.walls.forEach((wall) => {
                 if (wall.frontEdge) {
                     planes.push(wall.frontEdge.plane);
@@ -110,7 +110,7 @@ module BP3D.Model {
          */
         public newWall(start: Corner, end: Corner): Wall {
             var wall = new Wall(start, end);
-            this.walls.push(wall)
+            this.walls.push(wall);
             var scope = this;
             wall.fireOnDelete(() => {
                 scope.removeWall(wall);
@@ -305,7 +305,7 @@ module BP3D.Model {
             });
             this.assignOrphanEdges();
 
-            this.updateFloorTextures();
+            // this.updateFloorTextures();
             this.updated_rooms.fire();
         }
 

@@ -230,7 +230,6 @@ module BP3D.Three {
 
                 shape.holes.push(new THREE.Path(holePoints));
             });
-            console.log("SHAPE", shape);
             var geometry = new THREE.ShapeGeometry(shape);
             // console.log("GEOMETRY", geometry, "shape", shape);
 

@@ -4,7 +4,7 @@
 
 module BP3D.Floorplanner {
     /** how much will we move a corner to make a wall axis aligned (cm) */
-    const snapTolerance = 25;
+    const snapTolerance = 20;
 
     /**
      * The Floorplanner implements an interactive tool for creation of floorplans.
@@ -178,7 +178,10 @@ module BP3D.Floorplanner {
             this.mouseY = (event.clientY - this.canvasElement.offset().top) * this.cmPerPixel + this.originY * this.cmPerPixel;
 
             // update target (snapped position of actual mouse)
-            if (this.mode == floorplannerModes.DRAW || (this.mode == floorplannerModes.MOVE && this.mouseDown)) {
+            // if (this.mode == floorplannerModes.DRAW || (this.mode == floorplannerModes.MOVE && this.mouseDown)) {
+            //     this.updateTarget();
+            // }
+            if (this.mode == floorplannerModes.DRAW ) {
                 this.updateTarget();
             }
 
@@ -247,11 +250,13 @@ module BP3D.Floorplanner {
                 }
                 this.lastNode = corner;
             }
+
         }
 
         /** */
         private mouseleave() {
             this.mouseDown = false;
+            this.view.draw();
             //scope.setMode(scope.modes.MOVE);
         }
 

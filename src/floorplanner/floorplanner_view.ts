@@ -83,7 +83,7 @@ module BP3D.Floorplanner {
 
             this.floorplan.getRooms().forEach((room) => {
                 this.drawRoom(room);
-            })
+            });
 
             this.floorplan.getWalls().forEach((wall) => {
                 this.drawWall(wall);
