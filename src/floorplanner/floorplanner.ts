@@ -75,7 +75,7 @@ module BP3D.Floorplanner {
         private cmPerPixel: number;
 
         /** */
-        private pixelsPerCm: number;
+        public pixelsPerCm: number;
 
         /** */
         constructor(canvas: string, private floorplan: Model.Floorplan) {
@@ -143,7 +143,6 @@ module BP3D.Floorplanner {
                 this.targetX = this.mouseX;
                 this.targetY = this.mouseY;
             }
-
             this.view.draw();
         }
 
@@ -256,8 +255,7 @@ module BP3D.Floorplanner {
         /** */
         private mouseleave() {
             this.mouseDown = false;
-            this.view.draw();
-            //scope.setMode(scope.modes.MOVE);
+            // scope.setMode(scope.modes.MOVE);
         }
 
         /** */
@@ -304,5 +302,22 @@ module BP3D.Floorplanner {
         public convertY(y: number): number {
             return (y - this.originY * this.cmPerPixel) * this.pixelsPerCm;
         }
+
+        public zoom(zoomValue){
+            if(zoomValue == "in"){
+                this.pixelsPerCm += 0.01;
+                this.cmPerPixel = 1 / this.pixelsPerCm;
+            }
+            else if (zoomValue == "out"){
+                this.pixelsPerCm -= 0.01;
+                this.cmPerPixel = 1 / this.pixelsPerCm;
+            }
+            else{
+                this.pixelsPerCm = 0.4921259842519685;
+                this.cmPerPixel = 1 / this.pixelsPerCm;
+            }
+
+        }
+
     }
 }

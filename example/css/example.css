@@ -126,6 +126,14 @@ div {
     text-align: right;
 }
 
+#floorplanner-camera-controls {
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    padding: 0 20px;
+    text-align: right;
+}
+
 #floorplanner-controls {
     position: absolute;
     left: 0;

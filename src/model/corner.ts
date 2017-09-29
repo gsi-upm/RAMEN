@@ -279,7 +279,6 @@ module BP3D.Model {
             // delete the other corner
             corner.removeAll();
             this.removeDuplicateWalls();
-            // this.floorplan.update();
         }
 
         public mergeWithIntersected(): boolean {
@@ -307,8 +306,6 @@ module BP3D.Model {
                     // merge this corner into wall by breaking wall into two parts
                     console.log("THIS", this, "wallEnd",end);
                     this.floorplan.newWall(this, end);
-                    console.log("HOLA");
-
                     // this.floorplan.update();
                     return true;
                 }

@@ -553,11 +553,29 @@ var ViewerFloorplanner = function(blueprint3d) {
         $(remove).click(function(){
             scope.floorplanner.setMode(BP3D.Floorplanner.floorplannerModes.DELETE);
         });
+
+        $('#floorplanner-zoom-out').click(function(){
+            console.log("pixels", scope.floorplanner.pixelsPerCm );
+            scope.floorplanner.zoom("out");
+            scope.floorplanner.reset();
+        });
+
+        $('#floorplanner-zoom-in').click(function(){
+            console.log("pixels", scope.floorplanner.pixelsPerCm );
+            scope.floorplanner.zoom("in");
+            scope.floorplanner.reset();
+        });
+
+        $('#floorplanner-zoom-home').click(function(){
+            console.log("pixels", scope.floorplanner.pixelsPerCm );
+            scope.floorplanner.zoom("home");
+            scope.floorplanner.reset();
+        });
     }
 
     this.updateFloorplanView = function() {
         scope.floorplanner.reset();
-    }
+    };
 
     this.handleWindowResize = function() {
         $(canvasWrapper).height(window.innerHeight - $(canvasWrapper).offset().top);

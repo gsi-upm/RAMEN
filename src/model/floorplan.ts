@@ -309,6 +309,7 @@ module BP3D.Model {
             this.updated_rooms.fire();
         }
 
+
         /**
          * Returns the center of the floorplan in the y plane
          */
