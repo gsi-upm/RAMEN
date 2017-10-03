@@ -92,18 +92,6 @@ $(document).ready(function() {
       "model" : "/models/js/cb-clapboard_baked.js",
       "type" : "1"
     },
-        {
-      "name" : "Media Console - Black",
-      "image" : "models/thumbnails/thumbnail_moore-60-media-console-1.jpg",
-      "model" : "/models/js/cb-moore_baked.js",
-      "type" : "1"
-    },
-       {
-      "name" : "Sectional - Olive",
-      "image" : "models/thumbnails/thumbnail_img21o.jpg",
-      "model" : "/models/js/we-crosby2piece-greenbaked.js",
-      "type" : "1"
-    },
     {
       "name" : "Sofa - Grey",
       "image" : "models/thumbnails/thumbnail_rochelle-sofa-3.jpg",
@@ -138,12 +126,6 @@ $(document).ready(function() {
       "name" : "Dining Table",
       "image" : "models/thumbnails/thumbnail_scholar-dining-table.jpg",
       "model" : "/models/js/cb-scholartable_baked.js",
-      "type" : "1"
-    },
-    {
-      "name" : "Dining table",
-      "image" : "models/thumbnails/thumbnail_Screen_Shot_2014-01-28_at_6.49.33_PM.png",
-      "model" : "/models/js/BlakeAvenuejoshuatreecheftable.js",
       "type" : "1"
     },
     {
