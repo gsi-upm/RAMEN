@@ -174,7 +174,7 @@ module BP3D.Three {
 
         this.isRotating = function () {
             return (state == states.ROTATING || state == states.ROTATING_FREE);
-        }
+        };
 
         function mouseDownEvent(event) {
             if (scope.enabled) {
@@ -293,7 +293,7 @@ module BP3D.Three {
 
         this.selectedObject = function () {
             return selectedObject;
-        }
+        };
 
         // updates the vector of the intersection with the plane of a given
         // mouse position, and the intersected object

@@ -148,8 +148,8 @@ ContextMenu = function (blueprint3d) {
                 selectedItem.resized();
                 break;
             case "rotate-right":
-                if(selectedItem.metadata.itemName == "Open Door"){
-                    selectedItem.rotation.y += 1.57079632679
+                if(selectedItem.metadata.itemName == "Open Door" || selectedItem.metadata.itemName == "Out Door"){
+                    selectedItem.rotation.y += 1.57079632679;
                     selectedItem.position_set = false;
                     selectedItem.placeInRoom();
                 }else{
@@ -184,9 +184,9 @@ ContextMenu = function (blueprint3d) {
         console.log("ITEM: ", item);
         $("#context-menu-name").text(item.metadata.itemName);
 
-        $("#item-width").val(cmToIn(selectedItem.getWidth()).toFixed(0));
-        $("#item-height").val(cmToIn(selectedItem.getHeight()).toFixed(0));
-        $("#item-depth").val(cmToIn(selectedItem.getDepth()).toFixed(0));
+        $("#item-width").val(selectedItem.getWidth().toFixed(0));
+        $("#item-height").val(selectedItem.getHeight().toFixed(0));
+        $("#item-depth").val(selectedItem.getDepth().toFixed(0));
 
         $("#context-menu").show();
 
@@ -233,9 +233,9 @@ ContextMenu = function (blueprint3d) {
 
     function resize() {
         selectedItem.resize(
-            inToCm($("#item-height").val()),
-            inToCm($("#item-width").val()),
-            inToCm($("#item-depth").val())
+            $("#item-height").val(),
+            $("#item-width").val(),
+            $("#item-depth").val()
         );
     }
 
@@ -432,10 +432,10 @@ var SideMenu = function(blueprint3d, floorplanControls, modalEffects) {
             var metadata = {
                 itemName: $(this).attr("model-name"),
                 resizable: true,
-                modelUrl: modelUrl,
+                modelUrl:  modelUrl,
                 itemType: itemType
-            }
-
+            };
+            console.log("METADATA", metadata);
             blueprint3d.model.scene.addItem2(itemType, modelUrl, metadata);
             setCurrentState(scope.states.DEFAULT);
         });
@@ -443,7 +443,7 @@ var SideMenu = function(blueprint3d, floorplanControls, modalEffects) {
 
     init();
 
-}
+};
 
 /*
  * Change floor and wall textures
@@ -555,19 +555,16 @@ var ViewerFloorplanner = function(blueprint3d) {
         });
 
         $('#floorplanner-zoom-out').click(function(){
-            console.log("pixels", scope.floorplanner.pixelsPerCm );
             scope.floorplanner.zoom("out");
             scope.floorplanner.reset();
         });
 
         $('#floorplanner-zoom-in').click(function(){
-            console.log("pixels", scope.floorplanner.pixelsPerCm );
             scope.floorplanner.zoom("in");
             scope.floorplanner.reset();
         });
 
         $('#floorplanner-zoom-home').click(function(){
-            console.log("pixels", scope.floorplanner.pixelsPerCm );
             scope.floorplanner.zoom("home");
             scope.floorplanner.reset();
         });
@@ -587,6 +584,7 @@ var ViewerFloorplanner = function(blueprint3d) {
 
 var mainControls = function(blueprint3d) {
     var blueprint3d = blueprint3d;
+    var scope = this;
 
     function newDesign() {
 
@@ -594,13 +592,18 @@ var mainControls = function(blueprint3d) {
     }
 
     function loadDesign() {
+        console.log("scope", blueprint3d.model.scene.loadedItems);
+        blueprint3d.model.scene.loadedItems = [];
+        console.log("scope2", blueprint3d.model.scene.loadedItems);
         files = $("#loadFile").get(0).files;
         var reader  = new FileReader();
+        var data;
         reader.onload = function(event) {
-            var data = event.target.result;
+            data = event.target.result;
             blueprint3d.model.loadSerialized(data);
         };
         reader.readAsText(files[0]);
+
     }
 
     function saveDesign() {
@@ -609,7 +612,7 @@ var mainControls = function(blueprint3d) {
         var blob = new Blob([data], {type : 'text'});
         a.href = window.URL.createObjectURL(blob);
         a.download = 'design.blueprint3d';
-        document.body.appendChild(a)
+        document.body.appendChild(a);
         a.click();
         document.body.removeChild(a)
     }
@@ -647,7 +650,7 @@ $(document).ready(function() {
     var cameraButtons = new CameraButtons(blueprint3d);
     mainControls(blueprint3d);
 
-    $.ajax('/js/LabGSI.blueprint3d', {
+    $.ajax('/js/design(19).blueprint3d', {
         async: false,
         dataType: 'text',
         success: function (data) {

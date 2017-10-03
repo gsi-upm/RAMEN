@@ -108,15 +108,19 @@ module BP3D.Model {
          * @param end he end corner.
          * @returns The new wall.
          */
-        public newWall(start: Corner, end: Corner): Wall {
+        public newWall(start: Corner, end: Corner, floorplanner?: boolean): Wall {
+            var creating = floorplanner || false;
             var wall = new Wall(start, end);
             this.walls.push(wall);
             var scope = this;
             wall.fireOnDelete(() => {
                 scope.removeWall(wall);
             });
+
             this.new_wall_callbacks.fire(wall);
-            this.update();
+            if(creating){
+                this.update();
+            }
             return wall;
         }
 

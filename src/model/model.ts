@@ -45,7 +45,7 @@ module BP3D.Model {
             // TODO: a much better serialization format.
             this.roomLoadingCallbacks.fire();
 
-            var data = JSON.parse(json)
+            var data = JSON.parse(json);
             this.newRoom(
                 data.floorplan,
                 data.items
@@ -63,6 +63,7 @@ module BP3D.Model {
                 items_arr[i] = {
                     item_name: object.metadata.itemName,
                     item_type: object.metadata.itemType,
+                    // model_url: "/" + object.metadata.modelUrl,
                     model_url: object.metadata.modelUrl,
                     xpos: object.position.x,
                     ypos: object.position.y,
@@ -71,7 +72,9 @@ module BP3D.Model {
                     scale_x: object.scale.x,
                     scale_y: object.scale.y,
                     scale_z: object.scale.z,
-                    fixed: object.fixed
+                    fixed: object.fixed,
+                    width: object.getWidth(),
+                    depth: object.getDepth()
                 };
             }
 
@@ -89,6 +92,7 @@ module BP3D.Model {
             items.forEach((item) => {
                 var position = new THREE.Vector3(
                     item.xpos, item.ypos, item.zpos);
+                console.log("url", item.model_url);
                 var metadata = {
                     itemName: item.item_name,
                     resizable: item.resizable,

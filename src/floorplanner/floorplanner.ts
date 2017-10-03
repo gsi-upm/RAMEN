@@ -242,7 +242,7 @@ module BP3D.Floorplanner {
             if (this.mode == floorplannerModes.DRAW && !this.mouseMoved) {
                 var corner = this.floorplan.newCorner(this.targetX, this.targetY);
                 if (this.lastNode != null) {
-                    this.floorplan.newWall(this.lastNode, corner);
+                    this.floorplan.newWall(this.lastNode, corner, true);
                 }
                 if (corner.mergeWithIntersected() && this.lastNode != null) {
                     this.setMode(floorplannerModes.MOVE);

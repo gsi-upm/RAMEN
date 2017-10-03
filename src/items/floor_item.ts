@@ -30,14 +30,14 @@ module BP3D.Items {
     /** */
     public moveToPosition(vec3, intersection) {
       // keeps the position in the room and on the floor
-      if (!this.isValidPosition(vec3)) {
-        this.showError(vec3);
-        return;
-      } else {
-        this.hideError();
+      // if (!this.isValidPosition(vec3)) {
+      //   this.showError(vec3);
+      //   return;
+      // } else {
+      //   this.hideError();
         vec3.y = this.position.y; // keep it on the floor!
         this.position.copy(vec3);
-      }
+      // }
     }
 
     /** */
