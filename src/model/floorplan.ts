@@ -129,7 +129,7 @@ module BP3D.Model {
          */
         private removeWall(wall: Wall) {
             Core.Utils.removeValue(this.walls, wall);
-            this.update();
+            // this.update();
         }
 
         /**

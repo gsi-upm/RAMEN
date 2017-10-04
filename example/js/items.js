@@ -137,15 +137,34 @@ $(document).ready(function() {
     {
       "name" : "NYC Poster",
       "image" : "models/thumbnails/thumbnail_nyc2.jpg",
-      "model" : "/models/js/nyc-poster2.js",
+      "model" : "/models/js/nyc-poster.js",
       "type" : "2"
     },
       {
+          "name" : "GSI Poster",
+          "image" : "models/thumbnails/thumbnail_gsi.png",
+          "model" : "/models/js/gsi-poster.js",
+          "type" : "2"
+      },
+      {
           "name" : "Camera",
-          "image" : "models/thumbnails/thumbnail_nyc2.jpg",
-          "model" : "/models/js/cube5.json",
+          "image" : "models/thumbnails/thumbnail_camera.png",
+          "model" : "/models/js/camera3.json",
+          "type" : "2"
+      },
+      {
+          "name" : "Air",
+          "image" : "models/thumbnails/thumbnail_air.png",
+          "model" : "/models/js/air.json",
+          "type" : "2"
+      },
+      {
+          "name" : "Beacon",
+          "image" : "models/thumbnails/thumbnail_beacon.png",
+          "model" : "/models/js/beacon_wall.json",
           "type" : "2"
       }
+
    /*
    {
       "name" : "",

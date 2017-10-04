@@ -422,7 +422,7 @@ var SideMenu = function(blueprint3d, floorplanControls, modalEffects) {
         $(".sidebar").height(window.innerHeight);
         $("#add-items").height(window.innerHeight);
 
-    };
+    }
 
     // TODO: this doesn't really belong here
     function initItems() {
@@ -435,7 +435,7 @@ var SideMenu = function(blueprint3d, floorplanControls, modalEffects) {
                 modelUrl:  modelUrl,
                 itemType: itemType
             };
-            console.log("METADATA", metadata);
+
             blueprint3d.model.scene.addItem2(itemType, modelUrl, metadata);
             setCurrentState(scope.states.DEFAULT);
         });
@@ -650,7 +650,7 @@ $(document).ready(function() {
     var cameraButtons = new CameraButtons(blueprint3d);
     mainControls(blueprint3d);
 
-    $.ajax('/js/design(19).blueprint3d', {
+    $.ajax('/js/LabGSI.blueprint3d', {
         async: false,
         dataType: 'text',
         success: function (data) {

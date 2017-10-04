@@ -215,6 +215,13 @@ module BP3D.Model {
                 );
                 item.fixed = fixed || false;
                 scope.items.push(item);
+
+                var scale2 = scope.calculateScale(metadata.itemName);
+
+                item.scale.x = scale2.x;
+                item.scale.y = scale2.y;
+                item.scale.z = scale2.z;
+
                 scope.add(item);
                 item.initObject();
                 scope.itemLoadedCallbacks.fire(item);
@@ -226,6 +233,30 @@ module BP3D.Model {
                 loaderCallback,
                 undefined // TODO_Ekki
             );
+        }
+
+        private calculateScale(itemName){
+            var scale = {"x":1, "y":1, "z":1};
+
+            if(itemName == "Camera"){
+                scale.x = 10;
+                scale.y = 10;
+                scale.z = 10;
+            }
+            else if(itemName == "Air"){
+                scale.x = 13;
+                scale.y = 12;
+                scale.z = 12;
+            }
+            else if(itemName == "GSI Poster"){
+                scale.x = 1.35;
+            }
+            else if(itemName == "Beacon"){
+                scale.x = 4;
+                scale.y = 4;
+                scale.z = 4;
+            }
+            return scale;
         }
     }
 }
