@@ -110,7 +110,6 @@ module BP3D.Model {
         }
 
         private relativeMove(dx: number, dy: number) {
-            console.log("dx", dx, "dy", dy);
             this.start.relativeMove(dx, dy);
             this.end.relativeMove(dx, dy);
         }

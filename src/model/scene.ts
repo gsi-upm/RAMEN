@@ -47,6 +47,8 @@ module BP3D.Model {
         public flag = 1;
         public step = 0;
         public customUniforms;
+        public mouse;
+        public element;
         /**
          * Constructs a scene.
          * @param model The associated model.
@@ -221,9 +223,10 @@ module BP3D.Model {
                 item.scale.x = scale2.x;
                 item.scale.y = scale2.y;
                 item.scale.z = scale2.z;
-
+                console.log("SCENE", scope);
                 scope.add(item);
                 item.initObject();
+
                 scope.itemLoadedCallbacks.fire(item);
             };
 
@@ -233,7 +236,32 @@ module BP3D.Model {
                 loaderCallback,
                 undefined // TODO_Ekki
             );
+            //     // scope.itemLoadedCallbacks.fire(item);
+            // };
+            // if (metadata.itemName == "Open Door"){
+            //
+            //     scope.mouse = undefined;
+            //     // $("#loading-modal").open();
+            //     scope.element.mouseup(function (event) {
+            //         // event.preventDefault();
+            //         console.log("MOUESE", scope.mouse);
+            //         scope.loader.load(
+            //             fileName,
+            //             loaderCallback,
+            //             undefined // TODO_Ekki
+            //         );
+            //     });
+            //     // this.itemLoadingCallbacks.fire();
+            //
+            //     $("#loading-modal").hide();
+            //     // }
+            //
+            // }
+            //
+            // // this.itemLoadingCallbacks.fire();
+
         }
+
 
         private calculateScale(itemName){
             var scale = {"x":1, "y":1, "z":1};

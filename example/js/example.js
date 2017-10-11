@@ -435,9 +435,32 @@ var SideMenu = function(blueprint3d, floorplanControls, modalEffects) {
                 modelUrl:  modelUrl,
                 itemType: itemType
             };
+            if(metadata.itemName == "Open Door" || metadata.itemName == "Out Door"){
+                setCurrentState(scope.states.DEFAULT);
+                console.log("controller",blueprint3d.three.getController());
+                var controller = blueprint3d.three.getController();
+                var flag = true;
+                controller.getElement().mousedown(function (event) {
+                    if(flag){
+                        var mouse = new THREE.Vector2();
+                        mouse.x = event.clientX;
+                        mouse.y = event.clientY;
+                        var intersections = controller.getIntersections(
+                            mouse, blueprint3d.model.scene.scene.children, false, false, true);
 
-            blueprint3d.model.scene.addItem2(itemType, modelUrl, metadata);
-            setCurrentState(scope.states.DEFAULT);
+                        var position = {"x": intersections[0].point.x, "y": 110.800000297771, "z": intersections[0].point.z};
+
+                        blueprint3d.model.scene.addItem2(itemType, modelUrl, metadata, position);
+                        flag = false;
+                    }
+
+                });
+            }
+            else{
+                blueprint3d.model.scene.addItem2(itemType, modelUrl, metadata);
+                setCurrentState(scope.states.DEFAULT);
+            }
+
         });
     }
 
@@ -462,6 +485,7 @@ var TextureSelector = function (blueprint3d, sideMenu) {
             var textureUrl = $(this).attr("texture-url");
             var textureStretch = ($(this).attr("texture-stretch") == "true");
             var textureScale = parseInt($(this).attr("texture-scale"));
+            console.log("currentTarget", currentTarget);
             currentTarget.setTexture(textureUrl, textureStretch, textureScale);
 
             e.preventDefault();
@@ -478,6 +502,7 @@ var TextureSelector = function (blueprint3d, sideMenu) {
     }
 
     function wallClicked(halfEdge) {
+        console.log("AQUIII", halfEdge);
         currentTarget = halfEdge;
         $("#floorTexturesDiv").hide();
         $("#wallTextures").show();
@@ -556,17 +581,17 @@ var ViewerFloorplanner = function(blueprint3d) {
 
         $('#floorplanner-zoom-out').click(function(){
             scope.floorplanner.zoom("out");
-            scope.floorplanner.reset();
+            scope.floorplanner.reset(true);
         });
 
         $('#floorplanner-zoom-in').click(function(){
             scope.floorplanner.zoom("in");
-            scope.floorplanner.reset();
+            scope.floorplanner.reset(true);
         });
 
         $('#floorplanner-zoom-home').click(function(){
             scope.floorplanner.zoom("home");
-            scope.floorplanner.reset();
+            scope.floorplanner.reset(true);
         });
     }
 
@@ -587,16 +612,15 @@ var mainControls = function(blueprint3d) {
     var scope = this;
 
     function newDesign() {
-
+        deleteAgents();
         blueprint3d.model.loadSerialized('{"floorplan":{"corners":{"f90da5e3-9e0e-eba7-173d-eb0b071e838e":{"x":0,"y":500},"da026c08-d76a-a944-8e7b-096b752da9ed":{"x":500,"y":500},"4e3d65cb-54c0-0681-28bf-bddcc7bdb571":{"x":500,"y":0},"71d4f128-ae80-3d58-9bd2-711c6ce6cdf2":{"x":0,"y":0}},"walls":[{"corner1":"71d4f128-ae80-3d58-9bd2-711c6ce6cdf2","corner2":"f90da5e3-9e0e-eba7-173d-eb0b071e838e","frontTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0},"backTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0}},{"corner1":"f90da5e3-9e0e-eba7-173d-eb0b071e838e","corner2":"da026c08-d76a-a944-8e7b-096b752da9ed","frontTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0},"backTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0}},{"corner1":"da026c08-d76a-a944-8e7b-096b752da9ed","corner2":"4e3d65cb-54c0-0681-28bf-bddcc7bdb571","frontTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0},"backTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0}},{"corner1":"4e3d65cb-54c0-0681-28bf-bddcc7bdb571","corner2":"71d4f128-ae80-3d58-9bd2-711c6ce6cdf2","frontTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0},"backTexture":{"url":"rooms/textures/wallmap.png","stretch":true,"scale":0}}],"wallTextures":[],"floorTextures":{},"newFloorTextures":{}},"items":[]}');
     }
 
     function loadDesign() {
-        console.log("scope", blueprint3d.model.scene.loadedItems);
+        deleteAgents();
         blueprint3d.model.scene.loadedItems = [];
-        console.log("scope2", blueprint3d.model.scene.loadedItems);
         files = $("#loadFile").get(0).files;
-        var reader  = new FileReader();
+        var reader = new FileReader();
         var data;
         reader.onload = function(event) {
             data = event.target.result;
@@ -621,6 +645,12 @@ var mainControls = function(blueprint3d) {
         $("#new").click(newDesign);
         $("#loadFile").change(loadDesign);
         $("#saveFile").click(saveDesign);
+    }
+
+    function deleteAgents(){
+        for (var i=0; i<blueprint3d.model.scene.meshes.length; i++){
+            blueprint3d.model.scene.remove(blueprint3d.model.scene.meshes[i]);
+        }
     }
 
     init();
@@ -650,7 +680,8 @@ $(document).ready(function() {
     var cameraButtons = new CameraButtons(blueprint3d);
     mainControls(blueprint3d);
 
-    $.ajax('/js/LabGSI.blueprint3d', {
+    // $.ajax('/js/LabGSI.blueprint3d', {
+    $.ajax('/js/gsi-video.blueprint3d', {
         async: false,
         dataType: 'text',
         success: function (data) {

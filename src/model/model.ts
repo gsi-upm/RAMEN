@@ -92,7 +92,6 @@ module BP3D.Model {
             items.forEach((item) => {
                 var position = new THREE.Vector3(
                     item.xpos, item.ypos, item.zpos);
-                console.log("url", item.model_url);
                 var metadata = {
                     itemName: item.item_name,
                     resizable: item.resizable,

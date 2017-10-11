@@ -259,10 +259,13 @@ module BP3D.Floorplanner {
         }
 
         /** */
-        private reset() {
+        private reset(zoom?: boolean) {
+            var isZoom = zoom || false;
             this.resizeView();
             this.setMode(floorplannerModes.MOVE);
-            this.resetOrigin();
+            if(!isZoom){
+                this.resetOrigin();
+            }
             this.view.draw();
         }
 

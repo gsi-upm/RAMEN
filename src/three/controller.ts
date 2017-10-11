@@ -42,6 +42,7 @@ module BP3D.Three {
         this.needsUpdate = true;
 
         function init() {
+            scene.element = element;
             element.mousedown(mouseDownEvent);
             element.mouseup(mouseUpEvent);
             element.mousemove(mouseMoveEvent);
@@ -116,11 +117,16 @@ module BP3D.Three {
             if (state == states.UNSELECTED && mouseoverObject == null) {
                 // check walls
                 var wallEdgePlanes = model.floorplan.wallEdgePlanes();
+                console.log("11", wallEdgePlanes, "mouse", mouse);
+                // var wallIntersects = scope.getIntersections(
+                //     mouse, planes, false, false, true);
                 var wallIntersects = scope.getIntersections(
-                    mouse, wallEdgePlanes);
+                    mouse, scene.scene.children, false, false, true);
 
+                console.log("!!", wallIntersects);
                 if (wallIntersects.length > 0) {
                     var wall = wallIntersects[0].object.edge;
+                    // console.log("wall", wall);
                     three.wallClicked.fire(wall);
                     return;
                 }
@@ -129,6 +135,7 @@ module BP3D.Three {
                 var floorPlanes = model.floorplan.floorPlanes();
                 var floorIntersects = scope.getIntersections(
                     mouse, floorPlanes, false);
+                console.log(floorIntersects);
                 if (floorIntersects.length > 0) {
                     var room = floorIntersects[0].object.room;
                     three.floorClicked.fire(room);
@@ -215,6 +222,7 @@ module BP3D.Three {
         function mouseUpEvent(event) {
             if (scope.enabled) {
                 mouseDown = false;
+                model.scene.mouse = mouse;
 
                 switch (state) {
                     case states.DRAGGING:
@@ -371,14 +379,11 @@ module BP3D.Three {
         // filter by normals will only return objects facing the camera
         // objects can be an array of objects or a single object
         this.getIntersections = function (vec2, objects, filterByNormals, onlyVisible, recursive, linePrecision) {
-
             var vector = mouseToVec3(vec2);
-
             onlyVisible = onlyVisible || false;
             filterByNormals = filterByNormals || false;
             recursive = recursive || false;
             linePrecision = linePrecision || 20;
-
             var direction = vector.sub(camera.position).normalize();
             var raycaster = new THREE.Raycaster(
                 camera.position,
@@ -406,6 +411,10 @@ module BP3D.Three {
             }
             return intersections;
         }
+
+        this.getElement = function (){
+            return element;
+        };
 
         // manage the selected object
         this.setSelectedObject = function (object) {

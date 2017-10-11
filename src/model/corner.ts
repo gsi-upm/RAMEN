@@ -304,7 +304,6 @@ module BP3D.Model {
                     var end = wall.getEnd();
                     wall.setEnd(this);
                     // merge this corner into wall by breaking wall into two parts
-                    console.log("THIS", this, "wallEnd",end);
                     this.floorplan.newWall(this, end);
                     // this.floorplan.update();
                     return true;
