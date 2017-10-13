@@ -208,6 +208,7 @@ module BP3D.Model {
         public addItem2(itemType: number, fileName: string, metadata, position: THREE.Vector3, rotation: number, scale: THREE.Vector3, fixed: boolean) {
             itemType = itemType || 1;
             var scope = this;
+
             var loaderCallback = function (geometry: THREE.Geometry, materials: THREE.Material[]) {
                 var item = new (Items.Factory.getClass(itemType))(
                     scope.model,
@@ -223,7 +224,8 @@ module BP3D.Model {
                 item.scale.x = scale2.x;
                 item.scale.y = scale2.y;
                 item.scale.z = scale2.z;
-                console.log("SCENE", scope);
+                item.position.y =  0.5 * (item.geometry.boundingBox.max.y - item.geometry.boundingBox.min.y);
+
                 scope.add(item);
                 item.initObject();
 
@@ -236,29 +238,7 @@ module BP3D.Model {
                 loaderCallback,
                 undefined // TODO_Ekki
             );
-            //     // scope.itemLoadedCallbacks.fire(item);
-            // };
-            // if (metadata.itemName == "Open Door"){
-            //
-            //     scope.mouse = undefined;
-            //     // $("#loading-modal").open();
-            //     scope.element.mouseup(function (event) {
-            //         // event.preventDefault();
-            //         console.log("MOUESE", scope.mouse);
-            //         scope.loader.load(
-            //             fileName,
-            //             loaderCallback,
-            //             undefined // TODO_Ekki
-            //         );
-            //     });
-            //     // this.itemLoadingCallbacks.fire();
-            //
-            //     $("#loading-modal").hide();
-            //     // }
-            //
-            // }
-            //
-            // // this.itemLoadingCallbacks.fire();
+
 
         }
 

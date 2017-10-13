@@ -287,6 +287,7 @@ var ModalEffects = function(blueprint3d) {
             update();
         });
 
+        $("#loading-modal2").hide();
         update();
     }
 
@@ -435,31 +436,27 @@ var SideMenu = function(blueprint3d, floorplanControls, modalEffects) {
                 modelUrl:  modelUrl,
                 itemType: itemType
             };
-            if(metadata.itemName == "Open Door" || metadata.itemName == "Out Door"){
-                setCurrentState(scope.states.DEFAULT);
-                console.log("controller",blueprint3d.three.getController());
-                var controller = blueprint3d.three.getController();
-                var flag = true;
-                controller.getElement().mousedown(function (event) {
-                    if(flag){
-                        var mouse = new THREE.Vector2();
-                        mouse.x = event.clientX;
-                        mouse.y = event.clientY;
-                        var intersections = controller.getIntersections(
-                            mouse, blueprint3d.model.scene.scene.children, false, false, true);
+            setCurrentState(scope.states.DEFAULT);
+            $("#loading-modal2").show();
+            console.log("controller",blueprint3d.three.getController());
+            var controller = blueprint3d.three.getController();
+            var flag = true;
+            controller.getElement().mousedown(function (event) {
+                if(flag){
+                    var mouse = new THREE.Vector2();
+                    mouse.x = event.clientX;
+                    mouse.y = event.clientY;
+                    var intersections = controller.getIntersections(
+                        mouse, blueprint3d.model.scene.scene.children, false, false, true);
 
-                        var position = {"x": intersections[0].point.x, "y": 110.800000297771, "z": intersections[0].point.z};
+                    var position = {"x": intersections[0].point.x, "y": 0, "z": intersections[0].point.z};
 
-                        blueprint3d.model.scene.addItem2(itemType, modelUrl, metadata, position);
-                        flag = false;
-                    }
+                    blueprint3d.model.scene.addItem2(itemType, modelUrl, metadata, position);
+                    $("#loading-modal2").hide();
+                    flag = false;
+                }
 
-                });
-            }
-            else{
-                blueprint3d.model.scene.addItem2(itemType, modelUrl, metadata);
-                setCurrentState(scope.states.DEFAULT);
-            }
+            });
 
         });
     }

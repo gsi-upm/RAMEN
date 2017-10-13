@@ -127,7 +127,7 @@ module BP3D.Three {
                 if (wallIntersects.length > 0) {
                     var wall = wallIntersects[0].object.edge;
                     // console.log("wall", wall);
-                    three.wallClicked.fire(wall);
+                    // three.wallClicked.fire(wall);
                     return;
                 }
 
