@@ -302,6 +302,7 @@ var SideMenu = function(blueprint3d, floorplanControls, modalEffects) {
     var blueprint3d = blueprint3d;
     var floorplanControls = floorplanControls;
     var modalEffects = modalEffects;
+    var flag = true;
 
     var ACTIVE_CLASS = "active";
 
@@ -438,11 +439,12 @@ var SideMenu = function(blueprint3d, floorplanControls, modalEffects) {
             };
             setCurrentState(scope.states.DEFAULT);
             $("#loading-modal2").show();
-            console.log("controller",blueprint3d.three.getController());
+
             var controller = blueprint3d.three.getController();
-            var flag = true;
-            controller.getElement().mousedown(function (event) {
-                if(flag){
+            controller.getElement().on("click");
+                controller.getElement().click(function (event) {
+
+                    event.preventDefault();
                     var mouse = new THREE.Vector2();
                     mouse.x = event.clientX;
                     mouse.y = event.clientY;
@@ -453,13 +455,12 @@ var SideMenu = function(blueprint3d, floorplanControls, modalEffects) {
 
                     blueprint3d.model.scene.addItem2(itemType, modelUrl, metadata, position);
                     $("#loading-modal2").hide();
+
                     flag = false;
-                }
-
-            });
-
-        });
-    }
+                    controller.getElement().off("click");
+                });
+             });
+        }
 
     init();
 

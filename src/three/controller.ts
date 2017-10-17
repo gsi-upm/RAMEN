@@ -117,13 +117,12 @@ module BP3D.Three {
             if (state == states.UNSELECTED && mouseoverObject == null) {
                 // check walls
                 var wallEdgePlanes = model.floorplan.wallEdgePlanes();
-                console.log("11", wallEdgePlanes, "mouse", mouse);
+
                 // var wallIntersects = scope.getIntersections(
                 //     mouse, planes, false, false, true);
                 var wallIntersects = scope.getIntersections(
                     mouse, scene.scene.children, false, false, true);
 
-                console.log("!!", wallIntersects);
                 if (wallIntersects.length > 0) {
                     var wall = wallIntersects[0].object.edge;
                     // console.log("wall", wall);
@@ -238,13 +237,13 @@ module BP3D.Three {
                         break;
                     case states.UNSELECTED:
                         if (!mouseMoved) {
-                            checkWallsAndFloors();
+                            // checkWallsAndFloors();
                         }
                         break;
                     case states.SELECTED:
                         if (intersectedObject == null && !mouseMoved) {
                             switchState(states.UNSELECTED);
-                            checkWallsAndFloors();
+                            // checkWallsAndFloors();
                         }
                         break;
                     case states.ROTATING_FREE:
