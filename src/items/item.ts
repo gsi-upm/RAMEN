@@ -73,7 +73,8 @@ module BP3D.Items {
             this.geometry = geometry;
             this.material = material;
 
-            this.errorColor = 0xff0000;
+            // this.errorColor = 0xff0000;
+            this.errorColor = 0xffffff;
 
             this.resizable = metadata.resizable;
 
@@ -176,10 +177,12 @@ module BP3D.Items {
             var on = this.hover || this.selected;
             this.highlighted = on;
             var hex = on ? this.emissiveColor : 0x000000;
-            (<THREE.MeshFaceMaterial>this.material).materials.forEach((material) => {
-                // TODO_Ekki emissive doesn't exist anymore?
-                (<any>material).emissive.setHex(hex);
-            });
+            if(this.hover){
+                this.showError(this.position);
+            }
+            else{
+                this.hideError();
+            }
         }
 
         /** */
@@ -214,6 +217,8 @@ module BP3D.Items {
         /** */
         public clickDragged(intersection) {
             if (intersection) {
+                // this.hover = false;
+                this.updateHighlight();
                 this.moveToPosition(
                     intersection.point.sub(this.dragOffset),
                     intersection);
@@ -318,7 +323,7 @@ module BP3D.Items {
             vec3 = vec3 || this.position;
             if (!this.error) {
                 this.error = true;
-                this.errorGlow = this.createGlow(this.errorColor, 0.8, true);
+                this.errorGlow = this.createGlow(this.errorColor, 0.1, false);
                 this.scene.add(this.errorGlow);
             }
             this.errorGlow.position.copy(vec3);
@@ -342,11 +347,11 @@ module BP3D.Items {
         /** */
         public createGlow(color, opacity, ignoreDepth): THREE.Mesh {
             ignoreDepth = ignoreDepth || false
-            opacity = opacity || 0.2;
+            var opacity = opacity || 0.2;
             var glowMaterial = new THREE.MeshBasicMaterial({
                 color: color,
                 blending: THREE.AdditiveBlending,
-                opacity: 0.2,
+                opacity: opacity,
                 transparent: true,
                 depthTest: !ignoreDepth
             });

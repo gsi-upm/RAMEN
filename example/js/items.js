@@ -147,6 +147,13 @@ $(document).ready(function() {
           "type" : "2"
       },
       {
+          "name" : "Board",
+          "image" : "models/thumbnails/thumbnail_board.png",
+          "model" : "/models/js/board.js",
+          "type" : "2"
+      },
+
+      {
           "name" : "Camera",
           "image" : "models/thumbnails/thumbnail_camera.png",
           "model" : "/models/js/camera3.json",

@@ -500,7 +500,6 @@ var TextureSelector = function (blueprint3d, sideMenu) {
     }
 
     function wallClicked(halfEdge) {
-        console.log("AQUIII", halfEdge);
         currentTarget = halfEdge;
         $("#floorTexturesDiv").hide();
         $("#wallTextures").show();

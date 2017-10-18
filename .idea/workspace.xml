@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa0b4dc9-b75a-4ded-9430-72350c6484c7" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/example/models/js/nyc2.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example/js/example.js" afterPath="$PROJECT_DIR$/example/js/example.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/three/controller.ts" afterPath="$PROJECT_DIR$/src/three/controller.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example/js/items.js" afterPath="$PROJECT_DIR$/example/js/items.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/items/item.ts" afterPath="$PROJECT_DIR$/src/items/item.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,109 +33,11 @@
       <file leaf-file-name="scene.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/scene.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3842">
-              <caret line="229" column="0" lean-forward="false" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="item.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/items/item.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2669">
-              <caret line="160" column="24" lean-forward="false" selection-start-line="160" selection-start-column="24" selection-end-line="160" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="floor_item.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/items/floor_item.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="20" column="17" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="100" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="example.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/example/js/example.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="464" column="4" lean-forward="false" selection-start-line="464" selection-start-column="4" selection-end-line="464" selection-end-column="4" />
+            <state relative-caret-position="255">
+              <caret line="15" column="15" lean-forward="false" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
               <folding>
-                <element signature="e#1#25#0" expanded="false" />
-                <element signature="e#81#2240#0" expanded="false" />
-                <element signature="e#216#289#0" expanded="false" />
-                <element signature="e#311#1218#0" expanded="false" />
-                <element signature="e#606#650#0" expanded="false" />
-                <element signature="e#693#738#0" expanded="false" />
-                <element signature="e#778#820#0" expanded="false" />
-                <element signature="e#862#906#0" expanded="false" />
-                <element signature="e#1252#1316#0" expanded="false" />
-                <element signature="e#1346#1821#0" expanded="false" />
-                <element signature="e#1356#1815#0" expanded="false" />
-                <element signature="e#1846#1949#0" expanded="false" />
-                <element signature="e#1975#2077#0" expanded="false" />
-                <element signature="e#2104#2150#0" expanded="false" />
-                <element signature="e#2178#2225#0" expanded="false" />
-                <element signature="e#2242#2282#0" expanded="false" />
-                <element signature="e#3836#3961#0" expanded="false" />
-                <element signature="e#4083#4266#0" expanded="false" />
-                <element signature="e#4271#4423#0" expanded="false" />
-                <element signature="e#4465#4498#0" expanded="false" />
-                <element signature="e#4528#4565#0" expanded="false" />
-                <element signature="e#5055#5136#0" expanded="false" />
-                <element signature="e#5180#5236#0" expanded="false" />
-                <element signature="e#5250#5370#0" expanded="false" />
-                <element signature="e#5278#5359#0" expanded="false" />
-                <element signature="e#5403#6018#0" expanded="false" />
-                <element signature="e#5480#5522#0" expanded="false" />
-                <element signature="e#5575#5618#0" expanded="false" />
-                <element signature="e#5668#5708#0" expanded="false" />
-                <element signature="e#5760#5802#0" expanded="false" />
-                <element signature="e#5856#5905#0" expanded="false" />
-                <element signature="e#5960#6010#0" expanded="false" />
-                <element signature="e#6042#6197#0" expanded="false" />
-                <element signature="e#6225#6356#0" expanded="false" />
-                <element signature="e#6388#6459#0" expanded="false" />
-                <element signature="e#6477#6510#0" expanded="false" />
-                <element signature="e#6682#6738#0" expanded="false" />
+                <element signature="n#!!doc" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5083">
-              <caret line="299" column="25" lean-forward="false" selection-start-line="299" selection-start-column="25" selection-end-line="299" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="example.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/css/example.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1275">
-              <caret line="75" column="1" lean-forward="false" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="14" />
-              <folding>
-                <marker date="1508142333953" expanded="true" signature="1059:1348" ph="/*...*/" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="model.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/model.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="105" column="27" lean-forward="false" selection-start-line="105" selection-start-column="27" selection-end-line="105" selection-end-column="27" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -141,28 +45,18 @@
       <file leaf-file-name="controller.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/three/controller.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="45" column="29" lean-forward="false" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+            <state relative-caret-position="246">
+              <caret line="443" column="33" lean-forward="false" selection-start-line="443" selection-start-column="24" selection-end-line="443" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/three/main.ts">
+      <file leaf-file-name="item.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/items/item.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4369">
-              <caret line="258" column="25" lean-forward="false" selection-start-line="258" selection-start-column="12" selection-end-line="258" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="floorplanner.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/floorplanner/floorplanner.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2499">
-              <caret line="149" column="16" lean-forward="false" selection-start-line="149" selection-start-column="16" selection-end-line="149" selection-end-column="16" />
+            <state relative-caret-position="393">
+              <caret line="186" column="0" lean-forward="true" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -180,15 +74,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>add</find>
-      <find>addItem2</find>
-      <find>checkWal</find>
-      <find>nou</find>
-      <find>no</find>
-      <find>mousedo</find>
-      <find>addItem</find>
-      <find>getEk</find>
-      <find>Co</find>
       <find>Con</find>
       <find>c</find>
       <find>n</find>
@@ -210,6 +95,15 @@
       <find>console.log</find>
       <find>itemSelected</find>
       <find>mouseDownEvent</find>
+      <find>updateHig</find>
+      <find>material</find>
+      <find>color</find>
+      <find>mouseOver</find>
+      <find>createGlow</find>
+      <find>showE</find>
+      <find>error</find>
+      <find>create</find>
+      <find>items</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/three</dir>
@@ -253,14 +147,12 @@
         <option value="$PROJECT_DIR$/src/three/human.ts" />
         <option value="$PROJECT_DIR$/src/three/floorPlan.ts" />
         <option value="$PROJECT_DIR$/lib/three.d.ts" />
-        <option value="$PROJECT_DIR$/src/items/item.ts" />
         <option value="$PROJECT_DIR$/src/items/wall_item.ts" />
         <option value="$PROJECT_DIR$/src/three/edge.ts" />
         <option value="$PROJECT_DIR$/example/js/design(3).blueprint3d" />
         <option value="$PROJECT_DIR$/src/items/floor_item.ts" />
         <option value="$PROJECT_DIR$/example/js/LabGSI2.blueprint3d" />
         <option value="$PROJECT_DIR$/example/models/js/BlakeAvenuejoshuatreecheftable.js" />
-        <option value="$PROJECT_DIR$/example/js/items.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/example/js/LabGSI.blueprint3d" />
         <option value="$PROJECT_DIR$/dist/blueprint3d.js" />
@@ -271,11 +163,13 @@
         <option value="$PROJECT_DIR$/src/floorplanner/floorplanner_view.ts" />
         <option value="$PROJECT_DIR$/src/model/floorplan.ts" />
         <option value="$PROJECT_DIR$/example/js/lab_move.json" />
-        <option value="$PROJECT_DIR$/src/model/scene.ts" />
         <option value="$PROJECT_DIR$/example/index.html" />
         <option value="$PROJECT_DIR$/example/css/example.css" />
         <option value="$PROJECT_DIR$/src/three/controller.ts" />
         <option value="$PROJECT_DIR$/example/js/example.js" />
+        <option value="$PROJECT_DIR$/example/js/items.js" />
+        <option value="$PROJECT_DIR$/src/items/item.ts" />
+        <option value="$PROJECT_DIR$/src/model/scene.ts" />
       </list>
     </option>
   </component>
@@ -326,10 +220,10 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="51" />
-    <option name="y" value="-14" />
-    <option name="width" value="1390" />
-    <option name="height" value="915" />
+    <option name="x" value="52" />
+    <option name="y" value="-4" />
+    <option name="width" value="1388" />
+    <option name="height" value="904" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -356,6 +250,88 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="blueprint3d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blueprint3d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blueprint3d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blueprint3d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blueprint3d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="three" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blueprint3d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blueprint3d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blueprint3d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blueprint3d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="items" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blueprint3d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blueprint3d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="example" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -661,11 +637,12 @@
       <workItem from="1508153486127" duration="2447000" />
       <workItem from="1508228447599" duration="1432000" />
       <workItem from="1508230450034" duration="2176000" />
+      <workItem from="1508314397571" duration="10375000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="664651000" />
+    <option name="totallyTimeSpent" value="675026000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -677,7 +654,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="51" y="-14" width="1390" height="915" extended-state="6" />
+    <frame x="52" y="-4" width="1388" height="904" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -846,13 +823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/js/items.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="178" column="0" lean-forward="true" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/js/ETSIT.blueprint3d">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -968,26 +938,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/items/item.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2669">
-          <caret line="160" column="24" lean-forward="false" selection-start-line="160" selection-start-column="24" selection-end-line="160" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/items/floor_item.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="20" column="17" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="100" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/scene.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3842">
-          <caret line="229" column="0" lean-forward="false" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1028,24 +982,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/model.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
+        <state relative-caret-position="1734">
           <caret line="105" column="27" lean-forward="false" selection-start-line="105" selection-start-column="27" selection-end-line="105" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/three/controller.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="45" column="29" lean-forward="false" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example/js/example.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="464" column="4" lean-forward="false" selection-start-line="464" selection-start-column="4" selection-end-line="464" selection-end-column="4" />
+        <state relative-caret-position="493">
+          <caret line="501" column="36" lean-forward="false" selection-start-line="501" selection-start-column="36" selection-end-line="501" selection-end-column="36" />
           <folding>
             <element signature="e#1#25#0" expanded="false" />
             <element signature="e#81#2240#0" expanded="false" />
@@ -1085,6 +1031,40 @@
             <element signature="e#6477#6510#0" expanded="false" />
             <element signature="e#6682#6738#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/js/items.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="150" column="54" lean-forward="false" selection-start-line="150" selection-start-column="54" selection-end-line="150" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/three/controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="443" column="33" lean-forward="false" selection-start-line="443" selection-start-column="24" selection-end-line="443" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/scene.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="15" lean-forward="false" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/items/item.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="186" column="0" lean-forward="true" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
