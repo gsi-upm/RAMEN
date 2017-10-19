@@ -106,7 +106,7 @@ module BP3D.Three {
                     scene.meshes.push(mesh);
                     //Setting mesh position
                     let position = steps[0][j].position;
-                    if(type==0){
+                    if(type == 0){
                         for(let k = 0; k < allRooms.length; k++){
                             if(position == allRooms[k].name){
                                 mesh.position.x = allRooms[k].x;
@@ -311,16 +311,7 @@ module BP3D.Three {
 
                     //Rotation Movement
                     if(type == 0){
-                        if (Math.abs(rotationAngle) > 0.7) {
-                            if (rotationAngle > 0) {
-                                // mesh.rotation.y += 0.75;
-                                mesh.rotation.y += Math.PI/4;
-                            } else {
-                                // mesh.rotation.y -= 0.75;
-                                mesh.rotation.y -= Math.PI/4;
-                            }
-                        }
-                        else {
+                        if (!rotateMesh(mesh, rotationAngle)){
                             //Translation Movement and Animation
                             let thisTime = Date.now();
                             let timeElapsed = thisTime-startTime;
@@ -339,27 +330,7 @@ module BP3D.Three {
                         }
                     }
                     else{
-                        if (Math.abs(rotationAngle) > 0.5) {
-                            if (rotationAngle > 0) {
-                                mesh.rotation.y += 0.45;
-                            } else {
-                                mesh.rotation.y -= 0.45;
-                            }
-                        }
-                        else if (Math.abs(rotationAngle) > 0.051) {
-                            if (rotationAngle > 0) {
-                                mesh.rotation.y += 0.05;
-                            } else {
-                                mesh.rotation.y -= 0.05;
-                            }
-                        } else if (Math.abs(rotationAngle) < 0.051 && Math.abs(rotationAngle) > 0.006) {
-                            if (rotationAngle > 0) {
-                                mesh.rotation.y += 0.005;
-                            } else {
-                                mesh.rotation.y -= 0.005;
-                            }
-                        }
-                        else {
+                        if(!rotateMesh(mesh, rotationAngle)){
                             //Translation Movement and Animation
                             let thisTime = Date.now();
                             let timeElapsed = thisTime-startTime;
@@ -393,30 +364,96 @@ module BP3D.Three {
             } else {
                 mixers[i].clipAction(clip).stop();
             }
-        }
+        };
 
-        this.moveMeshes = function(){
-            for(let i = 0; i< meshesMoving.length; i++){
-                var j = meshesMoving[i].agent;
-                if(this.moveToPosition(scene.meshes[j], j, meshesMoving[i].to.x, 0, meshesMoving[i].to.y,meshesMoving[i].speed, meshesMoving[i].startTime, meshesMoving[i].time, meshesMoving[i].startStep)
-                || meshesMoving[i].finalStep == scene.step){
-                    if(meshesMoving[i].rotation != undefined){
-                        scene.meshes[meshesMoving[i].agent].rotation.y = meshesMoving[i].rotation;
+        function rotateMesh(mesh, rotationAngle){
+            if (type == 0){
+                if (Math.abs(rotationAngle) > 0.7) {
+                    if (rotationAngle > 0) {
+                        mesh.rotation.y += Math.PI/4;
+                    } else {
+                        mesh.rotation.y -= Math.PI/4;
                     }
-                    if(meshesMoving[i].outBuilding != undefined){
-
-                        if(meshesMoving[i].outBuilding == true){
-                            scene.remove(scene.meshes[meshesMoving[i].agent]);
-                            scene.meshes[meshesMoving[i].agent] = null;
-                        }
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+            else if(type == 1){
+                if (Math.abs(rotationAngle) > 0.5) {
+                    if (rotationAngle > 0) {
+                        mesh.rotation.y += 0.45;
+                    } else {
+                        mesh.rotation.y -= 0.45;
                     }
-
-
-                    meshesMoving.splice(i, 1);
-                    mixers[j].clipAction(clip).stop();
+                    return true;
+                }
+                else if (Math.abs(rotationAngle) > 0.051) {
+                    if (rotationAngle > 0) {
+                        mesh.rotation.y += 0.05;
+                    } else {
+                        mesh.rotation.y -= 0.05;
+                    }
+                    return true;
+                } else if (Math.abs(rotationAngle) < 0.051 && Math.abs(rotationAngle) > 0.006) {
+                    if (rotationAngle > 0) {
+                        mesh.rotation.y += 0.005;
+                    } else {
+                        mesh.rotation.y -= 0.005;
+                    }
+                    return true;
+                } else{
+                    return false;
                 }
             }
         }
+
+        this.moveDirection = function(mesh, i, direction, speed){
+            let movementSpeed = speed / scene.fps;
+
+            let rotationAngle = getDirection(direction) - mesh.rotation.y;
+            if (rotationAngle > Math.PI) {
+                rotationAngle -= 2 * Math.PI;
+            }
+            else if (rotationAngle < -Math.PI) {
+                rotationAngle += 2 * Math.PI;
+            }
+
+
+
+        };
+
+        this.moveMeshes = function(){
+            if(type == 0 || type == 1){
+                for(let i = 0; i< meshesMoving.length; i++){
+                    var j = meshesMoving[i].agent;
+                    if(this.moveToPosition(scene.meshes[j], j, meshesMoving[i].to.x, 0, meshesMoving[i].to.y,meshesMoving[i].speed, meshesMoving[i].startTime, meshesMoving[i].time, meshesMoving[i].startStep)
+                        || meshesMoving[i].finalStep == scene.step){
+
+                        if(meshesMoving[i].rotation != undefined){
+                            scene.meshes[meshesMoving[i].agent].rotation.y = meshesMoving[i].rotation;
+                        }
+
+                        if(meshesMoving[i].outBuilding != undefined){
+                            if(meshesMoving[i].outBuilding == true){
+                                scene.remove(scene.meshes[meshesMoving[i].agent]);
+                                scene.meshes[meshesMoving[i].agent] = null;
+                            }
+                        }
+
+                        meshesMoving.splice(i, 1);
+                        mixers[j].clipAction(clip).stop();
+                    }
+                }
+            }
+            else{
+                for(let i = 0; i< meshesMoving.length; i++){
+                    var agent = meshesMoving[i].agent;
+                    this.moveDirection(scene.meshes[agent], agent, meshesMoving[i].direction, meshesMoving[i].speed);
+                }
+            }
+
+        };
 
         this.moveAll = function(step) {
             if(scene.flag == 1){
@@ -697,6 +734,27 @@ module BP3D.Three {
         //     }
         //     return null;
         // }
+
+        function getDirection(direction) {
+            switch(direction){
+                case "N":
+                    return Math.PI;
+                case "NE":
+                    return 3*Math.PI/4;
+                case "E":
+                    return Math.PI/2;
+                case "SE":
+                    return Math.PI/4;
+                case "S":
+                    return 0;
+                case "SW":
+                    return -Math.PI/4;
+                case "W":
+                    return -Math.PI/2;
+                case "NW":
+                    return -3*Math.PI/4;
+            }
+        }
 
         function getRoom(x, y){
             //Array with all the Rooms
