@@ -20,16 +20,30 @@
     {
       "agent": 0,
       "direction": "E",
-      "speed": 2
+      "speed": 1
     }],
-    [],
     [{
+      "agent": 1,
+      "position": {"x": 250, "y": -447},
+      "sentiment": "happiness",
+      "rotation": 1.57
+    }],
+    [{
+      "agent": 1,
+      "direction": "E",
+      "speed": 1
+    },{
       "light": "high",
       "room": "Hall.1"
     },
     {
       "agent": 0,
-      "stop": true
+      "direction": "NE",
+      "speed": 1
+    }],
+    [{
+        "agent": 1,
+        "outBuilding": true
     }],
     [],
     [],
@@ -37,8 +51,10 @@
     [],
     [],
     [],
-    [],
-    [],
+    [{
+        "agent": 0,
+        "stop": true
+    }],
     [],
     [],
     [],

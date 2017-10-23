@@ -409,7 +409,8 @@ module BP3D.Three {
                 }
             }
             else{
-                if (Math.abs(rotationAngle) > 0.7) {
+                // console.log("ROTATIONANGLE", rotationAngle);
+                if (Math.abs(rotationAngle) > 0.38) {
                     if (rotationAngle > 0) {
                         mesh.rotation.y += Math.PI/8;
                     } else {
@@ -466,7 +467,6 @@ module BP3D.Three {
             }
             else{
                 for(let i = 0; i< meshesMoving.length; i++){
-                    console.log("meshesMoving", meshesMoving);
                     var agent = meshesMoving[i].agent;
                     this.moveDirection(scene.meshes[agent], agent, meshesMoving[i].direction, meshesMoving[i].speed);
                     if(meshesMoving[i].rotation != undefined){
@@ -474,6 +474,7 @@ module BP3D.Three {
                     }
                     if(meshesMoving[i].outBuilding != undefined){
                         if(meshesMoving[i].outBuilding == true){
+
                             scene.remove(scene.meshes[meshesMoving[i].agent]);
                             scene.meshes[meshesMoving[i].agent] = null;
                         }
@@ -556,29 +557,40 @@ module BP3D.Three {
                                 }
                                 //Direction and speed
                                 else{
+                                    var rotation = getRotation(stepArr[i].rotation);
+                                    var out = getOutBuilding(stepArr[i].outBuilding);
                                     if(stepArr[i].direction != undefined && stepArr[i].speed!= undefined){
                                         var direction = stepArr[i].direction;
                                         var sp = stepArr[i].speed;
+                                        for (var j=0 ; j<meshesMoving.length; j++){
+                                            if(meshesMoving[j].agent == stepArr[i].agent) {
+                                                meshesMoving.splice(j, 1);
+                                            }
+                                        }
+                                        meshesMoving.push({"agent": stepArr[i].agent, "direction": direction, "speed": sp, "rotation": rotation, "outBuilding": out});
                                     }
                                     if(stepArr[i].stop != undefined && stepArr[i].stop == true){
-                                        console.log("HOLA");
                                         var stop = stepArr[i].stop;
                                         for (var j=0 ; j<meshesMoving.length; j++){
                                             if(meshesMoving[j].agent == stepArr[i].agent){
-                                                // mixers[0].clipAction(clip).stop();
+                                                mixers[stepArr[i].agent].clipAction(clip).stop();
                                                 meshesMoving.splice(j, 1);
-
                                             }
                                         }
                                     }
-                                    else{
-                                        var rotation = getRotation(stepArr[i].rotation);
-                                        var out = getOutBuilding(stepArr[i].outBuilding);
+                                    if(out && out == true){
+                                        for (var j=0 ; j<meshesMoving.length; j++){
+                                            if(meshesMoving[j].agent == stepArr[i].agent){
+                                                mixers[stepArr[i].agent].clipAction(clip).stop();
+                                                meshesMoving.splice(j, 1);
+                                                scene.remove(scene.meshes[stepArr[i].agent]);
+                                                scene.meshes[stepArr[i].agent] = null;
+                                            }
+                                        }
 
-                                        meshesMoving.push({"agent": stepArr[i].agent, "direction": direction, "speed": sp, "rotation": rotation, "outBuilding": out});
-                                        scene.flag = 0;
+
                                     }
-
+                                    scene.flag = 0;
                                 }
 
                             }
