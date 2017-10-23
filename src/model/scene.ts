@@ -45,7 +45,7 @@ module BP3D.Model {
         public initialTime;
         public stepTime = 1000;
         public flag = 1;
-        public step = 0;
+        public step = 2;
         public customUniforms;
         public mouse;
         public element;

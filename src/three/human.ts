@@ -47,7 +47,8 @@ module BP3D.Three {
             allRooms3 = JSON.parse(allRooms2);
             allRooms = allRooms3.room;
             //Loading JSON with the movement
-            $.ajax('/js/lab_move.json', {
+            //Loading JSON with the movement
+            $.ajax('/js/lab_move2.json', {
                 async: false,
                 dataType: 'text',
                 success: function (data2) {
@@ -423,7 +424,6 @@ module BP3D.Three {
         }
 
         this.moveDirection = function(mesh, i, direction, speed){
-
             let movementSpeed = (speed*109.8559) / scene.fps;
 
             let rotationAngle = getDirection(direction) - mesh.rotation.y;
@@ -434,6 +434,7 @@ module BP3D.Three {
                 rotationAngle += 2 * Math.PI;
             }
             if (!rotateMesh(mesh, rotationAngle)){
+                mixers[i].clipAction(clip).play();
                 this.move(mesh, i, movementSpeed);
             }
 
@@ -465,6 +466,7 @@ module BP3D.Three {
             }
             else{
                 for(let i = 0; i< meshesMoving.length; i++){
+                    console.log("meshesMoving", meshesMoving);
                     var agent = meshesMoving[i].agent;
                     this.moveDirection(scene.meshes[agent], agent, meshesMoving[i].direction, meshesMoving[i].speed);
                     if(meshesMoving[i].rotation != undefined){
@@ -558,10 +560,25 @@ module BP3D.Three {
                                         var direction = stepArr[i].direction;
                                         var sp = stepArr[i].speed;
                                     }
-                                    var rotation = getRotation(stepArr[i].rotation);
-                                    var out = getOutBuilding(stepArr[i].outBuilding);
-                                    meshesMoving.push({"agent": stepArr[i].agent, "direction": direction, "speed": sp, "rotation": rotation, "outBuilding": out});
-                                    scene.flag = 0;
+                                    if(stepArr[i].stop != undefined && stepArr[i].stop == true){
+                                        console.log("HOLA");
+                                        var stop = stepArr[i].stop;
+                                        for (var j=0 ; j<meshesMoving.length; j++){
+                                            if(meshesMoving[j].agent == stepArr[i].agent){
+                                                // mixers[0].clipAction(clip).stop();
+                                                meshesMoving.splice(j, 1);
+
+                                            }
+                                        }
+                                    }
+                                    else{
+                                        var rotation = getRotation(stepArr[i].rotation);
+                                        var out = getOutBuilding(stepArr[i].outBuilding);
+
+                                        meshesMoving.push({"agent": stepArr[i].agent, "direction": direction, "speed": sp, "rotation": rotation, "outBuilding": out});
+                                        scene.flag = 0;
+                                    }
+
                                 }
 
                             }
