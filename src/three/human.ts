@@ -3,7 +3,7 @@
 /// <reference path="../core/utils.ts" />
 
 module BP3D.Three {
-    export var Human = function (scene, model) {
+    export var Human = function (scene, model, steps, type) {
 
         // var meshes = [];
         var mixers = [];
@@ -19,10 +19,9 @@ module BP3D.Three {
         var m = 1;
         var video;
 
-        var testing;
-        var movementJSON;
-        var steps;
-        // var speed = 12;
+        // var testing;
+        var steps = steps;
+
         var allRooms3;
         var allRooms2;
         var allRooms;
@@ -32,58 +31,36 @@ module BP3D.Three {
         var geometry1;
 
         var flag = 1;
-        var type;
+        var type = type;
         var fire;
 
         function init() {
-            $.ajax('/js/rooms_Lab.json', {
-                async: false,
-                dataType: 'text',
-                success: function (data) {
-                    allRooms2 = data;
-                }
-            });
-
-            allRooms3 = JSON.parse(allRooms2);
-            allRooms = allRooms3.room;
-            //Loading JSON with the movement
-            //Loading JSON with the movement
-            $.ajax('/js/lab_move2.json', {
-                async: false,
-                dataType: 'text',
-                success: function (data2) {
-                    movementJSON = data2;
-                }
-            });
-
-            var jsonMove = JSON.parse(movementJSON);
-            steps = jsonMove.steps;
-            type = jsonMove.type;
 
 
             // Loading JSON 3DModel
             var jsonLoader = new THREE.JSONLoader();
             jsonLoader.load( "/models/js/walkmorphcolor.json", addModelToScene);
 
-            //Loading JSON with the doors
-            $.ajax('/js/LabGSI.blueprint3d', {
-                async: false,
-                dataType: 'text',
-                success: function (data) {
-                    testing = data;
-                }
-            });
+            // //Loading JSON with the doors
+            // $.ajax('/js/LabGSI.blueprint3d', {
+            //     async: false,
+            //     dataType: 'text',
+            //     success: function (data) {
+            //         testing = data;
+            //     }
+            // });
+            //
+            // model.floorJSON = testing;
+            // var json = JSON.parse(testing);
+            // items = json.items;
+            // for(var i=0; i<items.length; i++){
+            //     if(items[i].item_name == "Open Door"){
+            //         doors.push(items[i]);
+            //     }
+            // }
+            //
+            // outBuilding = whichRoom("outBuilding");
 
-            model.floorJSON = testing;
-            var json = JSON.parse(testing);
-            items = json.items;
-            for(var i=0; i<items.length; i++){
-                if(items[i].item_name == "Open Door"){
-                    doors.push(items[i]);
-                }
-            }
-
-            outBuilding = whichRoom("outBuilding");
             var fire = new Fire(scene, model);
 
         }
@@ -485,203 +462,6 @@ module BP3D.Three {
 
         };
 
-        this.moveAll = function(step) {
-            if(scene.flag == 1){
-                var stepArr = steps[step];
-
-                if(stepArr && stepArr.length != 0){
-
-                    for (let i = 0; i < stepArr.length; i++){
-                        if (stepArr[i].agent != undefined){
-                            //Add new agent if not defined
-                            if(scene.meshes[stepArr[i].agent] == undefined){
-                                if(stepArr[i].position != undefined){
-                                    if(type == 0){
-                                        var room = whichRoom(stepArr[i].position);
-                                        var x = room.x;
-                                        var y = room.y;
-                                    }else{
-                                        var x = stepArr[i].position.x;
-                                        var y = stepArr[i].position.y;
-                                    }
-
-                                    var sentiment = stepArr[i].sentiment;
-                                    var rotation = stepArr[i].rotation;
-                                }else{
-                                    if(type == 0){
-                                        var position = stepArr[i].moveTo;
-                                        let room = whichRoom(position);
-                                        var x = room.x;
-                                        var y = room.y;
-                                    }
-                                    else{
-                                        var position = stepArr[i].moveTo;
-                                        var x = position.x;
-                                        var y = position.y;
-                                    }
-
-                                    var sentiment = stepArr[i].sentiment;
-                                    var rotation = stepArr[i].rotation;
-                                }
-
-                                addIndividualModelToScene(stepArr[i].agent,  x, y, sentiment, rotation)
-                            }
-                            //Move agent
-                            else{
-                                //Rooms or Coordinates
-                                if(type == 0 || type == 1){
-                                    if(stepArr[i].moveTo != undefined && stepArr[i].toStep != undefined){
-                                        let time = (stepArr[i].toStep - step) * scene.stepTime;
-                                        if(type == 0){
-                                            var xTo = whichRoom(stepArr[i].moveTo).x;
-                                            var yTo = whichRoom(stepArr[i].moveTo).y;
-                                            var speed = calculateSpeed(scene.meshes[stepArr[i].agent].position.x ,scene.meshes[stepArr[i].agent].position.y , xTo, yTo, time);
-
-                                        }
-                                        else{
-                                            var xTo = stepArr[i].moveTo.x;
-                                            var yTo = stepArr[i].moveTo.y;
-                                            var speed = calculateSpeed(scene.meshes[stepArr[i].agent].position.x ,scene.meshes[stepArr[i].agent].position.y ,xTo, yTo, time);
-
-                                        }
-
-                                        var rotation = getRotation(stepArr[i].rotation);
-                                        var out = getOutBuilding(stepArr[i].outBuilding);
-
-                                        meshesMoving.push({"agent": stepArr[i].agent, "to":{"x": xTo,"y": yTo}, "speed": speed, "startTime": Date.now(), "time": time, "finalStep": stepArr[i].toStep, "rotation": rotation, "outBuilding": out});
-                                        scene.flag = 0;
-                                    }
-                                    if (stepArr[i].sentiment != undefined){
-                                        changeColorEmotion(stepArr[i].sentiment, stepArr[i].agent);
-                                    }
-                                }
-                                //Direction and speed
-                                else{
-                                    var rotation = getRotation(stepArr[i].rotation);
-                                    var out = getOutBuilding(stepArr[i].outBuilding);
-                                    if(stepArr[i].direction != undefined && stepArr[i].speed!= undefined){
-                                        var direction = stepArr[i].direction;
-                                        var sp = stepArr[i].speed;
-                                        for (var j=0 ; j<meshesMoving.length; j++){
-                                            if(meshesMoving[j].agent == stepArr[i].agent) {
-                                                meshesMoving.splice(j, 1);
-                                            }
-                                        }
-                                        meshesMoving.push({"agent": stepArr[i].agent, "direction": direction, "speed": sp, "rotation": rotation, "outBuilding": out});
-                                    }
-                                    if(stepArr[i].stop != undefined && stepArr[i].stop == true){
-                                        var stop = stepArr[i].stop;
-                                        for (var j=0 ; j<meshesMoving.length; j++){
-                                            if(meshesMoving[j].agent == stepArr[i].agent){
-                                                mixers[stepArr[i].agent].clipAction(clip).stop();
-                                                meshesMoving.splice(j, 1);
-                                            }
-                                        }
-                                    }
-                                    if(out && out == true){
-                                        for (var j=0 ; j<meshesMoving.length; j++){
-                                            if(meshesMoving[j].agent == stepArr[i].agent){
-                                                mixers[stepArr[i].agent].clipAction(clip).stop();
-                                                meshesMoving.splice(j, 1);
-                                                scene.remove(scene.meshes[stepArr[i].agent]);
-                                                scene.meshes[stepArr[i].agent] = null;
-                                            }
-                                        }
-
-
-                                    }
-                                    scene.flag = 0;
-                                }
-
-                            }
-
-                        }
-                        if (stepArr[i].light != undefined){
-                            let room = whichRoom(stepArr[i].room);
-                            let roomNumber = getRoom(room.x, room.y);
-                            setRoomLight(roomNumber, stepArr[i].light);
-                        }
-
-                        if (stepArr[i].video != undefined){
-                            var roomCoordinates = whichRoom(stepArr[i].room);
-                            // var room = getRoom(roomCoordinates.x, roomCoordinates.y);
-                            var video = new Video(scene, model, getRoom(roomCoordinates.x, roomCoordinates.y));
-                        }
-
-                        if (stepArr[i].fire != undefined){
-                            if (stepArr[i].fire == true) {
-                                if(fire == undefined){
-                                    fire = new Fire(scene, model);
-                                }
-                                var position = stepArr[i].position;
-                                fire.setFire(position);
-                            }
-                        }
-                    }
-                }
-            }
-
-            this.moveMeshes();
-
-            // //Check if the meshes exist
-            // if(scene.meshes[0]){
-            //     for(var i=0; i<humans.length; i++){
-            //         var number = scene.movement[i].number;
-            //         var time = scene.movement[i].time;
-            //         var position = humans[i].positions;
-            //         var timeStopped = humans[i].timeStopped[number];
-            //         var sentiment = humans[i].sentiment[number];
-            //         var speed = humans[i].speed[number];
-            //         //Move Mesh and check if it is in its final position
-            //         if(this.moveToPosition(scene.meshes[i], i, position[number].x, 0, position[number].y, speed)){
-            //             //Update time variable if the mesh has to be stopped
-            //             if(timeStopped!=0 && scene.movement[i].time == 0){
-            //                 scene.movement[i].time = Date.now();
-            //             }
-            //             //if the timeStopped has expired, changeColor and roomLight
-            //             else if(Date.now() - time >= timeStopped){
-            //                 if(scene.movement[i].number < humans[i].positions.length-1){
-            //                     changeColorEmotion(sentiment, i);
-            //                     var room = getRoom(scene.meshes[i]);
-            //                     if(getRoomLight(room) != humans[i].actions[number].light){
-            //                         setRoomLight(room, humans[i].actions[number].light);
-            //                         var prueba = new Video(scene, model, room);
-            //                     }
-            //                     scene.movement[i].number +=1;
-            //                     scene.movement[i].time = 0;
-            //                 }
-            //             }
-            //
-            //         }
-            //     }
-            // }
-        }
-
-        function getRotation(rotationValue){
-            var rotation = undefined;
-            if (rotationValue != undefined){
-                rotation = rotationValue;
-            }
-            return rotation;
-        }
-
-        function getOutBuilding(outBuildingValue){
-            var out = undefined;
-            if (outBuildingValue != undefined){
-                out = outBuildingValue;
-            }
-            return out;
-        }
-
-        function whichRoom(room){
-            for (var j = 0; j < allRooms.length; j++) {
-                if (room == allRooms[j].name) {
-                    var x = allRooms[j].x;
-                    var y = allRooms[j].y;
-                    return {"x": x, "y": y};
-                }
-            }
-        }
 
         function changeColor(r, g, b, i){
             //Change mesh color
