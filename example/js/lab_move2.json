@@ -25,9 +25,17 @@
     [{
       "agent": 1,
       "position": {"x": 250, "y": -447},
-      "sentiment": "happiness",
+      "sentiment": "sadness",
       "rotation": 1.57
-    }],
+    },
+      {
+        "fire": true,
+        "position":{"x": 823, "y": -411}
+      },
+      {
+        "fire": true,
+        "position":{"x": 723, "y": -411}
+      }],
     [{
       "agent": 1,
       "direction": "E",
@@ -42,10 +50,17 @@
       "speed": 1
     }],
     [{
+      "agent": 1,
+      "sentiment": "anger"
+    },{
         "agent": 1,
-        "outBuilding": true
-    }],
-    [],
+        "stop": true
+    },
+      {
+        "fire": true,
+        "position":{"x": 523, "y": -411}
+      }],
+    [    ],
     [],
     [],
     [],

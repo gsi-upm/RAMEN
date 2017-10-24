@@ -1,10 +1,9 @@
 /// <reference path="../../lib/three.d.ts" />
-/// <reference path="loadMovement.ts" />
 /// <reference path="../core/utils.ts" />
 
 module BP3D.Three {
-    export var Human = function (scene, model, steps, type) {
-
+    // export var Human = function (scene, model, steps, type, allRooms) {
+    export var Human = function (scene, model, steps, type, allRooms) {
         // var meshes = [];
         var mixers = [];
         var items = [];
@@ -22,17 +21,19 @@ module BP3D.Three {
         // var testing;
         var steps = steps;
 
-        var allRooms3;
-        var allRooms2;
-        var allRooms;
+        // var allRooms3;
+        // var allRooms2;
+        var allRooms = allRooms;
 
-        var meshesMoving = [];
+
         var outBuilding;
         var geometry1;
 
         var flag = 1;
         var type = type;
         var fire;
+
+        var meshesMoving = [];
 
         function init() {
 
@@ -59,8 +60,7 @@ module BP3D.Three {
             //     }
             // }
             //
-            // outBuilding = whichRoom("outBuilding");
-
+            meshesMoving = [];
             var fire = new Fire(scene, model);
 
         }
@@ -116,9 +116,9 @@ module BP3D.Three {
                     }
                 }
                 else if (steps[0][j].light != undefined){
-                    let room = whichRoom(steps[0][j].room);
-                    let roomNumber = getRoom(room.x, room.y);
-                    setRoomLight(roomNumber, steps[0][j].light);
+                    let room = this.whichRoom(steps[0][j].room);
+                    let roomNumber = this.getRoom(room.x, room.y);
+                    this.setRoomLight(roomNumber, steps[0][j].light);
                 }
 
             }
@@ -127,7 +127,8 @@ module BP3D.Three {
 
         }
 
-        function addIndividualModelToScene(agent, x, y, sentiment, rotation) {
+        this.addIndividualModelToScene = function(agent, x, y, sentiment, rotation){
+        // function addIndividualModelToScene(agent, x, y, sentiment, rotation) {
 
             //Adding Mesh
             let material1 = new THREE.MeshLambertMaterial();
@@ -259,7 +260,7 @@ module BP3D.Three {
 
             prevTime = time;
 
-        }
+        };
 
 
         this.moveToPosition = function(mesh, i, x, y, z, speed, startTime, time, finalStep) {
@@ -272,9 +273,8 @@ module BP3D.Three {
             var meshZ = mesh.position.z;
 
             let speed2 = speed / scene.fps;
-            console.log("SPEED2", speed2);
             //Check if the mesh is not in a wall
-            if (isValidPosition(mesh.position, mesh)) {
+            // if (isValidPosition(mesh.position, mesh)) {
                 //Check if the mesh is not in the final position
                 if (Math.abs(meshX - x) > speed2 - 1 || Math.abs(meshZ - z) > speed2 - 1) {
                     mixers[i].clipAction(clip).play();
@@ -295,7 +295,7 @@ module BP3D.Three {
                             let thisTime = Date.now();
                             let timeElapsed = thisTime-startTime;
                             if(time - timeElapsed>0){
-                                speed2 = calculateSpeed(meshX, meshZ, x, z, time-(timeElapsed)) / scene.fps;
+                                speed2 = this.calculateSpeed(meshX, meshZ, x, z, time-(timeElapsed)) / scene.fps;
 
                                 this.move(mesh, i, speed2);
                             }
@@ -314,7 +314,7 @@ module BP3D.Three {
                             let thisTime = Date.now();
                             let timeElapsed = thisTime-startTime;
                             if(time - timeElapsed>0){
-                                speed2 = calculateSpeed(meshX, meshZ, x, z, time-(timeElapsed)) / scene.fps;
+                                speed2 = this.calculateSpeed(meshX, meshZ, x, z, time-(timeElapsed)) / scene.fps;
 
                                 this.move(mesh, i, speed2);
                             }
@@ -340,10 +340,40 @@ module BP3D.Three {
                     return true;
                 }
                 //Stop the animation if the mesh is in a Wall
-            } else {
-                mixers[i].clipAction(clip).stop();
-            }
+            // } else {
+            //     mixers[i].clipAction(clip).stop();
+            // }
         };
+
+        this.getMeshesMoving = function () {
+            return meshesMoving;
+        };
+
+        this.pushMeshesMoving = function(arrElement){
+            meshesMoving.push(arrElement);
+        };
+
+        this.setMeshesMoving = function(arr){
+            meshesMoving = arr;
+        };
+
+        this.getMixers = function () {
+            return mixers;
+        };
+
+        this.setMixers = function (arr){
+            mixers = arr;
+        };
+
+        this.getClip = function(){
+            return clip;
+        };
+
+        this.setOutBuilding = function(out){
+            outBuilding = out;
+        };
+
+
 
         function rotateMesh(mesh, rotationAngle){
             if (type == 0){
@@ -386,7 +416,6 @@ module BP3D.Three {
                 }
             }
             else{
-                // console.log("ROTATIONANGLE", rotationAngle);
                 if (Math.abs(rotationAngle) > 0.38) {
                     if (rotationAngle > 0) {
                         mesh.rotation.y += Math.PI/8;
@@ -462,6 +491,16 @@ module BP3D.Three {
 
         };
 
+        this.whichRoom = function(room){
+        // function whichRoom(room) {
+            for (var j = 0; j < allRooms.length; j++) {
+                if (room == allRooms[j].name) {
+                    var x = allRooms[j].x;
+                    var y = allRooms[j].y;
+                    return {"x": x, "y": y};
+                }
+            }
+        };
 
         function changeColor(r, g, b, i){
             //Change mesh color
@@ -470,6 +509,10 @@ module BP3D.Three {
             scene.meshes[i].material.color.b = b;
 
         }
+
+        this.changeColorEmotion2 = function(emotion, mesh){
+            changeColorEmotion(emotion, mesh);
+        };
 
         function changeColorEmotion (emotion, mesh){
             //Change color according to the emotion
@@ -514,7 +557,8 @@ module BP3D.Three {
 
         }
 
-        function setRoomLight(room, on){
+        this.setRoomLight = function (room, on){
+        // function setRoomLight(room, on){
 
             //Getting the walls
             var walls = model.floorplan.getRooms()[room].updateWallsTexture();
@@ -616,7 +660,8 @@ module BP3D.Three {
             }
         }
 
-        function getRoom(x, y){
+        this.getRoom = function(x,y){
+        // function getRoom(x, y){
             //Array with all the Rooms
             var rooms = model.floorplan.getRooms();
             for (var i = 0; i<rooms.length; i++){
@@ -646,14 +691,15 @@ module BP3D.Three {
                 }
             }
             return null;
-        }
+        };
 
-        function calculateSpeed(x1, y1, x2, y2, time){
+        this.calculateSpeed = function(x1, y1, x2, y2, time){
+        // function calculateSpeed(x1, y1, x2, y2, time){
             var distance = Core.Utils.distance(x1, y1, x2, y2);
             // var speed = distance*1000 / (time-800)/scene.fps;
             var speed = distance*1000 / time;
             return speed;
-        }
+        };
 
         function objectHalfSize(mesh): THREE.Vector3 {
             var objectBox = new THREE.Box3();

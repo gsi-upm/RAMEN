@@ -1,4 +1,5 @@
 /// <reference path="../../lib/three.d.ts" />
+/// <reference path="human.ts" />
 
 module BP3D.Three {
     export var LoadMovement = function (scene, model) {
@@ -15,6 +16,7 @@ module BP3D.Three {
         var type;
 
         var human;
+        var outBuilding;
 
         function init() {
 
@@ -31,7 +33,7 @@ module BP3D.Three {
             steps = jsonMove.steps;
             type = jsonMove.type;
 
-            human = new Human(scene, model, steps, type);
+
 
             $.ajax('/js/rooms_Lab.json', {
                 async: false,
@@ -44,9 +46,13 @@ module BP3D.Three {
             allRooms3 = JSON.parse(allRooms2);
             allRooms = allRooms3.room;
 
+            human = new Human(scene, model, steps, type, allRooms);
+            human.setOutBuilding(human.whichRoom("outBuilding"));
+
         }
 
         this.moveAll = function (step) {
+            var step2 = step;
             if (scene.flag == 1) {
                 var stepArr = steps[step];
                 if (stepArr && stepArr.length != 0) {
@@ -60,7 +66,7 @@ module BP3D.Three {
                             else {
                                 //Rooms or Coordinates
                                 if (type == 0 || type == 1) {
-                                    moveAgentByRoomOrCoordinates(stepArr, i);
+                                    moveAgentByRoomOrCoordinates(stepArr, i, step2);
                                 }
                                 //Direction and speed
                                 else {
@@ -69,38 +75,40 @@ module BP3D.Three {
                                 scene.flag = 0;
                             }
                         }
-                    }
-                }
-                if (stepArr[i].light != undefined){
-                    let room = whichRoom(stepArr[i].room);
-                    let roomNumber = human.getRoom(room.x, room.y);
-                    human.setRoomLight(roomNumber, stepArr[i].light);
-                }
 
-                if (stepArr[i].video != undefined){
-                    var roomCoordinates = whichRoom(stepArr[i].room);
-                    // var room = getRoom(roomCoordinates.x, roomCoordinates.y);
-                    var video = new Video(scene, model, human.getRoom(roomCoordinates.x, roomCoordinates.y));
-                }
 
-                if (stepArr[i].fire != undefined){
-                    if (stepArr[i].fire == true) {
-                        if(human.fire == undefined){
-                            human.fire = new Fire(scene, model);
+                        if (stepArr[i].light != undefined) {
+                            let room = human.whichRoom(stepArr[i].room);
+                            let roomNumber = human.getRoom(room.x, room.y);
+                            human.setRoomLight(roomNumber, stepArr[i].light);
                         }
-                        var position = stepArr[i].position;
-                        human.fire.setFire(position);
+
+                        if (stepArr[i].video != undefined) {
+                            var roomCoordinates = human.whichRoom(stepArr[i].room);
+                            // var room = getRoom(roomCoordinates.x, roomCoordinates.y);
+                            var video = new Video(scene, model, human.getRoom(roomCoordinates.x, roomCoordinates.y));
+                        }
+
+                        if (stepArr[i].fire != undefined) {
+                            if (stepArr[i].fire == true) {
+                                if (human.fire == undefined) {
+                                    human.fire = new Fire(scene, model);
+                                }
+                                var position = stepArr[i].position;
+                                human.fire.setFire(position);
+                            }
+                        }
                     }
                 }
             }
             human.moveMeshes();
-        }
+        };
 
         function addNewAgent(stepArr, i){
 
                 if(stepArr[i].position != undefined){
                     if (type == 0) {
-                        var room = whichRoom(stepArr[i].position);
+                        var room = human.whichRoom(stepArr[i].position);
                         var x = room.x;
                         var y = room.y;
                     }
@@ -114,7 +122,7 @@ module BP3D.Three {
                  } else {
                 if (type == 0) {
                     var position = stepArr[i].moveTo;
-                    let room = whichRoom(position);
+                    let room = human.whichRoom(position);
                     var x = room.x;
                     var y = room.y;
                 }
@@ -131,12 +139,12 @@ module BP3D.Three {
 
         }
 
-        function moveAgentByRoomOrCoordinates(stepArr, i){
+        function moveAgentByRoomOrCoordinates(stepArr, i, step){
             if (stepArr[i].moveTo != undefined && stepArr[i].toStep != undefined) {
                 let time = (stepArr[i].toStep - step) * scene.stepTime;
                 if (type == 0) {
-                    var xTo = whichRoom(stepArr[i].moveTo).x;
-                    var yTo = whichRoom(stepArr[i].moveTo).y;
+                    var xTo = human.whichRoom(stepArr[i].moveTo).x;
+                    var yTo = human.whichRoom(stepArr[i].moveTo).y;
                     var speed = human.calculateSpeed(scene.meshes[stepArr[i].agent].position.x, scene.meshes[stepArr[i].agent].position.y, xTo, yTo, time);
 
                 }
@@ -150,7 +158,7 @@ module BP3D.Three {
                 var rotation = getRotation(stepArr[i].rotation);
                 var out = getOutBuilding(stepArr[i].outBuilding);
 
-                human.meshesMoving.push({
+                human.pushMeshesMoving({
                     "agent": stepArr[i].agent,
                     "to": {"x": xTo, "y": yTo},
                     "speed": speed,
@@ -162,7 +170,7 @@ module BP3D.Three {
                 });
             }
             if (stepArr[i].sentiment != undefined) {
-                human.changeColorEmotion(stepArr[i].sentiment, stepArr[i].agent);
+                human.changeColorEmotion2(stepArr[i].sentiment, stepArr[i].agent);
             }
 
         }
@@ -170,52 +178,60 @@ module BP3D.Three {
         function moveAgentByDirection(stepArr, i) {
             var rotation = getRotation(stepArr[i].rotation);
             var out = getOutBuilding(stepArr[i].outBuilding);
+            var mixers = human.getMixers();
             if (stepArr[i].direction != undefined && stepArr[i].speed != undefined) {
+                var movingMeshes = human.getMeshesMoving();
                 var direction = stepArr[i].direction;
                 var sp = stepArr[i].speed;
-                for (var j = 0; j < human.meshesMoving.length; j++) {
-                    if (human.meshesMoving[j].agent == stepArr[i].agent) {
-                        human.meshesMoving.splice(j, 1);
+
+                for (var j = 0; j < movingMeshes.length; j++) {
+                    if (movingMeshes[j].agent == stepArr[i].agent) {
+                        movingMeshes.splice(j, 1);
+                        human.setMeshesMoving(movingMeshes);
                     }
                 }
-                human.meshesMoving.push({
+
+                human.pushMeshesMoving({
                     "agent": stepArr[i].agent,
                     "direction": direction,
                     "speed": sp,
                     "rotation": rotation,
                     "outBuilding": out
                 });
+
             }
+            if (stepArr[i].sentiment != undefined) {
+                human.changeColorEmotion2(stepArr[i].sentiment, stepArr[i].agent);
+            }
+
             if (stepArr[i].stop != undefined && stepArr[i].stop == true) {
                 var stop = stepArr[i].stop;
-                for (var j = 0; j < human.meshesMoving.length; j++) {
-                    if (human.meshesMoving[j].agent == stepArr[i].agent) {
-                        human.mixers[stepArr[i].agent].clipAction(human.clip).stop();
-                        human.meshesMoving.splice(j, 1);
+                var movingMeshes = human.getMeshesMoving();
+                for (var j = 0; j < movingMeshes.length; j++) {
+                    if (movingMeshes[j].agent == stepArr[i].agent) {
+                        // var mixers = human.getMixers();
+                        mixers[stepArr[i].agent].clipAction(human.getClip()).stop();
+                        human.setMixers(mixers);
+                        movingMeshes.splice(j, 1);
+                        human.setMeshesMoving(movingMeshes);
                     }
                 }
             }
             if (out && out == true) {
-                for (var j = 0; j < human.meshesMoving.length; j++) {
-                    if (human.meshesMoving[j].agent == stepArr[i].agent) {
-                        human.mixers[stepArr[i].agent].clipAction(human.clip).stop();
-                        human.meshesMoving.splice(j, 1);
+                var movingMeshes = human.getMeshesMoving();
+                for (var j = 0; j < movingMeshes.length; j++) {
+                    if (movingMeshes[j].agent == stepArr[i].agent) {
+                        // var mixers = human.getMixers();
+                        mixers[stepArr[i].agent].clipAction(human.getClip()).stop();
+                        human.setMixers(mixers);
+                        movingMeshes.splice(j, 1);
+                        human.setMeshesMoving(movingMeshes);
                         scene.remove(scene.meshes[stepArr[i].agent]);
                         scene.meshes[stepArr[i].agent] = null;
                     }
                 }
 
 
-            }
-        }
-
-        function whichRoom(room) {
-            for (var j = 0; j < allRooms.length; j++) {
-                if (room == allRooms[j].name) {
-                    var x = allRooms[j].x;
-                    var y = allRooms[j].y;
-                    return {"x": x, "y": y};
-                }
             }
         }
 

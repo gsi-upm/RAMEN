@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="fa0b4dc9-b75a-4ded-9430-72350c6484c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example/js/lab_move1.json" afterPath="$PROJECT_DIR$/example/js/lab_move1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example/js/lab_move2.json" afterPath="$PROJECT_DIR$/example/js/lab_move2.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/three/human.ts" afterPath="$PROJECT_DIR$/src/three/human.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/three/loadMovement.ts" afterPath="$PROJECT_DIR$/src/three/loadMovement.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/three/main.ts" afterPath="$PROJECT_DIR$/src/three/main.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,6 +19,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="blueprint3d" />
   </component>
@@ -26,172 +30,84 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.48420373">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="scene.ts" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/model/scene.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="748">
-                  <caret line="47" column="23" lean-forward="false" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
-                  <folding>
-                    <element signature="n#!!doc" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="controller.ts" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/three/controller.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="7497">
-                  <caret line="443" column="33" lean-forward="false" selection-start-line="443" selection-start-column="24" selection-end-line="443" selection-end-column="33" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="item.ts" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/items/item.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3230">
-                  <caret line="193" column="14" lean-forward="false" selection-start-line="193" selection-start-column="14" selection-end-line="193" selection-end-column="14" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="loadMovement.ts" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/three/loadMovement.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="297">
-                  <caret line="81" column="37" lean-forward="false" selection-start-line="81" selection-start-column="34" selection-end-line="81" selection-end-column="37" />
-                  <folding>
-                    <element signature="e#3489#3659#0" expanded="false" />
-                    <element signature="e#3685#3818#0" expanded="false" />
-                    <element signature="e#3958#4484#0" expanded="false" />
-                    <element signature="e#3991#4188#0" expanded="false" />
-                    <element signature="e#4210#4363#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="main.ts" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/three/main.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="303">
-                  <caret line="203" column="20" lean-forward="false" selection-start-line="203" selection-start-column="20" selection-end-line="203" selection-end-column="20" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="floorplanner.ts" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/floorplanner/floorplanner.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2652">
-                  <caret line="158" column="40" lean-forward="false" selection-start-line="158" selection-start-column="40" selection-end-line="158" selection-end-column="40" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="example.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/example/js/example.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="8041">
-                  <caret line="633" column="50" lean-forward="false" selection-start-line="633" selection-start-column="50" selection-end-line="633" selection-end-column="50" />
-                  <folding>
-                    <element signature="e#1#25#0" expanded="false" />
-                    <element signature="e#81#2240#0" expanded="false" />
-                    <element signature="e#216#289#0" expanded="false" />
-                    <element signature="e#311#1218#0" expanded="false" />
-                    <element signature="e#606#650#0" expanded="false" />
-                    <element signature="e#693#738#0" expanded="false" />
-                    <element signature="e#778#820#0" expanded="false" />
-                    <element signature="e#862#906#0" expanded="false" />
-                    <element signature="e#1252#1316#0" expanded="false" />
-                    <element signature="e#1346#1821#0" expanded="false" />
-                    <element signature="e#1356#1815#0" expanded="false" />
-                    <element signature="e#1846#1949#0" expanded="false" />
-                    <element signature="e#1975#2077#0" expanded="false" />
-                    <element signature="e#2104#2150#0" expanded="false" />
-                    <element signature="e#2178#2225#0" expanded="false" />
-                    <element signature="e#2242#2282#0" expanded="false" />
-                    <element signature="e#3836#3961#0" expanded="false" />
-                    <element signature="e#4083#4266#0" expanded="false" />
-                    <element signature="e#4271#4423#0" expanded="false" />
-                    <element signature="e#4465#4498#0" expanded="false" />
-                    <element signature="e#4528#4565#0" expanded="false" />
-                    <element signature="e#5055#5136#0" expanded="false" />
-                    <element signature="e#5180#5236#0" expanded="false" />
-                    <element signature="e#5250#5370#0" expanded="false" />
-                    <element signature="e#5278#5359#0" expanded="false" />
-                    <element signature="e#5403#6018#0" expanded="false" />
-                    <element signature="e#5480#5522#0" expanded="false" />
-                    <element signature="e#5575#5618#0" expanded="false" />
-                    <element signature="e#5668#5708#0" expanded="false" />
-                    <element signature="e#5760#5802#0" expanded="false" />
-                    <element signature="e#5856#5905#0" expanded="false" />
-                    <element signature="e#5960#6010#0" expanded="false" />
-                    <element signature="e#6042#6197#0" expanded="false" />
-                    <element signature="e#6225#6356#0" expanded="false" />
-                    <element signature="e#6388#6459#0" expanded="false" />
-                    <element signature="e#6477#6510#0" expanded="false" />
-                    <element signature="e#6682#6738#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="human.ts" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/three/human.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="595">
-                  <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-                  <folding>
-                    <marker date="1508769851082" expanded="true" signature="1069:1263" ph="{&quot;dataType&quot;: 'text'...}" />
-                    <marker date="1508769851082" expanded="true" signature="1185:1246" ph="{...}" />
-                    <marker date="1508769851082" expanded="true" signature="1453:1595" ph="{...}" />
-                    <marker date="1508769851082" expanded="true" signature="1511:1578" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="human.ts" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/three/human.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="7055">
-                  <caret line="462" column="10" lean-forward="false" selection-start-line="462" selection-start-column="10" selection-end-line="462" selection-end-column="10" />
-                  <folding>
-                    <marker date="1508769851082" expanded="true" signature="1069:1263" ph="{&quot;dataType&quot;: 'text'...}" />
-                    <marker date="1508769851082" expanded="true" signature="1185:1246" ph="{...}" />
-                    <marker date="1508769851082" expanded="true" signature="1453:1595" ph="{...}" />
-                    <marker date="1508769851082" expanded="true" signature="1511:1578" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="blueprint3d.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/example/js/blueprint3d.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="433">
-                  <caret line="5408" column="13" lean-forward="true" selection-start-line="5400" selection-start-column="12" selection-end-line="5408" selection-end-column="13" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="scene.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/scene.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="17" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/three/main.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="199" column="49" lean-forward="false" selection-start-line="199" selection-start-column="49" selection-end-line="199" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loadMovement.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/three/loadMovement.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2059">
+              <caret line="202" column="52" lean-forward="true" selection-start-line="202" selection-start-column="52" selection-end-line="202" selection-end-column="52" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="human.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/three/human.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="529">
+              <caret line="701" column="10" lean-forward="false" selection-start-line="701" selection-start-column="10" selection-end-line="701" selection-end-column="10" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lab_move.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/js/lab_move.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-363">
+              <caret line="30" column="7" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="88" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lab_move2.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/js/lab_move2.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="62" column="5" lean-forward="false" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lab_move1.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/js/lab_move1.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="43" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -203,36 +119,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>moveA</find>
-      <find>mo</find>
-      <find>rotation</find>
-      <find>xTO</find>
-      <find>moveMeshe</find>
-      <find>moveToPositi</find>
-      <find>speed</find>
-      <find>consol</find>
-      <find>moveMes</find>
-      <find>direction</find>
-      <find>clipAction</find>
-      <find>scene.step</find>
+      <find>moveAgentByDirection</find>
+      <find>model</find>
+      <find>meshesM</find>
+      <find>meshesMoving</find>
+      <find>meshesMo</find>
       <find>mixers</find>
-      <find>moveDire</find>
-      <find>play</find>
-      <find>moveDirec</find>
-      <find>step</find>
-      <find>stop</find>
-      <find>out</find>
-      <find>console.log</find>
-      <find>outBui</find>
-      <find>type == 0</find>
-      <find>ALO</find>
-      <find>moveAll</find>
-      <find>human</find>
-      <find>steps</find>
-      <find>scene.flag</find>
-      <find>whichRo</find>
-      <find>\/\/\/ \&lt;reference path\=\&quot;\.\.\/\.\.\/lib\/three\.d\.ts\&quot; \/\&gt;\n\nmodule BP3D\.Three \{\n    export var LoadMovement \= function \(scene\, model\) \{\n\n        var scene \= scene\;\n        var model \= model\;\n\n        var movementJSON\;\n        var allRooms\;\n        var allRooms2\;\n        var allRooms3\;\n\n        var steps\;\n        var type\;\n\n        var human\;\n\n        function init\(\)\{\n\n            \/\/Loading JSON with the movement\n            \$\.ajax\(\'\/js\/lab_move2\.json\'\, \{\n                async\: false\,\n                dataType\: \'text\'\,\n                success\: function \(data2\) \{\n                    movementJSON \= data2\;\n                \}\n            \}\)\;\n\n            var jsonMove \= JSON\.parse\(movementJSON\)\;\n            steps \= jsonMove\.steps\;\n            type \= jsonMove\.type\;\n\n            human \= new Human\(scene\, model\, steps\, type\)\;\n\n            \$\.ajax\(\'\/js\/rooms_Lab\.json\'\, \{\n                async\: false\,\n                dataType\: \'text\'\,\n                success\: function \(data\) \{\n                    allRooms2 \= data\;\n                \}\n            \}\)\;\n\n            allRooms3 \= JSON\.parse\(allRooms2\)\;\n            allRooms \= allRooms3\.room\;\n\n        \}\n\n        this\.moveAll \= function\(step\)\{\n            if\(scene\.flag \=\= 1\)\{\n                var stepArr \= steps\[step\]\;\n                if\(stepArr \&amp;\&amp; stepArr\.length \!\= 0\)\{\n                    for \(var i \= 0\; i \&lt; stepArr\.length\; i\+\+\)\{\n                        \/\/Add new agent if not defined\n                        if \(stepArr\[i\]\.agent \!\= undefined\) \{\n                            if \(scene\.meshes\[stepArr\[i\]\.agent\] \=\= undefined \&amp;\&amp; stepArr\[i\]\.position \!\= undefined\)\{\n                                if \(type \=\= 0\) \{\n                                    var room \= whichRoom\(stepArr\[i\]\.position\)\;\n                                    var x \= room\.x\;\n                                    var y \= room\.y\;\n                                \}\n                                else \{\n                                    var x \= stepArr\[i\]\.position\.x\;\n                                    var y \= stepArr\[i\]\.position\.y\;\n                                \}\n                                var sentiment \= stepArr\[i\]\.sentiment\;\n                                var rotation \= stepArr\[i\]\.rotation\;\n                            \}\n                        \}else\{\n\n                            if\(type \=\= 0\)\{\n                                var position \= stepArr\[i\]\.moveTo\;\n                                let room \= whichRoom\(position\)\;\n                                var x \= room\.x\;\n                                var y \= room\.y\;\n                            \}\n                            else\{\n                                var position \= stepArr\[i\]\.moveTo\;\n                                var x \= position\.x\;\n                                var y \= position\.y\;\n                            \}\n\n                            var sentiment \= stepArr\[i\]\.sentiment\;\n                            var rotation \= stepArr\[i\]\.rotation\;\n                        \}\n                        human\.addIndividualModelToScene\(stepArr\[i\]\.agent\,  x\, y\, sentiment\, rotation\)\n                    \}\n                    \/\/Move agent\n                else\{\n                        \/\/Rooms or Coordinates\n                        if\(type \=\= 0 \|\| type \=\= 1\)\{\n                            if\(stepArr\[i\]\.moveTo \!\= undefined \&amp;\&amp; stepArr\[i\]\.toStep \!\= undefined\)\{\n                                let time \= \(stepArr\[i\]\.toStep \- step\) \* scene\.stepTime\;\n                                if\(type \=\= 0\)\{\n                                    var xTo \= whichRoom\(stepArr\[i\]\.moveTo\)\.x\;\n                                    var yTo \= whichRoom\(stepArr\[i\]\.moveTo\)\.y\;\n                                    var speed \= calculateSpeed\(scene\.meshes\[stepArr\[i\]\.agent\]\.position\.x \,scene\.meshes\[stepArr\[i\]\.agent\]\.position\.y \, xTo\, yTo\, time\)\;\n\n                                \}\n                                else\{\n                                    var xTo \= stepArr\[i\]\.moveTo\.x\;\n                                    var yTo \= stepArr\[i\]\.moveTo\.y\;\n                                    var speed \= calculateSpeed\(scene\.meshes\[stepArr\[i\]\.agent\]\.position\.x \,scene\.meshes\[stepArr\[i\]\.agent\]\.position\.y \,xTo\, yTo\, time\)\;\n\n                                \}\n\n                                var rotation \= getRotation\(stepArr\[i\]\.rotation\)\;\n                                var out \= getOutBuilding\(stepArr\[i\]\.outBuilding\)\;\n\n                                meshesMoving\.push\(\{\&quot;agent\&quot;\: stepArr\[i\]\.agent\, \&quot;to\&quot;\:\{\&quot;x\&quot;\: xTo\,\&quot;y\&quot;\: yTo\}\, \&quot;speed\&quot;\: speed\, \&quot;startTime\&quot;\: Date\.now\(\)\, \&quot;time\&quot;\: time\, \&quot;finalStep\&quot;\: stepArr\[i\]\.toStep\, \&quot;rotation\&quot;\: rotation\, \&quot;outBuilding\&quot;\: out\}\)\;\n                                scene\.flag \= 0\;\n                            \}\n                            if \(stepArr\[i\]\.sentiment \!\= undefined\)\{\n                                changeColorEmotion\(stepArr\[i\]\.sentiment\, stepArr\[i\]\.agent\)\;\n                            \}\n                        \}\n                        \/\/Direction and speed\n                        else\{\n                            var rotation \= getRotation\(stepArr\[i\]\.rotation\)\;\n                            var out \= getOutBuilding\(stepArr\[i\]\.outBuilding\)\;\n                            if\(stepArr\[i\]\.direction \!\= undefined \&amp;\&amp; stepArr\[i\]\.speed\!\= undefined\)\{\n                                var direction \= stepArr\[i\]\.direction\;\n                                var sp \= stepArr\[i\]\.speed\;\n                                for \(var j\=0 \; j\&lt;meshesMoving\.length\; j\+\+\)\{\n                                    if\(meshesMoving\[j\]\.agent \=\= stepArr\[i\]\.agent\) \{\n                                        meshesMoving\.splice\(j\, 1\)\;\n                                    \}\n                                \}\n                                meshesMoving\.push\(\{\&quot;agent\&quot;\: stepArr\[i\]\.agent\, \&quot;direction\&quot;\: direction\, \&quot;speed\&quot;\: sp\, \&quot;rotation\&quot;\: rotation\, \&quot;outBuilding\&quot;\: out\}\)\;\n                            \}\n                            if\(stepArr\[i\]\.stop \!\= undefined \&amp;\&amp; stepArr\[i\]\.stop \=\= true\)\{\n                                var stop \= stepArr\[i\]\.stop\;\n                                for \(var j\=0 \; j\&lt;meshesMoving\.length\; j\+\+\)\{\n                                    if\(meshesMoving\[j\]\.agent \=\= stepArr\[i\]\.agent\)\{\n                                        mixers\[stepArr\[i\]\.agent\]\.clipAction\(clip\)\.stop\(\)\;\n                                        meshesMoving\.splice\(j\, 1\)\;\n                                    \}\n                                \}\n                            \}\n                            if\(out \&amp;\&amp; out \=\= true\)\{\n                                for \(var j\=0 \; j\&lt;meshesMoving\.length\; j\+\+\)\{\n                                    if\(meshesMoving\[j\]\.agent \=\= stepArr\[i\]\.agent\)\{\n                                        mixers\[stepArr\[i\]\.agent\]\.clipAction\(clip\)\.stop\(\)\;\n                                        meshesMoving\.splice\(j\, 1\)\;\n                                        scene\.remove\(scene\.meshes\[stepArr\[i\]\.agent\]\)\;\n                                        scene\.meshes\[stepArr\[i\]\.agent\] \= null\;\n                                    \}\n                                \}\n\n\n                            \}\n                            scene\.flag \= 0\;\n                        \}\n\n                    \}\n\n                \}\n            \}\n            human\.moveMeshes\(\)\;\n        \}\;\n\n        function whichRoom\(room\)\{\n            for \(var j \= 0\; j \&lt; allRooms\.length\; j\+\+\) \{\n                if \(room \=\= allRooms\[j\]\.name\) \{\n                    var x \= allRooms\[j\]\.x\;\n                    var y \= allRooms\[j\]\.y\;\n                    return \{\&quot;x\&quot;\: x\, \&quot;y\&quot;\: y\}\;\n                \}\n            \}\n        \}\n\n        init\(\)\;\n    \}\n\}</find>
+      <find>clip</find>
+      <find>fire</find>
       <find>get</find>
+      <find>calcu</find>
+      <find>calculateS</find>
+      <find>moveAgentbyroom</find>
+      <find>push</find>
+      <find>outBuil</find>
+      <find>whichRoom</find>
+      <find>whichRo</find>
+      <find>outB</find>
+      <find>whichRoo</find>
+      <find>meshes</find>
+      <find>changeColorEm</find>
+      <find>human</find>
+      <find>changeColorEmoti</find>
+      <find>human.change</find>
+      <find>changeColo</find>
+      <find>isVa</find>
+      <find>isva</find>
+      <find>type == 2</find>
+      <find>sentim</find>
+      <find>steps</find>
+      <find>emotio</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/three</dir>
@@ -248,8 +164,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/example/js/floor5.json" />
-        <option value="$PROJECT_DIR$/src/three/skybox.ts" />
         <option value="$PROJECT_DIR$/example/js/floor6.json" />
         <option value="$PROJECT_DIR$/src/three/controls.ts" />
         <option value="$PROJECT_DIR$/example/js/prueba.csv" />
@@ -269,7 +183,6 @@
         <option value="$PROJECT_DIR$/example/js/movement5.json" />
         <option value="$PROJECT_DIR$/example/js/familia.json" />
         <option value="$PROJECT_DIR$/example/js/datos.json" />
-        <option value="$PROJECT_DIR$/src/three/main.ts" />
         <option value="$PROJECT_DIR$/src/three/hud.ts" />
         <option value="$PROJECT_DIR$/example/js/three.min.js" />
         <option value="$PROJECT_DIR$/src/three/floorPlan.ts" />
@@ -297,6 +210,9 @@
         <option value="$PROJECT_DIR$/example/js/items.js" />
         <option value="$PROJECT_DIR$/src/items/item.ts" />
         <option value="$PROJECT_DIR$/src/model/scene.ts" />
+        <option value="$PROJECT_DIR$/src/three/main.ts" />
+        <option value="$PROJECT_DIR$/example/js/lab_move1.json" />
+        <option value="$PROJECT_DIR$/example/js/lab_move2.json" />
         <option value="$PROJECT_DIR$/src/three/loadMovement.ts" />
         <option value="$PROJECT_DIR$/src/three/human.ts" />
       </list>
@@ -348,11 +264,11 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="75" />
-    <option name="y" value="6" />
-    <option name="width" value="1851" />
-    <option name="height" value="1068" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="52" />
+    <option name="y" value="-4" />
+    <option name="width" value="1388" />
+    <option name="height" value="904" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -369,34 +285,67 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
-          <expand>
-            <path>
-              <item name="blueprint3d" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blueprint3d" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blueprint3d" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blueprint3d" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blueprint3d" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blueprint3d" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blueprint3d" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blueprint3d" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="three" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blueprint3d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blueprint3d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blueprint3d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blueprint3d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blueprint3d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blueprint3d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="example" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blueprint3d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blueprint3d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="example" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -426,40 +375,40 @@
     </option>
   </component>
   <component name="RunManager" selected="Grunt.js.grunt">
-    <configuration name="Server" type="FirefoxRemoteDebugType" factoryName="Firefox Remote" port="8000">
-      <method>
-        <option name="GruntBeforeRunTask" enabled="true">
-          <node-interpreter value="project" />
-          <gruntfile value="$PROJECT_DIR$/gruntfile.js" />
-          <tasks>
-            <task value="typescript:blueprint3d" />
-          </tasks>
-          <envs />
-        </option>
-        <option name="GruntBeforeRunTask" enabled="true">
-          <node-interpreter value="project" />
-          <gruntfile value="$PROJECT_DIR$/gruntfile.js" />
-          <tasks>
-            <task value="copy:blueprint3d" />
-          </tasks>
-          <envs />
-        </option>
-      </method>
+    <configuration default="false" name="example.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="example.js" working-dir="$PROJECT_DIR$/example/js">
+      <method />
     </configuration>
-    <configuration default="true" type="FirefoxRemoteDebugType" factoryName="Firefox Remote" port="6004" />
-    <configuration default="true" type="js.build_tools.grunt" factoryName="Grunt.js">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="FirefoxRemoteDebugType" factoryName="Firefox Remote" port="6004">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
       <node-interpreter value="project" />
       <envs />
+      <method />
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
       <envs />
+      <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:8000" />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:8000">
+      <method />
+    </configuration>
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
       <EXTENSION ID="com.jetbrains.nodejs.remote.docker.NodeJSDockerRunConfigurationExtension">
         <option name="envVars">
@@ -482,36 +431,26 @@
           <list />
         </option>
       </EXTENSION>
-    </configuration>
-    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
-      <method />
-    </configuration>
-    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
-      <node-interpreter value="project" />
-      <working-dir value="" />
-      <envs />
-      <scope-kind value="ALL" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
-      <config-file value="" />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
-      <config-file value="" />
-      <node-interpreter value="project" />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
       <option name="cucumberJsArguments" value="" />
       <option name="executablePath" />
       <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.grunt" factoryName="Grunt.js">
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -534,8 +473,27 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <configuration name="example.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="example.js" working-dir="$PROJECT_DIR$/example/js" />
-    <configuration name="grunt" type="js.build_tools.grunt" factoryName="Grunt.js">
+    <configuration default="false" name="Server" type="FirefoxRemoteDebugType" factoryName="Firefox Remote" port="8000">
+      <method>
+        <option name="GruntBeforeRunTask" enabled="true">
+          <node-interpreter value="project" />
+          <gruntfile value="$PROJECT_DIR$/gruntfile.js" />
+          <tasks>
+            <task value="typescript:blueprint3d" />
+          </tasks>
+          <envs />
+        </option>
+        <option name="GruntBeforeRunTask" enabled="true">
+          <node-interpreter value="project" />
+          <gruntfile value="$PROJECT_DIR$/gruntfile.js" />
+          <tasks>
+            <task value="copy:blueprint3d" />
+          </tasks>
+          <envs />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="false" name="grunt" type="js.build_tools.grunt" factoryName="Grunt.js">
       <node-interpreter value="project" />
       <gruntfile value="$PROJECT_DIR$/gruntfile.js" />
       <tasks>
@@ -695,11 +653,12 @@
       <workItem from="1508764653883" duration="44000" />
       <workItem from="1508764723140" duration="1314000" />
       <workItem from="1508766055788" duration="3814000" />
+      <workItem from="1508833401277" duration="12146000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="712590000" />
+    <option name="totallyTimeSpent" value="724736000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -711,51 +670,43 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="75" y="6" width="1857" height="1092" extended-state="6" />
+    <frame x="52" y="-4" width="1388" height="904" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16354467" sideWeight="0.48886138" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21613833" sideWeight="0.5111386" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.5028818" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912987" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912987" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1638814" sideWeight="0.48886138" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21613833" sideWeight="0.5111386" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32719836" sideWeight="0.49711815" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17659463" sideWeight="0.50643086" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39925373" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17659463" sideWeight="0.50643086" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32719836" sideWeight="0.49711815" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="processedProjectFiles" value="true" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/example/js/floor_example.json" />
-    <entry file="file://$PROJECT_DIR$/example/js/three.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6511">
-          <caret line="173" column="22" lean-forward="false" selection-start-line="173" selection-start-column="22" selection-end-line="173" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/items/in_wall_floor_item.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1000,23 +951,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/js/lab_move.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="7" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="88" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/scene.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="47" column="23" lean-forward="false" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/three/controller.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7497">
@@ -1087,45 +1021,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/three/main.ts">
+    <entry file="file://$PROJECT_DIR$/example/js/blueprint3d.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="203" column="20" lean-forward="false" selection-start-line="203" selection-start-column="20" selection-end-line="203" selection-end-column="20" />
+        <state relative-caret-position="17">
+          <caret line="5408" column="13" lean-forward="false" selection-start-line="5400" selection-start-column="12" selection-end-line="5408" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/js/blueprint3d.js">
+    <entry file="file://$PROJECT_DIR$/src/model/scene.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="5408" column="13" lean-forward="true" selection-start-line="5400" selection-start-column="12" selection-end-line="5408" selection-end-column="13" />
+        <state relative-caret-position="85">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="17" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/js/lab_move.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-363">
+          <caret line="30" column="7" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="88" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/three/main.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="199" column="49" lean-forward="false" selection-start-line="199" selection-start-column="49" selection-end-line="199" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/js/lab_move1.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="43" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/js/lab_move2.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="62" column="5" lean-forward="false" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/three/loadMovement.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="81" column="37" lean-forward="false" selection-start-line="81" selection-start-column="34" selection-end-line="81" selection-end-column="37" />
+        <state relative-caret-position="2059">
+          <caret line="202" column="52" lean-forward="true" selection-start-line="202" selection-start-column="52" selection-end-line="202" selection-end-column="52" />
           <folding>
-            <element signature="e#3489#3659#0" expanded="false" />
-            <element signature="e#3685#3818#0" expanded="false" />
-            <element signature="e#3958#4484#0" expanded="false" />
-            <element signature="e#3991#4188#0" expanded="false" />
-            <element signature="e#4210#4363#0" expanded="false" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/three/human.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7055">
-          <caret line="462" column="10" lean-forward="false" selection-start-line="462" selection-start-column="10" selection-end-line="462" selection-end-column="10" />
+        <state relative-caret-position="529">
+          <caret line="701" column="10" lean-forward="false" selection-start-line="701" selection-start-column="10" selection-end-line="701" selection-end-column="10" />
           <folding>
-            <marker date="1508769851082" expanded="true" signature="1069:1263" ph="{&quot;dataType&quot;: 'text'...}" />
-            <marker date="1508769851082" expanded="true" signature="1185:1246" ph="{...}" />
-            <marker date="1508769851082" expanded="true" signature="1453:1595" ph="{...}" />
-            <marker date="1508769851082" expanded="true" signature="1511:1578" ph="{...}" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
