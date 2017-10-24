@@ -13,6 +13,11 @@
       {
         "light": "low",
         "room": "Hall.1"
+      },
+      {
+        "agent": 0,
+        "direction": "E",
+        "speed": 1
       }
 
     ],
@@ -23,43 +28,43 @@
       "speed": 1
     }],
     [{
+      "agent": 0,
+      "direction": "E",
+      "speed": 1
+    },{
       "agent": 1,
       "position": {"x": 250, "y": -447},
       "sentiment": "sadness",
       "rotation": 1.57
-    },
-      {
-        "fire": true,
-        "position":{"x": 823, "y": -411}
-      },
-      {
-        "fire": true,
-        "position":{"x": 723, "y": -411}
-      }],
+    }
+    ],
     [{
+      "agent": 0,
+      "direction": "E",
+      "speed": 1
+    },{
       "agent": 1,
       "direction": "E",
       "speed": 1
     },{
       "light": "high",
       "room": "Hall.1"
-    },
-    {
-      "agent": 0,
-      "direction": "NE",
-      "speed": 1
     }],
-    [{
+    [
+      {
+        "agent": 0,
+        "direction": "SW",
+        "speed": 1
+      },
+      {
+        "agent": 1,
+        "direction": "NW",
+        "speed": 1
+      },{
       "agent": 1,
       "sentiment": "anger"
-    },{
-        "agent": 1,
-        "stop": true
-    },
-      {
-        "fire": true,
-        "position":{"x": 523, "y": -411}
-      }],
+    }
+      ],
     [    ],
     [],
     [],

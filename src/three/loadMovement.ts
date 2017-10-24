@@ -80,7 +80,7 @@ module BP3D.Three {
                         if (stepArr[i].light != undefined) {
                             let room = human.whichRoom(stepArr[i].room);
                             let roomNumber = human.getRoom(room.x, room.y);
-                            human.setRoomLight(roomNumber, stepArr[i].light);
+                            setRoomLight(roomNumber, stepArr[i].light);
                         }
 
                         if (stepArr[i].video != undefined) {
@@ -233,6 +233,58 @@ module BP3D.Three {
 
 
             }
+        }
+
+        function getRoomLight(room){
+            var texture = model.floorplan.getRooms()[room].getTexture().url;
+            //TRUE -> Light ON, FALSE -> Light OFF
+            return texture == "rooms/textures/hardwood.png";
+
+        }
+
+        function setRoomLight(room, on){
+            //Getting the walls
+            var walls = model.floorplan.getRooms()[room].updateWallsTexture();
+
+            for (var i = 0; i<walls.length; i++){
+                //Check where is the wall headed
+                if(walls[i].to == false){
+                    //Turn on
+                    if(on == "high"){
+                        walls[i].backEdge.setTexture("rooms/textures/wallmap.png", true, 1);
+                        model.floorplan.getRooms()[room].setTexture("rooms/textures/hardwood.png", true, 300);
+                    }
+                    //Turn medium
+                    else if (on == "medium"){
+                        walls[i].backEdge.setTexture("rooms/textures/walllightmap_medium.png", true, 1);
+                        model.floorplan.getRooms()[room].setTexture("rooms/textures/hardwood_medium.png", true, 300);
+                    }
+                    //Turn off
+                    else if (on == "low"){
+                        walls[i].backEdge.setTexture("rooms/textures/walllightmap_dark.png", true, 1);
+                        model.floorplan.getRooms()[room].setTexture("rooms/textures/hardwood_dark.png", true, 300);
+                    }
+                }
+                else{
+                    //Turn on
+                    if(on == "high"){
+                        walls[i].frontEdge.setTexture("rooms/textures/wallmap.png", true, 1);
+                        model.floorplan.getRooms()[room].setTexture("rooms/textures/hardwood.png", true, 300);
+                    }
+                    //Turn medium
+                    else if (on == "medium"){
+                        walls[i].frontEdge.setTexture("rooms/textures/walllightmap_medium.png", true, 1);
+                        model.floorplan.getRooms()[room].setTexture("rooms/textures/hardwood_medium.png", true, 300);
+                    }
+                    //Turn off
+                    else if (on == "low"){
+                        walls[i].frontEdge.setTexture("rooms/textures/walllightmap_dark.png", true, 1);
+                        model.floorplan.getRooms()[room].setTexture("rooms/textures/hardwood_dark.png", true, 300);
+
+                    }
+                }
+            }
+
         }
 
         function getRotation(rotationValue){

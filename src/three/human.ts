@@ -115,11 +115,11 @@ module BP3D.Three {
                         changeColorEmotion("happiness", j);
                     }
                 }
-                else if (steps[0][j].light != undefined){
-                    let room = this.whichRoom(steps[0][j].room);
-                    let roomNumber = this.getRoom(room.x, room.y);
-                    this.setRoomLight(roomNumber, steps[0][j].light);
-                }
+                // else if (steps[0][j].light != undefined){
+                //     let room = this.whichRoom(steps[0][j].room);
+                //     let roomNumber = this.getRoom(room.x, room.y);
+                //     this.setRoomLight(roomNumber, steps[0][j].light);
+                // }
 
             }
             //Setting the initial time of the simulation
@@ -550,59 +550,8 @@ module BP3D.Three {
 
         }
 
-        function getRoomLight(room){
-            var texture = model.floorplan.getRooms()[room].getTexture().url;
-            //TRUE -> Light ON, FALSE -> Light OFF
-            return texture == "rooms/textures/hardwood.png";
 
-        }
 
-        this.setRoomLight = function (room, on){
-        // function setRoomLight(room, on){
-
-            //Getting the walls
-            var walls = model.floorplan.getRooms()[room].updateWallsTexture();
-
-            for (var i = 0; i<walls.length; i++){
-                //Check where is the wall headed
-                if(walls[i].to == false){
-                    //Turn on
-                    if(on == "high"){
-                        walls[i].backEdge.setTexture("rooms/textures/wallmap.png", true, 1);
-                        model.floorplan.getRooms()[room].setTexture("rooms/textures/hardwood.png", true, 300);
-                    }
-                    //Turn medium
-                    else if (on == "medium"){
-                        walls[i].backEdge.setTexture("rooms/textures/walllightmap_medium.png", true, 1);
-                        model.floorplan.getRooms()[room].setTexture("rooms/textures/hardwood_medium.png", true, 300);
-                    }
-                    //Turn off
-                    else if (on == "low"){
-                        walls[i].backEdge.setTexture("rooms/textures/walllightmap_dark.png", true, 1);
-                        model.floorplan.getRooms()[room].setTexture("rooms/textures/hardwood_dark.png", true, 300);
-                    }
-                }
-                else{
-                    //Turn on
-                    if(on == "high"){
-                        walls[i].frontEdge.setTexture("rooms/textures/wallmap.png", true, 1);
-                        model.floorplan.getRooms()[room].setTexture("rooms/textures/hardwood.png", true, 300);
-                    }
-                    //Turn medium
-                    else if (on == "medium"){
-                        walls[i].frontEdge.setTexture("rooms/textures/walllightmap_medium.png", true, 1);
-                        model.floorplan.getRooms()[room].setTexture("rooms/textures/hardwood_medium.png", true, 300);
-                    }
-                    //Turn off
-                    else if (on == "low"){
-                        walls[i].frontEdge.setTexture("rooms/textures/walllightmap_dark.png", true, 1);
-                        model.floorplan.getRooms()[room].setTexture("rooms/textures/hardwood_dark.png", true, 300);
-
-                    }
-                }
-            }
-
-        }
 
         // function getRoom(mesh){
         //     //Mesh position
