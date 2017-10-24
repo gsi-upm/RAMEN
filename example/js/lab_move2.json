@@ -18,6 +18,10 @@
         "agent": 0,
         "direction": "E",
         "speed": 1
+      },
+      {
+        "fire": true,
+        "position":{"x": 523, "y": -411}
       }
 
     ],
@@ -25,12 +29,12 @@
     {
       "agent": 0,
       "direction": "E",
-      "speed": 1
+      "speed": 2
     }],
     [{
       "agent": 0,
       "direction": "E",
-      "speed": 1
+      "speed": 2
     },{
       "agent": 1,
       "position": {"x": 250, "y": -447},

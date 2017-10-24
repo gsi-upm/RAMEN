@@ -17,6 +17,7 @@ module BP3D.Three {
 
         var human;
         var outBuilding;
+        var fire;
 
         function init() {
 
@@ -47,7 +48,7 @@ module BP3D.Three {
             allRooms = allRooms3.room;
 
             human = new Human(scene, model, steps, type, allRooms);
-            human.setOutBuilding(human.whichRoom("outBuilding"));
+            human.setOutBuilding(whichRoom("outBuilding"));
 
         }
 
@@ -57,8 +58,8 @@ module BP3D.Three {
                 var stepArr = steps[step];
                 if (stepArr && stepArr.length != 0) {
                     for (var i = 0; i < stepArr.length; i++) {
-                        //Add new agent if not defined
                         if (stepArr[i].agent != undefined) {
+                            //Add new agent if not defined
                             if (scene.meshes[stepArr[i].agent] == undefined) {
                                 addNewAgent(stepArr, i);
                             }
@@ -76,26 +77,28 @@ module BP3D.Three {
                             }
                         }
 
-
+                        //Lights ON or OFF
                         if (stepArr[i].light != undefined) {
-                            let room = human.whichRoom(stepArr[i].room);
+                            let room = whichRoom(stepArr[i].room);
                             let roomNumber = human.getRoom(room.x, room.y);
                             setRoomLight(roomNumber, stepArr[i].light);
                         }
 
+                        //Turn ON TV
                         if (stepArr[i].video != undefined) {
-                            var roomCoordinates = human.whichRoom(stepArr[i].room);
+                            var roomCoordinates = whichRoom(stepArr[i].room);
                             // var room = getRoom(roomCoordinates.x, roomCoordinates.y);
                             var video = new Video(scene, model, human.getRoom(roomCoordinates.x, roomCoordinates.y));
                         }
 
+                        //FIRE
                         if (stepArr[i].fire != undefined) {
                             if (stepArr[i].fire == true) {
-                                if (human.fire == undefined) {
-                                    human.fire = new Fire(scene, model);
+                                if (fire == undefined) {
+                                    fire = new Fire(scene, model);
                                 }
                                 var position = stepArr[i].position;
-                                human.fire.setFire(position);
+                                fire.setFire(position);
                             }
                         }
                     }
@@ -106,23 +109,23 @@ module BP3D.Three {
 
         function addNewAgent(stepArr, i){
 
-                if(stepArr[i].position != undefined){
-                    if (type == 0) {
-                        var room = human.whichRoom(stepArr[i].position);
-                        var x = room.x;
-                        var y = room.y;
-                    }
-                    else {
-                        var x = stepArr[i].position.x;
-                        var y = stepArr[i].position.y;
-                    }
-                    var sentiment = stepArr[i].sentiment;
-                    var rotation = stepArr[i].rotation;
+            if(stepArr[i].position != undefined){
+                if (type == 0) {
+                    var room = whichRoom(stepArr[i].position);
+                    var x = room.x;
+                    var y = room.y;
+                }
+                else {
+                    var x = stepArr[i].position.x;
+                    var y = stepArr[i].position.y;
+                }
+                var sentiment = stepArr[i].sentiment;
+                var rotation = stepArr[i].rotation;
 
-                 } else {
+            } else {
                 if (type == 0) {
                     var position = stepArr[i].moveTo;
-                    let room = human.whichRoom(position);
+                    let room = whichRoom(position);
                     var x = room.x;
                     var y = room.y;
                 }
@@ -135,7 +138,7 @@ module BP3D.Three {
                 var sentiment = stepArr[i].sentiment;
                 var rotation = stepArr[i].rotation;
             }
-                human.addIndividualModelToScene(stepArr[i].agent, x, y, sentiment, rotation)
+            human.addIndividualModelToScene(stepArr[i].agent, x, y, sentiment, rotation)
 
         }
 
@@ -143,8 +146,8 @@ module BP3D.Three {
             if (stepArr[i].moveTo != undefined && stepArr[i].toStep != undefined) {
                 let time = (stepArr[i].toStep - step) * scene.stepTime;
                 if (type == 0) {
-                    var xTo = human.whichRoom(stepArr[i].moveTo).x;
-                    var yTo = human.whichRoom(stepArr[i].moveTo).y;
+                    var xTo = whichRoom(stepArr[i].moveTo).x;
+                    var yTo = whichRoom(stepArr[i].moveTo).y;
                     var speed = human.calculateSpeed(scene.meshes[stepArr[i].agent].position.x, scene.meshes[stepArr[i].agent].position.y, xTo, yTo, time);
 
                 }
@@ -209,7 +212,6 @@ module BP3D.Three {
                 var movingMeshes = human.getMeshesMoving();
                 for (var j = 0; j < movingMeshes.length; j++) {
                     if (movingMeshes[j].agent == stepArr[i].agent) {
-                        // var mixers = human.getMixers();
                         mixers[stepArr[i].agent].clipAction(human.getClip()).stop();
                         human.setMixers(mixers);
                         movingMeshes.splice(j, 1);
@@ -221,7 +223,6 @@ module BP3D.Three {
                 var movingMeshes = human.getMeshesMoving();
                 for (var j = 0; j < movingMeshes.length; j++) {
                     if (movingMeshes[j].agent == stepArr[i].agent) {
-                        // var mixers = human.getMixers();
                         mixers[stepArr[i].agent].clipAction(human.getClip()).stop();
                         human.setMixers(mixers);
                         movingMeshes.splice(j, 1);
@@ -286,6 +287,16 @@ module BP3D.Three {
             }
 
         }
+
+        function whichRoom(room) {
+            for (var j = 0; j < allRooms.length; j++) {
+                if (room == allRooms[j].name) {
+                    var x = allRooms[j].x;
+                    var y = allRooms[j].y;
+                    return {"x": x, "y": y};
+                }
+            }
+        };
 
         function getRotation(rotationValue){
             var rotation = undefined;
