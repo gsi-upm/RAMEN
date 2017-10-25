@@ -97,7 +97,7 @@ module BP3D.Three {
                     }
 
                     if(steps[0][j].rotation != undefined){
-                        mesh.rotation.y = steps[0][j].rotation;
+                        mesh.rotation.y = getDirection(steps[0][j].rotation);
                     }
 
                     //Mesh Animation
