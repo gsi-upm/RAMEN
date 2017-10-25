@@ -25,7 +25,6 @@ module BP3D.Three {
         // var allRooms2;
         var allRooms = allRooms;
 
-
         var outBuilding;
         var geometry1;
 
@@ -36,7 +35,6 @@ module BP3D.Three {
         var meshesMoving = [];
 
         function init() {
-
 
             // Loading JSON 3DModel
             var jsonLoader = new THREE.JSONLoader();
@@ -60,10 +58,11 @@ module BP3D.Three {
             //     }
             // }
             //
-            meshesMoving = [];
+            // meshesMoving = [];
 
         }
 
+        //Adding agents when the simulation starts
         function addModelToScene( geometry, materials) {
             // Preparing animation
             for (let i = 0; i < materials.length; i++){
@@ -84,6 +83,7 @@ module BP3D.Three {
                     //Setting mesh position
                     let position = steps[0][j].position;
                     if(type == 0){
+                        //Getting the position of the room
                         for(let k = 0; k < allRooms.length; k++){
                             if(position == allRooms[k].name){
                                 mesh.position.x = allRooms[k].x;
@@ -91,19 +91,18 @@ module BP3D.Three {
                             }
                         }
                     }
+                    //Types 1 y 2
                     else{
                         mesh.position.x = position.x;
                         mesh.position.z = position.y;
                     }
-
+                    //Setting rotation
                     if(steps[0][j].rotation != undefined){
                         mesh.rotation.y = getDirection(steps[0][j].rotation);
                     }
-
                     //Mesh Animation
                     let mixer = new THREE.AnimationMixer( mesh );
                     mixers.push(mixer);
-
                     //Mesh Emotion
                     if(steps[0][j].sentiment != undefined){
                         let sentiment = steps[0][j].sentiment;
@@ -117,9 +116,9 @@ module BP3D.Three {
             }
             //Setting the initial time of the simulation
             scene.initialTime = Date.now();
-
         }
 
+        //Adding an agent during the simulation
         this.addIndividualModelToScene = function(agent, x, y, sentiment, rotation){
             //Adding Mesh
             let material1 = new THREE.MeshLambertMaterial();
@@ -137,11 +136,10 @@ module BP3D.Three {
             //Mesh Animation
             let mixer = new THREE.AnimationMixer( mesh );
             mixers[agent] = mixer;
-
+            //Setting rotation
             if(rotation != undefined){
                 mesh.rotation.y = rotation;
             }
-
             //Mesh Emotion
             if(sentiment != undefined){
                 changeColorEmotion(sentiment, agent);
@@ -153,6 +151,7 @@ module BP3D.Three {
 
         };
 
+        //Translate and animation
         this.move = function (mesh, i, speed) {
             var time = Date.now();
 
@@ -170,6 +169,7 @@ module BP3D.Three {
 
         };
 
+        //Movement by rooms or coordinates: type 0 and 1
         this.moveToPosition = function(mesh, i, x, y, z, speed, startTime, time, finalStep) {
             //Get floorplan for isValidPosition
             if (floorplan == undefined) {
@@ -197,6 +197,7 @@ module BP3D.Three {
 
                 //Rotation Movement
                 if(type == 0){
+                    //Rotation
                     if (!rotateMesh(mesh, rotationAngle)){
                         //Translation Movement and Animation
                         let thisTime = Date.now();
@@ -204,8 +205,7 @@ module BP3D.Three {
                         if(time - timeElapsed>0){
                             speed2 = this.calculateSpeed(meshX, meshZ, x, z, time-(timeElapsed)) / scene.fps;
                             this.move(mesh, i, speed2);
-                        }
-
+                        }//if step has ended, place the mesh in the final position
                         else{
                             mesh.position.x = x;
                             mesh.position.z = z;
@@ -214,7 +214,9 @@ module BP3D.Three {
                         }
                     }
                 }
+                //Type 1
                 else{
+                    //Rotation
                     if(!rotateMesh(mesh, rotationAngle)){
                         //Translation Movement and Animation
                         let thisTime = Date.now();
@@ -223,7 +225,7 @@ module BP3D.Three {
                             speed2 = this.calculateSpeed(meshX, meshZ, x, z, time-(timeElapsed)) / scene.fps;
                             this.move(mesh, i, speed2);
                         }
-
+                        //if step has ended, place the mesh in the final position
                         else{
                             mesh.position.x = x;
                             mesh.position.z = z;
@@ -235,9 +237,11 @@ module BP3D.Three {
             }
             //Stop the animation if the mesh has stopped
             else {
+                //Adjust mesh to final position
                 mesh.position.x = x;
                 mesh.position.z = z;
                 mixers[i].clipAction(clip).stop();
+                //Remove mesh if final position is outBuilding
                 if(mesh.position.x == outBuilding.x && mesh.position.z == outBuilding.y){
                     scene.remove(mesh);
                     scene.meshes[i] = null;
@@ -250,44 +254,60 @@ module BP3D.Three {
             // }
         };
 
+        //Movement by Direction and Speed: type 2
+        this.moveDirection = function(mesh, i, direction, speed){
+            //Speed in m/s
+            let movementSpeed = (speed*109.8559) / scene.fps;
+            //Rotation calculation
+            let rotationAngle = getDirection(direction) - mesh.rotation.y;
+            if (rotationAngle > Math.PI) {
+                rotationAngle -= 2 * Math.PI;
+            }
+            else if (rotationAngle < -Math.PI) {
+                rotationAngle += 2 * Math.PI;
+            }
+            //Rotate and Move Mesh
+            if (!rotateMesh(mesh, rotationAngle)){
+                mixers[i].clipAction(clip).play();
+                this.move(mesh, i, movementSpeed);
+            }
+        };
+
         this.moveMeshes = function(){
             if(type == 0 || type == 1){
+                //Checking meshesMoving to move meshes
                 for(let i = 0; i< meshesMoving.length; i++){
                     var j = meshesMoving[i].agent;
+                    //Move agent
                     if(this.moveToPosition(scene.meshes[j], j, meshesMoving[i].to.x, 0, meshesMoving[i].to.y,meshesMoving[i].speed, meshesMoving[i].startTime, meshesMoving[i].time, meshesMoving[i].startStep)
                         || meshesMoving[i].finalStep == scene.step){
-
+                        //Rotation when agent arrives
                         if(meshesMoving[i].rotation != undefined){
                             scene.meshes[meshesMoving[i].agent].rotation.y = meshesMoving[i].rotation;
                         }
-
+                        //Remove mesh if outBuilding
                         if(meshesMoving[i].outBuilding != undefined){
                             if(meshesMoving[i].outBuilding == true){
                                 scene.remove(scene.meshes[meshesMoving[i].agent]);
                                 scene.meshes[meshesMoving[i].agent] = null;
                             }
                         }
-
+                        //Once the movement ended, erase from meshesMoving
                         meshesMoving.splice(i, 1);
                         mixers[j].clipAction(clip).stop();
                     }
                 }
             }
+            //Type 2
             else{
                 for(let i = 0; i< meshesMoving.length; i++){
                     var agent = meshesMoving[i].agent;
+                    //Move agent by direction and speed
                     this.moveDirection(scene.meshes[agent], agent, meshesMoving[i].direction, meshesMoving[i].speed);
+                    //Rotation when agent arrives
                     if(meshesMoving[i].rotation != undefined){
                         scene.meshes[meshesMoving[i].agent].rotation.y = meshesMoving[i].rotation;
                     }
-                    if(meshesMoving[i].outBuilding != undefined){
-                        if(meshesMoving[i].outBuilding == true){
-
-                            scene.remove(scene.meshes[meshesMoving[i].agent]);
-                            scene.meshes[meshesMoving[i].agent] = null;
-                        }
-                    }
-                    // meshesMoving.splice(i, 1);
                 }
             }
 
@@ -325,25 +345,8 @@ module BP3D.Three {
             changeColorEmotion(emotion, mesh);
         };
 
-
-        this.moveDirection = function(mesh, i, direction, speed){
-            let movementSpeed = (speed*109.8559) / scene.fps;
-
-            let rotationAngle = getDirection(direction) - mesh.rotation.y;
-            if (rotationAngle > Math.PI) {
-                rotationAngle -= 2 * Math.PI;
-            }
-            else if (rotationAngle < -Math.PI) {
-                rotationAngle += 2 * Math.PI;
-            }
-            if (!rotateMesh(mesh, rotationAngle)){
-                mixers[i].clipAction(clip).play();
-                this.move(mesh, i, movementSpeed);
-            }
-        };
-
+        //Return the room where the coordinates x and y are
         this.getRoom = function(x,y){
-        // function getRoom(x, y){
             //Array with all the Rooms
             var rooms = model.floorplan.getRooms();
             for (var i = 0; i<rooms.length; i++){
@@ -375,14 +378,15 @@ module BP3D.Three {
             return null;
         };
 
+        //Calculate the speed from position1 to position2 in a specific time
         this.calculateSpeed = function(x1, y1, x2, y2, time){
-        // function calculateSpeed(x1, y1, x2, y2, time){
             var distance = Core.Utils.distance(x1, y1, x2, y2);
             // var speed = distance*1000 / (time-800)/scene.fps;
             var speed = distance*1000 / time;
             return speed;
         };
 
+        //Rotate a mesh a specific angle
         function rotateMesh(mesh, rotationAngle){
             if (type == 0){
                 if (Math.abs(rotationAngle) > 0.7) {
@@ -434,10 +438,10 @@ module BP3D.Three {
                 }else{
                     return false;
                 }
-
             }
         }
 
+        //Change the color that represent emotions
         function changeColor(r, g, b, i){
             //Change mesh color
             scene.meshes[i].material.color.r = r;
@@ -445,6 +449,7 @@ module BP3D.Three {
             scene.meshes[i].material.color.b = b;
         }
 
+        //Relation between colors and emotions
         function changeColorEmotion (emotion, mesh){
             //Change color according to the emotion
             switch (emotion){
@@ -479,6 +484,7 @@ module BP3D.Three {
             }
         }
 
+        //Relation between angle and cardinal points
         function getDirection(direction) {
             switch(direction){
                 case "N":
@@ -500,6 +506,7 @@ module BP3D.Three {
             }
         }
 
+        //Detects walls
         function isValidPosition(vec3, mesh) {
             var corners = getCorners('x', 'z', vec3, mesh);
 

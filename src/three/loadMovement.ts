@@ -34,8 +34,6 @@ module BP3D.Three {
             steps = jsonMove.steps;
             type = jsonMove.type;
 
-
-
             $.ajax('/js/rooms_Lab.json', {
                 async: false,
                 dataType: 'text',
@@ -181,6 +179,7 @@ module BP3D.Three {
         function moveAgentByDirection(stepArr, i) {
             var rotation = getRotation(stepArr[i].rotation);
             var out = getOutBuilding(stepArr[i].outBuilding);
+            console.log("OUTQ", out);
             var mixers = human.getMixers();
             if (stepArr[i].direction != undefined && stepArr[i].speed != undefined) {
                 var movingMeshes = human.getMeshesMoving();
@@ -216,23 +215,18 @@ module BP3D.Three {
                         human.setMixers(mixers);
                         movingMeshes.splice(j, 1);
                         human.setMeshesMoving(movingMeshes);
+                        if(stepArr[i].rotation != undefined){
+                            scene.meshes[stepArr[i].agent].rotation.y = getDirection(stepArr[i].rotation);
+                        }
+
                     }
                 }
             }
             if (out && out == true) {
-                var movingMeshes = human.getMeshesMoving();
-                for (var j = 0; j < movingMeshes.length; j++) {
-                    if (movingMeshes[j].agent == stepArr[i].agent) {
-                        mixers[stepArr[i].agent].clipAction(human.getClip()).stop();
-                        human.setMixers(mixers);
-                        movingMeshes.splice(j, 1);
-                        human.setMeshesMoving(movingMeshes);
-                        scene.remove(scene.meshes[stepArr[i].agent]);
-                        scene.meshes[stepArr[i].agent] = null;
-                    }
-                }
-
-
+                mixers[stepArr[i].agent].clipAction(human.getClip()).stop();
+                human.setMixers(mixers);
+                scene.remove(scene.meshes[stepArr[i].agent]);
+                scene.meshes[stepArr[i].agent] = null;
             }
         }
 
@@ -296,12 +290,12 @@ module BP3D.Three {
                     return {"x": x, "y": y};
                 }
             }
-        };
+        }
 
         function getRotation(rotationValue){
             var rotation = undefined;
             if (rotationValue != undefined){
-                rotation = rotationValue;
+                rotation = getDirection(rotationValue);
             }
             return rotation;
         }
@@ -312,6 +306,27 @@ module BP3D.Three {
                 out = outBuildingValue;
             }
             return out;
+        }
+
+        function getDirection(direction) {
+            switch(direction){
+                case "N":
+                    return Math.PI;
+                case "NE":
+                    return 3*Math.PI/4;
+                case "E":
+                    return Math.PI/2;
+                case "SE":
+                    return Math.PI/4;
+                case "S":
+                    return 0;
+                case "SW":
+                    return -Math.PI/4;
+                case "W":
+                    return -Math.PI/2;
+                case "NW":
+                    return -3*Math.PI/4;
+            }
         }
 
         init();

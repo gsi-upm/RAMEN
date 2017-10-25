@@ -25,6 +25,12 @@
       }
 
     ],
+    [],[],[
+      {
+        "agent":0,
+        "stop":true
+      }
+    ],
     [
     {
       "agent": 0,
@@ -59,29 +65,47 @@
         "agent": 0,
         "direction": "SW",
         "speed": 1
-      },
-      {
-        "agent": 1,
-        "direction": "NW",
-        "speed": 1
-      },{
-      "agent": 1,
-      "sentiment": "anger"
-    }
+      }
+
       ],
-    [    ],
-    [],
-    [],
-    [],
+    [{
+      "agent": 1,
+      "stop": true,
+      "rotation": "NE"
+    }],
+    [
+      {
+        "agent":1,
+      "outBuilding": true
+      }
+    ],
     [],
     [],
     [{
+      "agent": 1,
+      "position": {"x": 250, "y": -447},
+      "sentiment": "sadness",
+      "rotation": 1.57
+    }],
+    [{
+      "agent": 1,
+      "direction": "E",
+      "speed": 1
+    }],
+    [{
         "agent": 0,
-        "stop": true
+        "stop": true,
+        "rotation": "SE"
+
     }],
     [],
     [],
-    [],
+    [{
+      "agent": 1,
+      "stop": true,
+      "rotation": "SE"
+
+    }],
     [],
     [],
     [],
