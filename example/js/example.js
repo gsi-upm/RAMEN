@@ -46,6 +46,7 @@ var CameraButtons = function(blueprint3d) {
         //Play Controls
         $("#play").click(playAction);
         $("#pause").click(pauseAction);
+        $("#forward").click(forwardAction);
 
 
     }
@@ -87,10 +88,18 @@ var CameraButtons = function(blueprint3d) {
 
     function playAction(){
         blueprint3d.model.play = true;
+        blueprint3d.model.scene.simSpeed = 1;
+        blueprint3d.model.scene.stepTime = blueprint3d.model.scene.stepTimeOri;
     }
 
     function pauseAction(){
         blueprint3d.model.play = false;
+    }
+
+    function forwardAction(){
+        blueprint3d.model.scene.simSpeed += 1;
+        blueprint3d.model.scene.stepTime = blueprint3d.model.scene.stepTimeOri / blueprint3d.model.scene.simSpeed;
+        console.log("SCENETIME", blueprint3d.model.scene.stepTime);
     }
 
     init();
@@ -678,7 +687,7 @@ $(document).ready(function() {
     mainControls(blueprint3d);
 
     // $.ajax('/js/LabGSI.blueprint3d', {
-    $.ajax('/js/gsi-video.blueprint3d', {
+    $.ajax('/js/maps/lab-gsi.blueprint3d', {
         async: false,
         dataType: 'text',
         success: function (data) {

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Blueprint 3D - Example</title>
+    <title>RAMEN</title>
+    <meta charset="utf-8"/>
 
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/example.css" rel="stylesheet">
@@ -47,7 +48,8 @@ void main()
 
 	gl_Position = projectionMatrix * modelViewMatrix * vec4( newPosition, 1.0 );
 }
-</script>
+
+    </script>
 
     <script id="fragmentShader" type="x-shader/x-vertex">
 uniform sampler2D baseTexture;
@@ -83,14 +85,15 @@ void main()
 	theColor.a = alpha;
 	gl_FragColor = theColor;
 }
-</script>
+
+    </script>
 
 </head>
 
 <body>
 
 <video id="video" autoplay muted loop webkit-playsinline style="display:none">
-    <source src="relax.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+    <source src="/assets/video/relax.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 
 </video>
 
@@ -113,18 +116,18 @@ void main()
                     <span class="glyphicon glyphicon-chevron-right pull-right"></span>
                 </a></li>
             </ul>
-            <hr />
+            <hr/>
 
             <!-- Context Menu -->
             <div id="context-menu">
                 <div style="margin: 0 20px">
                     <span id="context-menu-name" class="lead"></span>
-                    <br /><br />
+                    <br/><br/>
                     <button class="btn btn-block btn-danger" id="context-menu-delete">
                         <span class="glyphicon glyphicon-trash"></span>
                         Delete Item
                     </button>
-                    <br />
+                    <br/>
                     <div class="panel panel-default">
                         <div class="panel-heading">Adjust Size</div>
                         <div class="panel-body" style="color: #333333">
@@ -187,8 +190,8 @@ void main()
                         </div>
                     </div>
 
-                    <label><input type="checkbox" id="fixed" /> Lock in place</label>
-                    <br /><br />
+                    <label><input type="checkbox" id="fixed"/> Lock in place</label>
+                    <br/><br/>
                 </div>
             </div>
 
@@ -199,8 +202,11 @@ void main()
                     <div class="panel-body" style="color: #333333">
 
                         <div class="col-sm-6" style="padding: 3px">
-                            <a href="#" class="thumbnail texture-select-thumbnail" texture-url="rooms/textures/light_fine_wood.jpg" texture-stretch="false" texture-scale="300">
-                                <img alt="Thumbnail light fine wood" src="rooms/thumbnails/thumbnail_light_fine_wood.jpg" />
+                            <a href="#" class="thumbnail texture-select-thumbnail"
+                               texture-url="rooms/textures/light_fine_wood.jpg" texture-stretch="false"
+                               texture-scale="300">
+                                <img alt="Thumbnail light fine wood"
+                                     src="rooms/thumbnails/thumbnail_light_fine_wood.jpg"/>
                             </a>
                         </div>
                     </div>
@@ -213,18 +219,22 @@ void main()
                     <div class="panel-heading">Adjust Wall</div>
                     <div class="panel-body" style="color: #333333">
                         <div class="col-sm-6" style="padding: 3px">
-                            <a href="#" class="thumbnail texture-select-thumbnail" texture-url="rooms/textures/marbletiles.jpg" texture-stretch="false" texture-scale="300">
-                                <img alt="Thumbnail marbletiles" src="rooms/thumbnails/thumbnail_marbletiles.jpg" />
+                            <a href="#" class="thumbnail texture-select-thumbnail"
+                               texture-url="rooms/textures/marbletiles.jpg" texture-stretch="false" texture-scale="300">
+                                <img alt="Thumbnail marbletiles" src="rooms/thumbnails/thumbnail_marbletiles.jpg"/>
                             </a>
                         </div>
                         <div class="col-sm-6" style="padding: 3px">
-                            <a href="#" class="thumbnail texture-select-thumbnail" texture-url="rooms/textures/wallmap_yellow.png" texture-stretch="true" texture-scale="">
-                                <img alt="Thumbnail wallmap yellow" src="rooms/thumbnails/thumbnail_wallmap_yellow.png" />
+                            <a href="#" class="thumbnail texture-select-thumbnail"
+                               texture-url="rooms/textures/wallmap_yellow.png" texture-stretch="true" texture-scale="">
+                                <img alt="Thumbnail wallmap yellow"
+                                     src="rooms/thumbnails/thumbnail_wallmap_yellow.png"/>
                             </a>
                         </div>
                         <div class="col-sm-6" style="padding: 3px">
-                            <a href="#" class="thumbnail texture-select-thumbnail" texture-url="rooms/textures/light_brick.jpg" texture-stretch="false" texture-scale="100">
-                                <img alt="Thumbnail light brick" src="rooms/thumbnails/thumbnail_light_brick.jpg" />
+                            <a href="#" class="thumbnail texture-select-thumbnail"
+                               texture-url="rooms/textures/light_brick.jpg" texture-stretch="false" texture-scale="100">
+                                <img alt="Thumbnail light brick" src="rooms/thumbnails/thumbnail_light_brick.jpg"/>
                             </a>
                         </div>
                     </div>
@@ -258,15 +268,10 @@ void main()
                     <a href="#" class="btn btn-default btn-sm" id="pause">
                         <span class="glyphicon glyphicon-pause"></span>
                     </a>
+                    <a href="#" class="btn btn-default btn-sm" id="forward">
+                        <span class="glyphicon glyphicon-forward"></span>
+                    </a>
                 </div>
-                <!--<div id="object-controls">-->
-                    <!--&lt;!&ndash;<a href="#" class="btn btn-default btn-sm" id="move-object-left">&ndash;&gt;-->
-                        <!--&lt;!&ndash;<span class="glyphicon glyphicon-arrow-left"></span>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</a>&ndash;&gt;-->
-                    <!--<a href="#" class="btn btn-default btn-sm" id="move-object-right">-->
-                        <!--<span class="glyphicon glyphicon-arrow-right"></span>-->
-                    <!--</a>-->
-                <!--</div>-->
 
                 <div id="camera-controls">
                     <a href="#" class="btn btn-default bottom" id="zoom-out">
@@ -281,7 +286,7 @@ void main()
 
                     <span>&nbsp;</span>
 
-                    <a class="btn btn-default bottom" href="#" id="move-left" >
+                    <a class="btn btn-default bottom" href="#" id="move-left">
                         <span class="glyphicon glyphicon-arrow-left"></span>
                     </a>
                     <span class="btn-group-vertical">
@@ -292,7 +297,7 @@ void main()
                   <span class="glyphicon glyphicon-arrow-down"></span>
                 </a>
               </span>
-                    <a class="btn btn-default bottom" href="#" id="move-right" >
+                    <a class="btn btn-default bottom" href="#" id="move-right">
                         <span class="glyphicon glyphicon-arrow-right"></span>
                     </a>
                 </div>
@@ -324,7 +329,7 @@ void main()
                     </button>
                     <span class="pull-right">
                 <button class="btn btn-primary btn-sm" id="update-floorplan">Done &raquo;</button>
-
+                    </span>
                 </div>
                 <div id="draw-walls-hint">
                     Press the "Esc" key to stop drawing walls

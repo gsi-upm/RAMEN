@@ -15,6 +15,10 @@
         "room": "Hall.1"
       },
       {
+        "video": true,
+        "room": "Hall.1"
+      },
+      {
         "agent": 0,
         "direction": "E",
         "speed": 1

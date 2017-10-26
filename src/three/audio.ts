@@ -18,7 +18,7 @@ module BP3D.Three {
             var audioLoader = new THREE.AudioLoader();
 
             //Load a sound and set it as the Audio object's buffer
-            audioLoader.load('358232_j_s_song.ogg', function (buffer) {
+            audioLoader.load('/assets/audio/358232_j_s_song.ogg', function (buffer) {
                 sound.setBuffer(buffer);
                 sound.setLoop(true);
                 sound.setVolume(0.5);
@@ -34,7 +34,7 @@ module BP3D.Three {
 
             //Load a sound and set it as the PositionalAudio object's buffer
             var audioLoader = new THREE.AudioLoader();
-            audioLoader.load( '358232_j_s_song.ogg', function( buffer ) {
+            audioLoader.load('/assets/audio/358232_j_s_song.ogg', function( buffer ) {
                 sound.setBuffer( buffer );
                 sound.setRefDistance( 20 );
                 sound.play();

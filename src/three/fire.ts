@@ -11,7 +11,7 @@ module BP3D.Three {
         function init(){
 
 
-            var lavaTexture =  THREE.ImageUtils.loadTexture( 'lava.jpg');
+            var lavaTexture =  THREE.ImageUtils.loadTexture('/assets/images/lava.jpg');
             lavaTexture.wrapS = lavaTexture.wrapT = THREE.RepeatWrapping;
             // multiplier for distortion speed
             var baseSpeed = 0.02;
@@ -19,13 +19,13 @@ module BP3D.Three {
             var repeatS = 4.0;
             var repeatT = 4.0;
             // texture used to generate "randomness", distort all other textures
-            var noiseTexture =  THREE.ImageUtils.loadTexture( 'cloud.png' );
+            var noiseTexture =  THREE.ImageUtils.loadTexture('/assets/images/cloud.png' );
             noiseTexture.wrapS = noiseTexture.wrapT = THREE.RepeatWrapping;
             // magnitude of noise effect
             var noiseScale = 0.5;
 
             // texture to additively blend with base image texture
-            var blendTexture =  THREE.ImageUtils.loadTexture( 'lava.jpg' );
+            var blendTexture =  THREE.ImageUtils.loadTexture('/assets/images/lava.jpg' );
             blendTexture.wrapS = blendTexture.wrapT = THREE.RepeatWrapping;
             // multiplier for distortion speed
             var blendSpeed = 0.01;
@@ -85,7 +85,7 @@ module BP3D.Three {
             mesh.position.y = 51;
             mesh.position.z = position.y;
             scene.add(mesh);
-        }
+        };
 
 
 

@@ -156,7 +156,7 @@ module BP3D.Three {
             var time = Date.now();
 
             // Translation Movement
-            var moveDistance = speed;
+            var moveDistance = scene.simSpeed*speed;
             // var moveDistance = 4;
             scene.meshes[i].translateZ(moveDistance);
 
@@ -267,7 +267,7 @@ module BP3D.Three {
                 rotationAngle += 2 * Math.PI;
             }
             //Rotate and Move Mesh
-            if (!rotateMesh(mesh, rotationAngle)){
+            if (!rotateMesh(mesh, rotationAngle, getDirection(direction))){
                 mixers[i].clipAction(clip).play();
                 this.move(mesh, i, movementSpeed);
             }
@@ -387,7 +387,7 @@ module BP3D.Three {
         };
 
         //Rotate a mesh a specific angle
-        function rotateMesh(mesh, rotationAngle){
+        function rotateMesh(mesh, rotationAngle, direction?){
             if (type == 0){
                 if (Math.abs(rotationAngle) > 0.7) {
                     if (rotationAngle > 0) {
@@ -428,11 +428,15 @@ module BP3D.Three {
                 }
             }
             else{
+                if(scene.simSpeed > 2){
+                    mesh.rotation.y = direction;
+                    return false;
+                }
                 if (Math.abs(rotationAngle) > 0.38) {
                     if (rotationAngle > 0) {
-                        mesh.rotation.y += Math.PI/8;
+                        mesh.rotation.y += Math.PI/4;
                     } else {
-                        mesh.rotation.y -= Math.PI/8;
+                        mesh.rotation.y -= Math.PI/4;
                     }
                     return true;
                 }else{

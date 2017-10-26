@@ -43,12 +43,14 @@ module BP3D.Model {
         public textureVideo;
         public fps;
         public initialTime;
-        public stepTime = 1000;
         public flag = 1;
         public step = 1;
         public customUniforms;
         public mouse;
         public element;
+        public simSpeed = 1;
+        public stepTime = 1000;
+        public stepTimeOri = 1000;
         /**
          * Constructs a scene.
          * @param model The associated model.
@@ -100,7 +102,7 @@ module BP3D.Model {
 
         /** Removes all items. */
         public clearItems() {
-            var items_copy = this.items
+            var items_copy = this.items;
             var scope = this;
             this.items.forEach((item) => {
                 scope.removeItem(item, true);
@@ -139,8 +141,6 @@ module BP3D.Model {
             var scope = this;
             var loaded = false;
 
-
-
             //Check if the item has been loaded before
             for (var i=0; i<scope.loadedItems.length; i++){
                 if(scope.loadedItems[i].fileName == fileName){
@@ -152,8 +152,6 @@ module BP3D.Model {
                     loaded = true;
                 }
             }
-
-
 
             var loaderCallback = function (geometry: THREE.Geometry, materials: THREE.Material[]) {
                 var n = 1;
@@ -239,9 +237,7 @@ module BP3D.Model {
                 undefined // TODO_Ekki
             );
 
-
         }
-
 
         private calculateScale(itemName){
             var scale = {"x":1, "y":1, "z":1};

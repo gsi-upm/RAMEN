@@ -4,7 +4,6 @@
 /// <reference path="controller.ts" />
 /// <reference path="floorPlan.ts" />
 /// <reference path="lights.ts" />
-/// <reference path="skybox.ts" />
 /// <reference path="controls.ts" />
 /// <reference path="hud.ts" />
 /// <reference path="human.ts" />
@@ -52,7 +51,7 @@ module BP3D.Three {
         var textureVideo;
         var paused = 1;
         var timeRender = 0;
-        var stepTime = 1000;
+        // var stepTime = 1000;
         // var step = 1;
 
         //var canvas;
@@ -93,7 +92,7 @@ module BP3D.Three {
             renderer.shadowMapSoft = true;
             renderer.shadowMapType = THREE.PCFSoftShadowMap;
             renderer.setClearColor( 0x808080, 1);
-            var skybox = new Three.Skybox(scene);
+            // var skybox = new Three.Skybox(scene);
 
             scope.controls = new Three.Controls(camera, domElement);
 
@@ -200,7 +199,8 @@ module BP3D.Three {
                 loadMovement.moveAll(scene.step);
 
                 lastRender = Date.now();
-                if( lastRender - scene.initialTime >= stepTime){
+                console.log("STEPTIE", scene.stepTime);
+                if( lastRender - scene.initialTime >= scene.stepTime){
                     scene.initialTime = lastRender;
                     scene.step += 1;
                     scene.flag = 1;

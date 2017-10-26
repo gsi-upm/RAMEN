@@ -22,7 +22,7 @@ module BP3D.Three {
         function init() {
 
             //Loading JSON with the movement
-            $.ajax('/js/lab_move2.json', {
+            $.ajax('/js/movement/lab_move2.json', {
                 async: false,
                 dataType: 'text',
                 success: function (data2) {
@@ -33,7 +33,7 @@ module BP3D.Three {
             var jsonMove = JSON.parse(movementJSON);
             steps = jsonMove.steps;
             type = jsonMove.type;
-
+            //Loading JSON with the rooms asignation
             $.ajax('/js/rooms_Lab.json', {
                 async: false,
                 dataType: 'text',
@@ -44,17 +44,20 @@ module BP3D.Three {
 
             allRooms3 = JSON.parse(allRooms2);
             allRooms = allRooms3.room;
-
+            //Creating agents
             human = new Human(scene, model, steps, type, allRooms);
             human.setOutBuilding(whichRoom("outBuilding"));
 
         }
 
+        //Reading movements
         this.moveAll = function (step) {
-            var step2 = step;
+            //Only execute one time each step
             if (scene.flag == 1) {
+                //Taking the current step
                 var stepArr = steps[step];
                 if (stepArr && stepArr.length != 0) {
+                    //Reading actions of the step
                     for (var i = 0; i < stepArr.length; i++) {
                         if (stepArr[i].agent != undefined) {
                             //Add new agent if not defined
@@ -65,13 +68,12 @@ module BP3D.Three {
                             else {
                                 //Rooms or Coordinates
                                 if (type == 0 || type == 1) {
-                                    moveAgentByRoomOrCoordinates(stepArr, i, step2);
+                                    moveAgentByRoomOrCoordinates(stepArr, i, step);
                                 }
                                 //Direction and speed
                                 else {
                                     moveAgentByDirection(stepArr, i);
                                 }
-                                scene.flag = 0;
                             }
                         }
 
@@ -85,7 +87,6 @@ module BP3D.Three {
                         //Turn ON TV
                         if (stepArr[i].video != undefined) {
                             var roomCoordinates = whichRoom(stepArr[i].room);
-                            // var room = getRoom(roomCoordinates.x, roomCoordinates.y);
                             var video = new Video(scene, model, human.getRoom(roomCoordinates.x, roomCoordinates.y));
                         }
 
@@ -99,66 +100,75 @@ module BP3D.Three {
                                 fire.setFire(position);
                             }
                         }
+                        scene.flag = 0;
                     }
                 }
             }
+            //Move meshes every render
             human.moveMeshes();
         };
 
         function addNewAgent(stepArr, i){
-
+            //Setting position
             if(stepArr[i].position != undefined){
                 if (type == 0) {
                     var room = whichRoom(stepArr[i].position);
                     var x = room.x;
                     var y = room.y;
                 }
+                //Type 1 or 2
                 else {
                     var x = stepArr[i].position.x;
                     var y = stepArr[i].position.y;
                 }
+                //Setting sentiment and rotation
                 var sentiment = stepArr[i].sentiment;
                 var rotation = stepArr[i].rotation;
 
-            } else {
+            }
+            //Position not defined, choose the position form the moveTo
+            else {
                 if (type == 0) {
                     var position = stepArr[i].moveTo;
                     let room = whichRoom(position);
                     var x = room.x;
                     var y = room.y;
                 }
+                //Type 1
                 else {
                     var position = stepArr[i].moveTo;
                     var x = position.x;
                     var y = position.y;
                 }
-
+                //Setting sentiment and rotation
                 var sentiment = stepArr[i].sentiment;
                 var rotation = stepArr[i].rotation;
             }
+            //Adding agent
             human.addIndividualModelToScene(stepArr[i].agent, x, y, sentiment, rotation)
-
         }
 
+        //Movement of type 0 or 1
         function moveAgentByRoomOrCoordinates(stepArr, i, step){
             if (stepArr[i].moveTo != undefined && stepArr[i].toStep != undefined) {
                 let time = (stepArr[i].toStep - step) * scene.stepTime;
+                //Setting coordinates to move and speed
                 if (type == 0) {
                     var xTo = whichRoom(stepArr[i].moveTo).x;
                     var yTo = whichRoom(stepArr[i].moveTo).y;
                     var speed = human.calculateSpeed(scene.meshes[stepArr[i].agent].position.x, scene.meshes[stepArr[i].agent].position.y, xTo, yTo, time);
-
                 }
+                //Type 1
                 else {
                     var xTo = stepArr[i].moveTo.x;
                     var yTo = stepArr[i].moveTo.y;
                     var speed = human.calculateSpeed(scene.meshes[stepArr[i].agent].position.x, scene.meshes[stepArr[i].agent].position.y, xTo, yTo, time);
 
                 }
-
+                //Setting rotation and outBuilding
                 var rotation = getRotation(stepArr[i].rotation);
                 var out = getOutBuilding(stepArr[i].outBuilding);
-
+                //Adding movement of mesh to the list
                 human.pushMeshesMoving({
                     "agent": stepArr[i].agent,
                     "to": {"x": xTo, "y": yTo},
@@ -170,29 +180,31 @@ module BP3D.Three {
                     "outBuilding": out
                 });
             }
+            //Setting sentiment
             if (stepArr[i].sentiment != undefined) {
                 human.changeColorEmotion2(stepArr[i].sentiment, stepArr[i].agent);
             }
 
         }
-
+        //Movement of type 2
         function moveAgentByDirection(stepArr, i) {
+            //Setting rotation and outBuilding
             var rotation = getRotation(stepArr[i].rotation);
             var out = getOutBuilding(stepArr[i].outBuilding);
-            console.log("OUTQ", out);
             var mixers = human.getMixers();
             if (stepArr[i].direction != undefined && stepArr[i].speed != undefined) {
                 var movingMeshes = human.getMeshesMoving();
+                //Setting direction and speed
                 var direction = stepArr[i].direction;
                 var sp = stepArr[i].speed;
-
+                //Erase previous movement
                 for (var j = 0; j < movingMeshes.length; j++) {
                     if (movingMeshes[j].agent == stepArr[i].agent) {
                         movingMeshes.splice(j, 1);
                         human.setMeshesMoving(movingMeshes);
                     }
                 }
-
+                //Adding new movement
                 human.pushMeshesMoving({
                     "agent": stepArr[i].agent,
                     "direction": direction,
@@ -200,47 +212,50 @@ module BP3D.Three {
                     "rotation": rotation,
                     "outBuilding": out
                 });
-
             }
+            //Setting sentiment
             if (stepArr[i].sentiment != undefined) {
                 human.changeColorEmotion2(stepArr[i].sentiment, stepArr[i].agent);
             }
-
+            //Stop Agent
             if (stepArr[i].stop != undefined && stepArr[i].stop == true) {
                 var stop = stepArr[i].stop;
                 var movingMeshes = human.getMeshesMoving();
                 for (var j = 0; j < movingMeshes.length; j++) {
                     if (movingMeshes[j].agent == stepArr[i].agent) {
+                        //Stop Animation
                         mixers[stepArr[i].agent].clipAction(human.getClip()).stop();
                         human.setMixers(mixers);
+                        //Erase from list of movements
                         movingMeshes.splice(j, 1);
                         human.setMeshesMoving(movingMeshes);
+                        //Setting rotation
                         if(stepArr[i].rotation != undefined){
                             scene.meshes[stepArr[i].agent].rotation.y = getDirection(stepArr[i].rotation);
                         }
-
                     }
                 }
             }
+            //Erase agent if outBuilding
             if (out && out == true) {
+                //Stop animation
                 mixers[stepArr[i].agent].clipAction(human.getClip()).stop();
                 human.setMixers(mixers);
+                //Remove agent
                 scene.remove(scene.meshes[stepArr[i].agent]);
                 scene.meshes[stepArr[i].agent] = null;
             }
         }
 
+        //TRUE -> Light ON, FALSE -> Light OFF
         function getRoomLight(room){
             var texture = model.floorplan.getRooms()[room].getTexture().url;
-            //TRUE -> Light ON, FALSE -> Light OFF
             return texture == "rooms/textures/hardwood.png";
-
         }
 
         function setRoomLight(room, on){
             //Getting the walls
             var walls = model.floorplan.getRooms()[room].updateWallsTexture();
-
             for (var i = 0; i<walls.length; i++){
                 //Check where is the wall headed
                 if(walls[i].to == false){
@@ -282,6 +297,7 @@ module BP3D.Three {
 
         }
 
+        //Return the center of the room
         function whichRoom(room) {
             for (var j = 0; j < allRooms.length; j++) {
                 if (room == allRooms[j].name) {
