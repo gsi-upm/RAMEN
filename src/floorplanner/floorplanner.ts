@@ -84,10 +84,16 @@ module BP3D.Floorplanner {
 
             this.view = new FloorplannerView(this.floorplan, this, canvas);
 
-            var cmPerFoot = 30.48;
-            var pixelsPerFoot = 15.0;
-            this.cmPerPixel = cmPerFoot * (1.0 / pixelsPerFoot);
-            this.pixelsPerCm = 1.0 / this.cmPerPixel;
+            // var cmPerFoot = 30.48;
+            // var pixelsPerFoot = 15.0;
+            // this.cmPerPixel = cmPerFoot * (1.0 / pixelsPerFoot);
+            // this.pixelsPerCm = 1.0 / this.cmPerPixel;
+
+            // var cmPerFoot = 30.48;
+            // var pixelsPerFoot = 15.0;
+            // this.cmPerPixel = cmPerFoot * (1.0 / pixelsPerFoot);
+            this.pixelsPerCm = 0.5;
+            this.cmPerPixel = 1.0 / this.pixelsPerCm;
 
             this.wallWidth = 10.0 * this.pixelsPerCm;
 
@@ -133,15 +139,20 @@ module BP3D.Floorplanner {
                     this.targetX = this.lastNode.x;
                 } else {
                     this.targetX = this.mouseX;
+                    this.targetX = this.scale(this.targetX);
                 }
                 if (Math.abs(this.mouseY - this.lastNode.y) < snapTolerance) {
                     this.targetY = this.lastNode.y;
+                    this.targetY = this.scale(this.targetY);
                 } else {
                     this.targetY = this.mouseY;
+                    this.targetY = this.scale(this.targetY);
                 }
             } else {
                 this.targetX = this.mouseX;
+                this.targetX = this.scale(this.targetX);
                 this.targetY = this.mouseY;
+                this.targetY = this.scale(this.targetY);
             }
             this.view.draw();
         }
@@ -219,19 +230,47 @@ module BP3D.Floorplanner {
             // dragging
             if (this.mode == floorplannerModes.MOVE && this.mouseDown) {
                 if (this.activeCorner) {
-                    this.activeCorner.move(this.mouseX, this.mouseY);
+                    this.activeCorner.move(this.scale(this.mouseX), this.scale(this.mouseY));
                     this.activeCorner.snapToAxis(snapTolerance);
                 } else if (this.activeWall) {
-                    this.activeWall.relativeMove(
-                        (this.rawMouseX - this.lastX) * this.cmPerPixel,
-                        (this.rawMouseY - this.lastY) * this.cmPerPixel
-                    );
-                    this.activeWall.snapToAxis(snapTolerance);
-                    this.lastX = this.rawMouseX;
-                    this.lastY = this.rawMouseY;
+                    this.moveWall();
                 }
                 this.view.draw();
             }
+        }
+
+        private moveWall(){
+            if (((this.rawMouseX - this.lastX)* this.cmPerPixel)>50){
+                this.activeWall.relativeMove(
+                    50,0
+                );
+                this.moveWallRefresh();
+            }
+            else if (((this.rawMouseY - this.lastY)* this.cmPerPixel)>50){
+                this.activeWall.relativeMove(
+                    0,50
+                );
+                this.moveWallRefresh();
+            }
+            else if (((this.rawMouseY - this.lastY)* this.cmPerPixel)<-50){
+                this.activeWall.relativeMove(
+                    0,-50
+                );
+                this.moveWallRefresh();
+            }
+            else if (((this.rawMouseX - this.lastX)* this.cmPerPixel)<-50){
+                this.activeWall.relativeMove(
+                    -50,0
+                );
+                this.moveWallRefresh();
+            }
+
+        }
+
+        private moveWallRefresh(){
+            this.activeWall.snapToAxis(snapTolerance);
+            this.lastX = this.rawMouseX;
+            this.lastY = this.rawMouseY;
         }
 
         /** */
@@ -298,6 +337,7 @@ module BP3D.Floorplanner {
 
         /** Convert from THREEjs coords to canvas coords. */
         public convertX(x: number): number {
+            // console.log("X", (x - this.originX * this.cmPerPixel) * this.pixelsPerCm);
             return (x - this.originX * this.cmPerPixel) * this.pixelsPerCm;
         }
 
@@ -318,7 +358,19 @@ module BP3D.Floorplanner {
             else{
                 this.pixelsPerCm = 0.4921259842519685;
                 this.cmPerPixel = 1 / this.pixelsPerCm;
+                console.log("PIXELSPERCM", this.pixelsPerCm);
             }
+
+        }
+
+        private scale(val){
+            var div = val / 50;
+            var rest = val%50;
+            div = Math.floor(div);
+            if(rest > 25 ){
+                return div*50+50;
+            }
+            return div*50;
 
         }
 

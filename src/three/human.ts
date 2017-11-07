@@ -428,20 +428,22 @@ module BP3D.Three {
                 }
             }
             else{
-                if(scene.simSpeed > 2){
-                    mesh.rotation.y = direction;
-                    return false;
-                }
-                if (Math.abs(rotationAngle) > 0.38) {
-                    if (rotationAngle > 0) {
-                        mesh.rotation.y += Math.PI/4;
-                    } else {
-                        mesh.rotation.y -= Math.PI/4;
-                    }
-                    return true;
-                }else{
-                    return false;
-                }
+                mesh.rotation.y = direction;
+                return false;
+                // if(scene.simSpeed > 2){
+                //     mesh.rotation.y = direction;
+                //     return false;
+                // }
+                // if (Math.abs(rotationAngle) > 0.38) {
+                //     if (rotationAngle > 0) {
+                //         mesh.rotation.y += Math.PI/4;
+                //     } else {
+                //         mesh.rotation.y -= Math.PI/4;
+                //     }
+                //     return true;
+                // }else{
+                //     return false;
+                // }
             }
         }
 

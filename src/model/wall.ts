@@ -114,6 +114,8 @@ module BP3D.Model {
             this.end.relativeMove(dx, dy);
         }
 
+
+
         public fireMoved() {
             this.moved_callbacks.fire();
         }

@@ -60,6 +60,7 @@ module BP3D.Three {
         var needsUpdate = false;
 
         var lastRender = Date.now();
+        var lastRender2= 0;
         var mouseOver = false;
         var hasClicked = false;
 
@@ -196,16 +197,19 @@ module BP3D.Three {
             if(model.play) {
 
                 // human.moveAll(scene.step);
-                loadMovement.moveAll(scene.step);
 
+                lastRender2 = lastRender;
                 lastRender = Date.now();
-                console.log("STEPTIE", scene.stepTime);
-                if( lastRender - scene.initialTime >= scene.stepTime){
+                console.log("LASTRENDER2", lastRender2, "lastrender", lastRender);
+                console.log("STEPTIE", lastRender-lastRender2);
+                console.log("LASTRENDER", lastRender - scene.initialTime);
+                console.log("difference",  lastRender+(lastRender-lastRender2));
+                if( lastRender - scene.initialTime >= scene.stepTime || lastRender+(lastRender-lastRender2)- scene.initialTime>scene.stepTime){
                     scene.initialTime = lastRender;
                     scene.step += 1;
                     scene.flag = 1;
                 }
-
+                loadMovement.moveAll(scene.step);
                 if (scene.video &&  scene.video.readyState === scene.video.HAVE_ENOUGH_DATA ) {
 
                     scene.imageContext.drawImage( scene.video, 0, 0 );
@@ -231,6 +235,7 @@ module BP3D.Three {
         function animate() {
             var delay = 50;
             var delta = 0.04;
+            //FIRE
             if(scene.customUniforms!=undefined){
                 scene.customUniforms.time.value += delta;
 

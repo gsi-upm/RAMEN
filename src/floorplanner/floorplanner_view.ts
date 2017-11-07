@@ -17,9 +17,10 @@ module BP3D.Floorplanner {
     };
 
     // grid parameters
-    const gridSpacing = 20; // pixels
+    const gridSpacing = 25; // pixels
     const gridWidth = 1;
-    const gridColor = "#f1f1f1";
+    // const gridColor = "#f1f1f1";
+    const gridColor = "#6E6E6E";
 
     // room config
     const roomColor = "#f9f9f9";
