@@ -92,6 +92,7 @@ module BP3D.Floorplanner {
             // var cmPerFoot = 30.48;
             // var pixelsPerFoot = 15.0;
             // this.cmPerPixel = cmPerFoot * (1.0 / pixelsPerFoot);
+            // this.pixelsPerCm = 0.5
             this.pixelsPerCm = 0.5;
             this.cmPerPixel = 1.0 / this.pixelsPerCm;
 
@@ -279,6 +280,7 @@ module BP3D.Floorplanner {
 
             // drawing
             if (this.mode == floorplannerModes.DRAW && !this.mouseMoved) {
+                console.log("TARGETX", this.targetX, "TARGETY", this.targetY);
                 var corner = this.floorplan.newCorner(this.targetX, this.targetY);
                 if (this.lastNode != null) {
                     this.floorplan.newWall(this.lastNode, corner, true);
@@ -356,9 +358,8 @@ module BP3D.Floorplanner {
                 this.cmPerPixel = 1 / this.pixelsPerCm;
             }
             else{
-                this.pixelsPerCm = 0.4921259842519685;
+                this.pixelsPerCm = 0.5;
                 this.cmPerPixel = 1 / this.pixelsPerCm;
-                console.log("PIXELSPERCM", this.pixelsPerCm);
             }
 
         }

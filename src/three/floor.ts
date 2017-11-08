@@ -18,7 +18,7 @@ module BP3D.Three {
       scope.room.fireOnFloorChange(redraw);
       floorPlane = buildFloor();
       // roofs look weird, so commented out
-      //roofPlane = buildRoof();
+      // roofPlane = buildRoof();
     }
 
     function redraw() {
@@ -100,7 +100,7 @@ module BP3D.Three {
 
     this.addToScene = function () {
       scene.add(floorPlane);
-      //scene.add(roofPlane);
+      // scene.add(roofPlane);
       // hack so we can do intersect testing
       scene.add(room.floorPlane);
     }

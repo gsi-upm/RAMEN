@@ -48,9 +48,8 @@ var CameraButtons = function(blueprint3d) {
         $("#pause").click(pauseAction);
         $("#forward").click(forwardAction);
 
-
     }
-
+    
 
     function preventDefault(e) {
         e.preventDefault();
@@ -687,7 +686,7 @@ $(document).ready(function() {
     mainControls(blueprint3d);
 
     // $.ajax('/js/LabGSI.blueprint3d', {
-    $.ajax('/js/maps/lab-gsi.blueprint3d', {
+    $.ajax('/js/maps/Lab_GSI_2.blueprint3d', {
         async: false,
         dataType: 'text',
         success: function (data) {
