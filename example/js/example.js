@@ -49,7 +49,7 @@ var CameraButtons = function(blueprint3d) {
         $("#forward").click(forwardAction);
 
     }
-    
+
 
     function preventDefault(e) {
         e.preventDefault();
@@ -109,6 +109,7 @@ var CameraButtons = function(blueprint3d) {
  */
 
 var ContextMenu;
+var grid = new THREE.GridHelper(25000, 1000, 0x000000, 0x000000);
 ContextMenu = function (blueprint3d) {
 
     var scope = this;
@@ -131,6 +132,18 @@ ContextMenu = function (blueprint3d) {
         $("#fixed").click(function () {
             var checked = $(this).prop('checked');
             selectedItem.setFixed(checked);
+        });
+        $("#grid").click(function () {
+
+            var checked = $(this).prop('checked');
+            if(checked){
+                grid.position.y = 10;
+                blueprint3d.model.scene.add(grid);
+            }
+            else{
+                blueprint3d.model.scene.remove(grid);
+            }
+
         });
 
 
@@ -460,7 +473,7 @@ var SideMenu = function(blueprint3d, floorplanControls, modalEffects) {
                         mouse, blueprint3d.model.scene.scene.children, false, false, true);
 
                     var position = {"x": intersections[0].point.x, "y": 0, "z": intersections[0].point.z};
-
+                    position = scalePosition(position);
                     blueprint3d.model.scene.addItem2(itemType, modelUrl, metadata, position);
                     $("#loading-modal2").hide();
 
@@ -471,6 +484,38 @@ var SideMenu = function(blueprint3d, floorplanControls, modalEffects) {
         }
 
     init();
+
+    function scalePosition(position){
+        var x = position.x;
+        var z = position.z;
+
+        x2 = Math.round(x / 25);
+        if(x2 % 2 == 0){
+            x2 -= 1;
+        }
+        x = x / 25;
+        var x3 = x - x2;
+
+        z2 = Math.round(z / 25);
+        if(z2 % 2 == 0){
+            z2 -= 1;
+        }
+        z = z / 25;
+        var z3 = z - z2;
+
+        if (x3 < 0.5 ){
+            x = x2*25;
+        }else{
+            x = (x2+2)*25;
+        }
+        if (z3 < 0.5 ){
+            z = z2*25;
+        }else{
+            z = (z2+2)*25;
+        }
+
+        return {"x": x, "y": 0, "z": z};
+    }
 
 };
 

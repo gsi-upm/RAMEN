@@ -127,9 +127,6 @@ module BP3D.Three {
                 hasClicked = false;
             });
 
-            var grid = new THREE.GridHelper(25000, 1000, 0x000000, 0x000000);
-            grid.position.y = 10;
-            scene.add(grid);
 
         }
 
