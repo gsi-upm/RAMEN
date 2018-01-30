@@ -10,5 +10,5 @@ build
 bin
 doc
 dist
-example/js/blueprint3d.js
+example/js/ramen.js
 .idea/workspace.xml

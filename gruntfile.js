@@ -3,11 +3,11 @@ module.exports = function (grunt) {
   require("matchdep").filterAll("grunt-*").forEach(grunt.loadNpmTasks);
 
   var globalConfig = {
-    moduleName: "blueprint3d",
+    moduleName: "ramen",
     sources: ["src/*.ts", "src/*/*.ts"],
     outDir: "dist",
     docDir: "doc",
-    exampleDir: "example/js/"
+    exampleDir: "executable/js/"
   };
 
   var configuration = {
@@ -72,7 +72,7 @@ module.exports = function (grunt) {
     "typescript:" + globalConfig.moduleName
   ]);
 
-  grunt.registerTask("example", [
+  grunt.registerTask("executable", [
     // "copy:threejs",
     "copy:" + globalConfig.moduleName
   ]);
@@ -86,6 +86,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask("default", [
     "debug",
-    "example"
+    "executable"
   ]);
 };

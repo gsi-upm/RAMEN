@@ -71,49 +71,52 @@ module BP3D.Three {
             clip = THREE.AnimationClip.CreateFromMorphTargetSequence('walk', geometry.morphTargets, 27, false);
             geometry1 = geometry;
 
-            //Adding Mesh
-            for(let j = 0; j < steps[0].length; j++){
-                if (steps[0][j].agent != undefined){
-                    let material1 = new THREE.MeshLambertMaterial();
-                    material1.morphTargets =true;
-                    let mesh = new THREE.SkinnedMesh( geometry, material1 );
-                    mesh.scale.set(55,65,55);
-                    scene.add(mesh);
-                    scene.meshes.push(mesh);
-                    //Setting mesh position
-                    let position = steps[0][j].position;
-                    if(type == 0){
-                        //Getting the position of the room
-                        for(let k = 0; k < allRooms.length; k++){
-                            if(position == allRooms[k].name){
-                                mesh.position.x = allRooms[k].x;
-                                mesh.position.z = allRooms[k].y;
+            if(!scene.realTime){
+                //Adding Mesh
+                for(let j = 0; j < steps[0].length; j++){
+                    if (steps[0][j].agent != undefined){
+                        let material1 = new THREE.MeshLambertMaterial();
+                        material1.morphTargets =true;
+                        let mesh = new THREE.SkinnedMesh( geometry, material1 );
+                        mesh.scale.set(55,65,55);
+                        scene.add(mesh);
+                        scene.meshes.push(mesh);
+                        //Setting mesh position
+                        let position = steps[0][j].position;
+                        if(type == 0){
+                            //Getting the position of the room
+                            for(let k = 0; k < allRooms.length; k++){
+                                if(position == allRooms[k].name){
+                                    mesh.position.x = allRooms[k].x;
+                                    mesh.position.z = allRooms[k].y;
+                                }
                             }
                         }
-                    }
-                    //Types 1 y 2
-                    else{
-                        mesh.position.x = position.x;
-                        mesh.position.z = position.y;
-                    }
-                    //Setting rotation
-                    if(steps[0][j].rotation != undefined){
-                        mesh.rotation.y = getDirection(steps[0][j].rotation);
-                    }
-                    //Mesh Animation
-                    let mixer = new THREE.AnimationMixer( mesh );
-                    mixers.push(mixer);
-                    //Mesh Emotion
-                    if(steps[0][j].sentiment != undefined){
-                        let sentiment = steps[0][j].sentiment;
-                        changeColorEmotion(sentiment, j);
-                    }
-                    //DEFAULT: happiness
-                    else{
-                        changeColorEmotion("happiness", j);
+                        //Types 1 y 2
+                        else{
+                            mesh.position.x = position.x;
+                            mesh.position.z = position.y;
+                        }
+                        //Setting rotation
+                        if(steps[0][j].rotation != undefined){
+                            mesh.rotation.y = getDirection(steps[0][j].rotation);
+                        }
+                        //Mesh Animation
+                        let mixer = new THREE.AnimationMixer( mesh );
+                        mixers.push(mixer);
+                        //Mesh Emotion
+                        if(steps[0][j].sentiment != undefined){
+                            let sentiment = steps[0][j].sentiment;
+                            changeColorEmotion(sentiment, j);
+                        }
+                        //DEFAULT: happiness
+                        else{
+                            changeColorEmotion("happiness", j);
+                        }
                     }
                 }
             }
+
             //Setting the initial time of the simulation
             scene.initialTime = Date.now();
         }

@@ -2,9 +2,175 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa0b4dc9-b75a-4ded-9430-72350c6484c7" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_board.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/executable/js/bootbox.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/executable/js/maps/rooms.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/executable/js/movement/movement.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/executable/js/ramen.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/executable/server/server.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/executable/visual.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/maps/floor5.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/maps/lab-gsi.blueprint3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/movement/datos.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/movement/datos3.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/movement/datos_agente.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/movement/familia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/movement/lab_move.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/movement/lab_move1.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/movement/lab_move2.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/movement/movement.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/movement/movement2.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/movement/movement3.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/movement/movement4.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/movement/movement5.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/movement/movement_soba.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/example/models/js/ik-kivine_baked.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_board.png" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/assets/audio/358232_j_s_song.ogg" afterPath="$PROJECT_DIR$/executable/assets/audio/358232_j_s_song.ogg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/assets/images/cloud.png" afterPath="$PROJECT_DIR$/executable/assets/images/cloud.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/assets/images/lava.jpg" afterPath="$PROJECT_DIR$/executable/assets/images/lava.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/assets/video/relax.mp4" afterPath="$PROJECT_DIR$/executable/assets/video/relax.mp4" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/assets/video/relax2.mp4" afterPath="$PROJECT_DIR$/executable/assets/video/relax2.mp4" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/assets/video/sintel.mp4" afterPath="$PROJECT_DIR$/executable/assets/video/sintel.mp4" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/assets/video/sintel.ogv" afterPath="$PROJECT_DIR$/executable/assets/video/sintel.ogv" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/css/bootstrap.css" afterPath="$PROJECT_DIR$/executable/css/bootstrap.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/css/example.css" afterPath="$PROJECT_DIR$/executable/css/example.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/executable/fonts/glyphicons-halflings-regular.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/executable/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/executable/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/executable/fonts/glyphicons-halflings-regular.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/executable/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/index.html" afterPath="$PROJECT_DIR$/executable/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/js/bootstrap.js" afterPath="$PROJECT_DIR$/executable/js/bootstrap.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/js/example.js" afterPath="$PROJECT_DIR$/executable/js/example.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/js/items.js" afterPath="$PROJECT_DIR$/executable/js/items.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/js/jquery.js" afterPath="$PROJECT_DIR$/executable/js/jquery.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/js/maps/ETSIT.blueprint3d" afterPath="$PROJECT_DIR$/executable/js/maps/ETSIT.blueprint3d" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/js/maps/ETSIT_furniture.blueprint3d" afterPath="$PROJECT_DIR$/executable/js/maps/ETSIT_furniture.blueprint3d" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/js/maps/Lab_GSI_2.blueprint3d" afterPath="$PROJECT_DIR$/executable/js/maps/map.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/js/rooms.json" afterPath="$PROJECT_DIR$/executable/js/maps/rooms_ETSIT.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/js/rooms_Lab.json" afterPath="$PROJECT_DIR$/executable/js/rooms_Lab.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/js/three.min.js" afterPath="$PROJECT_DIR$/executable/js/three.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/DWR_MATERA_DRESSER2.js" afterPath="$PROJECT_DIR$/executable/models/js/DWR_MATERA_DRESSER2.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/GUSossingtonendtable.js" afterPath="$PROJECT_DIR$/executable/models/js/GUSossingtonendtable.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/Table.json" afterPath="$PROJECT_DIR$/executable/models/js/Table.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/air.json" afterPath="$PROJECT_DIR$/executable/models/js/air.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/b_cb-blue-block60x96.png" afterPath="$PROJECT_DIR$/executable/models/js/b_cb-blue-block60x96.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/bd-shalebedside-smoke_baked.js" afterPath="$PROJECT_DIR$/executable/models/js/bd-shalebedside-smoke_baked.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/bd-shalebedside-smoke_baked.png" afterPath="$PROJECT_DIR$/executable/models/js/bd-shalebedside-smoke_baked.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/beacon.json" afterPath="$PROJECT_DIR$/executable/models/js/beacon.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/beacon_wall.json" afterPath="$PROJECT_DIR$/executable/models/js/beacon_wall.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/board.jpg" afterPath="$PROJECT_DIR$/executable/models/js/board.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/board.js" afterPath="$PROJECT_DIR$/executable/models/js/board.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/camera.json" afterPath="$PROJECT_DIR$/executable/models/js/camera.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/camera2.json" afterPath="$PROJECT_DIR$/executable/models/js/camera2.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/camera3.json" afterPath="$PROJECT_DIR$/executable/models/js/camera3.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cb-archnight-white_baked.js" afterPath="$PROJECT_DIR$/executable/models/js/cb-archnight-white_baked.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cb-archnight-white_baked.png" afterPath="$PROJECT_DIR$/executable/models/js/cb-archnight-white_baked.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cb-blue-block-60x96.js" afterPath="$PROJECT_DIR$/executable/models/js/cb-blue-block-60x96.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cb-clapboard_baked.js" afterPath="$PROJECT_DIR$/executable/models/js/cb-clapboard_baked.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cb-clapboard_baked.png" afterPath="$PROJECT_DIR$/executable/models/js/cb-clapboard_baked.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cb-kendallbookcasewalnut_baked.js" afterPath="$PROJECT_DIR$/executable/models/js/cb-kendallbookcasewalnut_baked.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cb-kendallbookcasewalnut_baked.png" afterPath="$PROJECT_DIR$/executable/models/js/cb-kendallbookcasewalnut_baked.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cb-rochelle-gray_baked.js" afterPath="$PROJECT_DIR$/executable/models/js/cb-rochelle-gray_baked.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cb-rochelle-gray_baked.png" afterPath="$PROJECT_DIR$/executable/models/js/cb-rochelle-gray_baked.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cb-scholartable_baked.js" afterPath="$PROJECT_DIR$/executable/models/js/cb-scholartable_baked.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cb-scholartable_baked.png" afterPath="$PROJECT_DIR$/executable/models/js/cb-scholartable_baked.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cb-tecs_baked.js" afterPath="$PROJECT_DIR$/executable/models/js/cb-tecs_baked.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cb-tecs_baked.png" afterPath="$PROJECT_DIR$/executable/models/js/cb-tecs_baked.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/closed-door28x80_baked.js" afterPath="$PROJECT_DIR$/executable/models/js/closed-door28x80_baked.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/closed-door28x80_baked.png" afterPath="$PROJECT_DIR$/executable/models/js/closed-door28x80_baked.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cube4.json" afterPath="$PROJECT_DIR$/executable/models/js/cube4.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cubo.json" afterPath="$PROJECT_DIR$/executable/models/js/cubo.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cubo2.json" afterPath="$PROJECT_DIR$/executable/models/js/cubo2.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/grey-brown_wood.jpg" afterPath="$PROJECT_DIR$/executable/models/js/grey-brown_wood.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/gsi-poster (copy).js" afterPath="$PROJECT_DIR$/executable/models/js/gsi-poster (copy).js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/gsi-poster.js" afterPath="$PROJECT_DIR$/executable/models/js/gsi-poster.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/gsi.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/gsi.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/gus-churchchair-whiteoak.js" afterPath="$PROJECT_DIR$/executable/models/js/gus-churchchair-whiteoak.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/ik-ekero-blue_baked.js" afterPath="$PROJECT_DIR$/executable/models/js/ik-ekero-blue_baked.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/ik-ekero-blue_baked.png" afterPath="$PROJECT_DIR$/executable/models/js/ik-ekero-blue_baked.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/ik-ekero-orange_baked.js" afterPath="$PROJECT_DIR$/executable/models/js/ik-ekero-orange_baked.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/ik-ekero-orange_baked.png" afterPath="$PROJECT_DIR$/executable/models/js/ik-ekero-orange_baked.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/ik-stockholmcoffee-brown.js" afterPath="$PROJECT_DIR$/executable/models/js/ik-stockholmcoffee-brown.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/ik_nordli_full.js" afterPath="$PROJECT_DIR$/executable/models/js/ik_nordli_full.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/nyc-poster.js" afterPath="$PROJECT_DIR$/executable/models/js/nyc-poster.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/nyc-poster2.js" afterPath="$PROJECT_DIR$/executable/models/js/nyc-poster2.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/nyc2old.jpg" afterPath="$PROJECT_DIR$/executable/models/js/nyc2old.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/oak_wood.jpg" afterPath="$PROJECT_DIR$/executable/models/js/oak_wood.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/open_door.js" afterPath="$PROJECT_DIR$/executable/models/js/open_door.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/ore-3legged-white_baked.js" afterPath="$PROJECT_DIR$/executable/models/js/ore-3legged-white_baked.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/ore-3legged-white_baked.png" afterPath="$PROJECT_DIR$/executable/models/js/ore-3legged-white_baked.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/out_door.js" afterPath="$PROJECT_DIR$/executable/models/js/out_door.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/ps_7.jpg" afterPath="$PROJECT_DIR$/executable/models/js/ps_7.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/sentiments.png" afterPath="$PROJECT_DIR$/executable/models/js/sentiments.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/sentiments_poster.js" afterPath="$PROJECT_DIR$/executable/models/js/sentiments_poster.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/speakers.json" afterPath="$PROJECT_DIR$/executable/models/js/speakers.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/walk.js" afterPath="$PROJECT_DIR$/executable/models/js/walk.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/walk.json" afterPath="$PROJECT_DIR$/executable/models/js/walk.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/walk2.json" afterPath="$PROJECT_DIR$/executable/models/js/walk2.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/walkingman.json" afterPath="$PROJECT_DIR$/executable/models/js/walkingman.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/walkingman2.json" afterPath="$PROJECT_DIR$/executable/models/js/walkingman2.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/walkmorph.json" afterPath="$PROJECT_DIR$/executable/models/js/walkmorph.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/walkmorphcolor.json" afterPath="$PROJECT_DIR$/executable/models/js/walkmorphcolor.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/walnut-marin.jpg" afterPath="$PROJECT_DIR$/executable/models/js/walnut-marin.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/we-narrow6white_baked.js" afterPath="$PROJECT_DIR$/executable/models/js/we-narrow6white_baked.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/we-narrow6white_baked.png" afterPath="$PROJECT_DIR$/executable/models/js/we-narrow6white_baked.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/white_wood.jpg" afterPath="$PROJECT_DIR$/executable/models/js/white_wood.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/whitewindow.js" afterPath="$PROJECT_DIR$/executable/models/js/whitewindow.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/gsi.png" afterPath="$PROJECT_DIR$/executable/models/js/gsi.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_Blu-Dot-Shale-Bedside-Table.jpg" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_Blu-Dot-Shale-Bedside-Table.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_Church-Chair-oak-white_1024x1024.jpg" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_Church-Chair-oak-white_1024x1024.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_Screen_Shot_2014-01-28_at_6.49.33_PM.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_Screen_Shot_2014-01-28_at_6.49.33_PM.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_Screen_Shot_2014-02-21_at_1.24.58_PM.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_Screen_Shot_2014-02-21_at_1.24.58_PM.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_Screen_Shot_2014-10-27_at_8.04.12_PM (1).png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_Screen_Shot_2014-10-27_at_8.04.12_PM (1).png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_Screen_Shot_2014-10-27_at_8.04.12_PM.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_Screen_Shot_2014-10-27_at_8.04.12_PM.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_Screen_Shot_2014-10-27_at_8.22.46_PM.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_Screen_Shot_2014-10-27_at_8.22.46_PM.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_TN-ikea-kvikine.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_TN-ikea-kvikine.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_air.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_air.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_arch-white-oval-nightstand.jpg" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_arch-white-oval-nightstand.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_beacon.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_beacon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_camera.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_camera.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_cb-blue-block60x96.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_cb-blue-block60x96.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_clapboard-white-60-media-console-1.jpg" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_clapboard-white-60-media-console-1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_ekero-blue3.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_ekero-blue3.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_gsi.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_gsi.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_img21o.jpg" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_img21o.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_img25o.jpg" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_img25o.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_kendall-walnut-bookcase.jpg" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_kendall-walnut-bookcase.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_matera_dresser_5.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_matera_dresser_5.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_moore-60-media-console-1.jpg" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_moore-60-media-console-1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_nordli-bed-frame__0159270_PE315708_S4.JPG" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_nordli-bed-frame__0159270_PE315708_S4.JPG" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_nyc2.jpg" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_nyc2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_ore-white.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_ore-white.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_rochelle-sofa-3.jpg" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_rochelle-sofa-3.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_scholar-dining-table.jpg" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_scholar-dining-table.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_stockholm-coffee-table__0181245_PE332924_S4.JPG" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_stockholm-coffee-table__0181245_PE332924_S4.JPG" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_teca-storage-trunk.jpg" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_teca-storage-trunk.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_tn-orange.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_tn-orange.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_window.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_window.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/textures/hardwood.png" afterPath="$PROJECT_DIR$/executable/rooms/textures/hardwood.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/textures/hardwood_dark.png" afterPath="$PROJECT_DIR$/executable/rooms/textures/hardwood_dark.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/textures/hardwood_medium.png" afterPath="$PROJECT_DIR$/executable/rooms/textures/hardwood_medium.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/textures/light_brick.jpg" afterPath="$PROJECT_DIR$/executable/rooms/textures/light_brick.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/textures/light_fine_wood.jpg" afterPath="$PROJECT_DIR$/executable/rooms/textures/light_fine_wood.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/textures/marbletiles.jpg" afterPath="$PROJECT_DIR$/executable/rooms/textures/marbletiles.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/textures/walllightmap.png" afterPath="$PROJECT_DIR$/executable/rooms/textures/walllightmap.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/textures/walllightmap_dark.png" afterPath="$PROJECT_DIR$/executable/rooms/textures/walllightmap_dark.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/textures/walllightmap_medium.png" afterPath="$PROJECT_DIR$/executable/rooms/textures/walllightmap_medium.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/textures/wallmap.png" afterPath="$PROJECT_DIR$/executable/rooms/textures/wallmap.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/textures/wallmap_yellow.png" afterPath="$PROJECT_DIR$/executable/rooms/textures/wallmap_yellow.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/thumbnails/thumbnail_light_brick.jpg" afterPath="$PROJECT_DIR$/executable/rooms/thumbnails/thumbnail_light_brick.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/thumbnails/thumbnail_light_fine_wood.jpg" afterPath="$PROJECT_DIR$/executable/rooms/thumbnails/thumbnail_light_fine_wood.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/thumbnails/thumbnail_marbletiles.jpg" afterPath="$PROJECT_DIR$/executable/rooms/thumbnails/thumbnail_marbletiles.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/thumbnails/thumbnail_wallmap_yellow.png" afterPath="$PROJECT_DIR$/executable/rooms/thumbnails/thumbnail_wallmap_yellow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example/index.html" afterPath="$PROJECT_DIR$/example/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example/js/example.js" afterPath="$PROJECT_DIR$/example/js/example.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gruntfile.js" afterPath="$PROJECT_DIR$/gruntfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/scene.ts" afterPath="$PROJECT_DIR$/src/model/scene.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/three/human.ts" afterPath="$PROJECT_DIR$/src/three/human.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/three/loadMovement.ts" afterPath="$PROJECT_DIR$/src/three/loadMovement.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/three/main.ts" afterPath="$PROJECT_DIR$/src/three/main.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -17,7 +183,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="blueprint3d" />
   </component>
@@ -29,50 +194,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="example.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/example/js/example.js">
+      <file leaf-file-name="example.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/executable/js/example.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="501" column="9" lean-forward="false" selection-start-line="501" selection-start-column="9" selection-end-line="501" selection-end-column="9" />
+            <state relative-caret-position="1513">
+              <caret line="89" column="25" lean-forward="false" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="human.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/three/human.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="243" column="24" lean-forward="false" selection-start-line="243" selection-start-column="18" selection-end-line="243" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="116" column="25" lean-forward="true" selection-start-line="116" selection-start-column="25" selection-end-line="116" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="floorplanner.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/floorplanner/floorplanner.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="95" column="31" lean-forward="false" selection-start-line="95" selection-start-column="31" selection-end-line="95" selection-end-column="31" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dimensioning.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/core/dimensioning.ts">
+      <file leaf-file-name="rooms.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/executable/js/maps/rooms.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -81,252 +214,63 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="configuration.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/core/configuration.ts">
+      <file leaf-file-name="loadMovement.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/three/loadMovement.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+            <state relative-caret-position="5457">
+              <caret line="322" column="39" lean-forward="false" selection-start-line="322" selection-start-column="39" selection-end-line="322" selection-end-column="39" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/executable/server/server.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1326">
+              <caret line="78" column="19" lean-forward="false" selection-start-line="78" selection-start-column="19" selection-end-line="78" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/three/main.ts">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="646">
+              <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scene.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/scene.ts">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="205" column="15" lean-forward="false" selection-start-line="205" selection-start-column="15" selection-end-line="205" selection-end-column="15" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="238">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blueprint3d.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/js/blueprint3d.js">
+      <file leaf-file-name="visual.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/executable/visual.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="47923">
-              <caret line="2819" column="39" lean-forward="false" selection-start-line="2819" selection-start-column="39" selection-end-line="2819" selection-end-column="39" />
-              <folding>
-                <marker date="1510659182940" expanded="true" signature="228468:238864" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="228507:238819" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="228577:238812" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="232366:232662" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="232431:232648" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="232453:232585" ph="//..." />
-                <marker date="1510659182940" expanded="true" signature="232702:232823" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="232865:232915" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="232956:233003" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="233045:233090" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="233132:233177" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="233224:233274" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="233317:233363" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="233408:233459" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="233497:234008" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="233665:233919" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="233941:233994" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="234039:235874" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="234101:234325" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="234410:235571" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="235031:235191" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="235342:235553" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="235593:235710" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="235632:235692" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="235920:236307" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="236066:236147" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="236187:236258" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="236353:236412" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="236460:236520" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="236579:236649" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="236699:237394" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="236932:237034" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="237056:237146" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="237440:237918" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="237932:238053" ph="//..." />
-                <marker date="1510659182940" expanded="true" signature="238117:238781" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="238620:238738" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="238888:239020" ph="//..." />
-                <marker date="1510659182940" expanded="true" signature="239048:239796" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="239054:239090" ph="/** Blueprint3D core application. ...*/" />
-                <marker date="1510659182940" expanded="true" signature="239126:239754" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="239136:239226" ph="/** Creates an instance. ...*/" />
-                <marker date="1510659182940" expanded="true" signature="239265:239720" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="239479:239617" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="239635:239710" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="239847:243168" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="239884:243126" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="239894:239929" ph="/** Enumeration of log contexts. ...*/" />
-                <marker date="1510659182940" expanded="true" signature="239962:240537" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="239976:239995" ph="/** Log nothing. ...*/" />
-                <marker date="1510659182940" expanded="true" signature="240067:240082" ph="/** Log all. ...*/" />
-                <marker date="1510659182940" expanded="true" signature="240152:240173" ph="/** 2D interaction ...*/" />
-                <marker date="1510659182940" expanded="true" signature="240263:240284" ph="/** Interior items ...*/" />
-                <marker date="1510659182940" expanded="true" signature="240356:240382" ph="/** Wall (connectivity) ...*/" />
-                <marker date="1510659182940" expanded="true" signature="240454:240468" ph="/** Room(s) ...*/" />
-                <marker date="1510659182940" expanded="true" signature="240637:240670" ph="/** Enumeration of log levels. ...*/" />
-                <marker date="1510659182940" expanded="true" signature="240701:241177" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="240715:240737" ph="/** An information. ...*/" />
-                <marker date="1510659182940" expanded="true" signature="240819:240836" ph="/** A warning. ...*/" />
-                <marker date="1510659182940" expanded="true" signature="240910:240926" ph="/** An error. ...*/" />
-                <marker date="1510659182940" expanded="true" signature="240996:241017" ph="/** A fatal error. ...*/" />
-                <marker date="1510659182940" expanded="true" signature="241087:241110" ph="/** A debug message. ...*/" />
-                <marker date="1510659182940" expanded="true" signature="241269:241345" ph="/** The current log context. To be set when initializing the Application. ...*/" />
-                <marker date="1510659182940" expanded="true" signature="241398:241723" ph="/** Pre-check if logging for specified context and/or level is enabled. ...*/" />
-                <marker date="1510659182940" expanded="true" signature="241767:241985" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="242030:242285" ph="/** Log the passed message in the context and with given level. ...*/" />
-                <marker date="1510659182940" expanded="true" signature="242332:243096" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="242387:242426" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="242484:243042" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="242529:242598" ph="..." />
-                <marker date="1510659182940" expanded="true" signature="242638:242707" ph="..." />
-                <marker date="1510659182940" expanded="true" signature="242745:242814" ph="..." />
-                <marker date="1510659182940" expanded="true" signature="242852:242921" ph="..." />
-                <marker date="1510659182940" expanded="true" signature="242959:243028" ph="..." />
-                <marker date="1510659182940" expanded="true" signature="243219:243794" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="243256:243752" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="243266:243293" ph="/** Version information. ...*/" />
-                <marker date="1510659182940" expanded="true" signature="243329:243710" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="243390:243418" ph="/** The informal version. ...*/" />
-                <marker date="1510659182940" expanded="true" signature="243472:243524" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="243538:243567" ph="/** The technical version. ...*/" />
-                <marker date="1510659182940" expanded="true" signature="243622:243671" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="243947:244039" ph="//..." />
-                <marker date="1510659182940" expanded="true" signature="244067:246157" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="244106:246112" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="244155:246105" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="244211:244420" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="244460:245046" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="244783:244964" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="244978:244997" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="245011:245030" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="245087:246075" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="245460:245604" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="245618:245637" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="245651:245670" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="246181:246273" ph="//..." />
-                <marker date="1510659182940" expanded="true" signature="246301:250380" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="246340:250335" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="246387:250328" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="246479:249998" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="248117:249030" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="249048:249166" ph="//..." />
-                <marker date="1510659182940" expanded="true" signature="249225:249473" ph="{&quot;uniforms&quot;: scene.customUniforms...}" />
-                <marker date="1510659182940" expanded="true" signature="249661:249984" ph="//..." />
-                <marker date="1510659182940" expanded="true" signature="250046:250297" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="250404:250483" ph="//..." />
-                <marker date="1510659182940" expanded="true" signature="250511:265351" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="250550:265306" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="250605:265299" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="250926:251966" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="251031:251238" ph="{&quot;dataType&quot;: 'text'...}" />
-                <marker date="1510659182940" expanded="true" signature="251151:251220" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="251478:251680" ph="{&quot;dataType&quot;: 'text'...}" />
-                <marker date="1510659182940" expanded="true" signature="251597:251662" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="252042:254671" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="252131:254578" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="252282:254560" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="252403:254538" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="252468:253219" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="252614:252710" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="252748:253189" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="252873:253000" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="253042:253155" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="253330:253588" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="253693:253934" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="254032:254468" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="254095:254438" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="254156:254272" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="254718:256161" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="254809:255360" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="254846:255016" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="255042:255175" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="255382:256022" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="255419:255642" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="255668:255837" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="256268:258091" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="256356:257879" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="256529:256844" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="256870:257163" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="257459:257859" ph="{&quot;speed&quot;: speed...}" />
-                <marker date="1510659182940" expanded="true" signature="257971:258077" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="258179:261117" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="258499:259428" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="258832:259074" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="258905:259052" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="259160:259408" ph="{&quot;direction&quot;: direction...}" />
-                <marker date="1510659182940" expanded="true" signature="259520:259626" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="259733:260675" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="259913:260657" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="259986:260635" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="260467:260609" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="260761:261103" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="261209:261370" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="261415:263649" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="261591:263635" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="261692:262640" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="261770:262009" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="262059:262317" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="262364:262618" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="262666:263617" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="262744:262984" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="263034:263293" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="263340:263595" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="263731:264043" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="263791:264029" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="263843:264011" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="264092:264310" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="264184:264263" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="264365:264560" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="264455:264518" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="264606:265269" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="264643:265255" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="264674:264714" ph="..." />
-                <marker date="1510659182940" expanded="true" signature="264745:264793" ph="..." />
-                <marker date="1510659182940" expanded="true" signature="264823:264867" ph="..." />
-                <marker date="1510659182940" expanded="true" signature="264972:265006" ph="..." />
-                <marker date="1510659182940" expanded="true" signature="265037:265082" ph="..." />
-                <marker date="1510659182940" expanded="true" signature="265112:265157" ph="..." />
-                <marker date="1510659182940" expanded="true" signature="265188:265237" ph="..." />
-                <marker date="1510659182940" expanded="true" signature="265375:265467" ph="//..." />
-                <marker date="1510659182940" expanded="true" signature="265495:268514" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="265534:268469" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="265588:268462" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="265694:266580" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="265838:265898" ph="//..." />
-                <marker date="1510659182940" expanded="true" signature="266610:267191" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="266713:267177" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="266794:267159" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="266857:267137" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="267237:268351" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="267384:268337" ph="{...}" />
-                <marker date="1510659182940" expanded="true" signature="267419:267619" ph="..." />
-                <marker date="1510659182940" expanded="true" signature="267652:267852" ph="..." />
-                <marker date="1510659182940" expanded="true" signature="267886:268086" ph="..." />
-                <marker date="1510659182940" expanded="true" signature="268119:268319" ph="..." />
-                <marker date="1510659182940" expanded="true" signature="268381:268432" ph="{...}" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="floorplanner_view.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/floorplanner/floorplanner_view.ts">
+      <file leaf-file-name="items.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/executable/js/items.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="28" column="23" lean-forward="false" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+            <state relative-caret-position="2618">
+              <caret line="154" column="8" lean-forward="true" selection-start-line="154" selection-start-column="8" selection-end-line="154" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -339,41 +283,42 @@
       <list>
         <option value="tsconfig.json" />
         <option value="TypeScript File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>wal</find>
-      <find>wall</find>
-      <find>wallW</find>
-      <find>targetX</find>
-      <find>conso</find>
-      <find>wallWid</find>
-      <find>wallWi</find>
-      <find>add</find>
-      <find>addItem</find>
-      <find>fixed</find>
-      <find>grid</find>
-      <find>sce</find>
-      <find>grif</find>
-      <find>griD</find>
-      <find>gri</find>
-      <find>gridHe</find>
-      <find>G</find>
-      <find>Grdi</find>
-      <find>Gr</find>
-      <find>Grid</find>
-      <find>GridH</find>
-      <find>GridHe</find>
-      <find>GridHel</find>
-      <find>GridHelp</find>
+      <find>type</find>
+      <find>movementJ</find>
+      <find>model</find>
+      <find>loadM</find>
+      <find>rotatePre</find>
       <find>scene</find>
-      <find>remove</find>
-      <find>lock in</find>
-      <find>a</find>
-      <find>addIte</find>
-      <find>addItem2</find>
+      <find>loadMo</find>
+      <find>scope</find>
+      <find>steps</find>
+      <find>realS</find>
+      <find>which</find>
+      <find>setRoom</find>
+      <find>conso</find>
+      <find>light</find>
+      <find>pla</find>
+      <find>playA</find>
+      <find>loadFi</find>
+      <find>play</find>
+      <find>loadDesi</find>
+      <find>loadf</find>
+      <find>loadMove</find>
+      <find>playAc</find>
+      <find>load</find>
+      <find>allRooms</find>
+      <find>whichRo</find>
+      <find>WebSoc</find>
+      <find>handler</find>
+      <find>Socket</find>
+      <find>Socket opened!</find>
+      <find>Socket! Conne</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/three</dir>
@@ -389,27 +334,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/example/js/rooms_Lab.json" />
-        <option value="$PROJECT_DIR$/src/three/video.ts" />
-        <option value="$PROJECT_DIR$/example/js/movement2.json" />
-        <option value="$PROJECT_DIR$/example/js/design(19).blueprint3d" />
-        <option value="$PROJECT_DIR$/example/js/movement3.json" />
-        <option value="$PROJECT_DIR$/example/js/movement4.json" />
-        <option value="$PROJECT_DIR$/example/js/movement.json" />
-        <option value="$PROJECT_DIR$/example/js/movement5.json" />
-        <option value="$PROJECT_DIR$/example/js/familia.json" />
-        <option value="$PROJECT_DIR$/example/js/datos.json" />
-        <option value="$PROJECT_DIR$/src/three/hud.ts" />
-        <option value="$PROJECT_DIR$/example/js/three.min.js" />
-        <option value="$PROJECT_DIR$/src/three/floorPlan.ts" />
-        <option value="$PROJECT_DIR$/lib/three.d.ts" />
-        <option value="$PROJECT_DIR$/src/items/wall_item.ts" />
-        <option value="$PROJECT_DIR$/src/three/edge.ts" />
-        <option value="$PROJECT_DIR$/example/js/design(3).blueprint3d" />
         <option value="$PROJECT_DIR$/src/items/floor_item.ts" />
         <option value="$PROJECT_DIR$/example/js/LabGSI2.blueprint3d" />
         <option value="$PROJECT_DIR$/example/models/js/BlakeAvenuejoshuatreecheftable.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/example/js/LabGSI.blueprint3d" />
         <option value="$PROJECT_DIR$/dist/blueprint3d.js" />
         <option value="$PROJECT_DIR$/src/model/corner.ts" />
@@ -422,11 +349,8 @@
         <option value="$PROJECT_DIR$/example/js/lab_move1.json" />
         <option value="$PROJECT_DIR$/example/js/lab_move2.json" />
         <option value="$PROJECT_DIR$/src/three/skybox.ts" />
-        <option value="$PROJECT_DIR$/src/three/loadMovement.ts" />
         <option value="$PROJECT_DIR$/src/three/fire.ts" />
         <option value="$PROJECT_DIR$/src/three/audio.ts" />
-        <option value="$PROJECT_DIR$/src/model/scene.ts" />
-        <option value="$PROJECT_DIR$/src/three/human.ts" />
         <option value="$PROJECT_DIR$/example/js/movement/lab_move2.json" />
         <option value="$PROJECT_DIR$/src/model/wall.ts" />
         <option value="$PROJECT_DIR$/src/model/half_edge.ts" />
@@ -437,9 +361,30 @@
         <option value="$PROJECT_DIR$/src/floorplanner/floorplanner_view.ts" />
         <option value="$PROJECT_DIR$/src/floorplanner/floorplanner.ts" />
         <option value="$PROJECT_DIR$/src/core/configuration.ts" />
-        <option value="$PROJECT_DIR$/src/three/main.ts" />
-        <option value="$PROJECT_DIR$/example/index.html" />
         <option value="$PROJECT_DIR$/example/js/example.js" />
+        <option value="$PROJECT_DIR$/example/index.html" />
+        <option value="$PROJECT_DIR$/gruntfile.js" />
+        <option value="$PROJECT_DIR$/dist/ramen.js.map" />
+        <option value="$PROJECT_DIR$/executable/js/ramen.js" />
+        <option value="$PROJECT_DIR$/executable/js/movement/lab_move1.json" />
+        <option value="$PROJECT_DIR$/executable/js/fragmentShader" />
+        <option value="$PROJECT_DIR$/executable/js/fragmentShader.js" />
+        <option value="$PROJECT_DIR$/executable/js/fragmentShader.vert" />
+        <option value="$PROJECT_DIR$/executable/js/jquery.js" />
+        <option value="$PROJECT_DIR$/executable/server/server.py" />
+        <option value="$PROJECT_DIR$/executable/js/socket.js" />
+        <option value="$PROJECT_DIR$/src/three/human.ts" />
+        <option value="$PROJECT_DIR$/src/three/main.ts" />
+        <option value="$PROJECT_DIR$/executable/index.html" />
+        <option value="$PROJECT_DIR$/src/model/scene.ts" />
+        <option value="$PROJECT_DIR$/executable/js/example.js" />
+        <option value="$PROJECT_DIR$/executable/js/movement/movement.json" />
+        <option value="$PROJECT_DIR$/src/three/loadMovement.ts" />
+        <option value="$PROJECT_DIR$/executable/js/items.js" />
+        <option value="$PROJECT_DIR$/executable/visual.py" />
+        <option value="$PROJECT_DIR$/executable/server/socket.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -489,11 +434,11 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="51" />
-    <option name="y" value="-14" />
-    <option name="width" value="1390" />
-    <option name="height" value="915" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1134" />
+    <option name="y" value="13" />
+    <option name="width" value="1384" />
+    <option name="height" value="857" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -510,172 +455,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blueprint3d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blueprint3d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blueprint3d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blueprint3d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blueprint3d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blueprint3d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="three" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blueprint3d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blueprint3d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blueprint3d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blueprint3d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="items" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blueprint3d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blueprint3d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="floorplanner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blueprint3d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blueprint3d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blueprint3d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blueprint3d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blueprint3d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blueprint3d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="example" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blueprint3d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blueprint3d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="example" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="RAMEN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RAMEN" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -687,6 +479,9 @@
     <property name="js.buildTools.grunt.grunt-cli.package" value="$PROJECT_DIR$/node_modules/grunt/node_modules/grunt-cli" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/executable/js/maps" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/example/js" />
     </key>
@@ -704,40 +499,40 @@
     </option>
   </component>
   <component name="RunManager" selected="Grunt.js.grunt">
-    <configuration default="false" name="example.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="example.js" working-dir="$PROJECT_DIR$/example/js">
-      <method />
+    <configuration name="Server" type="FirefoxRemoteDebugType" factoryName="Firefox Remote" port="8000">
+      <method>
+        <option name="GruntBeforeRunTask" enabled="true">
+          <node-interpreter value="project" />
+          <gruntfile value="$PROJECT_DIR$/gruntfile.js" />
+          <tasks>
+            <task value="typescript:blueprint3d" />
+          </tasks>
+          <envs />
+        </option>
+        <option name="GruntBeforeRunTask" enabled="true">
+          <node-interpreter value="project" />
+          <gruntfile value="$PROJECT_DIR$/gruntfile.js" />
+          <tasks>
+            <task value="copy:blueprint3d" />
+          </tasks>
+          <envs />
+        </option>
+      </method>
     </configuration>
-    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
-      <method />
-    </configuration>
-    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
-      <method />
-    </configuration>
-    <configuration default="true" type="FirefoxRemoteDebugType" factoryName="Firefox Remote" port="6004">
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
-      <node-interpreter value="project" />
-      <working-dir value="" />
-      <envs />
-      <scope-kind value="ALL" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
-      <config-file value="" />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
-      <config-file value="" />
+    <configuration default="true" type="FirefoxRemoteDebugType" factoryName="Firefox Remote" port="6004" />
+    <configuration default="true" type="js.build_tools.grunt" factoryName="Grunt.js">
       <node-interpreter value="project" />
       <envs />
-      <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:8000">
-      <method />
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
     </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:8000" />
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
       <EXTENSION ID="com.jetbrains.nodejs.remote.docker.NodeJSDockerRunConfigurationExtension">
         <option name="envVars">
@@ -760,26 +555,36 @@
           <list />
         </option>
       </EXTENSION>
+    </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
       <option name="cucumberJsArguments" value="" />
       <option name="executablePath" />
       <option name="filePath" />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.grunt" factoryName="Grunt.js">
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -802,27 +607,8 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <configuration default="false" name="Server" type="FirefoxRemoteDebugType" factoryName="Firefox Remote" port="8000">
-      <method>
-        <option name="GruntBeforeRunTask" enabled="true">
-          <node-interpreter value="project" />
-          <gruntfile value="$PROJECT_DIR$/gruntfile.js" />
-          <tasks>
-            <task value="typescript:blueprint3d" />
-          </tasks>
-          <envs />
-        </option>
-        <option name="GruntBeforeRunTask" enabled="true">
-          <node-interpreter value="project" />
-          <gruntfile value="$PROJECT_DIR$/gruntfile.js" />
-          <tasks>
-            <task value="copy:blueprint3d" />
-          </tasks>
-          <envs />
-        </option>
-      </method>
-    </configuration>
-    <configuration default="false" name="grunt" type="js.build_tools.grunt" factoryName="Grunt.js">
+    <configuration name="example.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="$PROJECT_DIR$/executable/js/example.js" working-dir="$PROJECT_DIR$/executable/js" />
+    <configuration name="grunt" type="js.build_tools.grunt" factoryName="Grunt.js">
       <node-interpreter value="project" />
       <gruntfile value="$PROJECT_DIR$/gruntfile.js" />
       <tasks>
@@ -993,12 +779,42 @@
       <workItem from="1509614301571" duration="3219000" />
       <workItem from="1510046802522" duration="11075000" />
       <workItem from="1510132854484" duration="9451000" />
-      <workItem from="1510651495432" duration="7562000" />
+      <workItem from="1510651495432" duration="8485000" />
+      <workItem from="1510737070718" duration="4345000" />
+      <workItem from="1510824048708" duration="1719000" />
+      <workItem from="1510827114270" duration="21000" />
+      <workItem from="1510827189086" duration="415000" />
+      <workItem from="1510827628184" duration="3384000" />
+      <workItem from="1511256748541" duration="4273000" />
+      <workItem from="1511428966472" duration="599000" />
+      <workItem from="1511785078186" duration="752000" />
+      <workItem from="1511864823190" duration="615000" />
+      <workItem from="1511947513686" duration="3954000" />
+      <workItem from="1512039521671" duration="5966000" />
+      <workItem from="1512466508279" duration="1235000" />
+      <workItem from="1512984667120" duration="1353000" />
+      <workItem from="1512990257994" duration="2880000" />
+      <workItem from="1513072161211" duration="598000" />
+      <workItem from="1513162581564" duration="81000" />
+      <workItem from="1513769429663" duration="2357000" />
+      <workItem from="1513783046736" duration="1740000" />
+      <workItem from="1513848476135" duration="11213000" />
+      <workItem from="1513934579144" duration="9131000" />
+      <workItem from="1515403732314" duration="598000" />
+      <workItem from="1515489635565" duration="4146000" />
+      <workItem from="1515494715380" duration="8128000" />
+      <workItem from="1515576527990" duration="40000" />
+      <workItem from="1515576860767" duration="595000" />
+      <workItem from="1515584899646" duration="4320000" />
+      <workItem from="1515665966772" duration="6013000" />
+      <workItem from="1517226796362" duration="2626000" />
+      <workItem from="1517304290948" duration="3361000" />
+      <workItem from="1517308418297" duration="9000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="789654000" />
+    <option name="totallyTimeSpent" value="880683000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1010,540 +826,59 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="51" y="-14" width="1390" height="915" extended-state="6" />
+    <frame x="1134" y="13" width="1390" height="915" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.259366" sideWeight="0.48886138" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.5028818" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912987" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16210374" sideWeight="0.48886138" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21613833" sideWeight="0.5111386" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32660782" sideWeight="0.49711815" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32670808" sideWeight="0.5028818" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912987" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17659463" sideWeight="0.50643086" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39925373" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17659463" sideWeight="0.50643086" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32546583" sideWeight="0.49711815" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="14" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="12317" column="10" lean-forward="false" selection-start-line="12317" selection-start-column="10" selection-end-line="12317" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/jQuery.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35734">
-          <caret line="2105" column="4" lean-forward="false" selection-start-line="2105" selection-start-column="4" selection-end-line="2105" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/js/rooms_Lab.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/items/floor_item.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="20" column="17" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/css/example.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="75" column="1" lean-forward="false" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/js/items.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="150" column="54" lean-forward="false" selection-start-line="150" selection-start-column="54" selection-end-line="150" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/items/item.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3230">
-          <caret line="193" column="14" lean-forward="false" selection-start-line="193" selection-start-column="14" selection-end-line="193" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/js/lab_move.json" />
-    <entry file="file://$PROJECT_DIR$/example/js/lab_move2.json" />
-    <entry file="file://$PROJECT_DIR$/example/js/lab_move1.json" />
-    <entry file="file://$PROJECT_DIR$/src/three/floorPlan.ts">
+    <entry file="file://$PROJECT_DIR$/src/core/configuration.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
-          <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="27" />
-          <folding />
+          <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/three/skybox.ts" />
-    <entry file="file://$PROJECT_DIR$/example/js/bootstrap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="166" column="13" lean-forward="false" selection-start-line="166" selection-start-column="13" selection-end-line="166" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/three/video.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-663">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/three/fire.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="68" lean-forward="false" selection-start-line="14" selection-start-column="68" selection-end-line="14" selection-end-column="68" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LICENSE.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-306">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/blueprint3d.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91987">
-          <caret line="5419" column="59" lean-forward="false" selection-start-line="5419" selection-start-column="59" selection-end-line="5419" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/js/movement/lab_move2.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="63" column="22" lean-forward="false" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/js/movement/datos.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/three/floor.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-978">
-          <caret line="20" column="33" lean-forward="true" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/three.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="6632" column="21" lean-forward="false" selection-start-line="6632" selection-start-column="17" selection-end-line="6632" selection-end-column="21" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/log.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/utils.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5574">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/version.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/corner.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3415">
-          <caret line="105" column="15" lean-forward="false" selection-start-line="105" selection-start-column="15" selection-end-line="105" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/floorplan.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6407">
-          <caret line="97" column="23" lean-forward="false" selection-start-line="97" selection-start-column="19" selection-end-line="97" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/half_edge.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2378">
-          <caret line="117" column="17" lean-forward="false" selection-start-line="117" selection-start-column="17" selection-end-line="117" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-372">
-          <caret line="57" column="16" lean-forward="false" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/room.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1052">
-          <caret line="93" column="66" lean-forward="true" selection-start-line="93" selection-start-column="66" selection-end-line="93" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/wall.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-100">
-          <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/three/audio.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="36" column="84" lean-forward="true" selection-start-line="36" selection-start-column="84" selection-end-line="36" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/three/controller.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5166">
-          <caret line="123" column="69" lean-forward="true" selection-start-line="123" selection-start-column="69" selection-end-line="123" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/blueprint3d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/three/loadMovement.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3905">
-          <caret line="82" column="75" lean-forward="true" selection-start-line="82" selection-start-column="75" selection-end-line="82" selection-end-column="75" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/three/lights.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-202">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/blueprint3d.js.map">
+    <entry file="file://$PROJECT_DIR$/dist/blueprint3d.js.map" />
+    <entry file="file://$PROJECT_DIR$/executable/js/blueprint3d.js" />
+    <entry file="file://$PROJECT_DIR$/dist/ramen.js.map">
       <provider editor-type-id="sourcemapFileViewerProvider">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="0" column="9557" lean-forward="false" selection-start-line="0" selection-start-column="9557" selection-end-line="0" selection-end-column="9557" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/three/hud.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="117" column="24" lean-forward="false" selection-start-line="117" selection-start-column="24" selection-end-line="117" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/blueprint3d.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="1017" column="8" lean-forward="false" selection-start-line="1017" selection-start-column="8" selection-end-line="1017" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/three/edge.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3062">
-          <caret line="206" column="27" lean-forward="false" selection-start-line="206" selection-start-column="27" selection-end-line="206" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/three/controls.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2499">
-          <caret line="147" column="10" lean-forward="false" selection-start-line="147" selection-start-column="10" selection-end-line="147" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/js/blueprint3d.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47923">
-          <caret line="2819" column="39" lean-forward="false" selection-start-line="2819" selection-start-column="39" selection-end-line="2819" selection-end-column="39" />
-          <folding>
-            <marker date="1510659182940" expanded="true" signature="228468:238864" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="228507:238819" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="228577:238812" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="232366:232662" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="232431:232648" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="232453:232585" ph="//..." />
-            <marker date="1510659182940" expanded="true" signature="232702:232823" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="232865:232915" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="232956:233003" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="233045:233090" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="233132:233177" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="233224:233274" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="233317:233363" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="233408:233459" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="233497:234008" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="233665:233919" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="233941:233994" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="234039:235874" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="234101:234325" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="234410:235571" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="235031:235191" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="235342:235553" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="235593:235710" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="235632:235692" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="235920:236307" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="236066:236147" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="236187:236258" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="236353:236412" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="236460:236520" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="236579:236649" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="236699:237394" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="236932:237034" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="237056:237146" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="237440:237918" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="237932:238053" ph="//..." />
-            <marker date="1510659182940" expanded="true" signature="238117:238781" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="238620:238738" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="238888:239020" ph="//..." />
-            <marker date="1510659182940" expanded="true" signature="239048:239796" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="239054:239090" ph="/** Blueprint3D core application. ...*/" />
-            <marker date="1510659182940" expanded="true" signature="239126:239754" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="239136:239226" ph="/** Creates an instance. ...*/" />
-            <marker date="1510659182940" expanded="true" signature="239265:239720" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="239479:239617" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="239635:239710" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="239847:243168" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="239884:243126" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="239894:239929" ph="/** Enumeration of log contexts. ...*/" />
-            <marker date="1510659182940" expanded="true" signature="239962:240537" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="239976:239995" ph="/** Log nothing. ...*/" />
-            <marker date="1510659182940" expanded="true" signature="240067:240082" ph="/** Log all. ...*/" />
-            <marker date="1510659182940" expanded="true" signature="240152:240173" ph="/** 2D interaction ...*/" />
-            <marker date="1510659182940" expanded="true" signature="240263:240284" ph="/** Interior items ...*/" />
-            <marker date="1510659182940" expanded="true" signature="240356:240382" ph="/** Wall (connectivity) ...*/" />
-            <marker date="1510659182940" expanded="true" signature="240454:240468" ph="/** Room(s) ...*/" />
-            <marker date="1510659182940" expanded="true" signature="240637:240670" ph="/** Enumeration of log levels. ...*/" />
-            <marker date="1510659182940" expanded="true" signature="240701:241177" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="240715:240737" ph="/** An information. ...*/" />
-            <marker date="1510659182940" expanded="true" signature="240819:240836" ph="/** A warning. ...*/" />
-            <marker date="1510659182940" expanded="true" signature="240910:240926" ph="/** An error. ...*/" />
-            <marker date="1510659182940" expanded="true" signature="240996:241017" ph="/** A fatal error. ...*/" />
-            <marker date="1510659182940" expanded="true" signature="241087:241110" ph="/** A debug message. ...*/" />
-            <marker date="1510659182940" expanded="true" signature="241269:241345" ph="/** The current log context. To be set when initializing the Application. ...*/" />
-            <marker date="1510659182940" expanded="true" signature="241398:241723" ph="/** Pre-check if logging for specified context and/or level is enabled. ...*/" />
-            <marker date="1510659182940" expanded="true" signature="241767:241985" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="242030:242285" ph="/** Log the passed message in the context and with given level. ...*/" />
-            <marker date="1510659182940" expanded="true" signature="242332:243096" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="242387:242426" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="242484:243042" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="242529:242598" ph="..." />
-            <marker date="1510659182940" expanded="true" signature="242638:242707" ph="..." />
-            <marker date="1510659182940" expanded="true" signature="242745:242814" ph="..." />
-            <marker date="1510659182940" expanded="true" signature="242852:242921" ph="..." />
-            <marker date="1510659182940" expanded="true" signature="242959:243028" ph="..." />
-            <marker date="1510659182940" expanded="true" signature="243219:243794" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="243256:243752" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="243266:243293" ph="/** Version information. ...*/" />
-            <marker date="1510659182940" expanded="true" signature="243329:243710" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="243390:243418" ph="/** The informal version. ...*/" />
-            <marker date="1510659182940" expanded="true" signature="243472:243524" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="243538:243567" ph="/** The technical version. ...*/" />
-            <marker date="1510659182940" expanded="true" signature="243622:243671" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="243947:244039" ph="//..." />
-            <marker date="1510659182940" expanded="true" signature="244067:246157" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="244106:246112" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="244155:246105" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="244211:244420" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="244460:245046" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="244783:244964" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="244978:244997" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="245011:245030" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="245087:246075" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="245460:245604" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="245618:245637" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="245651:245670" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="246181:246273" ph="//..." />
-            <marker date="1510659182940" expanded="true" signature="246301:250380" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="246340:250335" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="246387:250328" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="246479:249998" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="248117:249030" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="249048:249166" ph="//..." />
-            <marker date="1510659182940" expanded="true" signature="249225:249473" ph="{&quot;uniforms&quot;: scene.customUniforms...}" />
-            <marker date="1510659182940" expanded="true" signature="249661:249984" ph="//..." />
-            <marker date="1510659182940" expanded="true" signature="250046:250297" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="250404:250483" ph="//..." />
-            <marker date="1510659182940" expanded="true" signature="250511:265351" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="250550:265306" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="250605:265299" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="250926:251966" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="251031:251238" ph="{&quot;dataType&quot;: 'text'...}" />
-            <marker date="1510659182940" expanded="true" signature="251151:251220" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="251478:251680" ph="{&quot;dataType&quot;: 'text'...}" />
-            <marker date="1510659182940" expanded="true" signature="251597:251662" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="252042:254671" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="252131:254578" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="252282:254560" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="252403:254538" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="252468:253219" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="252614:252710" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="252748:253189" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="252873:253000" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="253042:253155" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="253330:253588" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="253693:253934" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="254032:254468" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="254095:254438" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="254156:254272" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="254718:256161" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="254809:255360" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="254846:255016" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="255042:255175" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="255382:256022" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="255419:255642" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="255668:255837" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="256268:258091" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="256356:257879" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="256529:256844" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="256870:257163" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="257459:257859" ph="{&quot;speed&quot;: speed...}" />
-            <marker date="1510659182940" expanded="true" signature="257971:258077" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="258179:261117" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="258499:259428" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="258832:259074" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="258905:259052" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="259160:259408" ph="{&quot;direction&quot;: direction...}" />
-            <marker date="1510659182940" expanded="true" signature="259520:259626" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="259733:260675" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="259913:260657" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="259986:260635" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="260467:260609" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="260761:261103" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="261209:261370" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="261415:263649" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="261591:263635" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="261692:262640" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="261770:262009" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="262059:262317" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="262364:262618" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="262666:263617" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="262744:262984" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="263034:263293" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="263340:263595" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="263731:264043" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="263791:264029" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="263843:264011" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="264092:264310" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="264184:264263" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="264365:264560" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="264455:264518" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="264606:265269" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="264643:265255" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="264674:264714" ph="..." />
-            <marker date="1510659182940" expanded="true" signature="264745:264793" ph="..." />
-            <marker date="1510659182940" expanded="true" signature="264823:264867" ph="..." />
-            <marker date="1510659182940" expanded="true" signature="264972:265006" ph="..." />
-            <marker date="1510659182940" expanded="true" signature="265037:265082" ph="..." />
-            <marker date="1510659182940" expanded="true" signature="265112:265157" ph="..." />
-            <marker date="1510659182940" expanded="true" signature="265188:265237" ph="..." />
-            <marker date="1510659182940" expanded="true" signature="265375:265467" ph="//..." />
-            <marker date="1510659182940" expanded="true" signature="265495:268514" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="265534:268469" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="265588:268462" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="265694:266580" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="265838:265898" ph="//..." />
-            <marker date="1510659182940" expanded="true" signature="266610:267191" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="266713:267177" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="266794:267159" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="266857:267137" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="267237:268351" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="267384:268337" ph="{...}" />
-            <marker date="1510659182940" expanded="true" signature="267419:267619" ph="..." />
-            <marker date="1510659182940" expanded="true" signature="267652:267852" ph="..." />
-            <marker date="1510659182940" expanded="true" signature="267886:268086" ph="..." />
-            <marker date="1510659182940" expanded="true" signature="268119:268319" ph="..." />
-            <marker date="1510659182940" expanded="true" signature="268381:268432" ph="{...}" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="2709" lean-forward="false" selection-start-line="0" selection-start-column="2709" selection-end-line="0" selection-end-column="2709" />
         </state>
       </provider>
     </entry>
@@ -1551,11 +886,152 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="28" column="23" lean-forward="false" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/floorplanner/floorplanner.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6290">
+          <caret line="372" column="13" lean-forward="false" selection-start-line="372" selection-start-column="13" selection-end-line="372" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/executable/js/movement/datos.json" />
+    <entry file="file://$PROJECT_DIR$/executable/js/movement/datos3.json" />
+    <entry file="file://$PROJECT_DIR$/executable/js/movement/familia.json" />
+    <entry file="file://$PROJECT_DIR$/executable/js/movement/datos_agente.json" />
+    <entry file="file://$PROJECT_DIR$/executable/js/movement/lab_move.json" />
+    <entry file="file://$PROJECT_DIR$/executable/js/movement/5.json" />
+    <entry file="file://$PROJECT_DIR$/executable/js/movement/movement2.json" />
+    <entry file="file://$PROJECT_DIR$/executable/js/movement/movement3.json" />
+    <entry file="file://$PROJECT_DIR$/executable/js/movement/movement.json" />
+    <entry file="file://$PROJECT_DIR$/executable/js/movement/movement4.json" />
+    <entry file="file://$PROJECT_DIR$/executable/js/movement/movement5.json" />
+    <entry file="file://$PROJECT_DIR$/src/three/lights.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/executable/js/maps/map.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="2876" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="12855" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/executable/js/movement/lab_move1.json" />
+    <entry file="file://$PROJECT_DIR$/src/items/factory.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" column="49" lean-forward="false" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/executable/models/js/ik-kivine_baked.js" />
+    <entry file="file://$PROJECT_DIR$/executable/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/three/fire.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="66" column="20" lean-forward="false" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/executable/js/fragmentShader.js" />
+    <entry file="file://$PROJECT_DIR$/LICENSE.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/executable/js/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="33" column="26" lean-forward="false" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/executable/js/fragmentShader.js" />
+    <entry file="file://$PROJECT_DIR$/executable/js/ramen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1406">
+          <caret line="6200" column="10" lean-forward="false" selection-start-line="6200" selection-start-column="10" selection-end-line="6200" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/ramen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105400">
+          <caret line="6200" column="0" lean-forward="false" selection-start-line="6200" selection-start-column="0" selection-end-line="6200" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/executable/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4624">
+          <caret line="272" column="77" lean-forward="false" selection-start-line="272" selection-start-column="77" selection-end-line="272" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/scene.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="58" column="21" lean-forward="false" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/three/main.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="46" column="23" lean-forward="false" selection-start-line="46" selection-start-column="15" selection-end-line="46" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/executable/js/movement/movement.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="71" lean-forward="false" selection-start-line="5" selection-start-column="71" selection-end-line="5" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/three/human.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="4" column="71" lean-forward="false" selection-start-line="4" selection-start-column="63" selection-end-line="4" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/executable/js/items.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2618">
+          <caret line="154" column="8" lean-forward="true" selection-start-line="154" selection-start-column="8" selection-end-line="154" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/dimensioning.ts">
+    <entry file="file://$PROJECT_DIR$/executable/js/maps/rooms.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1563,64 +1039,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/configuration.ts">
+    <entry file="file://$PROJECT_DIR$/executable/js/maps/rooms2.json" />
+    <entry file="file://$PROJECT_DIR$/executable/js/movement/movement_soba.json" />
+    <entry file="file://$PROJECT_DIR$/executable/js/socket.js" />
+    <entry file="file://$PROJECT_DIR$/executable/visual.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+        <state relative-caret-position="255">
+          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/three/main.ts">
+    <entry file="file://$PROJECT_DIR$/executable/server/UselessdrawModelFront.js" />
+    <entry file="file://$PROJECT_DIR$/executable/server/drawModelBack.py" />
+    <entry file="file://$PROJECT_DIR$/executable/js/example.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+        <state relative-caret-position="1513">
+          <caret line="89" column="25" lean-forward="false" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/executable/server/socket.js" />
+    <entry file="file://$PROJECT_DIR$/src/three/loadMovement.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5457">
+          <caret line="322" column="39" lean-forward="false" selection-start-line="322" selection-start-column="39" selection-end-line="322" selection-end-column="39" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/three/human.ts">
+    <entry file="file://$PROJECT_DIR$/executable/server/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="243" column="24" lean-forward="false" selection-start-line="243" selection-start-column="18" selection-end-line="243" selection-end-column="24" />
+        <state relative-caret-position="1326">
+          <caret line="78" column="19" lean-forward="false" selection-start-line="78" selection-start-column="19" selection-end-line="78" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/floorplanner/floorplanner.ts">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="95" column="31" lean-forward="false" selection-start-line="95" selection-start-column="31" selection-end-line="95" selection-end-column="31" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="116" column="25" lean-forward="true" selection-start-line="116" selection-start-column="25" selection-end-line="116" selection-end-column="25" />
+        <state relative-caret-position="646">
+          <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/scene.ts">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="205" column="15" lean-forward="false" selection-start-line="205" selection-start-column="15" selection-end-line="205" selection-end-column="15" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/js/example.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="501" column="9" lean-forward="false" selection-start-line="501" selection-start-column="9" selection-end-line="501" selection-end-column="9" />
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>

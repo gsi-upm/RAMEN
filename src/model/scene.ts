@@ -32,6 +32,7 @@ module BP3D.Model {
 
         public wallTextures = [];
         public floorTextures = [];
+        public movementJSON;
         public loadedItems = [];
         public positions = [];
         public rotations = [];
@@ -49,8 +50,13 @@ module BP3D.Model {
         public mouse;
         public element;
         public simSpeed = 1;
-        public stepTime = 1000;
-        public stepTimeOri = 1000;
+        public stepTime = 100;
+        public stepTimeOri = 100;
+        public realTime = false;
+        public realSteps;
+        public type = 2;
+        public loadMovement;
+        public rooms;
         /**
          * Constructs a scene.
          * @param model The associated model.

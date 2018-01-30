@@ -7,7 +7,7 @@ var CameraButtons = function(blueprint3d) {
 
     var orbitControls = blueprint3d.three.controls;
     var three = blueprint3d.three;
-
+    var play = false;
     var panSpeed = 30;
     var directions = {
         UP: 1,
@@ -44,13 +44,71 @@ var CameraButtons = function(blueprint3d) {
         $("#move-down").dblclick(preventDefault);
 
         //Play Controls
-        $("#play").click(playAction);
+        $("#play").click(chooseTypeSim);
         $("#pause").click(pauseAction);
         $("#forward").click(forwardAction);
 
+
+        }
+
+    function chooseTypeSim() {
+        if(!play){
+            var dialog = bootbox.dialog({
+
+                message: "<h4>Choose Type of Simulation:</h4>",
+                buttons: {
+                    cancel: {
+                        label: "Real Time",
+                        // className: 'btn-danger',
+                        callback: function(){
+                            blueprint3d.model.scene.realTime = true;
+                            openSocket();
+                            playAction();
+                        }
+                    },
+                    ok: {
+                        label: "Batch Mode",
+                        inputType: "file",
+                        // className: 'btn-warning',
+                        callback: function(){
+                            var fileInput = $(document.getElementById("batchFile"));
+                            fileInput.trigger("click");
+                            $("#batchFile").change(loadBatch);
+                        }
+                    }
+                }
+
+            });
+        }else{
+            playAction();
+        }
     }
 
+    function openSocket(){
+        var ws = new WebSocket('ws://' + window.location.host + '/ws'); // Open the websocket connection
+        ws.onopen = function() {
+            console.log("Socket! Connection opened!");
+        };
+        ws.onmessage = function(message) {
+            var data = JSON.parse(message.data);
+            blueprint3d.model.scene.realSteps = data.data;
+            console.log("Message", data.data);
+        }
+    }
 
+    function loadBatch(){
+        var selectedFile = document.getElementById('batchFile').files[0];
+        var reader = new FileReader();
+        var data;
+        reader.onload = function(event) {
+            data = event.target.result;
+            blueprint3d.model.scene.movementJSON = data;
+            playAction();
+        };
+        reader.readAsText(selectedFile);
+
+
+    }
     function preventDefault(e) {
         e.preventDefault();
         e.stopPropagation();
@@ -86,6 +144,11 @@ var CameraButtons = function(blueprint3d) {
     }
 
     function playAction(){
+        if(!play){
+            blueprint3d.three.createLoadMovement(blueprint3d.model.scene, blueprint3d.model.model);
+            play = true;
+        }
+
         blueprint3d.model.play = true;
         blueprint3d.model.scene.simSpeed = 1;
         blueprint3d.model.scene.stepTime = blueprint3d.model.scene.stepTimeOri;
@@ -96,9 +159,11 @@ var CameraButtons = function(blueprint3d) {
     }
 
     function forwardAction(){
-        blueprint3d.model.scene.simSpeed += 1;
-        blueprint3d.model.scene.stepTime = blueprint3d.model.scene.stepTimeOri / blueprint3d.model.scene.simSpeed;
-        console.log("SCENETIME", blueprint3d.model.scene.stepTime);
+        if(!blueprint3d.model.scene.realTime){
+            blueprint3d.model.scene.simSpeed += 1;
+            blueprint3d.model.scene.stepTime = blueprint3d.model.scene.stepTimeOri / blueprint3d.model.scene.simSpeed;
+            console.log("SCENETIME", blueprint3d.model.scene.stepTime);
+        }
     }
 
     init();
@@ -496,6 +561,12 @@ var SideMenu = function(blueprint3d, floorplanControls, modalEffects) {
         x = x / 25;
         var x3 = x - x2;
 
+        if (x3 < 0.5 ){
+            x = x2*25;
+        }else{
+            x = (x2+2)*25;
+        }
+
         z2 = Math.round(z / 25);
         if(z2 % 2 == 0){
             z2 -= 1;
@@ -503,17 +574,11 @@ var SideMenu = function(blueprint3d, floorplanControls, modalEffects) {
         z = z / 25;
         var z3 = z - z2;
 
-        if (x3 < 0.5 ){
-            x = x2*25;
-        }else{
-            x = (x2+2)*25;
-        }
         if (z3 < 0.5 ){
             z = z2*25;
         }else{
             z = (z2+2)*25;
         }
-
         return {"x": x, "y": 0, "z": z};
     }
 
@@ -680,6 +745,19 @@ var mainControls = function(blueprint3d) {
 
     }
 
+    function loadRooms() {
+        files = $("#loadRooms").get(0).files;
+        var reader = new FileReader();
+        var dataRooms;
+        reader.onload = function(event) {
+            dataRooms = event.target.result;
+            var dataRooms2 = JSON.parse(dataRooms);
+            blueprint3d.model.scene.rooms = dataRooms2.room;
+        };
+        reader.readAsText(files[0]);
+
+    }
+
     function saveDesign() {
         var data = blueprint3d.model.exportSerialized();
         var a = window.document.createElement('a');
@@ -694,6 +772,7 @@ var mainControls = function(blueprint3d) {
     function init() {
         $("#new").click(newDesign);
         $("#loadFile").change(loadDesign);
+        $("#loadRooms").change(loadRooms);
         $("#saveFile").click(saveDesign);
     }
 
@@ -731,7 +810,7 @@ $(document).ready(function() {
     mainControls(blueprint3d);
 
     // $.ajax('/js/LabGSI.blueprint3d', {
-    $.ajax('/js/maps/Lab_GSI_2.blueprint3d', {
+    $.ajax('/js/maps/map.json', {
         async: false,
         dataType: 'text',
         success: function (data) {

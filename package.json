@@ -1,6 +1,6 @@
 {
-  "name": "blueprint3d",
-  "version": "0.0.1",
+  "name": "ramen",
+  "version": "1.0",
   "description": "",
   "license": "(MIT OR Apache-2.0)",
   "main": "main.js",
@@ -33,7 +33,7 @@
     "url": "https://github.com/Ekki/blueprint3d.git"
   },
   "scripts": {
-    "build": "browserify src/blueprint3d.js > example/js/blueprint3d.js --verbose"
+    "build": "browserify src/ramen.js > example/js/ramen.js --verbose"
   },
   "author": ""
 }

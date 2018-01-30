@@ -44,7 +44,7 @@ module BP3D.Three {
         var meshes = [];
         var mixers = [];
         // var human = new Human(scene, model);
-        var loadMovement = new LoadMovement(scene, model);
+        // var loadMovement = new LoadMovement(scene, model);
 
         var video;
         var imageContext;
@@ -197,20 +197,14 @@ module BP3D.Three {
             //Check if the simulation is paused
             if(model.play) {
 
-                // human.moveAll(scene.step);
-
                 lastRender2 = lastRender;
                 lastRender = Date.now();
-                console.log("LASTRENDER2", lastRender2, "lastrender", lastRender);
-                console.log("STEPTIE", lastRender-lastRender2);
-                console.log("LASTRENDER", lastRender - scene.initialTime);
-                console.log("difference",  lastRender+(lastRender-lastRender2));
                 if( lastRender - scene.initialTime >= scene.stepTime || lastRender+(lastRender-lastRender2)- scene.initialTime>scene.stepTime){
                     scene.initialTime = lastRender;
                     scene.step += 1;
                     scene.flag = 1;
                 }
-                loadMovement.moveAll(scene.step);
+                scene.loadMovement.moveAll(scene.step);
                 if (scene.video &&  scene.video.readyState === scene.video.HAVE_ENOUGH_DATA ) {
 
                     scene.imageContext.drawImage( scene.video, 0, 0 );
@@ -243,7 +237,7 @@ module BP3D.Three {
             }
             setTimeout(function () {
                 requestAnimationFrame(animate);
-            }, delay);
+            }, 25);
             render();
 
         }
@@ -320,6 +314,10 @@ module BP3D.Three {
 
             return vec2;
         }
+
+        this.createLoadMovement = function(){
+            scene.loadMovement = new LoadMovement(scene, model);
+        };
 
         init();
     }

@@ -69,12 +69,6 @@ $(document).ready(function() {
       "type" : "1"
     },
     {
-      "name" : "Wardrobe - White",
-      "image" : "models/thumbnails/thumbnail_TN-ikea-kvikine.png",
-      "model" : "/models/js/ik-kivine_baked.js",
-      "type" : "1"
-    },
-    {
       "name" : "Full Bed",
       "image" : "models/thumbnails/thumbnail_nordli-bed-frame__0159270_PE315708_S4.JPG",
       "model" : "/models/js/ik_nordli_full.js",

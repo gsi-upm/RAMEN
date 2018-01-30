@@ -13,40 +13,41 @@ module BP3D.Three {
         var allRooms3;
 
         var steps;
-        var type;
+        var type = scene.type;
 
         var human;
         var outBuilding;
         var fire;
 
         function init() {
+            //Loading JSON with the rooms assignation
+            if(scene.rooms == undefined){
+                $.ajax('/js/maps/rooms.json', {
+                    async: false,
+                    dataType: 'text',
+                    success: function (data) {
+                        allRooms2 = data;
+                    }
+                });
+                allRooms3 = JSON.parse(allRooms2);
+                allRooms = allRooms3.room;
+                scene.rooms = allRooms;
+            }
 
-            //Loading JSON with the movement
-            $.ajax('/js/movement/lab_move2.json', {
-                async: false,
-                dataType: 'text',
-                success: function (data2) {
-                    movementJSON = data2;
-                }
-            });
 
-            var jsonMove = JSON.parse(movementJSON);
-            steps = jsonMove.steps;
-            type = jsonMove.type;
-            //Loading JSON with the rooms asignation
-            $.ajax('/js/rooms_Lab.json', {
-                async: false,
-                dataType: 'text',
-                success: function (data) {
-                    allRooms2 = data;
-                }
-            });
-
-            allRooms3 = JSON.parse(allRooms2);
-            allRooms = allRooms3.room;
-            //Creating agents
-            human = new Human(scene, model, steps, type, allRooms);
+            if (scene.realTime){
+                //Creating agents
+                human = new Human(scene, model, [], type, scene.rooms);
+            }
+            else{
+                var jsonMove = JSON.parse(scene.movementJSON);
+                steps = jsonMove.steps;
+                type = jsonMove.type;
+                //Creating agents
+                human = new Human(scene, model, steps, type, scene.rooms);
+            }
             human.setOutBuilding(whichRoom("outBuilding"));
+
 
         }
 
@@ -54,8 +55,14 @@ module BP3D.Three {
         this.moveAll = function (step) {
             //Only execute one time each step
             if (scene.flag == 1) {
+                var stepArr;
                 //Taking the current step
-                var stepArr = steps[step];
+                if(scene.realTime){
+                    stepArr = scene.realSteps;
+                }
+                else{
+                    stepArr = steps[step];
+                }
                 if (stepArr && stepArr.length != 0) {
                     //Reading actions of the step
                     for (var i = 0; i < stepArr.length; i++) {
@@ -79,14 +86,25 @@ module BP3D.Three {
 
                         //Lights ON or OFF
                         if (stepArr[i].light != undefined) {
-                            let room = whichRoom(stepArr[i].room);
-                            let roomNumber = human.getRoom(room.x, room.y);
+                            let roomNumber;
+                            if (stepArr[i].room != undefined){
+                                let room = whichRoom(stepArr[i].room);
+                                roomNumber = human.getRoom(room.x, room.y);
+                            }
+                            else if(stepArr[i].position != undefined){
+                                roomNumber = human.getRoom(stepArr[i].position.x, stepArr[i].position.y);
+                            }
                             setRoomLight(roomNumber, stepArr[i].light);
                         }
 
                         //Turn ON TV
                         if (stepArr[i].video != undefined) {
-                            var roomCoordinates = whichRoom(stepArr[i].room);
+                            if(stepArr[i].room != undefined){
+                                var roomCoordinates = whichRoom(stepArr[i].room);
+                            }
+                            else if(stepArr[i].position != undefined){
+                                var roomCoordinates = {"x":stepArr[i].position.x, "y": stepArr[i].position.y};
+                            }
                             var video = new Video(scene, model, human.getRoom(roomCoordinates.x, roomCoordinates.y));
                         }
 
@@ -299,10 +317,10 @@ module BP3D.Three {
 
         //Return the center of the room
         function whichRoom(room) {
-            for (var j = 0; j < allRooms.length; j++) {
-                if (room == allRooms[j].name) {
-                    var x = allRooms[j].x;
-                    var y = allRooms[j].y;
+            for (var j = 0; j < scene.rooms.length; j++) {
+                if (room == scene.rooms[j].name) {
+                    var x = scene.rooms[j].x;
+                    var y = scene.rooms[j].y;
                     return {"x": x, "y": y};
                 }
             }
