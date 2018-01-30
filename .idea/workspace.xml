@@ -2,176 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa0b4dc9-b75a-4ded-9430-72350c6484c7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_board.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/executable/js/bootbox.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/executable/js/maps/rooms.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/executable/js/movement/movement.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/executable/js/ramen.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/executable/server/server.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/executable/visual.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/maps/floor5.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/maps/lab-gsi.blueprint3d" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/movement/datos.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/movement/datos3.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/movement/datos_agente.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/movement/familia.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/movement/lab_move.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/movement/lab_move1.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/movement/lab_move2.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/movement/movement.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/movement/movement2.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/movement/movement3.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/movement/movement4.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/movement/movement5.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/js/movement/movement_soba.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/models/js/ik-kivine_baked.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_board.png" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/assets/audio/358232_j_s_song.ogg" afterPath="$PROJECT_DIR$/executable/assets/audio/358232_j_s_song.ogg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/assets/images/cloud.png" afterPath="$PROJECT_DIR$/executable/assets/images/cloud.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/assets/images/lava.jpg" afterPath="$PROJECT_DIR$/executable/assets/images/lava.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/assets/video/relax.mp4" afterPath="$PROJECT_DIR$/executable/assets/video/relax.mp4" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/assets/video/relax2.mp4" afterPath="$PROJECT_DIR$/executable/assets/video/relax2.mp4" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/assets/video/sintel.mp4" afterPath="$PROJECT_DIR$/executable/assets/video/sintel.mp4" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/assets/video/sintel.ogv" afterPath="$PROJECT_DIR$/executable/assets/video/sintel.ogv" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/css/bootstrap.css" afterPath="$PROJECT_DIR$/executable/css/bootstrap.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/css/example.css" afterPath="$PROJECT_DIR$/executable/css/example.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/executable/fonts/glyphicons-halflings-regular.eot" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/executable/fonts/glyphicons-halflings-regular.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/executable/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/executable/fonts/glyphicons-halflings-regular.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/executable/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/index.html" afterPath="$PROJECT_DIR$/executable/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/js/bootstrap.js" afterPath="$PROJECT_DIR$/executable/js/bootstrap.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/js/example.js" afterPath="$PROJECT_DIR$/executable/js/example.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/js/items.js" afterPath="$PROJECT_DIR$/executable/js/items.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/js/jquery.js" afterPath="$PROJECT_DIR$/executable/js/jquery.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/js/maps/ETSIT.blueprint3d" afterPath="$PROJECT_DIR$/executable/js/maps/ETSIT.blueprint3d" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/js/maps/ETSIT_furniture.blueprint3d" afterPath="$PROJECT_DIR$/executable/js/maps/ETSIT_furniture.blueprint3d" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/js/maps/Lab_GSI_2.blueprint3d" afterPath="$PROJECT_DIR$/executable/js/maps/map.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/js/rooms.json" afterPath="$PROJECT_DIR$/executable/js/maps/rooms_ETSIT.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/js/rooms_Lab.json" afterPath="$PROJECT_DIR$/executable/js/rooms_Lab.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/js/three.min.js" afterPath="$PROJECT_DIR$/executable/js/three.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/DWR_MATERA_DRESSER2.js" afterPath="$PROJECT_DIR$/executable/models/js/DWR_MATERA_DRESSER2.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/GUSossingtonendtable.js" afterPath="$PROJECT_DIR$/executable/models/js/GUSossingtonendtable.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/Table.json" afterPath="$PROJECT_DIR$/executable/models/js/Table.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/air.json" afterPath="$PROJECT_DIR$/executable/models/js/air.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/b_cb-blue-block60x96.png" afterPath="$PROJECT_DIR$/executable/models/js/b_cb-blue-block60x96.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/bd-shalebedside-smoke_baked.js" afterPath="$PROJECT_DIR$/executable/models/js/bd-shalebedside-smoke_baked.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/bd-shalebedside-smoke_baked.png" afterPath="$PROJECT_DIR$/executable/models/js/bd-shalebedside-smoke_baked.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/beacon.json" afterPath="$PROJECT_DIR$/executable/models/js/beacon.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/beacon_wall.json" afterPath="$PROJECT_DIR$/executable/models/js/beacon_wall.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/board.jpg" afterPath="$PROJECT_DIR$/executable/models/js/board.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/board.js" afterPath="$PROJECT_DIR$/executable/models/js/board.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/camera.json" afterPath="$PROJECT_DIR$/executable/models/js/camera.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/camera2.json" afterPath="$PROJECT_DIR$/executable/models/js/camera2.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/camera3.json" afterPath="$PROJECT_DIR$/executable/models/js/camera3.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cb-archnight-white_baked.js" afterPath="$PROJECT_DIR$/executable/models/js/cb-archnight-white_baked.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cb-archnight-white_baked.png" afterPath="$PROJECT_DIR$/executable/models/js/cb-archnight-white_baked.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cb-blue-block-60x96.js" afterPath="$PROJECT_DIR$/executable/models/js/cb-blue-block-60x96.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cb-clapboard_baked.js" afterPath="$PROJECT_DIR$/executable/models/js/cb-clapboard_baked.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cb-clapboard_baked.png" afterPath="$PROJECT_DIR$/executable/models/js/cb-clapboard_baked.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cb-kendallbookcasewalnut_baked.js" afterPath="$PROJECT_DIR$/executable/models/js/cb-kendallbookcasewalnut_baked.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cb-kendallbookcasewalnut_baked.png" afterPath="$PROJECT_DIR$/executable/models/js/cb-kendallbookcasewalnut_baked.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cb-rochelle-gray_baked.js" afterPath="$PROJECT_DIR$/executable/models/js/cb-rochelle-gray_baked.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cb-rochelle-gray_baked.png" afterPath="$PROJECT_DIR$/executable/models/js/cb-rochelle-gray_baked.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cb-scholartable_baked.js" afterPath="$PROJECT_DIR$/executable/models/js/cb-scholartable_baked.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cb-scholartable_baked.png" afterPath="$PROJECT_DIR$/executable/models/js/cb-scholartable_baked.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cb-tecs_baked.js" afterPath="$PROJECT_DIR$/executable/models/js/cb-tecs_baked.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cb-tecs_baked.png" afterPath="$PROJECT_DIR$/executable/models/js/cb-tecs_baked.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/closed-door28x80_baked.js" afterPath="$PROJECT_DIR$/executable/models/js/closed-door28x80_baked.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/closed-door28x80_baked.png" afterPath="$PROJECT_DIR$/executable/models/js/closed-door28x80_baked.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cube4.json" afterPath="$PROJECT_DIR$/executable/models/js/cube4.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cubo.json" afterPath="$PROJECT_DIR$/executable/models/js/cubo.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/cubo2.json" afterPath="$PROJECT_DIR$/executable/models/js/cubo2.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/grey-brown_wood.jpg" afterPath="$PROJECT_DIR$/executable/models/js/grey-brown_wood.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/gsi-poster (copy).js" afterPath="$PROJECT_DIR$/executable/models/js/gsi-poster (copy).js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/gsi-poster.js" afterPath="$PROJECT_DIR$/executable/models/js/gsi-poster.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/gsi.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/gsi.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/gus-churchchair-whiteoak.js" afterPath="$PROJECT_DIR$/executable/models/js/gus-churchchair-whiteoak.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/ik-ekero-blue_baked.js" afterPath="$PROJECT_DIR$/executable/models/js/ik-ekero-blue_baked.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/ik-ekero-blue_baked.png" afterPath="$PROJECT_DIR$/executable/models/js/ik-ekero-blue_baked.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/ik-ekero-orange_baked.js" afterPath="$PROJECT_DIR$/executable/models/js/ik-ekero-orange_baked.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/ik-ekero-orange_baked.png" afterPath="$PROJECT_DIR$/executable/models/js/ik-ekero-orange_baked.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/ik-stockholmcoffee-brown.js" afterPath="$PROJECT_DIR$/executable/models/js/ik-stockholmcoffee-brown.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/ik_nordli_full.js" afterPath="$PROJECT_DIR$/executable/models/js/ik_nordli_full.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/nyc-poster.js" afterPath="$PROJECT_DIR$/executable/models/js/nyc-poster.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/nyc-poster2.js" afterPath="$PROJECT_DIR$/executable/models/js/nyc-poster2.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/nyc2old.jpg" afterPath="$PROJECT_DIR$/executable/models/js/nyc2old.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/oak_wood.jpg" afterPath="$PROJECT_DIR$/executable/models/js/oak_wood.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/open_door.js" afterPath="$PROJECT_DIR$/executable/models/js/open_door.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/ore-3legged-white_baked.js" afterPath="$PROJECT_DIR$/executable/models/js/ore-3legged-white_baked.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/ore-3legged-white_baked.png" afterPath="$PROJECT_DIR$/executable/models/js/ore-3legged-white_baked.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/out_door.js" afterPath="$PROJECT_DIR$/executable/models/js/out_door.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/ps_7.jpg" afterPath="$PROJECT_DIR$/executable/models/js/ps_7.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/sentiments.png" afterPath="$PROJECT_DIR$/executable/models/js/sentiments.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/sentiments_poster.js" afterPath="$PROJECT_DIR$/executable/models/js/sentiments_poster.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/speakers.json" afterPath="$PROJECT_DIR$/executable/models/js/speakers.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/walk.js" afterPath="$PROJECT_DIR$/executable/models/js/walk.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/walk.json" afterPath="$PROJECT_DIR$/executable/models/js/walk.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/walk2.json" afterPath="$PROJECT_DIR$/executable/models/js/walk2.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/walkingman.json" afterPath="$PROJECT_DIR$/executable/models/js/walkingman.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/walkingman2.json" afterPath="$PROJECT_DIR$/executable/models/js/walkingman2.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/walkmorph.json" afterPath="$PROJECT_DIR$/executable/models/js/walkmorph.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/walkmorphcolor.json" afterPath="$PROJECT_DIR$/executable/models/js/walkmorphcolor.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/walnut-marin.jpg" afterPath="$PROJECT_DIR$/executable/models/js/walnut-marin.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/we-narrow6white_baked.js" afterPath="$PROJECT_DIR$/executable/models/js/we-narrow6white_baked.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/we-narrow6white_baked.png" afterPath="$PROJECT_DIR$/executable/models/js/we-narrow6white_baked.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/white_wood.jpg" afterPath="$PROJECT_DIR$/executable/models/js/white_wood.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/js/whitewindow.js" afterPath="$PROJECT_DIR$/executable/models/js/whitewindow.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/gsi.png" afterPath="$PROJECT_DIR$/executable/models/js/gsi.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_Blu-Dot-Shale-Bedside-Table.jpg" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_Blu-Dot-Shale-Bedside-Table.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_Church-Chair-oak-white_1024x1024.jpg" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_Church-Chair-oak-white_1024x1024.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_Screen_Shot_2014-01-28_at_6.49.33_PM.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_Screen_Shot_2014-01-28_at_6.49.33_PM.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_Screen_Shot_2014-02-21_at_1.24.58_PM.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_Screen_Shot_2014-02-21_at_1.24.58_PM.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_Screen_Shot_2014-10-27_at_8.04.12_PM (1).png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_Screen_Shot_2014-10-27_at_8.04.12_PM (1).png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_Screen_Shot_2014-10-27_at_8.04.12_PM.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_Screen_Shot_2014-10-27_at_8.04.12_PM.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_Screen_Shot_2014-10-27_at_8.22.46_PM.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_Screen_Shot_2014-10-27_at_8.22.46_PM.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_TN-ikea-kvikine.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_TN-ikea-kvikine.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_air.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_air.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_arch-white-oval-nightstand.jpg" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_arch-white-oval-nightstand.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_beacon.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_beacon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_camera.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_camera.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_cb-blue-block60x96.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_cb-blue-block60x96.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_clapboard-white-60-media-console-1.jpg" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_clapboard-white-60-media-console-1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_ekero-blue3.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_ekero-blue3.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_gsi.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_gsi.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_img21o.jpg" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_img21o.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_img25o.jpg" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_img25o.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_kendall-walnut-bookcase.jpg" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_kendall-walnut-bookcase.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_matera_dresser_5.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_matera_dresser_5.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_moore-60-media-console-1.jpg" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_moore-60-media-console-1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_nordli-bed-frame__0159270_PE315708_S4.JPG" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_nordli-bed-frame__0159270_PE315708_S4.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_nyc2.jpg" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_nyc2.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_ore-white.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_ore-white.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_rochelle-sofa-3.jpg" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_rochelle-sofa-3.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_scholar-dining-table.jpg" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_scholar-dining-table.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_stockholm-coffee-table__0181245_PE332924_S4.JPG" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_stockholm-coffee-table__0181245_PE332924_S4.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_teca-storage-trunk.jpg" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_teca-storage-trunk.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_tn-orange.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_tn-orange.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/models/thumbnails/thumbnail_window.png" afterPath="$PROJECT_DIR$/executable/models/thumbnails/thumbnail_window.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/textures/hardwood.png" afterPath="$PROJECT_DIR$/executable/rooms/textures/hardwood.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/textures/hardwood_dark.png" afterPath="$PROJECT_DIR$/executable/rooms/textures/hardwood_dark.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/textures/hardwood_medium.png" afterPath="$PROJECT_DIR$/executable/rooms/textures/hardwood_medium.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/textures/light_brick.jpg" afterPath="$PROJECT_DIR$/executable/rooms/textures/light_brick.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/textures/light_fine_wood.jpg" afterPath="$PROJECT_DIR$/executable/rooms/textures/light_fine_wood.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/textures/marbletiles.jpg" afterPath="$PROJECT_DIR$/executable/rooms/textures/marbletiles.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/textures/walllightmap.png" afterPath="$PROJECT_DIR$/executable/rooms/textures/walllightmap.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/textures/walllightmap_dark.png" afterPath="$PROJECT_DIR$/executable/rooms/textures/walllightmap_dark.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/textures/walllightmap_medium.png" afterPath="$PROJECT_DIR$/executable/rooms/textures/walllightmap_medium.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/textures/wallmap.png" afterPath="$PROJECT_DIR$/executable/rooms/textures/wallmap.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/textures/wallmap_yellow.png" afterPath="$PROJECT_DIR$/executable/rooms/textures/wallmap_yellow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/thumbnails/thumbnail_light_brick.jpg" afterPath="$PROJECT_DIR$/executable/rooms/thumbnails/thumbnail_light_brick.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/thumbnails/thumbnail_light_fine_wood.jpg" afterPath="$PROJECT_DIR$/executable/rooms/thumbnails/thumbnail_light_fine_wood.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/thumbnails/thumbnail_marbletiles.jpg" afterPath="$PROJECT_DIR$/executable/rooms/thumbnails/thumbnail_marbletiles.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/rooms/thumbnails/thumbnail_wallmap_yellow.png" afterPath="$PROJECT_DIR$/executable/rooms/thumbnails/thumbnail_wallmap_yellow.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gruntfile.js" afterPath="$PROJECT_DIR$/gruntfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/scene.ts" afterPath="$PROJECT_DIR$/src/model/scene.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/three/human.ts" afterPath="$PROJECT_DIR$/src/three/human.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/three/loadMovement.ts" afterPath="$PROJECT_DIR$/src/three/loadMovement.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/three/main.ts" afterPath="$PROJECT_DIR$/src/three/main.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -239,14 +70,24 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+            <state relative-caret-position="230">
+              <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" column="53" lean-forward="true" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
@@ -260,7 +101,7 @@
         <entry file="file://$PROJECT_DIR$/executable/visual.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+              <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -270,7 +111,7 @@
         <entry file="file://$PROJECT_DIR$/executable/js/items.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2618">
-              <caret line="154" column="8" lean-forward="true" selection-start-line="154" selection-start-column="8" selection-end-line="154" selection-end-column="8" />
+              <caret line="154" column="8" lean-forward="false" selection-start-line="154" selection-start-column="8" selection-end-line="154" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -334,7 +175,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/items/floor_item.ts" />
         <option value="$PROJECT_DIR$/example/js/LabGSI2.blueprint3d" />
         <option value="$PROJECT_DIR$/example/models/js/BlakeAvenuejoshuatreecheftable.js" />
         <option value="$PROJECT_DIR$/example/js/LabGSI.blueprint3d" />
@@ -385,6 +225,7 @@
         <option value="$PROJECT_DIR$/executable/server/socket.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -809,12 +650,12 @@
       <workItem from="1515665966772" duration="6013000" />
       <workItem from="1517226796362" duration="2626000" />
       <workItem from="1517304290948" duration="3361000" />
-      <workItem from="1517308418297" duration="9000" />
+      <workItem from="1517308418297" duration="609000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="880683000" />
+    <option name="totallyTimeSpent" value="881283000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -863,13 +704,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/core/configuration.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/blueprint3d.js.map" />
     <entry file="file://$PROJECT_DIR$/executable/js/blueprint3d.js" />
     <entry file="file://$PROJECT_DIR$/dist/ramen.js.map">
@@ -1026,7 +860,7 @@
     <entry file="file://$PROJECT_DIR$/executable/js/items.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2618">
-          <caret line="154" column="8" lean-forward="true" selection-start-line="154" selection-start-column="8" selection-end-line="154" selection-end-column="8" />
+          <caret line="154" column="8" lean-forward="false" selection-start-line="154" selection-start-column="8" selection-end-line="154" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -1045,7 +879,7 @@
     <entry file="file://$PROJECT_DIR$/executable/visual.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -1079,18 +913,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="53" lean-forward="true" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
           <folding />
         </state>
       </provider>
