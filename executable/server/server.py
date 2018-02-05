@@ -4,8 +4,7 @@ import tornado.web
 import tornado.websocket
 import tornado.escape
 import tornado.gen
-import webbrowser
-import yaml
+#import webbrowser
 
 from datetime import timedelta
 

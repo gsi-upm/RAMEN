@@ -5,7 +5,7 @@ First of all, you need to clone the GitHub repository:
 
 .. code:: bash
 
-	git clone https://github.com/pablo-aznard/blueprint3d
+	git clone https://github.com/gsi-upm/RAMEN.git
 	cd ramen
 
 Once you have downloaded RAMEN, you have to ensure that you have installed npm and grunt. Then, execute the following commands:
