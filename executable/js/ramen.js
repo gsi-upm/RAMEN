@@ -5681,7 +5681,7 @@ var BP3D;
         Core.Version = Version;
     })(Core = BP3D.Core || (BP3D.Core = {}));
 })(BP3D || (BP3D = {}));
-console.log("Blueprint3D " + BP3D.Core.Version.getInformalVersion()
+console.log("RAMEN " + BP3D.Core.Version.getInformalVersion()
     + " (" + BP3D.Core.Version.getTechnicalVersion() + ")");
 /// <reference path="../../lib/jQuery.d.ts" />
 /// <reference path="../../lib/three.d.ts" />

@@ -47,9 +47,14 @@ var CameraButtons = function(blueprint3d) {
         $("#play").click(chooseTypeSim);
         $("#pause").click(pauseAction);
         $("#forward").click(forwardAction);
+        $("#refresh").click(refreshAction);
 
 
         }
+
+    function refreshAction() {
+        location.reload();
+    }
 
     function chooseTypeSim() {
         if(!play){
@@ -92,7 +97,6 @@ var CameraButtons = function(blueprint3d) {
         ws.onmessage = function(message) {
             var data = JSON.parse(message.data);
             blueprint3d.model.scene.realSteps = data.data;
-            console.log("Message", data.data);
         }
     }
 
