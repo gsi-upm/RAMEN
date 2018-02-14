@@ -110,7 +110,7 @@ class SocketHandler(tornado.websocket.WebSocketHandler):
 			if self.application.verbose:
 				print("Unexpected message!")'''
 	def schedule_update(self):
-		self.timeout = tornado.ioloop.IOLoop.instance().add_timeout(timedelta(milliseconds=100),
+		self.timeout = tornado.ioloop.IOLoop.instance().add_timeout(timedelta(milliseconds=50),
 													 self.update_client)
 	def update_client(self):
 		try:

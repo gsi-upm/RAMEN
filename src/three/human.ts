@@ -260,7 +260,7 @@ module BP3D.Three {
         //Movement by Direction and Speed: type 2
         this.moveDirection = function(mesh, i, direction, speed){
             //Speed in m/s
-            let movementSpeed = (speed*109.8559) / scene.fps;
+            let movementSpeed = (speed*100) / scene.fps;
             //Rotation calculation
             let rotationAngle = getDirection(direction) - mesh.rotation.y;
             if (rotationAngle > Math.PI) {

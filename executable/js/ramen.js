@@ -4994,7 +4994,8 @@ var BP3D;
             //Movement by Direction and Speed: type 2
             this.moveDirection = function (mesh, i, direction, speed) {
                 //Speed in m/s
-                var movementSpeed = (speed * 109.8559) / scene.fps;
+                // let movementSpeed = (speed*109.8559) / scene.fps;
+                var movementSpeed = (speed * 100) / scene.fps;
                 //Rotation calculation
                 var rotationAngle = getDirection(direction) - mesh.rotation.y;
                 if (rotationAngle > Math.PI) {
@@ -5872,6 +5873,7 @@ var BP3D;
                     else {
                         stepArr = steps[step];
                     }
+                    console.log("stepArr", stepArr);
                     if (stepArr && stepArr.length != 0) {
                         //Reading actions of the step
                         for (var i = 0; i < stepArr.length; i++) {
@@ -5931,6 +5933,7 @@ var BP3D;
             };
             function addNewAgent(stepArr, i) {
                 //Setting position
+                console.log("stepArr", stepArr, "i", i);
                 if (stepArr[i].position != undefined) {
                     if (type == 0) {
                         var room = whichRoom(stepArr[i].position);
@@ -5946,6 +5949,7 @@ var BP3D;
                     var rotation = stepArr[i].rotation;
                 }
                 else {
+                    console.log("AQUI");
                     if (type == 0) {
                         var position = stepArr[i].moveTo;
                         var room_1 = whichRoom(position);

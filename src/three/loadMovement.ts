@@ -63,6 +63,7 @@ module BP3D.Three {
                 else{
                     stepArr = steps[step];
                 }
+                console.log("stepArr", stepArr);
                 if (stepArr && stepArr.length != 0) {
                     //Reading actions of the step
                     for (var i = 0; i < stepArr.length; i++) {
@@ -128,6 +129,7 @@ module BP3D.Three {
 
         function addNewAgent(stepArr, i){
             //Setting position
+            console.log("stepArr", stepArr, "i", i);
             if(stepArr[i].position != undefined){
                 if (type == 0) {
                     var room = whichRoom(stepArr[i].position);
@@ -146,6 +148,7 @@ module BP3D.Three {
             }
             //Position not defined, choose the position form the moveTo
             else {
+                console.log("AQUI");
                 if (type == 0) {
                     var position = stepArr[i].moveTo;
                     let room = whichRoom(position);
